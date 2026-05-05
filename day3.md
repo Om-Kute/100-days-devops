@@ -2,14 +2,14 @@
 
 ## Commands
 
-rm file.txt          # Remove file
-rm -rf folder/       # Force remove folder and contents
-rmdir folder/        # Remove empty folder
-mv old.txt new.txt   # Rename file
-mv file.txt docs/    # Move file
-cp file.txt copy.txt # Copy file
-cd ..                # Go back one directory
-cd .                 # Current directory
-history              # Show command history
-history -c           # Clear history
-clear                # Clear terminal
+1.rm file.txt          # Remove file
+2.rm -rf folder/       # Force remove folder and contents
+3.rmdir folder/        # Remove empty folder
+4.mv old.txt new.txt   # Rename file
+5.mv file.txt docs/    # Move file
+6.cp file.txt copy.txt # Copy file
+7.cd ..                # Go back one directory
+8.cd .                 # Current directory
+9.history              # Show command history
+10.history -c           # Clear history
+11.clear                # Clear terminal
