@@ -1,6 +1,6 @@
 🚀 Day 2/100 – Linux File & Directory Basics
 
-Today I practiced 5 useful Linux commands:
+Today I practiced 5 useful Linux commands:-
 
 1️⃣ `mkdir` – Create a new directory
 2️⃣ `mkdir -p parent/child` – Create parent and child directories together
