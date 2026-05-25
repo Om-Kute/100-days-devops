@@ -8,3 +8,6 @@ chmod 111 file.txt
 
 chmod 222 file.txt
 # Write-only permission
+
+chmod 754 file.txt
+# Custom permissions
