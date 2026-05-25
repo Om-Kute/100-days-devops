@@ -20,3 +20,8 @@ ln file.txt hardlink.txt
 
 ln -s file.txt softlink.txt
 # Create soft link
+
+chown user file.txt
+# Change owner
+
+
