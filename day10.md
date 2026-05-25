@@ -27,5 +27,7 @@ chown user file.txt
 chgrp group file.txt
 # Change group
 
+chattr +i file.txt
+# Make file immutable
 
 
