@@ -14,3 +14,6 @@ chmod 754 file.txt
 
 chmod u+r file.txt
 # Add read permission to user
+
+ln file.txt hardlink.txt
+# Create hard link
