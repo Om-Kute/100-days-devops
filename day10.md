@@ -5,3 +5,6 @@ chmod 444 file.txt
 
 chmod 111 file.txt
 # Execute-only permission
+
+chmod 222 file.txt
+# Write-only permission
