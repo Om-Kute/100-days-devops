@@ -17,3 +17,6 @@ chmod u+r file.txt
 
 ln file.txt hardlink.txt
 # Create hard link
+
+ln -s file.txt softlink.txt
+# Create soft link
