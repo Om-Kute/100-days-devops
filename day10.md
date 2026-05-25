@@ -11,3 +11,6 @@ chmod 222 file.txt
 
 chmod 754 file.txt
 # Custom permissions
+
+chmod u+r file.txt
+# Add read permission to user
