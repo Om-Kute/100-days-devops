@@ -24,4 +24,8 @@ ln -s file.txt softlink.txt
 chown user file.txt
 # Change owner
 
+chgrp group file.txt
+# Change group
+
+
 
