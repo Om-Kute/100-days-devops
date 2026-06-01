@@ -14,3 +14,6 @@ gpasswd devops
 
 groups username
 # Show user groups
+
+grpck
+# Verify group files
