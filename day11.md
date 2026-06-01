@@ -11,3 +11,6 @@ groupmod devops
 
 gpasswd devops
 # Manage group password/members
+
+groups username
+# Show user groups
