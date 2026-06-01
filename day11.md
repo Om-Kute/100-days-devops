@@ -8,3 +8,6 @@ gpasswd -M user1,user2 devops
 
 groupmod devops
 # Modify group settings
+
+gpasswd devops
+# Manage group password/members
