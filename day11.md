@@ -23,3 +23,9 @@ grpconv
 
 groupmod -g 1050 devops
 # Change group ID
+
+groupdel devops
+# Delete group
+
+newgrp devops
+# Switch to new group session
