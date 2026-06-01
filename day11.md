@@ -20,3 +20,6 @@ grpck
 
 grpconv
 # Convert to shadow group passwords
+
+groupmod -g 1050 devops
+# Change group ID
