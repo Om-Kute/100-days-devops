@@ -5,3 +5,6 @@ groupadd devops
 
 gpasswd -M user1,user2 devops
 # Add multiple users to group
+
+groupmod devops
+# Modify group settings
