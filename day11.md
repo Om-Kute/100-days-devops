@@ -17,3 +17,6 @@ groups username
 
 grpck
 # Verify group files
+
+grpconv
+# Convert to shadow group passwords
