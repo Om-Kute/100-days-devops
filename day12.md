@@ -20,3 +20,12 @@ uptime
 
 df -h
 # Disk space usage
+
+arch
+# System architecture
+
+hwclock -r
+# Read hardware clock
+
+free -h
+# Memory usage
