@@ -14,3 +14,9 @@ showkey -v
 
 stty -a
 # Terminal settings
+
+uptime
+# System uptime and load
+
+df -h
+# Disk space usage
