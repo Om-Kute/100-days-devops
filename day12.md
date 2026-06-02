@@ -8,3 +8,9 @@ sum file.txt
 
 md5sum file.txt
 # Generate MD5 hash
+
+showkey -v
+# Show keyboard scan codes
+
+stty -a
+# Terminal settings
