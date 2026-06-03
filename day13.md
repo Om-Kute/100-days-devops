@@ -5,3 +5,9 @@ aspell -c file.txt
 
 banner Linux
 # Print text banner
+
+dc
+# Desk calculator
+
+col -b
+# Remove backspaces
