@@ -11,3 +11,9 @@ dc
 
 col -b
 # Remove backspaces
+
+colcrt
+# Filter terminal text
+
+egrep "word" file.txt
+# Extended grep search
