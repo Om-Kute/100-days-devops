@@ -17,3 +17,9 @@ colcrt
 
 egrep "word" file.txt
 # Extended grep search
+
+fgrep "word" file.txt
+# Fixed string search
+
+fmt file.txt
+# Format text
