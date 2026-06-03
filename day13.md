@@ -23,3 +23,9 @@ fgrep "word" file.txt
 
 fmt file.txt
 # Format text
+
+last
+# Login history
+
+whatis ls
+# Command description
