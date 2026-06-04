@@ -5,3 +5,9 @@ ps
 
 ps -ef
 # Detailed process list
+
+top
+# Real-time process monitoring
+
+htop
+# Interactive process viewer
