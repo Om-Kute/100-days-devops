@@ -11,3 +11,9 @@ top
 
 htop
 # Interactive process viewer
+
+kill PID
+# Terminate process
+
+renice
+# Change process priority
