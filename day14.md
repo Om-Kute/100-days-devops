@@ -17,3 +17,9 @@ kill PID
 
 renice
 # Change process priority
+
+jobs
+# Show background jobs
+
+bg
+# Run process in background
