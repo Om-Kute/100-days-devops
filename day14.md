@@ -23,3 +23,9 @@ jobs
 
 bg
 # Run process in background
+
+fg
+# Bring process to foreground
+
+nice
+# Start process with priority
