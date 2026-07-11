@@ -7,3 +7,10 @@ crontab -e
 
 crontab -l
 # List current user's cron jobs
+
+crontab -r
+# Remove all cron jobs
+
+crontab -u username -l
+# List another user's cron jobs
+
