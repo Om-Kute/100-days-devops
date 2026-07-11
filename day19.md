@@ -14,3 +14,13 @@ crontab -r
 crontab -u username -l
 # List another user's cron jobs
 
+crontab -u username -e
+# Edit another user's cron jobs
+
+systemctl status cron
+# Check Cron service status
+
+systemctl start cron
+# Start Cron service
+
+
