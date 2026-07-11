@@ -23,4 +23,13 @@ systemctl status cron
 systemctl start cron
 # Start Cron service
 
+systemctl stop cron
+# Stop Cron service
+
+systemctl restart cron
+# Restart Cron service
+
+at 10:30
+# Schedule a one-time job
+
 
