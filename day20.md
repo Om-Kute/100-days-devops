@@ -7,3 +7,9 @@ find / -name file.txt
 
 which python3
 # Locate executable path
+
+whereis ssh
+# Find binary, source, and manual pages
+
+xargs
+# Build and execute commands from standard input
