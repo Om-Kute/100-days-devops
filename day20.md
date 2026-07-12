@@ -22,3 +22,12 @@ journalctl
 
 dmesg
 # Display kernel and boot messages
+
+lsof
+# List open files and associated processes
+
+vmstat
+# Display system performance statistics
+
+env
+# Show environment variables
