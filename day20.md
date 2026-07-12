@@ -13,3 +13,12 @@ whereis ssh
 
 xargs
 # Build and execute commands from standard input
+
+watch -n 2 df -h
+# Monitor command output every 2 seconds
+
+journalctl
+# View systemd logs
+
+dmesg
+# Display kernel and boot messages
