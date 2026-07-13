@@ -49,3 +49,29 @@ FTP
 SSH
 DNS
 DHCP
+
+Types of Networks
+
+PAN (Personal Area Network)
+Covers a few meters.
+Used for personal devices.
+Example: Bluetooth, USB tethering
+
+LAN (Local Area Network)
+Covers a home, office, school, or building.
+High-speed private network.
+
+MAN (Metropolitan Area Network)
+Covers a city or large campus.
+Connects multiple LANs.
+
+WAN (Wide Area Network)
+Covers countries or continents.
+The Internet is the largest WAN.
+
+Why Networking is Important
+Enables communication between devices.
+Allows file and resource sharing.
+Provides Internet connectivity.
+Supports cloud computing and distributed systems.
+Forms the backbone of DevOps infrastructure.
