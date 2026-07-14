@@ -16,3 +16,16 @@ Ring Topology
 Devices form a circular connection.
 Data travels around the ring.
 Failure of one node can affect communication unless redundancy exists.
+
+Mesh Topology
+Every device connects to multiple devices.
+Highly reliable and fault tolerant.
+Common in enterprise and data center environments.
+Tree Topology
+Combination of Star and Bus topology.
+Easy to expand.
+Suitable for large organizations.
+Hybrid Topology
+Combination of two or more topologies.
+Flexible and scalable.
+Used in modern enterprise networks.
