@@ -38,3 +38,19 @@ Address Space	~4.3 Billion	Extremely Large
 Security	Optional	Built-in IPsec support
 Broadcast	Supported	Not Supported (Multicast instead)
 NAT	Commonly Used	Generally Not Required
+
+Common Network Ports
+Port	Service
+20/21	FTP
+22	SSH
+23	Telnet
+25	SMTP
+53	DNS
+67/68	DHCP
+80	HTTP
+110	POP3
+123	NTP
+143	IMAP
+161/162	SNMP
+389	LDAP
+443	HTTPS
