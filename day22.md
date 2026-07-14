@@ -29,3 +29,12 @@ Hybrid Topology
 Combination of two or more topologies.
 Flexible and scalable.
 Used in modern enterprise networks.
+
+2. IPv4 vs IPv6
+Feature	IPv4	IPv6
+Address Size	32-bit	128-bit
+Address Format	Decimal	Hexadecimal
+Address Space	~4.3 Billion	Extremely Large
+Security	Optional	Built-in IPsec support
+Broadcast	Supported	Not Supported (Multicast instead)
+NAT	Commonly Used	Generally Not Required
