@@ -4,14 +4,17 @@ Overview
 Networking is one of the most important foundations of DevOps, Cloud Computing, and System Administration. Today I learned about network topologies, IPv4 vs IPv6, and commonly used network ports.
 
 1. Types of Network Topology
+
 Bus Topology
 All devices connect to a single backbone cable.
 Simple and inexpensive.
 Failure of the main cable affects the entire network.
+
 Star Topology
 All devices connect to a central switch or hub.
 Easy to manage and troubleshoot.
 Most common topology used in LANs.
+
 Ring Topology
 Devices form a circular connection.
 Data travels around the ring.
@@ -21,10 +24,12 @@ Mesh Topology
 Every device connects to multiple devices.
 Highly reliable and fault tolerant.
 Common in enterprise and data center environments.
+
 Tree Topology
 Combination of Star and Bus topology.
 Easy to expand.
 Suitable for large organizations.
+
 Hybrid Topology
 Combination of two or more topologies.
 Flexible and scalable.
@@ -54,3 +59,11 @@ Port	Service
 161/162	SNMP
 389	LDAP
 443	HTTPS
+3306	MySQL
+5432	PostgreSQL
+6379	Redis
+6443	Kubernetes API Server
+8080	HTTP Alternate
+9000	SonarQube
+9090	Prometheus
+9092	Apache Kafka
