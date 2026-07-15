@@ -25,3 +25,21 @@ Layer	Description
 2 Transport	End-to-end communication using TCP or UDP
 3 Internet	Logical addressing and routing using IP
 4 Network Access	Physical transmission and local network communication
+
+3. OSI vs TCP/IP
+Feature	   OSI                   	TCP/IP
+Layers	     7                       	4
+Type	  Reference Model	        Protocol Suite
+Developed By   ISO               	DoD
+Usage	  Learning and design   	Real-world networking
+Adoption  	Mainly educational	Internet standard
+
+4. TCP vs UDP
+Feature	TCP	UDP
+Connection	Connection-oriented	Connectionless
+Reliability	Reliable	Unreliable
+Packet Order	Guaranteed	Not guaranteed
+Speed	Slower	Faster
+Error Recovery	Yes	No
+Header Size	20–60 Bytes	8 Bytes
+Best For	Web, Email, SSH, Databases	DNS, VoIP, Streaming, Gaming
