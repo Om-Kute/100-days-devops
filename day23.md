@@ -15,3 +15,13 @@ Layer	Name	Purpose
 3	Network	Logical addressing and routing
 2	Data Link	Node-to-node delivery and error detection
 1	Physical	Transmission of bits through cables or wireless media
+
+2. TCP/IP Model (4 Layers)
+
+The TCP/IP model is the practical networking model used on the Internet.
+
+Layer	Description
+1 Application	Combines OSI Application, Presentation, and Session layers
+2 Transport	End-to-end communication using TCP or UDP
+3 Internet	Logical addressing and routing using IP
+4 Network Access	Physical transmission and local network communication
