@@ -42,3 +42,14 @@ B	128–191	255.255.0.0 (/16)	Medium Networks
 C	192–223	255.255.255.0 (/24)	Small Networks
 D	224–239	N/A	Multicast
 E	240–255	N/A	Experimental
+
+Special IPv4 Addresses
+Network Address – Identifies the network
+Broadcast Address – Sends data to all devices on a network
+Loopback Address (127.0.0.1) – Refers to the local machine
+Unspecified Address (0.0.0.0) – Represents an unknown or default address
+Key Takeaways
+Every device on a network requires an IP address.
+Public IPs are used on the Internet, while Private IPs are used within local networks.
+Static IPs remain fixed; Dynamic IPs are assigned automatically by DHCP.
+IPv4 uses five address classes (A–E), each designed for different purposes.
