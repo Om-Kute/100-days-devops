@@ -34,3 +34,11 @@ Dynamic IP
 Automatically assigned by DHCP
 Changes over time
 Commonly used for personal devices
+
+3. IPv4 Address Classes
+Class	Range	Default Subnet Mask	Usage
+A	1–126	255.0.0.0 (/8)	Large Networks
+B	128–191	255.255.0.0 (/16)	Medium Networks
+C	192–223	255.255.255.0 (/24)	Small Networks
+D	224–239	N/A	Multicast
+E	240–255	N/A	Experimental
