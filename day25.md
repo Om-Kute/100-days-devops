@@ -24,3 +24,30 @@ Used for Web Servers, Bastion Hosts, Load Balancers
 Private Subnet
 No direct Internet access
 Used for Databases, Application Servers, Internal Services
+
+3. Route Table
+
+A Route Table contains rules that determine where network traffic should go.
+
+Example:
+
+Destination	Target
+10.0.0.0/16	Local
+0.0.0.0/0	Internet Gateway (Public)
+0.0.0.0/0	NAT Gateway (Private)
+
+4. Internet Gateway (IGW)
+An Internet Gateway allows communication between a VPC and the Internet.
+
+Functions
+Enables inbound Internet access
+Enables outbound Internet access
+Used by public subnets
+
+5. NAT Gateway
+A NAT Gateway allows instances in private subnets to access the Internet without exposing them to inbound connections.
+
+Common Use Cases
+Software updates
+Installing packages
+Accessing external APIs
