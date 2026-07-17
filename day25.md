@@ -67,3 +67,22 @@ Features
 Subnet-level security
 Supports both ALLOW and DENY rules
 Return traffic must be explicitly allowed
+
+Security Group vs Network ACL
+Feature	Security Group	Network ACL
+Level	Instance	Subnet
+Type	Stateful	Stateless
+Rules	Allow only	Allow and Deny
+Return Traffic	Automatic	Must be explicitly allowed
+
+Architecture Flow
+
+Internet
+⬇️
+Internet Gateway (IGW)
+⬇️
+Public Subnet
+⬇️
+NAT Gateway
+⬇️
+Private Subnet
