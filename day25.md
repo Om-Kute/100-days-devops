@@ -51,3 +51,19 @@ Common Use Cases
 Software updates
 Installing packages
 Accessing external APIs
+
+6. Security Groups
+Security Groups are stateful firewalls attached to EC2 instances.
+
+Features
+Instance-level security
+Allow rules only
+Return traffic is automatically allowed
+
+8. Network ACLs (NACLs)
+Network ACLs are stateless firewalls attached to subnets.
+
+Features
+Subnet-level security
+Supports both ALLOW and DENY rules
+Return traffic must be explicitly allowed
