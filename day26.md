@@ -26,5 +26,22 @@ Dynamic NAT – Maps private IPs from a public IP pool
 PAT (NAT Overload) – Many private IPs share one public IP using different ports
 Benefits
 Conserves public IP addresses
+
+3. CIDR (Classless Inter-Domain Routing)
+
+CIDR provides flexible IP address allocation and efficient subnetting.
+
+Common CIDR Prefixes
+CIDR	Subnet Mask	Usable Hosts
+/8	255.0.0.0	16,777,214
+/16	255.255.0.0	65,534
+/24	255.255.255.0	254
+/26	255.255.255.192	62
+/30	255.255.255.252	2
+Advantages
+Efficient IP address utilization
+Smaller routing tables
+Supports Variable Length Subnet Masking (VLSM)
+4. Firewalls
 Hides internal network addresses
 Improves network security
