@@ -42,6 +42,20 @@ Advantages
 Efficient IP address utilization
 Smaller routing tables
 Supports Variable Length Subnet Masking (VLSM)
+
 4. Firewalls
+   A firewall filters network traffic according to defined security rules.
+
+Types of Firewalls
+Packet Filtering Firewall
+Stateful Inspection Firewall
+Application Layer Firewall (WAF)
+Next-Generation Firewall (NGFW)
+Best Practices
+Allow only required ports
+Block unnecessary traffic
+Follow the principle of least privilege
+Review firewall rules regularly
+
 Hides internal network addresses
 Improves network security
