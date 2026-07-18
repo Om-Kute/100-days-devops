@@ -14,4 +14,17 @@ AAAA	Maps a domain to an IPv6 address
 CNAME	Alias for another domain
 MX	Mail server record
 NS	Authoritative name server
-TXT	Verification and security informatio
+TXT	Verification and security information
+
+2. NAT (Network Address Translation)
+
+NAT enables devices using private IP addresses to access external networks through a public IP address.
+
+Types of NAT
+Static NAT – One-to-one mapping
+Dynamic NAT – Maps private IPs from a public IP pool
+PAT (NAT Overload) – Many private IPs share one public IP using different ports
+Benefits
+Conserves public IP addresses
+Hides internal network addresses
+Improves network security
