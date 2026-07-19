@@ -10,3 +10,5 @@ lsblk                   # Show disk partitions
 mount                   # Mount file system
 tree                    # Directory tree view
 du -sh folder/          # Disk usage of folder
+
+
