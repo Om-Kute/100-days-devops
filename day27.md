@@ -24,3 +24,6 @@ iperf3 -s	Start bandwidth server
 iperf3 -c server-ip	Test network bandwidth
 iftop	Monitor live network traffic
 vnstat	View historical network usage
+
+
+
