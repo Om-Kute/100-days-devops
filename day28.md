@@ -19,3 +19,18 @@ Components
 #!/bin/bash → Shebang (specifies Bash interpreter)
 # → Comment
 echo → Display output
+Variables
+
+Variables store data for later use.
+
+name="Om"
+course="Shell Scripting"
+
+echo "Name: $name"
+echo "Course: $course"
+User Input
+
+Read input from the keyboard using read.
+
+read username
+echo "Welcome $username"
