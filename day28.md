@@ -28,6 +28,21 @@ course="Shell Scripting"
 
 echo "Name: $name"
 echo "Course: $course"
+
+Output Commands
+echo
+echo "Hello World"
+printf
+printf "Name: %s\n" "Om"
+Output Redirection
+
+Overwrite file:
+
+echo "Hello" > file.txt
+
+Append to file:
+
+echo "DevOps" >> file.txt
 User Input
 
 Read input from the keyboard using read.
