@@ -8,3 +8,14 @@ What is Shell Scripting?
 Shell scripting is the process of writing Linux commands in a file and executing them using the Bash shell.
 
 It is widely used to automate repetitive tasks in Linux systems and DevOps workflows.
+
+Basic Script Structure
+#!/bin/bash
+
+# This is a comment
+
+echo "Hello, DevOps!"
+Components
+#!/bin/bash → Shebang (specifies Bash interpreter)
+# → Comment
+echo → Display output
