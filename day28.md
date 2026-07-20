@@ -47,5 +47,12 @@ User Input
 
 Read input from the keyboard using read.
 
+Make Script Executable
+chmod +x script.sh
+
+Run the script:
+
+./script.sh
+
 read username
 echo "Welcome $username"
