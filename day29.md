@@ -49,3 +49,20 @@ if [ $a -gt 5 -a $b -lt 30 ]; then
     echo "Condition is true"
 fi
 
+4. String Operators
+
+Used for comparing strings.
+
+Operator	Description
+=	Equal
+!=	Not Equal
+-z	String is empty
+-n	String is not empty
+
+Example:
+
+name="DevOps"
+
+if [ "$name" = "DevOps" ]; then
+    echo "Strings match"
+fi
