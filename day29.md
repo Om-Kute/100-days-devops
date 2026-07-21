@@ -14,3 +14,23 @@ Operator	Description
 /	Division
 %	Modulus
 **	Exponentiation
+
+2. Relational Operators
+
+Used to compare numeric values.
+
+Operator	Description
+-eq	Equal
+-ne	Not Equal
+-gt	Greater Than
+-lt	Less Than
+-ge	Greater Than or Equal
+-le	Less Than or Equal
+
+Example:
+
+if [ $a -lt $b ]; then
+    echo "a is less than b"
+fi
+
+
