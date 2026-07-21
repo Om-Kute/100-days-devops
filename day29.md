@@ -34,3 +34,18 @@ if [ $a -lt $b ]; then
 fi
 
 
+3. Logical Operators
+
+Used to combine conditions.
+
+Operator	Description
+-a	AND
+-o	OR
+!	NOT
+
+Example:
+
+if [ $a -gt 5 -a $b -lt 30 ]; then
+    echo "Condition is true"
+fi
+
