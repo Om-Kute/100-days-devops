@@ -66,3 +66,22 @@ name="DevOps"
 if [ "$name" = "DevOps" ]; then
     echo "Strings match"
 fi
+
+5. File Operators
+
+Used to check file and directory properties.
+
+Operator	Description
+-e	File exists
+-f	Regular file
+-d	Directory exists
+-r	Read permission
+-w	Write permission
+-x	Execute permission
+-s	File is not empty
+
+Example:
+
+if [ -f script.sh ]; then
+    echo "File exists"
+fi
