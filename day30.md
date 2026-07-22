@@ -42,3 +42,28 @@ if [ $marks -ge 50 ]; then
 else
     echo "Fail"
 fi
+
+3. if...elif...else Statement
+
+Used when multiple conditions need to be checked.
+
+Syntax
+if [ condition1 ]; then
+    commands
+elif [ condition2 ]; then
+    commands
+else
+    commands
+fi
+Example
+marks=82
+
+if [ $marks -ge 90 ]; then
+    echo "Grade A"
+elif [ $marks -ge 75 ]; then
+    echo "Grade B"
+elif [ $marks -ge 60 ]; then
+    echo "Grade C"
+else
+    echo "Grade D"
+fi
