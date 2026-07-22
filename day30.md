@@ -67,3 +67,21 @@ elif [ $marks -ge 60 ]; then
 else
     echo "Grade D"
 fi
+
+4. Nested if Statement
+
+An if statement inside another if statement.
+
+Example
+age=22
+citizen="yes"
+
+if [ $age -ge 18 ]; then
+    if [ "$citizen" = "yes" ]; then
+        echo "Eligible to vote"
+    else
+        echo "Citizenship required"
+    fi
+else
+    echo "Not eligible"
+fi
