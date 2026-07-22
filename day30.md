@@ -79,6 +79,41 @@ citizen="yes"
 if [ $age -ge 18 ]; then
     if [ "$citizen" = "yes" ]; then
         echo "Eligible to vote"
+5. case Statement
+
+Used when checking one variable against multiple possible values.
+
+Syntax
+case variable in
+    pattern1)
+        commands
+        ;;
+    pattern2)
+        commands
+        ;;
+    *)
+        default_command
+        ;;
+esac
+Example
+day="Sun"
+
+case $day in
+    Mon)
+        echo "Start of the week"
+        ;;
+    Fri)
+        echo "Weekend is near"
+        ;;
+    Sat|Sun)
+        echo "Weekend"
+        ;;
+    *)
+        echo "Regular day"
+        ;;
+esac
+
+        
     else
         echo "Citizenship required"
     fi
