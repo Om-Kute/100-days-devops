@@ -58,6 +58,23 @@ done
 Example
 count=1
 
+4. break Statement
+
+The break statement immediately exits the loop.
+
+Example
+for i in {1..5}
+do
+    if [ $i -eq 3 ]; then
+        break
+    fi
+
+    echo $i
+done
+Output
+1
+2
+
 until [ $count -gt 5 ]
 do
     echo "Count: $count"
