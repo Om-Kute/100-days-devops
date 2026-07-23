@@ -80,3 +80,23 @@ do
     echo "Count: $count"
     ((count++))
 done
+
+
+5. continue Statement
+
+The continue statement skips the current iteration and proceeds with the next one.
+
+Example
+for i in {1..5}
+do
+    if [ $i -eq 3 ]; then
+        continue
+    fi
+
+    echo $i
+done
+Output
+1
+2
+4
+5
