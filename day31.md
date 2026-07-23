@@ -21,6 +21,23 @@ for i in {1..5}
 do
     echo "Number: $i"
 done
+2. while Loop
+
+The while loop executes as long as the specified condition is true.
+
+Syntax
+while [ condition ]
+do
+    commands
+done
+Example
+count=1
+
+while [ $count -le 5 ]
+do
+    echo "Count: $count"
+    ((count++))
+done
 Output
 Number: 1
 Number: 2
