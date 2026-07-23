@@ -44,3 +44,22 @@ Number: 2
 Number: 3
 Number: 4
 Number: 5
+
+
+3. until Loop
+
+The until loop executes until the specified condition becomes true.
+
+Syntax
+until [ condition ]
+do
+    commands
+done
+Example
+count=1
+
+until [ $count -gt 5 ]
+do
+    echo "Count: $count"
+    ((count++))
+done
