@@ -1,0 +1,19 @@
+Day 32 – Functions & Positional Parameters in Bash
+🎯 Objective
+
+Learn how to write reusable functions and use positional parameters to make Bash scripts modular and dynamic.
+
+What are Functions?
+
+A function is a reusable block of commands that performs a specific task. Functions improve code readability, reduce duplication, and make scripts easier to maintain.
+
+Function Syntax
+function_name() {
+    commands
+}
+
+or
+
+function function_name() {
+    commands
+}
