@@ -25,3 +25,11 @@ greet() {
 greet
 Output
 Hello, DevOps!
+Example 2 – Function with Parameters
+add() {
+    echo "Sum = $(($1 + $2))"
+}
+
+add 15 25
+Output
+Sum = 40
