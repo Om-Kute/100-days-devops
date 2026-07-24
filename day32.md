@@ -17,3 +17,11 @@ or
 function function_name() {
     commands
 }
+Example 1 – Simple Function
+greet() {
+    echo "Hello, DevOps!"
+}
+
+greet
+Output
+Hello, DevOps!
