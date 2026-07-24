@@ -47,3 +47,19 @@ check 5
 echo $?
 Output
 0
+Positional Parameters
+
+Positional parameters store the arguments passed to a Bash script.
+
+Example
+./script.sh Linux DevOps AWS
+Parameter	Description	Example Output
+$0	Script name	./script.sh
+$1	First argument	Linux
+$2	Second argument	DevOps
+$3	Third argument	AWS
+$#	Number of arguments	3
+$@	All arguments individually	Linux DevOps AWS
+$*	All arguments as one string	Linux DevOps AWS
+$$	Current process ID	e.g., 12345
+$?	Exit status of last command	0 (success)
