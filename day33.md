@@ -17,7 +17,7 @@ Mango
 Print All Elements
 echo ${fruits[@]}
 Array Length
-echo ${#fruits[@]}
+echo ${fruits[@]}
 Loop Through an Array
 for fruit in "${fruits[@]}"
 String Manipulation
@@ -27,7 +27,7 @@ Strings are commonly used for processing file names, logs, command outputs, and 
 String Length
 str="Hello DevOps"
 
-echo ${#str}
+echo ${str}
 Substring
 echo ${str:0:5}
 Concatenate Strings
@@ -49,3 +49,12 @@ Convert to Uppercase
 echo ${str^^}
 Convert to Lowercase
 echo ${str,,}
+Useful Text Processing Commands
+cut
+echo "Linux,DevOps,AWS" | cut -d"," -f2
+tr
+echo "linux" | tr 'a-z' 'A-Z'
+sed
+echo "I Love Bash" | sed 's/Bash/Linux/'
+awk
+echo "John 25" | awk '{print $1}'
