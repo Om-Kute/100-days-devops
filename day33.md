@@ -20,6 +20,21 @@ Array Length
 echo ${#fruits[@]}
 Loop Through an Array
 for fruit in "${fruits[@]}"
+String Manipulation
+
+Strings are commonly used for processing file names, logs, command outputs, and user input.
+
+String Length
+str="Hello DevOps"
+
+echo ${#str}
+Substring
+echo ${str:0:5}
+Concatenate Strings
+first="Hello"
+second="DevOps"
+
+echo "$first $second"
 do
     echo "$fruit"
 done
