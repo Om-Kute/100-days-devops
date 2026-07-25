@@ -41,3 +41,11 @@ done
 Add and Remove Elements
 fruits+=("Grapes")
 unset fruits[1]
+Replace Text
+str="I Love Bash"
+
+echo ${str/Bash/Linux}
+Convert to Uppercase
+echo ${str^^}
+Convert to Lowercase
+echo ${str,,}
