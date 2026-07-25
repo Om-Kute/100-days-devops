@@ -18,3 +18,11 @@ Print All Elements
 echo ${fruits[@]}
 Array Length
 echo ${#fruits[@]}
+Loop Through an Array
+for fruit in "${fruits[@]}"
+do
+    echo "$fruit"
+done
+Add and Remove Elements
+fruits+=("Grapes")
+unset fruits[1]
