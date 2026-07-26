@@ -18,3 +18,12 @@ Read First 5 Lines
 head -n 5 file.txt
 Read Last 5 Lines
 tail -n 5 file.txt
+2. Writing to Files
+Create or Overwrite a File
+echo "Hello DevOps" > file.txt
+Write Multiple Lines
+cat > file.txt << EOF
+Line 1
+Line 2
+Line 3
+EOF
