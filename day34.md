@@ -21,6 +21,14 @@ tail -n 5 file.txt
 2. Writing to Files
 Create or Overwrite a File
 echo "Hello DevOps" > file.txt
+3. Appending Data
+Append a Single Line
+echo "New Entry" >> file.txt
+Append Multiple Lines
+cat >> file.txt << EOF
+Line 4
+Line 5
+EOF
 Write Multiple Lines
 cat > file.txt << EOF
 Line 1
