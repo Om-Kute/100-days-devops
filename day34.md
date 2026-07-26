@@ -49,3 +49,11 @@ Move or Rename
 mv old.txt new.txt
 Delete
 rm file.txt
+6. Useful Commands for Automation
+find – Locate files and directories
+grep – Search text patterns
+sed – Edit text
+awk – Process structured data
+xargs – Pass arguments to commands
+du – Check directory size
+df – Display disk space
