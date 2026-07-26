@@ -51,6 +51,15 @@ Delete
 rm file.txt
 6. Useful Commands for Automation
 find – Locate files and directories
+>>Mini Automation Scripts
+Disk Usage Checker
+df -h
+Memory Usage Monitor
+free -h
+Backup Script
+tar -czf backup.tar.gz /home/user/data
+Log Cleaner
+find /var/log -name "*.log" -mtime +7 -delete
 grep – Search text patterns
 sed – Edit text
 awk – Process structured data
