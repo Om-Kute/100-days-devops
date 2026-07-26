@@ -36,6 +36,13 @@ Line 2
 Line 3
 EOF
 4. Copy, Move & Delete Files
+5. Input/Output Redirection
+Operator	Purpose
+>	Redirect output
+>>	Append output
+<	Read input
+2>	Redirect error output
+`	`	Pass output to another command
 Copy
 cp source.txt backup.txt
 Move or Rename
