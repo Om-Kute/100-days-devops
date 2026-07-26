@@ -35,3 +35,10 @@ Line 1
 Line 2
 Line 3
 EOF
+4. Copy, Move & Delete Files
+Copy
+cp source.txt backup.txt
+Move or Rename
+mv old.txt new.txt
+Delete
+rm file.txt
