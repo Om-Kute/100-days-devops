@@ -6,3 +6,15 @@ Learn how to perform file operations and create automation scripts using Bash to
 What is File Handling?
 
 File handling refers to performing operations such as reading, writing, appending, copying, moving, and deleting files. These operations form the foundation of automation in Bash scripting.
+1. Reading Files
+Display File Content
+cat file.txt
+Read Line by Line
+while IFS= read -r line
+do
+    echo "$line"
+done < file.txt
+Read First 5 Lines
+head -n 5 file.txt
+Read Last 5 Lines
+tail -n 5 file.txt
