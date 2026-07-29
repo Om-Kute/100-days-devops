@@ -16,3 +16,11 @@ Restore previous versions
 Collaborate safely
 Resolve conflicts
 Manage releases
+⭐ Why Git?
+Fast and lightweight
+Distributed architecture
+Data integrity using SHA hashing
+Supports branching and merging
+Easy collaboration
+Works offline
+Open source
