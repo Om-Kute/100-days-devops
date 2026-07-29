@@ -24,3 +24,35 @@ Supports branching and merging
 Easy collaboration
 Works offline
 Open source
+🏗 Git Architecture
+
+Git manages changes through four main areas:
+
+Working Directory
+        │
+    git add
+        ▼
+Staging Area
+        │
+   git commit
+        ▼
+Local Repository
+        │
+    git push
+        ▼
+Remote Repository (GitHub)
+Working Directory
+
+The folder where you create, edit, and delete project files.
+
+Staging Area
+
+A temporary area where selected changes are prepared before committing.
+
+Local Repository
+
+Stores the complete commit history on your local machine.
+
+Remote Repository
+
+A shared repository hosted on platforms like GitHub for collaboration.
