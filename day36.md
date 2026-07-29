@@ -62,4 +62,10 @@ Stores the complete commit history on your local machine.
 
 Remote Repository
 
+Git vs GitHub
+Git	GitHub
+Version control software	Cloud hosting platform
+Runs locally	Hosts remote repositories
+Tracks code changes	Enables collaboration and pull requests
+
 A shared repository hosted on platforms like GitHub for collaboration.
