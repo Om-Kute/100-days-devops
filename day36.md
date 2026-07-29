@@ -69,3 +69,17 @@ Runs locally	Hosts remote repositories
 Tracks code changes	Enables collaboration and pull requests
 
 A shared repository hosted on platforms like GitHub for collaboration.
+
+Install Git
+
+Ubuntu:
+
+sudo apt update
+sudo apt install git -y
+git --version
+⚙️ Configure Git
+git config --global user.name "Your Name"
+
+git config --global user.email "your@email.com"
+
+git config --list
