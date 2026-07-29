@@ -51,6 +51,13 @@ A temporary area where selected changes are prepared before committing.
 
 Local Repository
 
+Centralized vs Distributed Version Control
+Centralized VCS	Distributed VCS
+Single central server	Every developer has a complete repository
+Internet usually required	Can work offline
+Single point of failure	More reliable
+Examples: SVN, CVS	Example: Git
+
 Stores the complete commit history on your local machine.
 
 Remote Repository
