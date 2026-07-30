@@ -72,3 +72,14 @@ git log
 Compact view:
 
 git log --oneline
+
+🔍 7. git diff
+
+Shows differences between file versions.
+
+Syntax
+git diff
+
+Compare staged changes:
+
+git diff --staged
