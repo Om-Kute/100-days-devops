@@ -88,6 +88,27 @@ git diff --staged
 
 Displays detailed information about a specific commit.
 
+🔄 Basic Git Workflow
+Create Project
+      │
+      ▼
+git init
+      │
+      ▼
+Create/Edit Files
+      │
+      ▼
+git status
+      │
+      ▼
+git add .
+      │
+      ▼
+git commit -m "Message"
+      │
+      ▼
+git log
+
 Syntax
 git show
 
