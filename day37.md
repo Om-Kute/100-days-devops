@@ -15,3 +15,14 @@ Example
 mkdir my-project
 cd my-project
 git init
+
+📥 2. git clone
+
+Creates a copy of an existing remote repository.
+
+Syntax
+git clone <repository-url>
+
+Example
+
+git clone https://github.com/username/project.git
