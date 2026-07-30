@@ -61,3 +61,14 @@ git commit -m "Your commit message"
 Example
 
 git commit -m "Add login page"
+
+📜 6. git log
+
+Displays commit history.
+
+Syntax
+git log
+
+Compact view:
+
+git log --oneline
