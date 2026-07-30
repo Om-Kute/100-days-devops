@@ -34,6 +34,17 @@ Displays the current state of your working directory and staging area.
 Syntax
 git status
 
+➕ 4. git add
+
+Stages files before committing them.
+
+Syntax
+git add file.txt
+
+Stage all files:
+
+git add .
+
 Use Cases
 
 Check modified files
