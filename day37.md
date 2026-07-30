@@ -83,3 +83,14 @@ git diff
 Compare staged changes:
 
 git diff --staged
+
+📄 8. git show
+
+Displays detailed information about a specific commit.
+
+Syntax
+git show
+
+Show a specific commit:
+
+git show <commit-id>
