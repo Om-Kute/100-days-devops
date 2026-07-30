@@ -50,3 +50,14 @@ Use Cases
 Check modified files
 View staged changes
 Identify untracked files
+
+💾 5. git commit
+
+Saves staged changes to the local repository.
+
+Syntax
+git commit -m "Your commit message"
+
+Example
+
+git commit -m "Add login page"
