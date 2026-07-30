@@ -26,3 +26,16 @@ git clone <repository-url>
 Example
 
 git clone https://github.com/username/project.git
+
+📋 3. git status
+
+Displays the current state of your working directory and staging area.
+
+Syntax
+git status
+
+Use Cases
+
+Check modified files
+View staged changes
+Identify untracked files
