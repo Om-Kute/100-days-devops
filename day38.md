@@ -58,3 +58,12 @@ git merge <branch-name>
 Example
 git switch main
 git merge feature-login
+
+Merge Types
+Fast-Forward Merge
+
+Occurs when the target branch has no new commits, allowing Git to move the branch pointer forward without creating a merge commit.
+
+Three-Way Merge
+
+Occurs when both branches contain new commits. Git creates a new merge commit to combine histories.
