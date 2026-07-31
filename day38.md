@@ -48,3 +48,13 @@ git checkout -b <branch-name>
 Example
 git checkout feature-login
 git checkout -b feature-dashboard
+
+4. git merge
+
+Merge another branch into the current branch.
+
+Syntax
+git merge <branch-name>
+Example
+git switch main
+git merge feature-login
