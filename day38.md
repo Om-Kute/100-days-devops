@@ -14,3 +14,15 @@ Fix bugs safely
 Collaborate with multiple developers
 Keep the main branch stable
 Support parallel development
+1. git branch
+
+Create, list, rename, and delete branches.
+
+Syntax
+git branch
+git branch <branch-name>
+git branch -d <branch-name>
+git branch -D <branch-name>
+Example
+git branch feature-login
+git branch
