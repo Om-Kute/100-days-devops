@@ -37,3 +37,14 @@ git switch feature-login
 git switch -c feature-payment
 git branch feature-login
 git branch
+
+3. git checkout
+
+Older command for switching branches or restoring files.
+
+Syntax
+git checkout <branch-name>
+git checkout -b <branch-name>
+Example
+git checkout feature-login
+git checkout -b feature-dashboard
