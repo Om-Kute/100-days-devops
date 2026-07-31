@@ -78,3 +78,28 @@ Occurs when the target branch has no new commits, allowing Git to move the branc
 Three-Way Merge
 
 Occurs when both branches contain new commits. Git creates a new merge commit to combine histories.
+
+Resolving Merge Conflicts
+Step 1
+
+Check the repository status.
+
+git status
+Step 2
+
+Open the conflicting file and remove the conflict markers.
+
+Step 3
+
+Save the correct version.
+
+Step 4
+
+Stage the resolved file.
+
+git add file.txt
+Step 5
+
+Complete the merge.
+
+git commit -m "Resolve merge conflict"
