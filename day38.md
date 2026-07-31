@@ -61,6 +61,17 @@ git merge feature-login
 
 Merge Types
 Fast-Forward Merge
+Merge Conflicts
+
+A merge conflict happens when Git cannot determine which changes should be kept because the same section of a file has been modified in different branches.
+
+Example conflict:
+
+<<<<<<< HEAD
+Hello DevOps
+=======
+Hello Git
+>>>>>>> feature-login
 
 Occurs when the target branch has no new commits, allowing Git to move the branch pointer forward without creating a merge commit.
 
