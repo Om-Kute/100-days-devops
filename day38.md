@@ -24,5 +24,16 @@ git branch <branch-name>
 git branch -d <branch-name>
 git branch -D <branch-name>
 Example
+
+2. git switch
+
+Switch to another branch.
+
+Syntax
+git switch <branch-name>
+git switch -c <branch-name>
+Example
+git switch feature-login
+git switch -c feature-payment
 git branch feature-login
 git branch
