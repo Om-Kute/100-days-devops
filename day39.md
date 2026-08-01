@@ -17,3 +17,15 @@ Issues
 Project management
 CI/CD integration
 Open-source collaboration
+🔗 1. git remote
+
+The git remote command manages connections between your local repository and remote repositories.
+
+Add a Remote
+git remote add origin <repository-url>
+
+Example:
+
+git remote add origin https://github.com/username/project.git
+
+Here, origin is the conventional name for the remote repository.
