@@ -38,4 +38,21 @@ Example output:
 origin  https://github.com/username/project.git (fetch)
 origin  https://github.com/username/project.git (push)
 ⬆️ 3. git push
+Uploads local commits to a remote repository.
+
+git push <remote> <branch>
+
+Example:
+
+git push origin main
+
+For the first push:
+
+git push -u origin main
+
+The -u option sets the upstream branch.
+
+After that, you can usually use:
+
+git push
 Here, origin is the conventional name for the remote repository.
