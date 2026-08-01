@@ -82,5 +82,11 @@ Conceptually:
 
 git pull = git fetch + integration
 
+⚖️ git fetch vs git pull
+git fetch	git pull
+Downloads remote changes	Downloads remote changes
+Updates remote-tracking branches	Integrates changes into current branch
+Lets you inspect changes first	Updates your current branch
+Useful when you want more control	Convenient for synchronization
 By default, that integration is commonly a merge, although Git can also be configured to rebase.
 Here, origin is the conventional name for the remote repository.
