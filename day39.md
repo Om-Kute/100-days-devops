@@ -65,7 +65,19 @@ git pull <remote> <branch>
 Example:
 
 git pull origin main
+📥 5. git fetch
 
+Downloads commits, branches, and other references from a remote repository without automatically integrating them into your current branch.
+
+git fetch
+
+Or:
+
+git fetch origin
+
+You can inspect the downloaded remote-tracking branch:
+
+git log HEAD..origin/main
 Conceptually:
 
 git pull = git fetch + integration
