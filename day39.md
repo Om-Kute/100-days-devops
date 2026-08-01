@@ -55,4 +55,20 @@ The -u option sets the upstream branch.
 After that, you can usually use:
 
 git push
+
+⬇️ 4. git pull
+
+Downloads changes from a remote repository and integrates them into your current branch.
+
+git pull <remote> <branch>
+
+Example:
+
+git pull origin main
+
+Conceptually:
+
+git pull = git fetch + integration
+
+By default, that integration is commonly a merge, although Git can also be configured to rebase.
 Here, origin is the conventional name for the remote repository.
