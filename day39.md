@@ -110,5 +110,38 @@ Typical use cases:
 
 Open-source contribution
 Experimenting with another project
+
+🔄 GitHub Collaboration Workflow
+Repository
+    │
+    ▼
+Fork or Clone
+    │
+    ▼
+Create Feature Branch
+    │
+    ▼
+Make Changes
+    │
+    ▼
+git add
+    │
+    ▼
+git commit
+    │
+    ▼
+git push
+    │
+    ▼
+Create Pull Request
+    │
+    ▼
+Code Review
+    │
+    ▼
+CI/CD Checks
+    │
+    ▼
+Approve & Merge
 Proposing improvements
 Working without direct write access to the original repository
