@@ -94,7 +94,18 @@ Here, origin is the conventional name for the remote repository.
 🍴 What is a Fork?
 
 A Fork is a GitHub-side copy of another user's repository under your own GitHub account.
+🔀 What is a Pull Request?
 
+A Pull Request (PR) is a GitHub feature used to propose changes from one branch or fork to another.
+
+Pull Requests allow teams to:
+
+Review code
+Discuss changes
+Run automated CI checks
+Request modifications
+Approve changes
+Merge approved code
 Typical use cases:
 
 Open-source contribution
