@@ -27,5 +27,15 @@ git remote add origin <repository-url>
 Example:
 
 git remote add origin https://github.com/username/project.git
+🔍 2. git remote -v
 
+Displays configured remote repositories and their fetch/push URLs.
+
+git remote -v
+
+Example output:
+
+origin  https://github.com/username/project.git (fetch)
+origin  https://github.com/username/project.git (push)
+⬆️ 3. git push
 Here, origin is the conventional name for the remote repository.
