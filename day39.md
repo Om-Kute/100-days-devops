@@ -90,3 +90,14 @@ Lets you inspect changes first	Updates your current branch
 Useful when you want more control	Convenient for synchronization
 By default, that integration is commonly a merge, although Git can also be configured to rebase.
 Here, origin is the conventional name for the remote repository.
+
+🍴 What is a Fork?
+
+A Fork is a GitHub-side copy of another user's repository under your own GitHub account.
+
+Typical use cases:
+
+Open-source contribution
+Experimenting with another project
+Proposing improvements
+Working without direct write access to the original repository
