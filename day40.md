@@ -97,4 +97,38 @@ git reset --hard HEAD~1
 
 Moves HEAD back and resets both the staging area and working directory.
 
+6. 🚫 .gitignore
+
+.gitignore specifies files and directories that Git should ignore when they are untracked.
+
+Example:
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Editor files
+.vscode/
+.idea/
+
+Create the file:
+
+touch .gitignore
+
+Then commit it:
+
+git add .gitignore
+git commit -m "Add gitignore"
+
+Note: Adding a file to .gitignore does not automatically stop tracking it if it is already tracked.
+
 ⚠️ git reset --hard can permanently remove uncommitted changes. Use it carefully.
