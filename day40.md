@@ -77,7 +77,21 @@ git reset --mixed HEAD~1
 Moves HEAD back and keeps changes in the working directory but unstaged.
 
 --mixed is the default mode.
+5. 🔙 Git Revert
 
+git revert creates a new commit that reverses the changes introduced by an earlier commit.
+
+git revert <commit-id>
+
+Example:
+
+git revert a1b2c3d
+Reset vs Revert
+git reset	git revert
+Moves branch history	Creates a new undo commit
+Can rewrite history	Preserves history
+Useful for local cleanup	Safer for shared branches
+--hard can remove work	Existing history remains visible
 Hard Reset
 git reset --hard HEAD~1
 
