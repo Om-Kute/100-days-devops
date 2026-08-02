@@ -152,4 +152,32 @@ View configured aliases:
 
 git config --global --get-regexp '^alias\.'
 
+8. 🪝 Git Hooks
+
+Git Hooks are scripts that Git executes automatically when specific Git events occur.
+
+Common hooks include:
+
+Hook	Purpose
+pre-commit	Run checks before creating a commit
+commit-msg	Validate commit messages
+pre-push	Run checks before pushing
+post-merge	Perform actions after a merge
+
+Hooks are normally located inside:
+
+.git/hooks/
+
+Example:
+
+ls .git/hooks/
+
+Git hooks can automate:
+
+Code formatting
+Linting
+Testing
+Commit message validation
+Security checks
+
 ⚠️ git reset --hard can permanently remove uncommitted changes. Use it carefully.
