@@ -21,3 +21,28 @@ Apply and Remove Latest Stash
 git stash pop
 Delete a Stash
 git stash drop stash@{0}
+
+2. 🔄 Git Rebase
+
+git rebase reapplies commits from one branch on top of another base.
+
+Example:
+
+git switch feature-login
+git rebase main
+Interactive Rebase
+git rebase -i HEAD~3
+
+Interactive rebase can be used to:
+
+Reorder commits
+Squash commits
+Edit commits
+Reword commit messages
+Continue After Resolving Conflicts
+git add .
+git rebase --continue
+Abort Rebase
+git rebase --abort
+
+⚠️ Avoid rebasing commits that other people are already using on shared branches unless your team workflow explicitly allows it.
