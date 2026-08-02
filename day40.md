@@ -61,3 +61,26 @@ Abort Rebase
 git rebase --abort
 
 ⚠️ Avoid rebasing commits that other people are already using on shared branches unless your team workflow explicitly allows it.
+
+4. ↩️ Git Reset
+
+git reset moves HEAD and the current branch pointer to another commit.
+
+Soft Reset
+git reset --soft HEAD~1
+
+Moves HEAD back while keeping changes staged.
+
+Mixed Reset
+git reset --mixed HEAD~1
+
+Moves HEAD back and keeps changes in the working directory but unstaged.
+
+--mixed is the default mode.
+
+Hard Reset
+git reset --hard HEAD~1
+
+Moves HEAD back and resets both the staging area and working directory.
+
+⚠️ git reset --hard can permanently remove uncommitted changes. Use it carefully.
