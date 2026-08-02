@@ -40,6 +40,21 @@ Squash commits
 Edit commits
 Reword commit messages
 Continue After Resolving Conflicts
+
+3. 🏷️ Git Tags
+
+Tags mark important points in Git history and are commonly used for software releases.
+
+List Tags
+git tag
+Lightweight Tag
+git tag v1.0
+Annotated Tag
+git tag -a v1.0 -m "Version 1.0 release"
+Push One Tag
+git push origin v1.0
+Push All Tags
+git push origin --tags
 git add .
 git rebase --continue
 Abort Rebase
