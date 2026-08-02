@@ -129,6 +129,27 @@ Then commit it:
 git add .gitignore
 git commit -m "Add gitignore"
 
-Note: Adding a file to .gitignore does not automatically stop tracking it if it is already tracked.
+Note: Adding a file to .gitignore does not automatically stop tracking it if it is already tracked.  
+
+7. ⚡ Git Aliases
+
+Aliases create shortcuts for frequently used Git commands.
+
+git config --global alias.st status
+
+git config --global alias.co checkout
+
+git config --global alias.br branch
+
+git config --global alias.ci commit
+
+Now:
+
+git st
+git br
+
+View configured aliases:
+
+git config --global --get-regexp '^alias\.'
 
 ⚠️ git reset --hard can permanently remove uncommitted changes. Use it carefully.
