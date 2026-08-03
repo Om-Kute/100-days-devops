@@ -51,6 +51,23 @@ Applications can be deployed closer to users around the world.
 
 5. Faster Deployment
 
+   🏗️ Cloud Service Models
+IaaS – Infrastructure as a Service
+
+Provides infrastructure resources such as:
+
+Compute
+Networking
+Storage
+
+AWS examples include:
+
+EC2
+EBS
+VPC
+
+The customer retains significant control over the operating system, applications, and configurations.
+
 Infrastructure can often be provisioned within minutes.
 
 6. Reduced Hardware Management
