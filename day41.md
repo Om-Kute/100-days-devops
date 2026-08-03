@@ -73,3 +73,10 @@ Infrastructure can often be provisioned within minutes.
 6. Reduced Hardware Management
 
 Cloud providers manage the underlying physical infrastructure.
+PaaS – Platform as a Service
+
+Provides a managed platform where developers can deploy applications without managing as much of the underlying infrastructure.
+
+Example:
+
+AWS Elastic Beanstalk
