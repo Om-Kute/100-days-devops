@@ -138,3 +138,23 @@ Data residency requirements
 Example:
 
 AWS Elastic Beanstalk
+
+🏢 Availability Zone (AZ)
+
+An Availability Zone consists of one or more discrete data centers with redundant power, networking, and connectivity within an AWS Region.
+
+A Region normally contains multiple Availability Zones.
+
+Example concept:
+
+AWS Region
+│
+├── Availability Zone A
+├── Availability Zone B
+└── Availability Zone C
+
+Using multiple AZs can improve:
+
+High availability
+Fault tolerance
+Disaster resilience
