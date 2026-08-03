@@ -80,6 +80,27 @@ Provides complete applications over the internet.
 
 Users consume the software while the provider manages the underlying application infrastructure.
 Provides a managed platform where developers can deploy applications without managing as much of the underlying infrastructure.
+🌐 Cloud Deployment Models
+Public Cloud
+
+Cloud resources are provided by a third-party cloud provider over shared provider infrastructure.
+
+Examples include:
+
+AWS
+Microsoft Azure
+Google Cloud
+Private Cloud
+
+Cloud infrastructure is dedicated to a single organization.
+
+Hybrid Cloud
+
+Combines private/on-premises infrastructure with public cloud resources.
+
+Multi-Cloud
+
+Uses services from multiple cloud providers.
 
 Example:
 
