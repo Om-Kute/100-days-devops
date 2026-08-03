@@ -168,3 +168,51 @@ One major example is:
 Amazon CloudFront
 
 CloudFront uses AWS edge infrastructure to cache and deliver content with lower latency.
+
+🔐 Shared Responsibility Model
+
+AWS security responsibilities are shared between AWS and the customer.
+
+AWS – Security OF the Cloud
+
+AWS is responsible for protecting the infrastructure that runs AWS services.
+
+This includes areas such as:
+
+Physical facilities
+Hardware
+Networking infrastructure
+Virtualization infrastructure
+Customer – Security IN the Cloud
+
+Customer responsibilities vary depending on the AWS service being used.
+
+They can include:
+
+Data protection
+IAM permissions
+Application security
+Operating system updates for customer-managed systems
+Network configuration
+Security Groups
+Encryption configuration
+🧠 Simple Example
+
+Consider an EC2 instance.
+
+AWS
+ │
+ ├── Physical Server
+ ├── Data Center
+ ├── Physical Network
+ └── Virtualization Infrastructure
+
+Customer
+ │
+ ├── Operating System
+ ├── Installed Software
+ ├── Application
+ ├── Data
+ └── Access & Security Configuration
+
+The exact division of responsibility changes depending on whether you're using infrastructure, managed, or serverless AWS services.
