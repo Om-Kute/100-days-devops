@@ -31,3 +31,28 @@ Monitoring
 Security services
 
 Instead of purchasing and maintaining physical infrastructure, organizations can provision resources from cloud providers when needed.
+
+⚡ Benefits of Cloud Computing
+1. Scalability
+
+Resources can be increased or decreased depending on workload requirements.
+
+2. Pay-as-you-go
+
+Organizations generally pay for the resources they consume according to the pricing model of each service.
+
+3. High Availability
+
+Applications can be designed across multiple infrastructure locations to improve availability.
+
+4. Global Reach
+
+Applications can be deployed closer to users around the world.
+
+5. Faster Deployment
+
+Infrastructure can often be provisioned within minutes.
+
+6. Reduced Hardware Management
+
+Cloud providers manage the underlying physical infrastructure.
