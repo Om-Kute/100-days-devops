@@ -102,6 +102,39 @@ Multi-Cloud
 
 Uses services from multiple cloud providers.
 
+🌍 AWS Global Infrastructure
+
+AWS infrastructure is organized around concepts including:
+
+AWS Global Infrastructure
+        │
+        ├── Regions
+        │
+        ├── Availability Zones
+        │
+        └── Edge Infrastructure
+🌎 AWS Region
+
+A Region is a separate geographic area where AWS operates infrastructure.
+
+Examples:
+
+us-east-1
+ap-south-1
+eu-west-1
+
+For example:
+
+ap-south-1 → Mumbai
+
+When selecting a Region, organizations may consider:
+
+Latency
+Cost
+Service availability
+Compliance requirements
+Data residency requirements
+
 Example:
 
 AWS Elastic Beanstalk
