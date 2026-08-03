@@ -74,7 +74,11 @@ Infrastructure can often be provisioned within minutes.
 
 Cloud providers manage the underlying physical infrastructure.
 PaaS – Platform as a Service
+SaaS – Software as a Service
 
+Provides complete applications over the internet.
+
+Users consume the software while the provider manages the underlying application infrastructure.
 Provides a managed platform where developers can deploy applications without managing as much of the underlying infrastructure.
 
 Example:
