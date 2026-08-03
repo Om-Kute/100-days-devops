@@ -216,3 +216,14 @@ Customer
  └── Access & Security Configuration
 
 The exact division of responsibility changes depending on whether you're using infrastructure, managed, or serverless AWS services.
+
+🌍 Why AWS Global Infrastructure Matters
+
+AWS global infrastructure allows architectures to be designed for:
+
+High availability
+Scalability
+Fault tolerance
+Low latency
+Disaster recovery
+Global application delivery
