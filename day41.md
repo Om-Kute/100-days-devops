@@ -158,3 +158,13 @@ Using multiple AZs can improve:
 High availability
 Fault tolerance
 Disaster resilience
+
+🌐 Edge Locations
+
+AWS edge infrastructure helps services deliver content and process requests closer to users.
+
+One major example is:
+
+Amazon CloudFront
+
+CloudFront uses AWS edge infrastructure to cache and deliver content with lower latency.
