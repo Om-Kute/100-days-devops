@@ -55,3 +55,20 @@ Programmatic credentials
 Permissions through policies
 Group membership
 For modern workloads, temporary credentials through IAM roles are generally preferred over long-term user credentials.
+👥 2. IAM Groups
+An IAM group is a collection of IAM users.
+Example:
+Developers Group
+      │
+      ├── Developer1
+      ├── Developer2
+      └── Developer3
+A policy can be attached to the group:
+Developers
+     │
+     ▼
+IAM Policy
+     │
+     ▼
+Permissions
+All users in the group receive the permissions granted through that group.
