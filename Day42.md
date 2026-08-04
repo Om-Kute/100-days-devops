@@ -110,3 +110,30 @@ Example:
 arn:aws:s3:::example-bucket/*
 Condition
 Optionally specifies conditions under which the policy statement applies.
+🔄 User → Group → Policy Workflow
+Create IAM User
+       │
+       ▼
+Add User to Group
+       │
+       ▼
+Attach Policy to Group
+       │
+       ▼
+User Receives Permissions
+Using groups can simplify permission management when multiple IAM users need the same permissions.
+📝 Types of IAM Policies
+Two important managed-policy categories are:
+AWS Managed Policies
+Created and maintained by AWS.
+Examples include:
+ReadOnlyAccess
+AmazonS3ReadOnlyAccess
+Customer Managed Policies
+Created and managed within your AWS account.
+Advantages include:
+Greater control
+Reusability
+Custom permissions
+Ability to tailor permissions to least privilege
+Inline policies also exist and are embedded directly into a single identity.
