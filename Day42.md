@@ -81,4 +81,17 @@ Lambda accessing DynamoDB
 Cross-account access
 Federated users
 Applications running on AWS
-CI/CD workloads
+CI/CD workloade
+📜 4. IAM Policies
+IAM policies are JSON documents that define permissions.
+A simplified example:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::example-bucket/*"
+    }
+  ]
+}
