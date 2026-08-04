@@ -161,3 +161,29 @@ MFA Factor
    ▼
 Authentication
 MFA is particularly important for privileged access and the AWS account root user.
+⚖️ IAM Policy Evaluation
+AWS starts from an implicit deny.
+Applicable policies and controls are then evaluated.
+A simplified concept:
+Request
+   │
+   ▼
+Evaluate Applicable Policies
+   │
+   ├──── Explicit Deny ────► DENIED
+   │
+   └──── Explicit Allow ───► Potentially Allowed
+A key rule:
+An applicable explicit Deny generally overrides an Allow.
+The full AWS authorization model can also involve resource-based policies, permissions boundaries, Organizations SCPs, session policies, and other controls.
+🛡️ Principle of Least Privilege
+Least privilege means granting only the permissions required to perform a task.
+Instead of:
+Action: *
+Resource: *
+prefer narrowly scoped permissions whenever possible.
+Example:
+Allow only the required S3 actions
+           │
+           ▼
+Only on the required bucket
