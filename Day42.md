@@ -34,3 +34,16 @@ UNDER WHAT CONDITIONS?
  │
  ▼
 Policy Conditions
+🔑 Authentication vs Authorization
+Authentication
+Authentication verifies:
+Who are you?
+Examples:
+Console password
+MFA
+Access credentials
+Temporary security credentials
+Authorization
+Authorization determines:
+What are you allowed to do?
+Authorization is primarily controlled through IAM policies and other applicable AWS access controls.
