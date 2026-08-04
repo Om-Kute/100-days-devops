@@ -95,3 +95,18 @@ A simplified example:
     }
   ]
 }
+🧩 Important Policy Elements
+Effect
+Defines whether access is:
+Allow
+Deny
+Action
+Defines which API operations are affected.
+Example:
+s3:GetObject
+Resource
+Defines which AWS resources the statement applies to.
+Example:
+arn:aws:s3:::example-bucket/*
+Condition
+Optionally specifies conditions under which the policy statement applies.
