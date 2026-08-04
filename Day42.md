@@ -72,3 +72,13 @@ IAM Policy
      ▼
 Permissions
 All users in the group receive the permissions granted through that group.
+🎭 3. IAM Roles
+An IAM role is an AWS identity with permissions that can be assumed by trusted identities.
+Unlike IAM users, roles are designed to provide temporary security credentials.
+Common use cases:
+EC2 accessing S3
+Lambda accessing DynamoDB
+Cross-account access
+Federated users
+Applications running on AWS
+CI/CD workloads
