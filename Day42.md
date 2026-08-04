@@ -12,3 +12,25 @@ MFA
 Policy Evaluation
 Least Privilege
 IAM Security Best Practices
+🔐 What is AWS IAM?
+AWS Identity and Access Management (IAM) is a service used to securely control access to AWS services and resources.
+IAM helps answer four important questions:
+WHO?
+ │
+ ▼
+User / Role
+
+CAN DO WHAT?
+ │
+ ▼
+Actions / Permissions
+
+ON WHICH RESOURCE?
+ │
+ ▼
+EC2 / S3 / RDS / etc.
+
+UNDER WHAT CONDITIONS?
+ │
+ ▼
+Policy Conditions
