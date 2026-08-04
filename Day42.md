@@ -47,3 +47,11 @@ Authorization
 Authorization determines:
 What are you allowed to do?
 Authorization is primarily controlled through IAM policies and other applicable AWS access controls.
+👤 1. IAM Users
+An IAM user represents an identity with long-term credentials that can be used for AWS access.
+An IAM user can have:
+Console access
+Programmatic credentials
+Permissions through policies
+Group membership
+For modern workloads, temporary credentials through IAM roles are generally preferred over long-term user credentials.
