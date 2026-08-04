@@ -137,3 +137,27 @@ Reusability
 Custom permissions
 Ability to tailor permissions to least privilege
 Inline policies also exist and are embedded directly into a single identity.
+
+🔑 Access Keys
+Access keys can be used for programmatic AWS access.
+They consist of:
+Access Key ID
+Secret Access Key
+⚠️ Never put credentials in:
+GitHub repositories
+Application source code
+Docker images
+Public files
+Screenshots
+Public configuration files
+For workloads running on AWS, prefer IAM roles and temporary credentials whenever possible.
+📱 Multi-Factor Authentication (MFA)
+MFA adds an additional authentication factor.
+Instead of relying only on a password:
+Password
+   +
+MFA Factor
+   │
+   ▼
+Authentication
+MFA is particularly important for privileged access and the AWS account root user.
