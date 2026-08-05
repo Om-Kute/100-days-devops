@@ -107,3 +107,20 @@ Connect:
 ssh -i mykey.pem ubuntu@<PUBLIC-IP>
 
 Never upload your private .pem key to
+🛡️ Security Groups
+
+A Security Group acts as a stateful virtual firewall controlling allowed traffic for associated resources such as EC2 network interfaces.
+
+Example inbound rules:
+
+Protocol	Port	Purpose
+SSH	22	Remote Linux administration
+HTTP	80	Web traffic
+HTTPS	443	Secure web traffic
+
+For SSH, prefer:
+
+Port 22
+Source → Your trusted IP
+
+instead of exposing SSH to the entire internet.
