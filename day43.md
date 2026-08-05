@@ -68,3 +68,42 @@ Amazon Linux
 Windows Server
       +
 Security
+
+⚙️ EC2 Instance Types
+
+EC2 provides different instance families for different workloads.
+
+Category	Typical Use
+General Purpose	Web servers, development environments
+Compute Optimized	CPU-intensive applications
+Memory Optimized	Databases and memory-heavy applications
+Storage Optimized	High I/O workloads
+Accelerated Computing	GPU, ML, graphics and HPC
+
+The exact instance type should be selected according to workload requirements.
+
+🔑 Key Pairs
+
+Key pairs can be used to authenticate when connecting to Linux EC2 instances.
+
+A key pair consists of:
+
+Public Key
+     +
+Private Key
+
+The public key is associated with the instance, while the private key must be protected by the user.
+
+Example private key:
+
+mykey.pem
+
+Set restrictive permissions:
+
+chmod 400 mykey.pem
+
+Connect:
+
+ssh -i mykey.pem ubuntu@<PUBLIC-IP>
+
+Never upload your private .pem key to
