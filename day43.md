@@ -35,5 +35,36 @@ Memory
 Storage
       +
 Networking
+
+🏗️ Basic EC2 Architecture
+                    Internet
+                       │
+                       ▼
+                Security Group
+                       │
+                       ▼
+                  EC2 Instance
+                 /     |      \
+                /      |       \
+             vCPU    Memory    Network
+                       │
+                       ▼
+                      EBS
+📦 AMI – Amazon Machine Image
+
+An AMI provides the information required to launch an EC2 instance.
+
+It can include:
+
+Operating system
+Software
+Configuration
+Root volume information
+
+Examples:
+
+Ubuntu
+Amazon Linux
+Windows Server
       +
 Security
