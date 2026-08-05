@@ -16,3 +16,24 @@ Instance States
 EC2 Purchasing Options
 SSH
 Nginx Deployment
+☁️ What is Amazon EC2?
+
+Amazon Elastic Compute Cloud (EC2) provides scalable compute capacity in AWS.
+
+An EC2 virtual server is called an:
+
+EC2 Instance
+
+EC2 allows us to configure resources such as:
+
+Operating System
+      +
+vCPU
+      +
+Memory
+      +
+Storage
+      +
+Networking
+      +
+Security
