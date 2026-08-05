@@ -124,3 +124,45 @@ Port 22
 Source → Your trusted IP
 
 instead of exposing SSH to the entire internet.
+💾 Amazon EBS
+
+Elastic Block Store (EBS) provides block storage commonly used with EC2.
+
+EBS can store:
+
+Operating system data
+Application files
+Databases
+Logs
+
+EBS volumes can also be backed up using snapshots.
+
+🌐 Elastic IP
+
+An Elastic IP address is a static public IPv4 address provided by AWS.
+
+It can help maintain a consistent public address when associated with supported AWS resources.
+
+Be aware that public IPv4 addresses can incur charges, so unused addresses should not be left allocated unnecessarily.
+
+🔄 EC2 Instance States
+
+Common EC2 states include:
+
+Pending
+   │
+   ▼
+Running
+   │
+   ▼
+Stopping
+   │
+   ▼
+Stopped
+
+An instance can also be:
+
+Shutting-down
+Terminated
+
+Once an instance is terminated, it cannot simply be started again.
