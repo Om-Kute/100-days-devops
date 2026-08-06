@@ -65,3 +65,19 @@ io2	High-performance databases
 io2 Block Express	Mission-critical workloads
 st1	Throughput-intensive HDD
 sc1	Cold HDD
+📂 Amazon EFS (Elastic File System)
+
+Amazon EFS is a fully managed NFS-based file storage service that can be mounted by multiple Linux EC2 instances simultaneously.
+
+Key Features
+Shared file system
+Automatic scaling
+Highly available
+Managed service
+Elastic capacity
+Common Use Cases
+Shared application data
+Web servers
+Content management systems
+Home directories
+Analytics workloads
