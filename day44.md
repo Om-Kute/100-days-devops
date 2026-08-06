@@ -81,3 +81,10 @@ Web servers
 Content management systems
 Home directories
 Analytics workloads
+⚖️ S3 vs EBS vs EFS
+Feature	S3	EBS	EFS
+Storage Type	Object	Block	File
+Access	HTTP/HTTPS	Attached to EC2	NFS
+Scalability	Virtually unlimited	Volume-based	Automatic
+Sharing	Yes	Single EC2 volume attachment (except supported multi-attach scenarios)	Multiple EC2 instances
+Best For	Backups, static content	OS, databases	Shared files
