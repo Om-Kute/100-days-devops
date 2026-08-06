@@ -32,3 +32,36 @@ Media files
 Application logs
 Data lakes
 Archive storage
+📦 S3 Storage Classes
+Storage Class	Use Case
+S3 Standard	Frequently accessed data
+S3 Standard-IA	Infrequently accessed data
+S3 One Zone-IA	Lower-cost infrequent access in one AZ
+S3 Glacier Instant Retrieval	Archive with millisecond retrieval
+S3 Glacier Flexible Retrieval	Archive with retrieval in minutes to hours
+S3 Glacier Deep Archive	Long-term archive at the lowest cost
+💽 Amazon EBS (Elastic Block Store)
+
+Amazon EBS provides persistent block storage for EC2 instances.
+
+Key Features
+Block-level storage
+Persistent volumes
+SSD and HDD options
+Low latency
+Snapshots
+Encryption
+Boot volumes
+Common Use Cases
+Operating system disks
+Databases
+Enterprise applications
+Transactional workloads
+📀 Common EBS Volume Types
+Volume Type	Best For
+gp3	General-purpose SSD
+gp2	Previous generation SSD
+io2	High-performance databases
+io2 Block Express	Mission-critical workloads
+st1	Throughput-intensive HDD
+sc1	Cold HDD
