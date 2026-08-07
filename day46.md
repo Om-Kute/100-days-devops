@@ -101,5 +101,33 @@ Goals:
 Maintain application availability
 Handle traffic spikes
 Optimize cost
+📦 Auto Scaling Group (ASG)
+
+An Auto Scaling Group manages a fleet of EC2 instances.
+
+Example:
+
+Minimum Capacity : 2
+Desired Capacity : 3
+Maximum Capacity : 6
+📊 Scaling Policies
+Target Tracking
+
+Maintain a target metric.
+
+Example:
+
+Average CPU = 50%
+
+Step Scaling
+
+Scale based on metric thresholds.
+
+Example:
+
+CPU > 70%
+      │
+      ▼
+Add 2 Instances
 Gaming
 Financial systems
