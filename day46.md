@@ -12,3 +12,26 @@ Fault Tolerance
 Better Performance
 Scalability
 Reduced Downtime
+🔀 Types of AWS Load Balancers
+1️⃣ Application Load Balancer (ALB)
+
+Layer: 7 (Application Layer)
+
+Supports:
+
+HTTP
+HTTPS
+WebSocket
+
+Features:
+
+Path-based routing
+Host-based routing
+SSL termination
+Target Groups
+
+Best for:
+
+Web Applications
+REST APIs
+Microservices
