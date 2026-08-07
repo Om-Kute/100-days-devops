@@ -135,3 +135,11 @@ Use cases:
 Environment separation
 Multi-team architectures
 Cross-VPC communication
+🔐 VPC Endpoints
+
+VPC Endpoints provide private connectivity to supported AWS services without requiring internet access.
+
+Examples:
+
+Amazon S3
+DynamoDB
