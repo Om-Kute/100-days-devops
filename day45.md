@@ -111,3 +111,27 @@ Port	Purpose
 22	SSH
 80	HTTP
 443	HTTPS
+🚧 Network ACLs (NACLs)
+
+Network ACLs operate at the subnet level.
+
+Characteristics:
+
+Stateless
+Support allow and deny rules
+Separate inbound and outbound rule evaluation
+⚖️ Security Groups vs NACLs
+Feature	Security Group	Network ACL
+Level	Instance	Subnet
+Stateful	Yes	No
+Allow Rules	Yes	Yes
+Deny Rules	No	Yes
+🔗 VPC Peering
+
+VPC Peering enables communication between two VPCs using private IP addresses.
+
+Use cases:
+
+Environment separation
+Multi-team architectures
+Cross-VPC communication
