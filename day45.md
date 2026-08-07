@@ -100,3 +100,14 @@ Example private route table:
 Destination	Target
 10.0.0.0/16	local
 0.0.0.0/0	NAT Gateway
+
+🛡️ Security Groups
+
+Security Groups act as stateful virtual firewalls attached to resources such as EC2.
+
+Example inbound rules:
+
+Port	Purpose
+22	SSH
+80	HTTP
+443	HTTPS
