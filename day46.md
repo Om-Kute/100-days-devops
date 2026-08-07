@@ -165,3 +165,18 @@ Auto Scaling
 Launch EC2
 Gaming
 Financial systems
+🏗️ Typical Highly Available Architecture
+                Internet
+                    │
+                    ▼
+        Application Load Balancer
+                    │
+         ┌──────────┴──────────┐
+         ▼                     ▼
+     EC2 (AZ-A)           EC2 (AZ-B)
+         │                     │
+         └──────────┬──────────┘
+                    ▼
+          Auto Scaling Group
+
+Deploying across multiple Availability Zones improves resilience if one AZ becomes unavailable.
