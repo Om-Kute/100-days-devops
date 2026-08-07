@@ -129,5 +129,39 @@ CPU > 70%
       │
       ▼
 Add 2 Instances
+Step Scaling
+
+Scale based on metric thresholds.
+
+Example:
+
+CPU > 70%
+      │
+      ▼
+Add 2 Instances
+Scheduled Scaling
+
+Scale at predefined times.
+
+Example:
+
+Increase capacity before business hours.
+
+☁️ CloudWatch Integration
+
+CloudWatch collects metrics and triggers scaling actions.
+
+Example:
+
+CPU > 70%
+      │
+      ▼
+CloudWatch Alarm
+      │
+      ▼
+Auto Scaling
+      │
+      ▼
+Launch EC2
 Gaming
 Financial systems
