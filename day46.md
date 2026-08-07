@@ -78,5 +78,28 @@ Traffic Removed
 Best for:
 
 High-performance applications
+🎯 Target Groups
+
+A Target Group contains the EC2 instances (or other supported targets) that receive traffic from the Load Balancer.
+
+Example:
+
+ALB
+ │
+ ▼
+Target Group
+ │
+ ├── EC2-1
+ ├── EC2-2
+ └── EC2-3
+📈 What is Auto Scaling?
+
+Auto Scaling automatically adjusts the number of EC2 instances based on demand.
+
+Goals:
+
+Maintain application availability
+Handle traffic spikes
+Optimize cost
 Gaming
 Financial systems
