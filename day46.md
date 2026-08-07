@@ -35,3 +35,25 @@ Best for:
 Web Applications
 REST APIs
 Microservices
+
+2️⃣ Network Load Balancer (NLB)
+
+Layer: 4 (Transport Layer)
+
+Supports:
+
+TCP
+UDP
+TLS
+
+Features:
+
+Very low latency
+Millions of requests per second
+Static IP support
+
+Best for:
+
+High-performance applications
+Gaming
+Financial systems
