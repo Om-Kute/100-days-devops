@@ -52,6 +52,29 @@ Very low latency
 Millions of requests per second
 Static IP support
 
+3️⃣ Gateway Load Balancer (GWLB)
+
+Designed for deploying and scaling virtual appliances.
+
+Examples:
+
+Firewalls
+IDS
+IPS
+❤️ Health Checks
+
+Health Checks monitor EC2 instances behind the Load Balancer.
+
+Workflow:
+
+Healthy Instance
+      │
+Receives Traffic
+
+Unhealthy Instance
+      │
+Traffic Removed
+
 Best for:
 
 High-performance applications
