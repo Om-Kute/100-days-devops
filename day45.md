@@ -67,3 +67,36 @@ Typical workloads:
 Databases
 Backend APIs
 Internal applications
+
+🌐 Internet Gateway (IGW)
+
+Internet Gateway enables communication between a VPC and the internet.
+
+Common route:
+
+Destination     Target
+0.0.0.0/0       igw-id
+🔄 NAT Gateway
+
+A NAT Gateway allows resources in private subnets to initiate outbound internet connections while preventing unsolicited inbound internet traffic.
+
+Common uses:
+
+OS updates
+Package installation
+External API access
+🛣️ Route Tables
+
+Route tables determine how traffic is forwarded.
+
+Example public route table:
+
+Destination	Target
+10.0.0.0/16	local
+0.0.0.0/0	Internet Gateway
+
+Example private route table:
+
+Destination	Target
+10.0.0.0/16	local
+0.0.0.0/0	NAT Gateway
