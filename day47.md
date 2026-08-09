@@ -70,3 +70,14 @@ Read Replica
  Read Replica 1     Read Replica 2
 
 Read replicas are useful for scaling read-heavy workloads.
+💾 RDS Backups
+Automated Backups
+
+Used for:
+
+Point-in-time recovery
+Automated backup management
+Disaster recovery
+DB Snapshots
+
+Manual snapshots can be retained for longer-term backup requirements.
