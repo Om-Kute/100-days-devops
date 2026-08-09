@@ -110,3 +110,62 @@ CNAME	Maps a name to another domain name
 MX	Specifies mail servers
 TXT	Stores text information
 NS	Specifies authoritative name servers
+🌐 Example DNS Flow
+User
+ │
+ │ www.example.com
+ ▼
+Route 53
+ │
+ │ DNS Resolution
+ ▼
+Load Balancer
+ │
+ ▼
+Application
+
+Route 53 resolves the domain name according to the configured DNS records and routing policy.
+
+🔀 Route 53 Routing Policies
+1. Simple Routing
+
+Routes traffic to a single resource or set of returned values.
+
+2. Weighted Routing
+
+Distributes traffic according to assigned weights.
+
+Example:
+
+Server A → 80%
+Server B → 20%
+
+Useful for controlled traffic distribution and testing.
+
+3. Latency-Based Routing
+
+Routes users to the AWS Region that provides the lowest network latency among configured resources.
+
+4. Failover Routing
+
+Routes traffic between primary and secondary resources based on health checks.
+
+Primary
+   │
+Healthy?
+ │     │
+Yes    No
+ │      │
+ ▼      ▼
+Serve  Secondary
+5. Geolocation Routing
+
+Routes users based on their geographic location.
+
+6. Geoproximity Routing
+
+Routes traffic based on geographic location and configured resource bias.
+
+7. Multivalue Answer Routing
+
+Returns multiple healthy resource values for a DNS query.
