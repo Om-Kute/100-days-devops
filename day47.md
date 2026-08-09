@@ -186,3 +186,21 @@ Healthy   Unhealthy
  │         │
  ▼         ▼
 Primary   Failover
+🏗️ RDS + Route 53 Example Architecture
+                  Internet
+                     │
+                     ▼
+                 Route 53
+                     │
+                     ▼
+              Application
+             Load Balancer
+                     │
+              ┌──────┴──────┐
+              ▼             ▼
+            EC2           EC2
+              │             │
+              └──────┬──────┘
+                     ▼
+              Amazon RDS
+                 Multi-AZ
