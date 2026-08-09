@@ -169,3 +169,20 @@ Routes traffic based on geographic location and configured resource bias.
 7. Multivalue Answer Routing
 
 Returns multiple healthy resource values for a DNS query.
+❤️ Route 53 Health Checks
+
+Health checks can monitor endpoints and help Route 53 make routing decisions.
+
+Example:
+
+Route 53
+   │
+   ▼
+Health Check
+   │
+ ┌─┴───────┐
+ ▼         ▼
+Healthy   Unhealthy
+ │         │
+ ▼         ▼
+Primary   Failover
