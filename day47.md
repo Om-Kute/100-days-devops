@@ -47,3 +47,26 @@ RDS integrates with Amazon CloudWatch for metrics and monitoring.
 🛡️ High Availability
 
 Multi-AZ deployments can provide standby infrastructure for automatic failover.
+🔄 Multi-AZ vs Read Replica
+Feature	Multi-AZ	Read Replica
+Main Purpose	High availability	Read scalability
+Primary Benefit	Failover	Read performance
+Replication	Synchronous for supported configurations	Asynchronous
+Typical Use	Production HA	Read-heavy workloads
+Simple Architecture
+             Multi-AZ
+        ┌───────────────┐
+        │               │
+        ▼               ▼
+   Primary RDS       Standby
+      AZ-A              AZ-B
+        │               │
+        └── Failover ───┘
+Read Replica
+             Primary
+                │
+       ┌────────┴────────┐
+       ▼                 ▼
+ Read Replica 1     Read Replica 2
+
+Read replicas are useful for scaling read-heavy workloads.
