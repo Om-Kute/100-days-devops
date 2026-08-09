@@ -81,3 +81,14 @@ Disaster recovery
 DB Snapshots
 
 Manual snapshots can be retained for longer-term backup requirements.
+🌐 Amazon Route 53
+
+Amazon Route 53 is a highly available and scalable Domain Name System (DNS) service.
+
+It can provide:
+
+Domain registration
+DNS hosting
+DNS resolution
+Health checks
+Traffic routing
