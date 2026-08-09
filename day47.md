@@ -92,3 +92,21 @@ DNS hosting
 DNS resolution
 Health checks
 Traffic routing
+🧩 Route 53 Components
+Route 53
+   │
+   ├── Hosted Zones
+   │
+   ├── DNS Records
+   │
+   ├── Health Checks
+   │
+   └── Routing Policies
+📋 Common DNS Records
+Record	Purpose
+A	Maps a name to an IPv4 address
+AAAA	Maps a name to an IPv6 address
+CNAME	Maps a name to another domain name
+MX	Specifies mail servers
+TXT	Stores text information
+NS	Specifies authoritative name servers
