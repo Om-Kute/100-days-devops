@@ -101,3 +101,32 @@ StopInstances
 CreateBucket
 DeleteBucket
 CreateUser
+🗂️ CloudTrail Event Types
+Management Events
+Record management operations performed on AWS resources.
+Examples:
+Create
+Update
+Delete
+Data Events
+Can record resource-level operations for supported resources.
+Examples can include:
+S3 object operations
+Lambda function operations
+Insights Events
+Can help identify unusual API activity patterns when CloudTrail Insights is enabled.
+📦 CloudTrail Log Delivery
+CloudTrail logs can be delivered to Amazon S3.
+A common architecture:
+AWS Account
+     │
+     ▼
+CloudTrail
+     │
+     ▼
+S3 Bucket
+     │
+     ├── Audit Logs
+     ├── Security Investigation
+     └── Compliance
+CloudTrail can also integrate with CloudWatch Logs and EventBridge for additional monitoring and automation workflows.
