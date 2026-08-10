@@ -39,3 +39,21 @@ Log Stream
      ▼
 Log Events
 Logs can be searched and analyzed to troubleshoot application and infrastructure problems.
+🚨 3. CloudWatch Alarms
+CloudWatch Alarms monitor metrics against configured thresholds.
+Example:
+EC2 CPU Utilization
+        │
+        ▼
+   CPU > 70%
+        │
+        ▼
+CloudWatch Alarm
+        │
+   ┌────┴─────┐
+   ▼          ▼
+SNS        Auto Scaling
+Possible actions include:
+SNS notifications
+Auto Scaling actions
+Other supported integrations
