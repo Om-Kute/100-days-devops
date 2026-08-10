@@ -130,3 +130,45 @@ S3 Bucket
      ├── Security Investigation
      └── Compliance
 CloudTrail can also integrate with CloudWatch Logs and EventBridge for additional monitoring and automation workflows.
+⚖️ CloudWatch vs CloudTrail
+Feature
+CloudWatch
+CloudTrail
+Main Purpose
+Monitoring & Observability
+Auditing & Governance
+Metrics
+✅
+❌
+Application Logs
+✅
+❌
+API Activity
+Limited/Indirect
+✅
+Alarms
+✅
+❌
+Dashboards
+✅
+❌
+Security Investigation
+✅
+✅
+Compliance
+Supporting role
+Strong auditing role
+🔄 Combined Architecture
+AWS Environment
+                       │
+            ┌──────────┴──────────┐
+            ▼                     ▼
+       CloudWatch             CloudTrail
+            │                     │
+      ┌─────┼─────┐         AWS API Events
+      ▼     ▼     ▼               │
+   Metrics Logs Alarms             ▼
+      │     │     │              S3
+      └─────┼─────┘               │
+            ▼                     ▼
+       Monitoring             Auditing
