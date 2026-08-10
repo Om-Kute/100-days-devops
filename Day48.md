@@ -20,3 +20,22 @@ NetworkOut
 DiskReadOps
 DiskWriteOps
 For EC2, CPU utilization is a common metric used to understand workload behavior and can also be used with Auto Scaling policies.
+📜 2. CloudWatch Logs
+CloudWatch Logs can collect and store log data from applications and AWS resources.
+Example sources:
+EC2
+Lambda
+Applications
+AWS Services
+Basic flow:
+Application
+     │
+     ▼
+Log Group
+     │
+     ▼
+Log Stream
+     │
+     ▼
+Log Events
+Logs can be searched and analyzed to troubleshoot application and infrastructure problems.
