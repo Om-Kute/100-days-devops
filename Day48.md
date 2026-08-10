@@ -57,3 +57,21 @@ Possible actions include:
 SNS notifications
 Auto Scaling actions
 Other supported integrations
+📊 4. CloudWatch Dashboards
+Dashboards provide a centralized view of operational metrics.
+They can include:
+Line charts
+Number widgets
+Bar charts
+Alarm status
+Other supported widgets
+Example:
+┌─────────────────────────────┐
+│       AWS Dashboard         │
+├──────────────┬──────────────┤
+│ EC2 CPU      │ Network      │
+│    45%       │    2 MB/s    │
+├──────────────┼──────────────┤
+│ RDS          │ ALB          │
+│ Connections  │ Requests     │
+└──────────────┴──────────────┘
