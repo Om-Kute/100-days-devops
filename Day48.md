@@ -75,3 +75,29 @@ Example:
 │ RDS          │ ALB          │
 │ Connections  │ Requests     │
 └──────────────┴──────────────┘
+🔐 AWS CloudTrail
+AWS CloudTrail provides logging and auditing of AWS API activity and account activity.
+It helps answer questions such as:
+Who made the API call?
+What action was performed?
+When did it happen?
+Which AWS service was involved?
+Which resource was affected?
+From where did the request originate?
+📝 CloudTrail Event
+A CloudTrail event can contain information such as:
+Event Time
+User Identity
+Event Source
+Event Name
+AWS Region
+Source IP Address
+User Agent
+Request Parameters
+Response Elements
+Example event names:
+RunInstances
+StopInstances
+CreateBucket
+DeleteBucket
+CreateUser
