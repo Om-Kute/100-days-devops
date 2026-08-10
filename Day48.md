@@ -11,3 +11,12 @@ EBS
 Application Load Balancers
 Auto Scaling
 Applications
+📈 1. CloudWatch Metrics
+Metrics are time-series measurements collected from AWS resources and applications.
+Examples:
+CPUUtilization
+NetworkIn
+NetworkOut
+DiskReadOps
+DiskWriteOps
+For EC2, CPU utilization is a common metric used to understand workload behavior and can also be used with Auto Scaling policies.
