@@ -157,3 +157,47 @@ Useful for:
 Notifications
 Alerts
 Event fan-out
+🔄 Lambda + SQS
+
+Lambda can poll an SQS queue and invoke the function to process messages.
+
+Producer
+    │
+    ▼
+SQS Queue
+    │
+    ▼
+Lambda
+    │
+    ▼
+Process Message
+
+Useful for:
+
+Background processing
+Asynchronous jobs
+Microservices
+File processing
+Workload buffering
+🏗️ Event-Driven Architecture
+
+Example: File processing system.
+
+User
+ │
+ ▼
+S3 Bucket
+ │
+ ▼
+Lambda
+ │
+ ├──────────────► Process File
+ │
+ ▼
+SNS Topic
+ │
+ ├──► Email
+ ├──► SMS
+ └──► Other Subscriber
+
+This architecture allows services to communicate through events instead of being tightly coupled.
