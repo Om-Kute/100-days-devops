@@ -127,3 +127,33 @@ Financial workflows
 Order processing
 Transaction workflows
 Sequential processing
+⚖️ SNS vs SQS
+Feature	SNS	SQS
+Model	Pub/Sub	Queue
+Communication	Push	Pull
+Main Purpose	Notifications / Fan-out	Decoupling / Buffering
+Delivery	One-to-many	Consumer-based
+Ordering	Not the primary feature	FIFO available
+Typical Use	Alerts	Background jobs
+🔄 Lambda + SNS
+
+Lambda can publish messages to an SNS topic or consume SNS notifications.
+
+Example:
+
+Application
+     │
+     ▼
+Lambda
+     │
+     ▼
+SNS Topic
+   /   |   \
+  ↓    ↓    ↓
+Email SMS Lambda
+
+Useful for:
+
+Notifications
+Alerts
+Event fan-out
