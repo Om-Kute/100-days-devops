@@ -15,3 +15,24 @@ Lambda Function
 Execute Code
   ↓
 Response / AWS Service
+⭐ Lambda Features
+Serverless
+Automatic scaling
+Pay-per-use
+Event-driven
+Multiple runtime options
+IAM integration
+CloudWatch monitoring
+Built-in fault tolerance
+🔄 How Lambda Works
+Event Source
+     │
+     ▼
+Lambda Function
+     │
+     ▼
+Execute Code
+     │
+     ├── Return Response
+     │
+     └── Call Another AWS Service
