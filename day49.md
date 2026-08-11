@@ -236,3 +236,21 @@ S3 / SQS / SNS / CloudWatch
 Follow the principle of least privilege.
 
 Only grant the permissions required by the function.
+📊 Monitoring
+
+Lambda integrates with CloudWatch for monitoring.
+
+Useful Lambda metrics include:
+
+Invocations
+Errors
+Duration
+Throttles
+Concurrent executions
+
+SQS metrics can include:
+
+ApproximateNumberOfMessagesVisible
+ApproximateNumberOfMessagesNotVisible
+NumberOfMessagesSent
+NumberOfMessagesDeleted
