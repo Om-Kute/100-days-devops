@@ -35,4 +35,17 @@ Execute Code
      │
      ├── Return Response
      │
-     └── Call Another AWS Service
+  🧩 Common Lambda Event Sources
+
+Lambda can be invoked by many AWS services.
+
+Examples:
+
+S3
+API Gateway
+EventBridge
+DynamoDB
+SNS
+SQS
+CloudWatch
+Kinesis   └── Call Another AWS Service
