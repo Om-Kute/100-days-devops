@@ -70,3 +70,27 @@ Fan-out architectures
 Application events
 System notifications
 Messaging between distributed components
+📬 Amazon SQS
+
+Amazon Simple Queue Service (SQS) is a managed message queuing service.
+
+It helps decouple application components.
+
+Producer
+    │
+    ▼
+ SQS Queue
+    │
+    ▼
+Consumer
+
+The producer does not need to wait for the consumer to process the message immediately.
+
+⭐ SQS Benefits
+Application decoupling
+Asynchronous processing
+Message buffering
+Fault isolation
+Scalable workloads
+Retry support
+Dead-letter queue support
