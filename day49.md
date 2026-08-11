@@ -201,3 +201,38 @@ SNS Topic
  └──► Other Subscriber
 
 This architecture allows services to communicate through events instead of being tightly coupled.
+🔄 Asynchronous Processing with SQS
+Application
+     │
+     ▼
+SQS Queue
+     │
+     │ Buffer
+     ▼
+Lambda
+     │
+     ▼
+Processing
+
+If the consumer temporarily slows down, messages can remain in the queue until they are processed according to the queue's configuration.
+
+🔐 IAM Permissions
+
+Lambda functions use execution roles to access AWS resources.
+
+Example:
+
+Lambda
+   │
+   ▼
+Execution Role
+   │
+   ▼
+IAM Policy
+   │
+   ▼
+S3 / SQS / SNS / CloudWatch
+
+Follow the principle of least privilege.
+
+Only grant the permissions required by the function.
