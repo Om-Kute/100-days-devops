@@ -49,3 +49,24 @@ SNS
 SQS
 CloudWatch
 Kinesis   └── Call Another AWS Service
+📢 Amazon SNS
+
+Amazon Simple Notification Service (SNS) is a managed messaging service based on the publish/subscribe model.
+
+It allows a publisher to send one message to a topic and distribute it to multiple subscribers.
+
+🔄 SNS Publish/Subscribe
+                SNS Topic
+              /    |    \
+             ↓     ↓     ↓
+          Email   SMS   Lambda
+
+A single published message can be delivered to multiple supported subscribers.
+
+📌 SNS Use Cases
+Notifications
+Alerts
+Fan-out architectures
+Application events
+System notifications
+Messaging between distributed components
