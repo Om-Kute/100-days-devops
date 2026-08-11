@@ -94,3 +94,36 @@ Fault isolation
 Scalable workloads
 Retry support
 Dead-letter queue support
+📦 SQS Queue Types
+Standard Queue
+
+Characteristics:
+
+Very high throughput
+At-least-once delivery
+Best-effort ordering
+Duplicate messages can occur
+
+Use when:
+
+Maximum throughput is more important than strict ordering.
+
+🔢 FIFO Queue
+
+FIFO means:
+
+First In, First Out
+
+Characteristics:
+
+Message ordering
+Exactly-once processing support under the required configuration
+Deduplication support
+Useful when order matters
+
+Common use cases:
+
+Financial workflows
+Order processing
+Transaction workflows
+Sequential processing
