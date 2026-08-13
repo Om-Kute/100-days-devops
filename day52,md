@@ -89,3 +89,13 @@ View Image History
 docker history nginx
 
 Shows the image's layer history.
+🚀 Running Containers
+Run a Container
+docker run nginx
+
+This creates and starts a container from the Nginx image.
+
+Run in Detached Mode
+docker run -d nginx
+
+The container runs in the background.
