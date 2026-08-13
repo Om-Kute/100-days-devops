@@ -59,3 +59,15 @@ docker stop
 docker start
 docker restart
 docker rm
+📥 Docker Image Commands
+Pull an Image
+docker pull nginx
+
+Downloads the Nginx image from a configured registry such as Docker Hub.
+
+List Images
+docker images
+
+or:
+
+docker image ls
