@@ -24,3 +24,18 @@ Nginx Image
     └── Container 3
 
 One image can be used to create multiple containers.
+🐳 Docker Containers
+
+A container is a running or stopped instance created from a Docker image.
+
+Docker Image
+     ↓
+Docker Container
+
+Containers provide:
+
+Process isolation
+Portability
+Lightweight execution
+Fast startup
+Consistent environments
