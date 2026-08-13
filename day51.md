@@ -16,3 +16,11 @@ Fast deployment
 Process isolation
 Efficient resource usage
 Easy scaling
+📦 Containers vs Virtual Machines
+Feature	Container	Virtual Machine
+OS	Shares host kernel	Includes guest OS
+Size	Usually smaller	Usually larger
+Startup	Very fast	Generally slower
+Resource Usage	Lower	Higher
+Isolation	Process-level	Full OS-level
+Common Use	Microservices, DevOps	Full OS workloads
