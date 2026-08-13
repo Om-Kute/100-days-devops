@@ -132,3 +132,142 @@ Force removal:
 docker rm -f web
 
 Use force removal carefully.
+📜 View Container Logs
+docker logs web
+
+Follow logs in real time:
+
+docker logs -f web
+🖥️ Execute Commands Inside a Container
+
+Open an interactive shell:
+
+docker exec -it web bash
+
+If Bash is unavailable:
+
+docker exec -it web sh
+
+Run a single command:
+
+docker exec web nginx -v
+🔍 Inspect a Container
+docker inspect web
+
+This can provide information about:
+
+Network configuration
+Mounts
+Environment
+Container configuration
+IP addresses
+Runtime settings
+⚙️ View Processes
+docker top web
+
+Displays processes running inside the container.
+
+📊 View Resource Usage
+docker stats
+
+Displays live resource usage such as:
+
+CPU
+Memory
+Network I/O
+Block I/O
+🌐 Port Mapping
+
+Containers have their own network namespace.
+
+To expose an Nginx container:
+
+docker run -d -p 8080:80 --name web nginx
+
+The mapping is:
+
+Host Port 8080
+      │
+      ▼
+Container Port 80
+      │
+      ▼
+Nginx
+
+Access:
+
+http://localhost:8080
+
+On a remote server:
+
+http://<SERVER-IP>:8080
+
+The server's firewall or cloud Security Group must also allow the required port.
+
+🧪 Practical Docker Exercise
+Step 1 – Pull Nginx
+docker pull nginx
+Step 2 – Run Nginx
+docker run -d -p 8080:80 --name web nginx
+Step 3 – Check Container
+docker ps
+Step 4 – Check Logs
+docker logs web
+Step 5 – Open Shell
+docker exec -it web bash
+Step 6 – Exit
+exit
+Step 7 – Stop Container
+docker stop web
+Step 8 – Start Again
+docker start web
+Step 9 – Remove Container
+docker stop web
+docker rm web
+🔄 Complete Workflow
+Docker Hub
+    │
+    ▼
+docker pull nginx
+    │
+    ▼
+Docker Image
+    │
+    ▼
+docker run
+    │
+    ▼
+Container
+    │
+    ├── docker ps
+    ├── docker logs
+    ├── docker exec
+    ├── docker stats
+    └── docker inspect
+    │
+    ▼
+docker stop
+    │
+    ▼
+docker rm
+📊 Container States
+State	Meaning
+Created	Container created but not started
+Running	Container is executing
+Paused	Container processes are paused
+Restarting	Container is restarting
+Exited	Container has stopped
+Dead	Container failed to reach a normal state
+Removed	Container no longer exists
+📍 Where Docker Images Can Exist
+Local Images
+
+Images pulled or built locally are stored in Docker's local image store.
+
+Docker Hub
+
+Public or private repositories can be used to distribute images.
+
+Private Registries
+
+Organizations can use private registries such as:
