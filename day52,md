@@ -99,3 +99,36 @@ Run in Detached Mode
 docker run -d nginx
 
 The container runs in the background.
+Assign a Name
+docker run -d --name web nginx
+
+Now the container can be referenced using:
+
+web
+
+instead of its generated container ID.
+
+📋 List Containers
+Running Containers
+docker ps
+All Containers
+docker ps -a
+
+This includes containers that have stopped.
+
+🛑 Stop a Container
+docker stop web
+▶️ Start a Stopped Container
+docker start web
+🔄 Restart a Container
+docker restart web
+🗑️ Remove a Container
+docker rm web
+
+A running container normally needs to be stopped before removal.
+
+Force removal:
+
+docker rm -f web
+
+Use force removal carefully.
