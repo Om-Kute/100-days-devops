@@ -178,3 +178,48 @@ Docker Run
 Docker Container
       ↓
 Docker Registry
+💻 Basic Docker Commands
+
+Check Docker version:
+
+docker --version
+
+Get detailed Docker information:
+
+docker info
+
+Download an image:
+
+docker pull nginx
+
+List images:
+
+docker images
+
+Run a container:
+
+docker run nginx
+
+Run a container in detached mode:
+
+docker run -d nginx
+
+List running containers:
+
+docker ps
+
+List all containers:
+
+docker ps -a
+
+Stop a container:
+
+docker stop <container_id>
+
+Remove a container:
+
+docker rm <container_id>
+
+Remove an image:
+
+docker rmi <image>
