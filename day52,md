@@ -1,0 +1,26 @@
+🐳 Day 52 – Docker Images & Containers
+🎯 Objective
+
+Learn Docker images and containers, understand the container lifecycle, and practice essential Docker commands for managing images and containers.
+
+📦 Docker Images
+
+A Docker image is a read-only template used to create containers.
+
+An image can contain:
+
+Application code
+Dependencies
+Libraries
+Configuration
+Runtime environment
+
+Example:
+
+Nginx Image
+    │
+    ├── Container 1
+    ├── Container 2
+    └── Container 3
+
+One image can be used to create multiple containers.
