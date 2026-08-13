@@ -80,3 +80,12 @@ Tag an Image
 docker tag nginx mynginx:v1
 
 Tags provide human-readable names and versions for images.
+Inspect an Image
+docker inspect nginx
+
+Displays detailed image metadata.
+
+View Image History
+docker history nginx
+
+Shows the image's layer history.
