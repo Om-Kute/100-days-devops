@@ -8,3 +8,11 @@ Start the Docker phase of the 100 Days of DevOps journey and understand Docker f
 Docker is a platform for building, packaging, and running applications using containers.
 
 A container packages an application together with the dependencies required to run it.
+Key Benefits
+Lightweight
+Portable
+Consistent environments
+Fast deployment
+Process isolation
+Efficient resource usage
+Easy scaling
