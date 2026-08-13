@@ -45,3 +45,23 @@ Docker Engine
 Container
    ↓
 Application
+🏗️ Docker Architecture
+
+Docker uses a client-server architecture.
+
+Docker Client
+      │
+      ▼
+Docker Daemon
+      │
+      ▼
+Docker Engine
+      │
+ ┌────┼──────────────┐
+ ▼    ▼              ▼
+Images Containers  Networks
+          │
+          ▼
+       Volumes
+
+Docker can also interact with contain
