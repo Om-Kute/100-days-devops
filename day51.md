@@ -150,3 +150,14 @@ Other Machine
      │
      ▼
 Pull Image
+🧩 Docker Objects
+
+Important Docker objects include:
+
+Object	Purpose
+Image	Template for containers
+Container	Running instance of an image
+Volume	Persistent data storage
+Network	Container communication
+Dockerfile	Instructions for building images
+Compose	Defines multi-container applications
