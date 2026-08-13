@@ -71,3 +71,12 @@ docker images
 or:
 
 docker image ls
+Remove an Image
+docker rmi nginx
+
+If the image is still referenced by existing containers, Docker may prevent removal until those references are handled.
+
+Tag an Image
+docker tag nginx mynginx:v1
+
+Tags provide human-readable names and versions for images.
