@@ -39,3 +39,23 @@ Portability
 Lightweight execution
 Fast startup
 Consistent environments
+🔄 Container Lifecycle
+
+A simplified lifecycle:
+
+Created
+   ↓
+Running
+   ↓
+Stopped
+   ↓
+Removed
+
+Common commands:
+
+docker create
+docker run
+docker stop
+docker start
+docker restart
+docker rm
