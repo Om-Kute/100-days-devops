@@ -161,3 +161,20 @@ Volume	Persistent data storage
 Network	Container communication
 Dockerfile	Instructions for building images
 Compose	Defines multi-container applications
+🔄 Docker Workflow
+
+The basic Docker workflow is:
+
+Application Code
+      ↓
+Dockerfile
+      ↓
+Docker Build
+      ↓
+Docker Image
+      ↓
+Docker Run
+      ↓
+Docker Container
+      ↓
+Docker Registry
