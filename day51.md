@@ -24,3 +24,24 @@ Startup	Very fast	Generally slower
 Resource Usage	Lower	Higher
 Isolation	Process-level	Full OS-level
 Common Use	Microservices, DevOps	Full OS workloads
+Simple Concept
+Virtual Machine
+
+Hardware
+   ↓
+Hypervisor
+   ↓
+Guest OS
+   ↓
+Application
+Container
+
+Hardware
+   ↓
+Host OS
+   ↓
+Docker Engine
+   ↓
+Container
+   ↓
+Application
