@@ -2,10 +2,7 @@
 
 ## 🎯 Objective
 
-Learn how to create a custom Docker image using a Dockerfile and understand the most important Dockerfile instructions.
-
----
-
+Learn how to create a custom Docker image using a Dockerfile and understand the most important Dockerfile instructions
 ## 📄 What is a Dockerfile?
 
 A Dockerfile is a text file containing instructions used by Docker to automatically build a container image.
@@ -41,24 +38,15 @@ LABEL	Adds metadata to the image
 
 🏗️ Dockerfile Example
 FROM node:18-alpine
-
-
 WORKDIR /app
-
-
 COPY package*.json ./
-
-
 RUN npm install
-
-
 COPY . .
-
-
 EXPOSE 3000
-
-
 ENV NODE_ENV=production
-
-
 CMD ["node", "app.js"]
+🔍 Dockerfile Explanation
+FROM
+FROM node:18-alpine
+
+Defines the base image.
