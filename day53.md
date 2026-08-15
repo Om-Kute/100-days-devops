@@ -52,10 +52,13 @@ FROM node:18-alpine
 Defines the base image.
 WORKDIR
 WORKDIR /app
-
 Sets /app as the working directory for subsequent instructions.
-
 COPY
 COPY package*.json ./
-
 Copies package files from the build context into the image.
+RUN
+RUN npm install
+Executes a command while building the image.
+COPY Application Code
+COPY . .
+Copies the application source into the image.
