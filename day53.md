@@ -106,14 +106,35 @@ Then build:
 docker build -t myapp:1.0 .
 
 Explanation:
-
 docker build     → Build image
 -t               → Assign name/tag
 myapp:1.0        → Image name and tag
 .                → Build context
 🔎 Verify the Image
 docker images
-
 or:
-
 docker image ls
+🚀 Run the Image
+docker run -d -p 3000:3000 --name myapp myapp:1.0
+
+Check:
+
+docker ps
+
+View logs:
+
+docker logs myapp
+🌐 Port Mapping
+Host Port
+   3000
+     │
+     ▼
+Container Port
+   3000
+     │
+     ▼
+Application
+
+Command:
+
+docker run -d -p 3000:3000 myapp:1.0
