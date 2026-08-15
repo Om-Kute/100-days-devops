@@ -22,3 +22,19 @@ Docker Image
 docker run
      ↓
 Container
+🧩 Important Dockerfile Instructions
+Instruction	Purpose
+FROM	Defines the base image
+RUN	Executes commands during image build
+COPY	Copies files from build context
+ADD	Copies files and supports additional source handling
+WORKDIR	Sets the working directory
+ENV	Defines environment variables
+EXPOSE	Documents a port used by the application
+CMD	Defines the default command
+ENTRYPOINT	Configures the main executable
+USER	Sets the user for subsequent commands/runtime
+ARG	Defines build-time variables
+VOLUME	Defines a mount point
+HEALTHCHECK	Defines a container health check
+LABEL	Adds metadata to the image
