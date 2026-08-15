@@ -95,3 +95,25 @@ Together:
 
 ENTRYPOINT → Main executable
 CMD        → Default arguments
+🏗️ Build a Docker Image
+
+Create a file named:
+
+Dockerfile
+
+Then build:
+
+docker build -t myapp:1.0 .
+
+Explanation:
+
+docker build     → Build image
+-t               → Assign name/tag
+myapp:1.0        → Image name and tag
+.                → Build context
+🔎 Verify the Image
+docker images
+
+or:
+
+docker image ls
