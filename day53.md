@@ -168,3 +168,16 @@ Smaller build context
 Faster builds
 Cleaner images
 Reduced risk of accidentally including unwanted files
+🧱 Docker Image Layers
+
+Many Dockerfile instructions create image layers.
+
+Conceptually:
+
+Layer 5 → CMD
+Layer 4 → COPY .
+Layer 3 → RUN npm install
+Layer 2 → WORKDIR
+Layer 1 → FROM node:18-alpine
+
+Docker can reuse cached layers when appropriate, which can make subsequent builds faster.
