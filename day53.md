@@ -138,3 +138,33 @@ Application
 Command:
 
 docker run -d -p 3000:3000 myapp:1.0
+📁 Docker Build Context
+
+When running:
+
+docker build -t myapp:1.0 .
+
+the . specifies the build context.
+
+Docker can access files from the build context when processing instructions such as COPY and ADD.
+
+🚫 .dockerignore
+
+A .dockerignore file prevents unnecessary files from being sent as part of the build context.
+
+Example:
+
+node_modules
+.git
+.gitignore
+*.log
+.env
+Dockerfile*
+README.md
+
+Benefits:
+
+Smaller build context
+Faster builds
+Cleaner images
+Reduced risk of accidentally including unwanted files
