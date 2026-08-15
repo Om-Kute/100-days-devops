@@ -78,3 +78,20 @@ CMD
 CMD ["node", "app.js"]
 
 Defines the default command executed when the container starts.
+⚙️ CMD vs ENTRYPOINT
+CMD
+
+Provides a default command or default arguments.
+
+CMD ["node", "app.js"]
+ENTRYPOINT
+
+Defines the main executable for the container.
+
+ENTRYPOINT ["node"]
+CMD ["app.js"]
+
+Together:
+
+ENTRYPOINT → Main executable
+CMD        → Default arguments
