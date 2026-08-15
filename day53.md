@@ -62,3 +62,19 @@ Executes a command while building the image.
 COPY Application Code
 COPY . .
 Copies the application source into the image.
+EXPOSE
+EXPOSE 3000
+
+Documents that the application listens on port 3000.
+
+EXPOSE does not publish the port by itself. Port publishing is done with docker run -p.
+
+ENV
+ENV NODE_ENV=production
+
+Sets an environment variable inside the image/container environment.
+
+CMD
+CMD ["node", "app.js"]
+
+Defines the default command executed when the container starts.
