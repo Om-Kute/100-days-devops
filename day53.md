@@ -38,3 +38,27 @@ ARG	Defines build-time variables
 VOLUME	Defines a mount point
 HEALTHCHECK	Defines a container health check
 LABEL	Adds metadata to the image
+
+🏗️ Dockerfile Example
+FROM node:18-alpine
+
+
+WORKDIR /app
+
+
+COPY package*.json ./
+
+
+RUN npm install
+
+
+COPY . .
+
+
+EXPOSE 3000
+
+
+ENV NODE_ENV=production
+
+
+CMD ["node", "app.js"]
