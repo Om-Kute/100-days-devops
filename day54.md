@@ -77,3 +77,14 @@ WORKDIR
 FROM
 
 Docker can reuse cached layers during builds, which can make subsequent builds faster.
+📦 Image Optimization
+
+Important techniques:
+
+Use appropriate lightweight base images.
+Use .dockerignore.
+Remove unnecessary files and packages.
+Take advantage of Docker build cache.
+Use multi-stage builds.
+Avoid storing secrets in images.
+Keep production images minimal.
