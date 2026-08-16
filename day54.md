@@ -88,3 +88,25 @@ Take advantage of Docker build cache.
 Use multi-stage builds.
 Avoid storing secrets in images.
 Keep production images minimal.
+🚫 .dockerignore
+
+Example:
+
+node_modules
+.git
+.gitignore
+*.log
+.env
+README.md
+
+This prevents unnecessary files from being sent as part of the Docker build context.
+
+🏗️ Multi-Stage Build
+
+Example:
+
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
