@@ -129,3 +129,18 @@ Smaller final image
 Fewer unnecessary dependencies
 Cleaner production image
 Reduced attack surface
+Remove Images
+
+Remove an image:
+
+docker rmi myapp:1.0
+
+Check Docker disk usage:
+
+docker system df
+
+Remove unused resources:
+
+docker system prune
+
+⚠️ Review cleanup commands carefully before execution because unused Docker resources may be removed.
