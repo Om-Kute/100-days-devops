@@ -51,3 +51,29 @@ This provides detailed information about the image configuration, metadata, arch
 docker history myapp:1.0
 
 This shows the image's layer history and Dockerfile instructions that contributed to the image.
+📥 Pull Image
+
+On another system:
+
+docker pull username/myapp:1.0
+
+Run it:
+
+docker run -d username/myapp:1.0
+🧱 Docker Image Layers
+
+Docker images are composed of layers.
+
+Example:
+
+CMD
+ ↓
+COPY
+ ↓
+RUN
+ ↓
+WORKDIR
+ ↓
+FROM
+
+Docker can reuse cached layers during builds, which can make subsequent builds faster.
