@@ -32,3 +32,11 @@ or:
 
 docker image ls
 🔍 Inspect Image
+docker image inspect myapp:1.0
+
+This provides detailed information about the image configuration, metadata, architecture, environment, and layers.
+
+📜 View Image History
+docker history myapp:1.0
+
+This shows the image's layer history and Dockerfile instructions that contributed to the image.
