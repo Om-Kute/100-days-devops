@@ -19,3 +19,8 @@ Persistent Data
 
 Create a Volume
 docker volume create myvolume
+
+List Volumes
+docker volume ls
+🔍 Inspect a Volume
+docker volume inspect myvolume
