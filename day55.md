@@ -72,3 +72,21 @@ Check the data:
 cat /data/test.txt
 
 The data remains available because it is stored in the Docker Volume.
+🔗 Bind Mount
+
+Example:
+
+docker run -d \
+  --name web \
+  -v /home/user/app:/usr/share/nginx/html \
+  nginx
+
+Bind mounts map a host directory directly into a container and are especially useful during development.
+
+⚖️ Volume vs Bind Mount
+Feature	Docker Volume	Bind Mount
+Managed by Docker	✅	❌
+Host path required	❌	✅
+Persistent	✅	✅
+Development	Good	Excellent
+Database Storage	Common	Possible
