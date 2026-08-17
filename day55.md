@@ -90,3 +90,21 @@ Host path required	❌	✅
 Persistent	✅	✅
 Development	Good	Excellent
 Database Storage	Common	Possible
+🗑️ Remove Volume
+docker volume rm myvolume
+
+Remove unused volumes:
+
+docker volume prune
+
+⚠️ Review carefully before deleting unused volumes.
+
+💾 Backup Concept
+
+Volumes can be backed up by mounting them into a temporary container and creating an archive.
+
+docker run --rm \
+  -v myvolume:/data \
+  -v $(pwd):/backup \
+  ubuntu \
+  tar czf /backup/myvolume-backup.tar.gz -C /data .
