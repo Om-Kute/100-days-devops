@@ -55,3 +55,10 @@ docker run --network host nginx
 The container shares the host's network namespace.
 
 There is no separate container network isolation in the usual bridge-network sense.
+3️⃣ None Network
+
+The none network disables networking for the container.
+
+docker run --network none nginx
+
+This can be useful when a workload should have no network connectivity.
