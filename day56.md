@@ -121,3 +121,33 @@ From the client container:
 curl http://web
 
 The name web can be resolved through Docker's embedded DNS on the user-defined network.
+🔀 Port Mapping
+
+Port mapping exposes a container port through a host port.
+
+Example:
+
+docker run -d \
+  -p 8080:80 \
+  --name web \
+  nginx
+
+Architecture:
+
+Host Port 8080
+      │
+      ▼
+Container Port 80
+      │
+      ▼
+    Nginx
+
+Access:
+
+http://localhost:8080
+
+On a remote server:
+
+http://SERVER-IP:8080
+
+The server firewall or cloud Security Group must also allow the required port.
