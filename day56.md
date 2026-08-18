@@ -23,3 +23,13 @@ Docker Network
     ├── Container 1
     ├── Container 2
     └── Container 3
+🔗 Docker Network Drivers
+
+Docker provides different network drivers for different use cases.
+
+Network	Purpose
+Bridge	Default network for containers on a Docker host
+Host	Container shares host networking
+None	Disables container networking
+Overlay	Multi-host container communication
+Macvlan	Gives containers network identities on the physical network
