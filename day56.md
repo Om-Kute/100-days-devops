@@ -82,3 +82,26 @@ Disconnect Container
 docker network disconnect mynetwork container_name
 Remove Network
 docker network rm mynetwork
+🚀 Custom Bridge Network
+
+Create a custom network:
+
+docker network create app-network
+
+Run an Nginx container:
+
+docker run -d \
+  --name web \
+  --network app-network \
+  nginx
+
+Run another container:
+
+docker run -it \
+  --name client \
+  --network app-network \
+  ubuntu
+
+Now both containers are connected to:
+
+app-network
