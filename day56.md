@@ -33,3 +33,16 @@ Host	Container shares host networking
 None	Disables container networking
 Overlay	Multi-host container communication
 Macvlan	Gives containers network identities on the physical network
+1️⃣ Bridge Network
+
+The bridge network is the default network driver for containers.
+
+Docker Host
+     │
+     ▼
+  Bridge
+  /    \
+ ↓      ↓
+Web    DB
+
+Containers connected to the same user-defined bridge network can communicate with each other.
