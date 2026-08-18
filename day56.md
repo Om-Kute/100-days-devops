@@ -76,3 +76,9 @@ Create a Network
 docker network create mynetwork
 Inspect a Network
 docker network inspect mynetwork
+Connect Container to Network
+docker network connect mynetwork container_name
+Disconnect Container
+docker network disconnect mynetwork container_name
+Remove Network
+docker network rm mynetwork
