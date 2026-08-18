@@ -64,3 +64,8 @@ Host 1                 Host 2
 Container              Container
    │                      │
    └──── Overlay Network ──┘
+5️⃣ Macvlan Network
+
+Macvlan allows containers to appear as network devices on the physical network.
+
+This can be useful for workloads that need to integrate directly with an existing Layer 2 network.
