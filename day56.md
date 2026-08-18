@@ -69,3 +69,10 @@ Container              Container
 Macvlan allows containers to appear as network devices on the physical network.
 
 This can be useful for workloads that need to integrate directly with an existing Layer 2 network.
+🛠️ Important Docker Network Commands
+List Networks
+docker network ls
+Create a Network
+docker network create mynetwork
+Inspect a Network
+docker network inspect mynetwork
