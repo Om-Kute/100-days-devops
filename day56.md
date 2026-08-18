@@ -105,3 +105,19 @@ docker run -it \
 Now both containers are connected to:
 
 app-network
+🔄 Container-to-Container Communication
+
+Containers on the same user-defined bridge network can communicate using container names.
+
+app-network
+     │
+ ┌───┴────┐
+ ▼        ▼
+ web      client
+Nginx    Ubuntu
+
+From the client container:
+
+curl http://web
+
+The name web can be resolved through Docker's embedded DNS on the user-defined network.
