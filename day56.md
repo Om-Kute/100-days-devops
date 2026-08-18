@@ -46,3 +46,12 @@ Docker Host
 Web    DB
 
 Containers connected to the same user-defined bridge network can communicate with each other.
+2️⃣ Host Network
+
+With the host network:
+
+docker run --network host nginx
+
+The container shares the host's network namespace.
+
+There is no separate container network isolation in the usual bridge-network sense.
