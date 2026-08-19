@@ -79,3 +79,4 @@ Host Port     Container Port
    8080   →       80
 The Nginx application running inside the container on port 80 can be accessed through:
 http://localhost:8080
+
