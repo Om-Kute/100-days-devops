@@ -79,4 +79,21 @@ Host Port     Container Port
    8080   →       80
 The Nginx application running inside the container on port 80 can be accessed through:
 http://localhost:8080
-
+🛠️ Important Docker Network Commands
+List networks
+docker network ls
+Inspect a network
+docker network inspect <network_name>
+Create a network
+docker network create <network_name>
+Remove a network
+docker network rm <network_name>
+Connect a container to a network
+docker network connect <network_name> <container_name>
+Disconnect a container
+docker network disconnect <network_name> <container_name>
+Run a container on a specific network
+docker run -d \
+  --network <network_name> \
+  --name <container_name> \
+  <image>
