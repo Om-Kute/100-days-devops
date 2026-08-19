@@ -66,3 +66,16 @@ docker run -d \
 Because both containers are connected to my-net, the application can communicate with the database using:
 db
 Instead of using the database container's IP address.
+
+🔀 Port Mapping
+Port mapping exposes a container application to the host machine.
+Example:
+docker run -d \
+  -p 8080:80 \
+  --name web \
+  nginx
+Meaning
+Host Port     Container Port
+   8080   →       80
+The Nginx application running inside the container on port 80 can be accessed through:
+http://localhost:8080
