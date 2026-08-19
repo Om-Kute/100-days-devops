@@ -26,3 +26,12 @@ Docker networking is used to:
 - Expose applications to the host
 - Provide network isolation
 - Connect multiple services in an application
+## 🔹 Docker Network Types
+
+### 1. Bridge Network
+
+The default Docker network.
+
+bash
+docker network ls
+Containers connected to the default bridge network can communicate through the Docker bridge.
