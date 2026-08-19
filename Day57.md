@@ -39,3 +39,8 @@ Containers connected to the default bridge network can communicate through the D
 The container uses the host machine's network stack.
 docker run --network host nginx
 There is less network isolation between the container and host.
+
+3. None Network
+The container has no network connectivity.
+docker run --network none nginx
+Useful when complete network isolation is required.
