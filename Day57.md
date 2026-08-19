@@ -44,3 +44,10 @@ There is less network isolation between the container and host.
 The container has no network connectivity.
 docker run --network none nginx
 Useful when complete network isolation is required.
+
+4. Custom Bridge Network
+A user-defined network provides better container-to-container communication.
+Create a network:
+docker network create my-net
+Check networks:
+docker network ls
