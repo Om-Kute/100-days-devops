@@ -17,3 +17,12 @@ Docker networking is used to:
 - Expose applications to the host
 - Provide network isolation
 - Connect multiple services in an application
+## 🌐 Why Docker Networking?
+
+Docker networking is used to:
+
+- Connect containers
+- Allow container-to-container communication
+- Expose applications to the host
+- Provide network isolation
+- Connect multiple services in an application
