@@ -102,3 +102,14 @@ Enter a running container:
 docker exec -it <container_name> bash
 Then test connectivity:
 ping <container_name>
+📊 Quick Comparison
+Network
+Purpose
+Bridge
+Default container networking
+Host
+Uses host network
+None
+Complete network isolation
+Custom Bridge
+Controlled container communication
