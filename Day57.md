@@ -97,3 +97,8 @@ docker run -d \
   --network <network_name> \
   --name <container_name> \
   <image>
+🧪 Useful Connectivity Test
+Enter a running container:
+docker exec -it <container_name> bash
+Then test connectivity:
+ping <container_name>
