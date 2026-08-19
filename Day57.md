@@ -51,3 +51,18 @@ Create a network:
 docker network create my-net
 Check networks:
 docker network ls
+
+🔗 Container-to-Container Communication
+Create a database container:
+docker run -d \
+  --name db \
+  --network my-net \
+  mysql
+Create an application container:
+docker run -d \
+  --name app \
+  --network my-net \
+  myapp
+Because both containers are connected to my-net, the application can communicate with the database using:
+db
+Instead of using the database container's IP address.
