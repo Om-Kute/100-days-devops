@@ -31,7 +31,11 @@ Docker networking is used to:
 ### 1. Bridge Network
 
 The default Docker network.
-
 bash
 docker network ls
 Containers connected to the default bridge network can communicate through the Docker bridge.
+
+2. Host Network
+The container uses the host machine's network stack.
+docker run --network host nginx
+There is less network isolation between the container and host.
