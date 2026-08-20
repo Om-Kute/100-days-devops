@@ -88,3 +88,9 @@ Follow logs:
 docker compose logs -f
 View logs for a specific service:
 docker compose logs app
+🛑 Stop Application
+docker compose stop
+This stops the services without removing the containers.
+🧹 Remove Application
+docker compose down
+This normally stops and removes the Compose-managed containers and networks.
