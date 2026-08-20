@@ -68,3 +68,16 @@ This defines three services:
 web
 app
 db
+🚀 Start Application
+Start all services:
+docker compose up
+Run in background:
+docker compose up -d
+Docker Compose will create the required networks and containers and start the services.
+📋 Check Services
+docker compose ps
+Example:
+NAME       SERVICE    STATUS
+web        web        running
+app        app        running
+db         db         running
