@@ -39,3 +39,32 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: appdb
+🧩 Main Docker Compose Components
+compose.yaml
+     │
+     ├── Services
+     │
+     ├── Networks
+     │
+     ├── Volumes
+     │
+     ├── Environment Variables
+     │
+     └── Configuration
+🔧 Services
+A service represents a container configuration.
+Example:
+services:
+
+  web:
+    image: nginx:alpine
+
+  app:
+    image: node:18-alpine
+
+  db:
+    image: mysql:8
+This defines three services:
+web
+app
+db
