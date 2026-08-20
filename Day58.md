@@ -81,3 +81,10 @@ NAME       SERVICE    STATUS
 web        web        running
 app        app        running
 db         db         running
+📜 View Logs
+View logs:
+docker compose logs
+Follow logs:
+docker compose logs -f
+View logs for a specific service:
+docker compose logs app
