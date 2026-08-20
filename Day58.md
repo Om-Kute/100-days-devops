@@ -16,3 +16,26 @@ Example architecture:
           └──────────────┼──────────────┘
                          ▼
                   Docker Network
+📄 Compose File
+A typical Compose file is named:
+compose.yaml
+Example:
+services:
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+
+  app:
+    image: node:18-alpine
+    working_dir: /app
+    command: node server.js
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: appdb
