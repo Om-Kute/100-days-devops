@@ -95,3 +95,20 @@ Fewer unnecessary dependencies
 Faster deployment
 Reduced attack surface
 Cleaner production images
+
+❤️ 5. Docker Healthcheck
+A health check allows Docker to determine whether a container's application is responding correctly.
+Example:
+HEALTHCHECK --interval=30s \
+            --timeout=10s \
+            --retries=3 \
+            CMD wget -qO- http://localhost:3000/health || exit 1
+Check container health:
+docker ps
+Example:
+STATUS
+Up 2 minutes (healthy)
+Possible states:
+Starting
+Healthy
+Unhealthy
