@@ -158,3 +158,17 @@ OS package vulnerabilities
 Application dependency vulnerabilities
 Misconfigurations
 Security issues
+🧹 10. Docker Cleanup
+Check Docker disk usage:
+docker system df
+Remove unused resources:
+docker system prune
+Remove unused images:
+docker image prune
+Remove unused containers:
+docker container prune
+Remove unused volumes:
+docker volume prune
+Remove unused networks:
+docker network prune
+⚠️ Always review cleanup commands before running them because they can remove resources that are no longer referenced but may still be needed.
