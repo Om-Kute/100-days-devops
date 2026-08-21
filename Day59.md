@@ -53,3 +53,45 @@ Smaller build context
 Faster builds
 Less unnecessary data
 Reduced risk of accidentally including sensitive files
+🏗️ 4. Multi-Stage Builds
+Multi-stage builds separate the build environment from the final runtime environment.
+Example:
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+CMD ["node", "dist/server.js"]
+Architecture
+Build Stage
+     │
+     ▼
+Compile / Build
+     │
+     ▼
+Production Stage
+     │
+     ▼
+Small Final Image
+Benefits
+Smaller images
+Fewer unnecessary dependencies
+Faster deployment
+Reduced attack surface
+Cleaner production images
