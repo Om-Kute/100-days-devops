@@ -148,3 +148,13 @@ docker run -d \
   --cap-add=NET_BIND_SERVICE \
   nginx:alpine
 This follows the least privilege principle.
+🔍 9. Image Vulnerability Scanning
+Docker images can contain vulnerable packages or dependencies.
+A common scanning tool is Trivy.
+Example:
+trivy image myapp:1.0
+Scanning helps identify:
+OS package vulnerabilities
+Application dependency vulnerabilities
+Misconfigurations
+Security issues
