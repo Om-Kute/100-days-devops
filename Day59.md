@@ -125,3 +125,17 @@ CPU    → 1.5 CPUs
 Memory → 512 MB
 Check resource usage:
 docker stats
+🔒 7. Read-Only Root Filesystem
+A read-only root filesystem can reduce the ability of a compromised application to modify files inside the container.
+Example:
+docker run -d \
+  --read-only \
+  --tmpfs /tmp \
+  nginx:alpine
+Concept:
+Container
+   │
+   ├── Root FS → Read Only
+   │
+   └── /tmp → Writable Temporary Storage
+Use this when the application is compatible with a read-only filesystem.
