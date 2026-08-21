@@ -139,3 +139,12 @@ Container
    │
    └── /tmp → Writable Temporary Storage
 Use this when the application is compatible with a read-only filesystem.
+🛡️ 8. Linux Capabilities
+Linux capabilities control specific privileged operations.
+Instead of giving a container broad privileges, unnecessary capabilities can be removed.
+Example:
+docker run -d \
+  --cap-drop=ALL \
+  --cap-add=NET_BIND_SERVICE \
+  nginx:alpine
+This follows the least privilege principle.
