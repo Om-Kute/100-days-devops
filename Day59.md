@@ -37,3 +37,19 @@ Check the user:
 docker exec <container> whoami
 Expected:
 appuser
+🚫 3. .dockerignore
+.dockerignore prevents unnecessary files from being included in the Docker build context.
+Example:
+node_modules
+.git
+.gitignore
+*.log
+.env
+coverage
+dist
+README.md
+Benefits
+Smaller build context
+Faster builds
+Less unnecessary data
+Reduced risk of accidentally including sensitive files
