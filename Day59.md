@@ -112,3 +112,16 @@ Possible states:
 Starting
 Healthy
 Unhealthy
+📊 6. Resource Limits
+Containers can consume excessive CPU or memory if they are not controlled.
+Example:
+docker run -d \
+  --name myapp \
+  --cpus="1.5" \
+  --memory="512m" \
+  myapp:1.0
+This limits the container to approximately:
+CPU    → 1.5 CPUs
+Memory → 512 MB
+Check resource usage:
+docker stats
