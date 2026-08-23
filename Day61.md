@@ -17,3 +17,21 @@ Kubernetes
   ├── Monitor
   ├── Self-Heal
   └── Manage Containers
+🐳 Docker vs Kubernetes
+Docker
+Kubernetes
+Builds and runs containers
+Orchestrates containers
+Container runtime/tooling
+Container orchestration platform
+Usually manages containers on a host
+Manages workloads across a cluster
+Manual scaling
+Automated scaling capabilities
+Basic container networking
+Service discovery and networking
+Individual container management
+Application/workload management
+Simple Memory Trick
+Docker      → Container
+Kubernetes  → Container Orchestration
