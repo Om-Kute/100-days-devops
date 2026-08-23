@@ -35,3 +35,17 @@ Application/workload management
 Simple Memory Trick
 Docker      → Container
 Kubernetes  → Container Orchestration
+Why Kubernetes?
+Kubernetes provides features that help operate containerized applications reliably.
+Major Benefits
+Automated deployment
+Scaling
+Self-healing
+Service discovery
+Load balancing
+Rolling updates
+Rollbacks
+Resource management
+Declarative configuration
+High availability
+Container orchestration
