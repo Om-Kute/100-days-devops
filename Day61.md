@@ -49,3 +49,17 @@ Resource management
 Declarative configuration
 High availability
 Container orchestration
+🏗️ Kubernetes Architecture
+A Kubernetes cluster generally contains:
+                 Kubernetes Cluster
+                        │
+          ┌─────────────┴─────────────┐
+          │                           │
+     Control Plane                Worker Nodes
+          │                           │
+   ┌──────┼──────┐             ┌──────┴──────┐
+   │      │      │             │             │
+ API   Scheduler Controller   Kubelet     Kubelet
+Server          Manager         │             │
+   │             │              ▼             ▼
+   └──── etcd ───┘            Pods          Pods
