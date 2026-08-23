@@ -72,3 +72,15 @@ Control Plane
      ├── Scheduler
      ├── Controller Manager
      └── etcd
+🌐 API Server
+The Kubernetes API Server is the main entry point to the Kubernetes control plane.
+kubectl communicates with the API Server.
+kubectl
+   │
+   ▼
+API Server
+   │
+   ▼
+Kubernetes Cluster
+Example:
+kubectl get nodes
