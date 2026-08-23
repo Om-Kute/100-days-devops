@@ -63,3 +63,12 @@ A Kubernetes cluster generally contains:
 Server          Manager         │             │
    │             │              ▼             ▼
    └──── etcd ───┘            Pods          Pods
+🎛️ Control Plane
+The Control Plane manages the overall Kubernetes cluster.
+Important components include:
+Control Plane
+     │
+     ├── API Server
+     ├── Scheduler
+     ├── Controller Manager
+     └── etcd
