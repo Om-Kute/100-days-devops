@@ -30,3 +30,22 @@ Control Plane
      ├── Controller Manager
      └── etcd
 The Control Plane decides what should happen, while Worker Nodes execute the workloads.
+🌐 1. Kubernetes API Server
+The API Server is the central communication point of Kubernetes.
+Almost all cluster operations go through the Kubernetes API.
+kubectl
+   │
+   ▼
+API Server
+   │
+   ▼
+Kubernetes Cluster
+Example:
+kubectl get nodes
+The command communicates with the API Server.
+Responsibilities
+Accept API requests
+Authenticate and authorize requests
+Validate Kubernetes objects
+Update cluster state
+Communicate with other control-plane components
