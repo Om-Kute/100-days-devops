@@ -49,3 +49,25 @@ Authenticate and authorize requests
 Validate Kubernetes objects
 Update cluster state
 Communicate with other control-plane components
+📅 2. Kubernetes Scheduler
+The Scheduler decides which Worker Node should run a newly scheduled Pod.
+New Pod
+   │
+   ▼
+Scheduler
+   │
+   ├── Check resources
+   ├── Check constraints
+   ├── Check policies
+   └── Select suitable node
+   │
+   ▼
+Worker Node
+The Scheduler considers factors such as:
+CPU
+Memory
+Node availability
+Resource requests
+Node selectors
+Affinity/anti-affinity
+Taints and tolerations
