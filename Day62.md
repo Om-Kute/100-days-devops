@@ -20,3 +20,13 @@ A Kubernetes cluster consists mainly of:
 Simple Concept
 Control Plane → Makes decisions
 Worker Node   → Runs applications
+🎛️ Control Plane
+The Control Plane manages the overall state of the Kubernetes cluster.
+Main components:
+Control Plane
+     │
+     ├── API Server
+     ├── Scheduler
+     ├── Controller Manager
+     └── etcd
+The Control Plane decides what should happen, while Worker Nodes execute the workloads.
