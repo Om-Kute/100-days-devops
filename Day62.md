@@ -71,3 +71,27 @@ Resource requests
 Node selectors
 Affinity/anti-affinity
 Taints and tolerations
+🔄 3. Controller Manager
+The Controller Manager runs controllers that continuously compare:
+Desired State
+      ↓
+Actual State
+If they differ, controllers work to reconcile the cluster.
+Example:
+Desired:
+3 Pods
+
+Actual:
+2 Pods
+
+Controller
+    ↓
+Create replacement Pod
+    ↓
+3 Pods
+Examples of controllers include:
+Node controller
+Deployment controller
+ReplicaSet controller
+Job controller
+EndpointSlice-related controllers
