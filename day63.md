@@ -585,3 +585,39 @@ kubectl logs nginx -c app
 Follow logs:
 
 kubectl logs -f nginx
+🖥️ Execute Commands Inside Pod
+
+Open a shell:
+
+kubectl exec -it nginx -- /bin/bash
+
+If Bash isn't available:
+
+kubectl exec -it nginx -- /bin/sh
+
+Run a command:
+
+kubectl exec nginx -- nginx -v
+
+For a specific container:
+
+kubectl exec -it nginx -c app -- /bin/sh
+📄 Apply YAML
+
+Create:
+
+pod.yaml
+
+Apply:
+
+kubectl apply -f pod.yaml
+
+Check:
+
+kubectl get pods
+🗑️ Delete Pod
+kubectl delete pod nginx
+
+Delete using YAML:
+
+kubectl delete -f pod.yaml
