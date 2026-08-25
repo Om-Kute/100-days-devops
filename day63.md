@@ -57,7 +57,89 @@ kind: Pod
 
 metadata:
   name: nginx-pod
+2️⃣ Multi-Container Pod
 
+A Pod can contain multiple containers when those containers are tightly coupled and need to share resources.
+
+             POD
+       ┌──────┴──────┐
+       ▼             ▼
+ Application      Sidecar
+ Container        Container
+
+Example:
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: multi-container-pod
+
+spec:
+  containers:
+
+    - name: app
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+    - name: sidecar
+      image: busybox
+      command:
+        - sh
+        - -c
+        - |
+          while true; do
+            echo "Sidecar running"
+            sleep 10
+          done
+
+Both containers share the same Pod network namespace.
+
+🔄 3️⃣ Init Containers
+
+Init Containers run before the main application containers.
+
+Pod
+ │
+ ▼
+Init Container
+ │
+ ▼
+Application Container
+
+Example:
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: init-demo
+
+spec:
+
+  initContainers:
+
+    - name: init
+      image: busybox
+      command:
+        - sh
+        - -c
+        - echo "Initializing application"
+
+  containers:
+
+    - name: app
+      image: nginx:latest
+Use Cases
+
+Init Containers can be used for:
+
+Initialization tasks
+Waiting for dependencies
+Preparing files
+Configuration setup
+Database preparation
 spec:
   containers:
     - name: nginx
