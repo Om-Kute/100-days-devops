@@ -540,3 +540,38 @@ apiVersion → Kubernetes API version
 kind       → Resource type
 metadata   → Name, labels, annotations
 spec       → Desired configuration
+🚀 Create Pod Using kubectl
+
+Quickly create a Pod:
+
+kubectl run nginx --image=nginx
+
+Check:
+
+kubectl get pods
+📋 Get Pods
+kubectl get pods
+
+More information:
+
+kubectl get pods -o wide
+
+All namespaces:
+
+kubectl get pods -A
+
+Watch Pods:
+
+kubectl get pods -w
+🔍 Describe Pod
+kubectl describe pod nginx
+
+This provides information about:
+
+Pod configuration
+Node
+Containers
+Events
+IP address
+Volumes
+Conditions
