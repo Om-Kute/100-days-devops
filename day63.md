@@ -575,3 +575,13 @@ Events
 IP address
 Volumes
 Conditions
+📜 View Pod Logs
+kubectl logs nginx
+
+For a specific container in a multi-container Pod:
+
+kubectl logs nginx -c app
+
+Follow logs:
+
+kubectl logs -f nginx
