@@ -510,3 +510,33 @@ Waiting for dependencies
 Preparing files
 Configuration setup
 Database preparation
+📄 Pod YAML Structure
+
+A Kubernetes Pod manifest generally contains:
+
+apiVersion:
+kind:
+metadata:
+spec:
+
+Example:
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+Explanation
+apiVersion → Kubernetes API version
+kind       → Resource type
+metadata   → Name, labels, annotations
+spec       → Desired configuration
