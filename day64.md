@@ -191,3 +191,14 @@ ReplicaSet
  ┌───┼───┬───┬───┐
  ▼   ▼   ▼   ▼   ▼
 Pod Pod Pod Pod Pod
+📉 Scale Down
+kubectl scale deployment nginx-deployment --replicas=2
+
+Check:
+
+kubectl get pods
+
+Kubernetes works toward the desired state:
+
+Desired = 2
+Actual  = 2
