@@ -343,3 +343,83 @@ kubectl apply -f rs.yaml
 Check:
 
 kubectl get rs
+⚠️ Why Prefer Deployment?
+
+For most production application workloads:
+
+Deployment
+    ↓
+ReplicaSet
+    ↓
+Pods
+
+A Deployment provides features that a standalone ReplicaSet does not provide directly, such as:
+
+Rolling updates
+Rollbacks
+Revision history
+Declarative application updates
+
+Therefore:
+
+Use Deployments to manage long-running applications rather than creating ReplicaSets directly in most cases.
+
+🧪 Hands-On Lab
+Step 1 – Create Deployment
+
+Create:
+
+nano deployment.yaml
+
+Add:
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      labels:
+        app: nginx
+
+spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+Step 2 – Apply
+kubectl apply -f deployment.yaml
+Step 3 – Check Deployment
+kubectl get deployments
+Step 4 – Check ReplicaSet
+kubectl get rs
+Step 5 – Check Pods
+kubectl get pods
+Step 6 – Scale
+kubectl scale deployment nginx-deployment --replicas=5
+
+Check:
+
+kubectl get pods
+Step 7 – Update Image
+kubectl set image deployment/nginx-deployment nginx=nginx:1.26
+Step 8 – Monitor Rollout
+kubectl rollout status deployment/nginx-deployment
+Step 9 – View History
+kubectl rollout history deployment/nginx-deployment
+Step 10 – Rollback
+kubectl rollout undo deployment/nginx-deployment
+Step 11 – Verify
+kubectl get deployment
+kubectl get rs
+kubectl get pods
