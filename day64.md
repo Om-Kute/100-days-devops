@@ -160,3 +160,14 @@ kubectl get replicasets
 Check Pods:
 
 kubectl get pods
+📊 Check Deployment
+kubectl get deployment nginx-deployment
+
+Detailed information:
+
+kubectl describe deployment nginx-deployment
+
+Example:
+
+NAME               READY   UP-TO-DATE   AVAILABLE
+nginx-deployment   3/3     3            3
