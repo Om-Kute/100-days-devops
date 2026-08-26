@@ -112,3 +112,51 @@ spec:
           image: nginx:1.25
           ports:
             - containerPort: 80
+🔍 Deployment YAML Explanation
+apiVersion
+apiVersion: apps/v1
+
+Specifies the Kubernetes API version.
+
+kind
+kind: Deployment
+
+Defines the resource type.
+
+replicas
+replicas: 3
+
+Requests three Pod replicas.
+
+selector
+selector:
+  matchLabels:
+    app: nginx
+
+Defines which Pods are managed by the Deployment.
+
+template
+
+Defines the Pod template used to create new Pods.
+
+🚀 Create Deployment
+
+Create a file:
+
+nano deployment.yaml
+
+Apply it:
+
+kubectl apply -f deployment.yaml
+
+Check Deployment:
+
+kubectl get deployments
+
+Check ReplicaSets:
+
+kubectl get replicasets
+
+Check Pods:
+
+kubectl get pods
