@@ -300,3 +300,46 @@ Rollback
    │
    ▼
 Version 1
+🗑️ Delete Deployment
+kubectl delete deployment nginx-deployment
+
+The Deployment and the ReplicaSets/Pods it manages are normally removed as part of the cascading deletion.
+
+🧩 ReplicaSet YAML
+
+Although Deployments are normally preferred for application workloads, a ReplicaSet can be created directly.
+
+Example:
+
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+  name: nginx-replicaset
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+
+Apply:
+
+kubectl apply -f rs.yaml
+
+Check:
+
+kubectl get rs
