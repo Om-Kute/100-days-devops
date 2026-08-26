@@ -246,3 +246,18 @@ kubectl set image deployment/nginx-deployment nginx=nginx:1.26
 Check rollout:
 
 kubectl rollout status deployment/nginx-deployment
+📈 Rolling Update Flow
+Old Pods
+   │
+   ▼
+Create New ReplicaSet
+   │
+   ▼
+Create New Pods
+   │
+   ▼
+Terminate Old Pods Gradually
+   │
+   ▼
+New Version Running
+🔍 Rollout Statu
