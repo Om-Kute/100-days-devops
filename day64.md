@@ -202,3 +202,47 @@ Kubernetes works toward the desired state:
 
 Desired = 2
 Actual  = 2
+🔄 Rolling Updates
+
+A rolling update gradually replaces old Pods with new Pods.
+
+Example:
+
+Version 1
+   │
+   ▼
+ReplicaSet v1
+   │
+   ├── Pod v1
+   ├── Pod v1
+   └── Pod v1
+
+Update:
+
+Version 2
+   │
+   ▼
+ReplicaSet v2
+   │
+   ├── Pod v2
+   ├── Pod v2
+   └── Pod v2
+
+Conceptually:
+
+Old ReplicaSet
+      │
+      ▼
+New ReplicaSet
+      │
+      ▼
+New Pods gradually replace old Pods
+🔧 Update Image
+
+Change the Deployment image:
+
+kubectl set image deployment/nginx-deployment nginx=nginx:1.26
+
+Check rollout:
+
+kubectl rollout status deployment/nginx-deployment
