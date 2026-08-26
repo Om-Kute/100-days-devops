@@ -260,4 +260,43 @@ Terminate Old Pods Gradually
    │
    ▼
 New Version Running
-🔍 Rollout Statu
+Running
+🔍 Rollout Status
+kubectl rollout status deployment/nginx-deployment
+
+This allows you to monitor whether the rollout has completed successfully.
+
+📜 Rollout History
+
+View deployment history:
+
+kubectl rollout history deployment/nginx-deployment
+
+View a specific revision:
+
+kubectl rollout history deployment/nginx-deployment --revision=2
+↩️ Rollback
+
+If a new deployment version causes problems, rollback to the previous revision:
+
+kubectl rollout undo deployment/nginx-deployment
+
+Check:
+
+kubectl rollout status deployment/nginx-deployment
+
+Architecture:
+
+Version 1
+   │
+   ▼
+Version 2
+   │
+   X
+Problem
+   │
+   ▼
+Rollback
+   │
+   ▼
+Version 1
