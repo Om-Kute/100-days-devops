@@ -48,3 +48,39 @@ Pod 4
 The desired number of replicas remains:
 
 3 Pods
+🚀 What is a Deployment?
+
+A Deployment provides declarative management for applications running in Pods.
+
+It manages ReplicaSets and supports:
+
+Scaling
+Rolling updates
+Rollbacks
+Version management
+Desired-state management
+
+Architecture:
+
+Deployment
+     │
+     ├── ReplicaSet v1
+     │       ├── Pod
+     │       ├── Pod
+     │       └── Pod
+     │
+     └── ReplicaSet v2
+             ├── Pod
+             ├── Pod
+             └── Pod
+🏗️ Deployment Architecture
+                 Deployment
+                     │
+             ┌───────┴───────┐
+             ▼               ▼
+        ReplicaSet v1    ReplicaSet v2
+             │               │
+             ▼               ▼
+          Old Pods         New Pods
+
+During an update, Kubernetes gradually moves from the old ReplicaSet to the new ReplicaSet.
