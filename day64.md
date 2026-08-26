@@ -84,3 +84,31 @@ Deployment
           Old Pods         New Pods
 
 During an update, Kubernetes gradually moves from the old ReplicaSet to the new ReplicaSet.
+📄 Deployment YAML
+
+Example:
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      labels:
+        app: nginx
+
+ spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
