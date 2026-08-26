@@ -171,3 +171,23 @@ Example:
 
 NAME               READY   UP-TO-DATE   AVAILABLE
 nginx-deployment   3/3     3            3
+🔢 Scaling a Deployment
+
+Scale up:
+
+kubectl scale deployment nginx-deployment --replicas=5
+
+Check:
+
+kubectl get pods
+
+Architecture:
+
+Deployment
+     │
+     ▼
+ReplicaSet
+     │
+ ┌───┼───┬───┬───┐
+ ▼   ▼   ▼   ▼   ▼
+Pod Pod Pod Pod Pod
