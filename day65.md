@@ -20,3 +20,45 @@ A Service provides a stable way to reach those Pods.
         ┌───────┼───────┐
         ▼       ▼       ▼
       Pod 1   Pod 2   Pod 3
+❓ Why Do We Need Services?
+
+Consider a Deployment with three Pods:
+
+Deployment
+    │
+    ▼
+┌────┼────┐
+▼    ▼    ▼
+Pod 1 Pod 2 Pod 3
+
+Pod IPs may change:
+
+Pod 1 → 10.244.1.10
+Pod 2 → 10.244.1.11
+Pod 3 → 10.244.1.12
+
+If a Pod is deleted:
+
+Pod 2 ❌
+
+Kubernetes may create a replacement:
+
+Pod 4 → 10.244.1.20
+
+The IP changed.
+
+A Service solves this problem:
+
+Client
+  │
+  ▼
+Service
+Stable DNS/IP
+  │
+  ├── Pod 1
+  ├── Pod 3
+  └── Pod 4
+Key Concept
+Pod IP       → Can change
+Service IP   → Stable
+Service DNS  → Stable
