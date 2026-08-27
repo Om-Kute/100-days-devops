@@ -402,3 +402,58 @@ kubectl expose deployment nginx-deployment \
 Check:
 
 kubectl get svc
+🔄 Service Traffic Flow
+                 Client
+                    │
+                    ▼
+             nginx-service
+                    │
+              Stable IP/DNS
+                    │
+              Service Selector
+                    │
+          ┌─────────┼─────────┐
+          ▼         ▼         ▼
+        Pod 1     Pod 2     Pod 3
+
+The Service provides a stable abstraction even when individual Pods are replaced.
+
+🔄 Pod Replacement
+
+Before:
+
+Service
+   │
+   ├── Pod 1
+   ├── Pod 2
+   └── Pod 3
+
+Pod 2 fails:
+
+Pod 2 ❌
+
+Deployment creates a replacement:
+
+Service
+   │
+   ├── Pod 1
+   ├── Pod 3
+   └── Pod 4
+
+The Service continues providing the stable endpoint.
+
+📈 Service with Scaling
+
+Scale Deployment:
+
+kubectl scale deployment nginx-deployment --replicas=5
+
+Check:
+
+kubectl get pods
+
+Then check endpoints:
+
+kubectl get endpoints nginx-service
+
+The Service can route traffic to the matching backend Pods.
