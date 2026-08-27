@@ -503,3 +503,93 @@ kubectl expose deployment	Create Service from Deployment
 kubectl apply -f service.yaml	Create/update Service
 kubectl delete svc <name>	Delete Service
 kubectl get svc -o wide	Detailed Service listing
+🗑️ Delete Service
+kubectl delete service nginx-service
+
+Or:
+
+kubectl delete -f service.yaml
+
+Delete Deployment:
+
+kubectl delete -f deployment.yaml
+🏗️ Complete Kubernetes Application Flow
+                     Client
+                        │
+                        ▼
+                   Service
+                        │
+                 Stable IP/DNS
+                        │
+                 Label Selector
+                        │
+              ┌─────────┼─────────┐
+              ▼         ▼         ▼
+            Pod 1     Pod 2     Pod 3
+              │         │         │
+              ▼         ▼         ▼
+          Container  Container  Container
+🧠 Deployment + Service
+
+A common Kubernetes architecture:
+
+                 Client
+                    │
+                    ▼
+                 Service
+                    │
+                    ▼
+               Deployment
+                    │
+                    ▼
+               ReplicaSet
+                    │
+          ┌─────────┼─────────┐
+          ▼         ▼         ▼
+         Pod       Pod       Pod
+          │         │         │
+          ▼         ▼         ▼
+      Container  Container  Container
+🛡️ Service Best Practices
+Use meaningful Service names.
+Use consistent labels and selectors.
+Prefer ClusterIP for internal communication.
+Use NodePort mainly when appropriate for development, testing, or specific network designs.
+Use LoadBalancer when external cloud load balancing is required.
+Don't expose unnecessary applications publicly.
+Monitor Service and endpoint health.
+Avoid depending on individual Pod IPs.
+Use Kubernetes DNS for service discovery.
+Verify that selectors correctly match the intended Pods.
+⚠️ Common Service Troubleshooting
+
+If a Service is not working:
+
+Check Service
+kubectl get svc
+Describe Service
+kubectl describe svc nginx-service
+Check Endpoints
+kubectl get endpoints nginx-service
+Check Pods
+kubectl get pods --show-labels
+Check Pod Labels
+kubectl get pods --show-labels
+
+Make sure:
+
+Service selector
+       =
+Pod labels
+
+Example:
+
+Service:
+selector:
+  app: nginx
+
+Pod:
+labels:
+  app: nginx
+
+If the labels don't match, the Service may have no backend endpoints.
