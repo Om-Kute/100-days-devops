@@ -228,3 +228,37 @@ spec:
 Use Case
 
 Useful when exposing applications externally through a cloud provider's load-balancing integration.
+🟣 4. ExternalName
+
+ExternalName maps a Kubernetes Service name to an external DNS name.
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: external-db
+
+spec:
+  type: ExternalName
+  externalName: database.example.com
+
+Concept:
+
+Application
+     │
+     ▼
+external-db
+     │
+     ▼
+database.example.com
+
+Unlike ClusterIP, NodePort, or LoadBalancer, ExternalName does not create a normal proxying Service.
+
+📊 Service Types Comparison
+Type	Main Purpose	Typical Access
+ClusterIP	Internal application access	Inside cluster
+NodePort	Expose through node port	Outside cluster
+LoadBalancer	External cloud load balancing	Internet/external clients
+ExternalName	DNS alias to external service	External dependency
