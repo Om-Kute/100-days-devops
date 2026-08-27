@@ -457,3 +457,49 @@ Then check endpoints:
 kubectl get endpoints nginx-service
 
 The Service can route traffic to the matching backend Pods.
+🧪 Test ClusterIP Service
+
+Create a temporary test Pod:
+
+kubectl run test-pod \
+  --image=curlimages/curl \
+  -it \
+  --rm \
+  -- sh
+
+Inside the Pod:
+
+curl http://nginx-service
+
+The Service name can be resolved through Kubernetes DNS.
+
+Exit:
+
+exit
+🌐 Kubernetes DNS
+
+Services receive DNS records inside the cluster.
+
+For example:
+
+nginx-service
+
+can be resolved by Pods in the same namespace.
+
+A fully qualified form can look like:
+
+nginx-service.default.svc.cluster.local
+
+General pattern:
+
+<SERVICE>.<NAMESPACE>.svc.cluster.local
+🛠️ Important Commands
+Command	Purpose
+kubectl get svc	List Services
+kubectl describe svc <name>	Service details
+kubectl get endpoints	Show backend endpoints
+kubectl get endpointslices	Show EndpointSlices
+kubectl expose deployment	Create Service from Deployment
+kubectl apply -f service.yaml	Create/update Service
+kubectl delete svc <name>	Delete Service
+kubectl get svc -o wide	Detailed Service listing
