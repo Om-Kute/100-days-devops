@@ -62,3 +62,42 @@ Key Concept
 Pod IP       → Can change
 Service IP   → Stable
 Service DNS  → Stable
+Service Architecture
+                    Client
+                       │
+                       ▼
+              Kubernetes Service
+                       │
+                 Label Selector
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+        Pod 1         Pod 2        Pod 3
+
+The Service uses selectors to identify the Pods that should receive traffic.
+
+🏷️ Service Selectors
+
+Example Pods:
+
+labels:
+  app: nginx
+
+Service selector:
+
+selector:
+  app: nginx
+
+The Service sends traffic to Pods matching:
+
+app=nginx
+
+Concept:
+
+Service
+   │
+   │ selector: app=nginx
+   │
+   ├── Pod app=nginx ✅
+   ├── Pod app=nginx ✅
+   └── Pod app=backend ❌
