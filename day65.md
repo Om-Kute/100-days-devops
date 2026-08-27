@@ -140,3 +140,50 @@ Service
    ├── Pod app=nginx ✅
    ├── Pod app=nginx ✅
    └── Pod app=backend ❌
+🟢 2. NodePort
+
+NodePort exposes a Service on a port on each node.
+
+Conceptually:
+
+External Client
+      │
+      ▼
+Node IP:NodePort
+      │
+      ▼
+Service
+      │
+      ▼
+Pods
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-nodeport
+
+spec:
+  type: NodePort
+
+  selector:
+    app: nginx
+
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+
+Access:
+
+http://NODE_IP:30080
+
+The exact accessible address depends on your cluster networking and environment.
+
+Use Cases
+Development
+Testing
+Lab environments
+Some self-managed/on-premises setups
