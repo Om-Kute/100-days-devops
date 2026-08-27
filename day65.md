@@ -262,3 +262,60 @@ ClusterIP	Internal application access	Inside cluster
 NodePort	Expose through node port	Outside cluster
 LoadBalancer	External cloud load balancing	Internet/external clients
 ExternalName	DNS alias to external service	External dependency
+Easy Memory Trick
+ClusterIP    → Internal
+NodePort     → Node IP + Port
+LoadBalancer → External Load Balancer
+ExternalName → External DNS
+📄 Service YAML
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-service
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: nginx
+
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+🔍 Service YAML Explanation
+apiVersion
+    ↓
+Kubernetes API version
+
+kind
+    ↓
+Service
+
+metadata
+    ↓
+Service name and labels
+
+spec
+    ↓
+Desired Service configuration
+
+type
+    ↓
+ClusterIP / NodePort / LoadBalancer / ExternalName
+
+selector
+    ↓
+Selects backend Pods
+
+port
+    ↓
+Service port
+
+targetPort
+    ↓
+Pod/container destination port
