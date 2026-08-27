@@ -187,3 +187,44 @@ Development
 Testing
 Lab environments
 Some self-managed/on-premises setups
+🟠 3. LoadBalancer
+
+LoadBalancer is commonly used in cloud environments where the platform can provision an external load balancer.
+
+              Internet
+                  │
+                  ▼
+        Cloud Load Balancer
+                  │
+        ┌─────────┼─────────┐
+        ▼         ▼         ▼
+      Node 1    Node 2    Node 3
+        │         │         │
+        └─────────┼─────────┘
+                  ▼
+               Service
+                  │
+             ┌────┼────┐
+             ▼    ▼    ▼
+            Pod  Pod  Pod
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-lb
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: nginx
+
+  ports:
+    - port: 80
+      targetPort: 80
+Use Case
+
+Useful when exposing applications externally through a cloud provider's load-balancing integration.
