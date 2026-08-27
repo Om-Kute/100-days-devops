@@ -319,3 +319,47 @@ Service port
 targetPort
     ↓
 Pod/container destination port
+🔌 port vs targetPort
+
+This is an important concept.
+
+ports:
+  - port: 80
+    targetPort: 8080
+
+Architecture:
+
+Client
+  │
+  ▼
+Service :80
+  │
+  ▼
+Pod :8080
+Remember
+port       → Service port
+targetPort → Pod application port
+🔍 Check Services
+
+List Services:
+
+kubectl get services
+
+Short form:
+
+kubectl get svc
+
+More information:
+
+kubectl get svc -o wide
+📋 Describe Service
+kubectl describe svc nginx-service
+
+This can show:
+
+Service type
+Cluster IP
+Ports
+Selector
+Endpoints
+Events
