@@ -93,7 +93,46 @@ The Service sends traffic to Pods matching:
 app=nginx
 
 Concept:
+❌
+🔵 1. ClusterIP
 
+ClusterIP is the default Service type.
+
+It provides an internal IP address that can normally be accessed from within the cluster.
+
+             Cluster
+                │
+        ┌───────┴───────┐
+        │               │
+      Client          Service
+                        │
+                 ClusterIP
+                        │
+              ┌─────────┼─────────┐
+              ▼         ▼         ▼
+             Pod       Pod       Pod
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-service
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: nginx
+
+  ports:
+    - port: 80
+      targetPort: 80
+
+Create:
+
+kubectl apply -f service.yaml
 Service
    │
    │ selector: app=nginx
