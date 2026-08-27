@@ -363,3 +363,42 @@ Ports
 Selector
 Endpoints
 Events
+🔗 Check Endpoints
+kubectl get endpoints
+
+Or:
+
+kubectl get endpoints nginx-service
+
+Endpoints represent backend addresses associated with the Service.
+
+Concept:
+
+Service
+   │
+   ▼
+Endpoints
+   │
+   ├── Pod IP:Port
+   ├── Pod IP:Port
+   └── Pod IP:Port
+
+Modern Kubernetes installations also use EndpointSlices internally:
+
+kubectl get endpointslices
+🚀 Expose a Deployment
+
+Suppose a Deployment already exists:
+
+kubectl get deployments
+
+Expose it:
+
+kubectl expose deployment nginx-deployment \
+  --name=nginx-service \
+  --port=80 \
+  --target-port=80
+
+Check:
+
+kubectl get svc
