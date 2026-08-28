@@ -77,3 +77,17 @@ Security requirements
 Normal access control
 Strong access control recommended
 Important: Base64 encoding is not encryption. Anyone who can obtain the encoded value can decode it.
+🏗️ How They Work
+ConfigMap / Secret
+        │
+        ▼
+       Pod
+        │
+        ▼
+    Application
+They can be consumed as:
+ConfigMap / Secret
+       │
+       ├── Environment Variables
+       │
+       └── Mounted Files
