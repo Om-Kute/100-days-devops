@@ -208,4 +208,43 @@ spec:
           valueFrom:
             secretKeyRef:
               name: db-secret
-              key: DB_PASSWORD
+📁 Mount Secret as Files
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: secret-volume-pod
+
+spec:
+  containers:
+    - name: app
+      image: nginx:alpine
+
+      volumeMounts:
+        - name: secret-volume
+          mountPath: /etc/secrets
+          readOnly: true
+
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: db-secret
+The Secret values are exposed as files under:
+/etc/secrets
+🔢 Base64 Encoding
+Kubernetes Secret manifests commonly represent data values using Base64.
+Example:
+echo -n 'admin123' | base64
+Decode:
+echo -n 'YWRtaW4xMjM=' | base64 --decode
+Result:
+admin123
+⚠️ Important
+Base64 ≠ Encryption
+Base64 only changes the representation of the data.
+Protect Secrets with appropriate:
+RBAC
+Encryption at rest where configured
+Access controls
+Secret rotation
+External secret-management systems              key: DB_PASSWORD
