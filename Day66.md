@@ -112,3 +112,17 @@ kubectl create configmap app-config \
   --from-file=app.properties
 Check:
 kubectl get configmap app-config
+📁 Create ConfigMap from Directory
+kubectl create configmap app-config \
+  --from-file=./configs/
+This loads configuration files from the specified directory.
+🔐 Create a Secret
+Create a Secret from literal values:
+kubectl create secret generic db-secret \
+  --from-literal=DB_USER=admin \
+  --from-literal=DB_PASSWORD=mypassword
+Check:
+kubectl get secrets
+Describe:
+kubectl describe secret db-secret
+Avoid putting real production credentials directly into shell history or Git-tracked files.
