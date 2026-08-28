@@ -54,3 +54,26 @@ stringData:
   DB_USER: admin
   DB_PASSWORD: mypassword
 Using stringData lets Kubernetes handle the conversion into the Secret's stored representation.
+⚖️ ConfigMap vs Secret
+Feature
+ConfigMap
+Secret
+Purpose
+Non-sensitive configuration
+Sensitive information
+Typical data
+URLs, settings, flags
+Passwords, tokens, keys
+Environment variables
+✅
+✅
+Volume files
+✅
+✅
+Base64 representation in manifests
+Not required
+Commonly used
+Security requirements
+Normal access control
+Strong access control recommended
+Important: Base64 encoding is not encryption. Anyone who can obtain the encoded value can decode it.
