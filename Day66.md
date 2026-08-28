@@ -161,3 +161,26 @@ spec:
             configMapKeyRef:
               name: app-config
               key: APP_ENV
+📁 Mount ConfigMap as Files
+Example:
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: configmap-volume-pod
+
+spec:
+  containers:
+    - name: app
+      image: nginx:alpine
+
+      volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+
+  volumes:
+    - name: config-volume
+      configMap:
+        name: app-config
+The ConfigMap data becomes available as files under:
+/etc/config
