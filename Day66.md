@@ -126,3 +126,38 @@ kubectl get secrets
 Describe:
 kubectl describe secret db-secret
 Avoid putting real production credentials directly into shell history or Git-tracked files.
+🌱 Use ConfigMap as Environment Variables
+Example:
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: configmap-env-pod
+
+spec:
+  containers:
+    - name: app
+      image: nginx:alpine
+
+      envFrom:
+        - configMapRef:
+            name: app-config
+The ConfigMap values become environment variables inside the container.
+🌱 Use a Specific ConfigMap Value
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: app-pod
+
+spec:
+  containers:
+    - name: app
+      image: nginx:alpine
+
+      env:
+        - name: APP_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP_ENV
