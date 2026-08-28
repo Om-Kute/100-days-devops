@@ -13,3 +13,23 @@ Application Code
                ↓
              Secret
 This allows the same application image to be configured differently for development, testing, and production.
+🗂️ ConfigMap
+A ConfigMap stores non-sensitive configuration data.
+Examples:
+Application configuration
+Environment variables
+Feature flags
+URLs
+Log levels
+Configuration files
+Example:
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: app-config
+
+data:
+  APP_NAME: "MyApplication"
+  APP_ENV: "production"
+  LOG_LEVEL: "info"
