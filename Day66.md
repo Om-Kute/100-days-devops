@@ -184,3 +184,28 @@ spec:
         name: app-config
 The ConfigMap data becomes available as files under:
 /etc/config
+🔑 Use Secret as Environment Variables
+Example:
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: secret-env-pod
+
+spec:
+  containers:
+    - name: app
+      image: nginx:alpine
+
+      env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: DB_USER
+
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: DB_PASSWORD
