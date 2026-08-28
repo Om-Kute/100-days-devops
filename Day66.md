@@ -33,3 +33,24 @@ data:
   APP_NAME: "MyApplication"
   APP_ENV: "production"
   LOG_LEVEL: "info"
+🔐 Secret
+A Kubernetes Secret is intended for sensitive information.
+Examples:
+Passwords
+API keys
+Tokens
+TLS certificates
+Database credentials
+Example:
+apiVersion: v1
+kind: Secret
+
+metadata:
+  name: db-secret
+
+type: Opaque
+
+stringData:
+  DB_USER: admin
+  DB_PASSWORD: mypassword
+Using stringData lets Kubernetes handle the conversion into the Secret's stored representation.
