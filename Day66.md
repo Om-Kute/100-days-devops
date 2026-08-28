@@ -91,3 +91,12 @@ ConfigMap / Secret
        ├── Environment Variables
        │
        └── Mounted Files
+🗂️ Create a ConfigMap
+From Literal Values
+kubectl create configmap app-config \
+  --from-literal=APP_ENV=production \
+  --from-literal=LOG_LEVEL=info
+Check:
+kubectl get configmaps
+Describe:
+kubectl describe configmap app-config
