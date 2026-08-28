@@ -100,3 +100,15 @@ Check:
 kubectl get configmaps
 Describe:
 kubectl describe configmap app-config
+📄 Create ConfigMap from File
+Create a configuration file:
+nano app.properties
+Example:
+APP_NAME=MyApplication
+APP_ENV=production
+LOG_LEVEL=info
+Create ConfigMap:
+kubectl create configmap app-config \
+  --from-file=app.properties
+Check:
+kubectl get configmap app-config
