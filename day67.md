@@ -168,3 +168,66 @@ PV
  ├── Reclaim Policy
  ├── Storage Class
  └── Storage Source
+🔗 PersistentVolumeClaim (PVC)
+
+A PersistentVolumeClaim is a request for storage made by a user or workload.
+
+Example:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+
+metadata:
+  name: my-pvc
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+  resources:
+    requests:
+      storage: 5Gi
+
+Concept:
+
+Application
+     │
+     ▼
+    PVC
+     │
+     ▼
+    PV
+     │
+     ▼
+Storage
+⚖️ PV vs PVC
+PersistentVolume	PersistentVolumeClaim
+Storage resource	Storage request
+Represents available storage	Requests storage
+Usually managed by cluster/admin or provisioner	Usually created by application/user
+Provides capacity	Specifies required capacity
+Can be dynamically provisioned	Can trigger dynamic provisioning
+Easy Memory Trick
+PV  → Provides Storage
+PVC → Requests Storage
+🏷️ StorageClass
+
+A StorageClass defines how storage should be dynamically provisioned.
+
+Example:
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+
+metadata:
+  name: fast-storage
+
+provisioner: example.com/provisioner
+
+reclaimPolicy: Delete
+
+volumeBindingMode: WaitForFirstConsumer
+
+The exact provisioner depends on the Kubernetes environment.
+
+For example, cloud environments provide their own CSI-based storage drivers.
