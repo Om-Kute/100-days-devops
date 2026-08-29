@@ -329,3 +329,69 @@ Available
 Bound
 Released
 Failed
+🗑️ Reclaim Policies
+
+Common reclaim policies include:
+
+Retain
+
+The storage resource is retained after the PVC is deleted.
+
+PVC Deleted
+     │
+     ▼
+PV Retained
+     │
+     ▼
+Data Can Be Recovered/Managed
+Delete
+
+The dynamically provisioned storage is deleted according to the storage provisioner's behavior.
+
+PVC Deleted
+     │
+     ▼
+Provisioned Storage Deleted
+
+Choose the policy according to the application's data-retention requirements.
+
+📦 Pod Using PVC
+
+Example:
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx-pvc-pod
+
+spec:
+
+  containers:
+
+    - name: nginx
+      image: nginx:alpine
+
+      volumeMounts:
+        - name: website-data
+          mountPath: /usr/share/nginx/html
+
+  volumes:
+
+    - name: website-data
+
+      persistentVolumeClaim:
+        claimName: my-pvc
+
+Architecture:
+
+        Nginx Pod
+            │
+            ▼
+          PVC
+            │
+            ▼
+           PV
+            │
+            ▼
+      Actual Storage
