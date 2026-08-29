@@ -129,3 +129,42 @@ Worker Node
 ⚠️ Important
 
 hostPath ties the workload to a particular node's filesystem and is generally not the preferred storage mechanism for portable production applications.
+🗄️ PersistentVolume (PV)
+
+A PersistentVolume is a storage resource available in the Kubernetes cluster.
+
+It can be:
+
+Provisioned manually
+Provisioned dynamically through a StorageClass
+
+Example:
+
+apiVersion: v1
+kind: PersistentVolume
+
+metadata:
+  name: manual-pv
+
+spec:
+  capacity:
+    storage: 5Gi
+
+  accessModes:
+    - ReadWriteOnce
+
+  persistentVolumeReclaimPolicy: Retain
+
+  hostPath:
+    path: /mnt/data
+📋 PV Components
+
+A PersistentVolume can define:
+
+PV
+ │
+ ├── Capacity
+ ├── Access Modes
+ ├── Reclaim Policy
+ ├── Storage Class
+ └── Storage Source
