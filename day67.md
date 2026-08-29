@@ -231,3 +231,51 @@ volumeBindingMode: WaitForFirstConsumer
 The exact provisioner depends on the Kubernetes environment.
 
 For example, cloud environments provide their own CSI-based storage drivers.
+⚡ Dynamic Provisioning
+
+With dynamic provisioning, Kubernetes can automatically create storage when a PVC requests it.
+
+User creates PVC
+       │
+       ▼
+StorageClass
+       │
+       ▼
+Provisioner
+       │
+       ▼
+PersistentVolume
+       │
+       ▼
+PVC Bound
+       │
+       ▼
+Pod Uses Storage
+
+This avoids manually creating every PV.
+
+🔄 Storage Flow
+
+The complete relationship can be remembered as:
+
+Pod
+ │
+ ▼
+PVC
+ │
+ ▼
+PV
+ │
+ ▼
+Actual Storage
+Example
+MySQL Pod
+    │
+    ▼
+mysql-pvc
+    │
+    ▼
+mysql-pv
+    │
+    ▼
+EBS / Disk / Cloud Storage
