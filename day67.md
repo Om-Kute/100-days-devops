@@ -105,3 +105,27 @@ Temporary files
 Cache
 Sharing files between containers in the same Pod
 Scratch space
+📁 2. hostPath
+
+hostPath mounts a file or directory from the Kubernetes node into a Pod.
+
+Example:
+
+volumes:
+  - name: host-data
+    hostPath:
+      path: /mnt/data
+      type: DirectoryOrCreate
+
+Architecture:
+
+Worker Node
+     │
+     ▼
+ /mnt/data
+     │
+     ▼
+   Pod
+⚠️ Important
+
+hostPath ties the workload to a particular node's filesystem and is generally not the preferred storage mechanism for portable production applications.
