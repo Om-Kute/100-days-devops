@@ -34,3 +34,74 @@ Persistent Storage
      │
      ▼
 Data Survives Pod Lifecycle
+🧩 Kubernetes Storage Components
+                    Pod
+                     │
+                     ▼
+                    PVC
+          PersistentVolumeClaim
+                     │
+                     ▼
+                    PV
+            PersistentVolume
+                     │
+                     ▼
+              Actual Storage
+          Cloud / Disk / Storage
+Simple Memory Trick
+PVC → Request for Storage
+PV  → Storage Resource
+Pod → Uses PVC
+📦 Kubernetes Volumes
+
+A Kubernetes Volume provides storage that can be mounted into containers within a Pod.
+
+Some common volume types include:
+
+emptyDir
+hostPath
+configMap
+secret
+persistentVolumeClaim
+🟢 1. emptyDir
+
+emptyDir creates temporary storage for a Pod.
+
+Example:
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: emptydir-demo
+
+spec:
+  containers:
+
+    - name: app
+      image: nginx:alpine
+
+      volumeMounts:
+        - name: shared-data
+          mountPath: /data
+
+  volumes:
+
+    - name: shared-data
+      emptyDir: {}
+
+Architecture:
+
+Pod
+ │
+ ├── Container
+ │
+ └── emptyDir Volume
+
+The volume exists while the Pod exists.
+
+Use Cases
+Temporary files
+Cache
+Sharing files between containers in the same Pod
+Scratch space
