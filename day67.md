@@ -279,3 +279,53 @@ mysql-pv
     │
     ▼
 EBS / Disk / Cloud Storage
+🔐 Access Modes
+
+Kubernetes storage can support different access modes depending on the storage implementation.
+
+ReadWriteOnce (RWO)
+
+Volume can be mounted read-write by a single node.
+
+Node 1
+  │
+  ▼
+Volume
+ReadOnlyMany (ROX)
+
+Volume can be mounted read-only by multiple nodes.
+
+Node 1 ──┐
+Node 2 ──┼──► Volume
+Node 3 ──┘
+ReadWriteMany (RWX)
+
+Volume can be mounted read-write by multiple nodes, if supported by the storage backend.
+
+Node 1 ──┐
+Node 2 ──┼──► Volume
+Node 3 ──┘
+
+Supported access modes depend on the storage provider and CSI driver.
+
+🔄 PV Lifecycle
+
+A PersistentVolume can move through states such as:
+
+Available
+    │
+    ▼
+Bound
+    │
+    ▼
+Released
+    │
+    ▼
+Reclaimed / Deleted
+
+Common PV phases:
+
+Available
+Bound
+Released
+Failed
