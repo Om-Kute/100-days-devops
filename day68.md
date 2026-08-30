@@ -122,3 +122,37 @@ Node IP:30080
       │
       ▼
      Pods
+☁️ LoadBalancer
+
+LoadBalancer exposes a Service through an external load balancer when supported by the Kubernetes environment.
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: web-service
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: web
+
+  ports:
+    - port: 80
+      targetPort: 8080
+
+Architecture:
+
+Internet
+   │
+   ▼
+Cloud Load Balancer
+   │
+   ▼
+Service
+   │
+   ▼
+Pods
