@@ -53,3 +53,37 @@ A Service provides a stable network endpoint for a set of Pods.
       Pod 1   Pod 2   Pod 3
 
 If a Pod is replaced and its IP changes, the Service continues providing a stable endpoint.
+🔵 ClusterIP
+
+ClusterIP is the default Service type.
+
+It exposes the Service internally within the cluster.
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: app-service
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: web
+
+  ports:
+    - port: 80
+      targetPort: 8080
+
+Architecture:
+
+Inside Cluster
+      │
+      ▼
+ClusterIP Service
+      │
+      ▼
+    Pods
+Use Case
+
+Internal communication between application components.
