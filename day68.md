@@ -273,3 +273,102 @@ spec:
                 name: api-service
                 port:
                   number: 80
+🛣️ Path-Based Routing
+
+Path-based routing uses the URL path to select the backend Service.
+
+Example:
+
+example.com/app
+      │
+      ▼
+App Service
+
+example.com/api
+      │
+      ▼
+API Service
+
+Example:
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: path-routing
+
+spec:
+  rules:
+
+    - host: example.com
+
+      http:
+        paths:
+
+          - path: /app
+            pathType: Prefix
+
+            backend:
+              service:
+                name: app-service
+                port:
+                  number: 80
+
+          - path: /api
+            pathType: Prefix
+
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 80
+🔐 TLS / HTTPS with Ingress
+
+Ingress can be configured to terminate TLS for HTTPS traffic.
+
+Example:
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: secure-ingress
+
+spec:
+
+  tls:
+    - hosts:
+        - secure.example.com
+      secretName: tls-secret
+
+  rules:
+
+    - host: secure.example.com
+
+      http:
+        paths:
+
+          - path: /
+            pathType: Prefix
+
+            backend:
+              service:
+                name: web-service
+                port:
+                  number: 80
+
+Architecture:
+
+HTTPS Client
+     │
+     ▼
+TLS Termination
+     │
+     ▼
+Ingress Controller
+     │
+     ▼
+Service
+     │
+     ▼
+Pods
