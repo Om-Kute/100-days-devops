@@ -421,3 +421,76 @@ Pod
    │
    ▼
 Application Container
+🔒 NetworkPolicy
+
+A NetworkPolicy controls network traffic to and from selected Pods when the cluster's network plugin supports NetworkPolicy enforcement.
+
+Example:
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+
+metadata:
+  name: allow-client-to-web
+
+spec:
+
+  podSelector:
+    matchLabels:
+      app: web
+
+  policyTypes:
+    - Ingress
+
+  ingress:
+
+    - from:
+
+        - podSelector:
+            matchLabels:
+              app: client
+
+Concept:
+
+Client Pod
+    │
+    │ Allowed
+    ▼
+ Web Pod
+
+Other Pods
+    │
+    X
+ Web Pod
+
+NetworkPolicy behavior depends on the networking implementation used by the cluster.
+
+📋 Important Commands
+
+List Services:
+
+kubectl get svc
+
+Detailed Service information:
+
+kubectl describe svc <service-name>
+
+List Ingress resources:
+
+kubectl get ingress
+
+Detailed Ingress information:
+
+kubectl describe ingress <ingress-name>
+
+List Ingress resources across namespaces:
+
+kubectl get ingress -A
+
+Check Pods:
+
+kubectl get pods -o wide
+
+Check NetworkPolicies:
+
+kubectl get networkpolicy
