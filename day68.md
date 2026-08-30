@@ -183,3 +183,41 @@ Service A   Service B
  │            │
  ▼            ▼
 Pods         Pods
+⚙️ Ingress Controller
+
+An Ingress resource only defines routing rules.
+
+An Ingress Controller is responsible for implementing those rules.
+
+Ingress Resource
+      │
+      ▼
+Ingress Controller
+      │
+      ▼
+Kubernetes Services
+      │
+      ▼
+Pods
+
+Examples of Ingress Controller implementations include:
+
+NGINX Ingress Controller
+Traefik
+HAProxy
+Cloud-provider-specific controllers
+
+The exact controller and configuration depend on the Kubernetes distribution and environment.
+
+🏗️ Ingress Architecture
+                   Internet
+                      │
+                      ▼
+               Ingress Controller
+                      │
+               ┌──────┴──────┐
+               ▼             ▼
+          Service A      Service B
+               │             │
+               ▼             ▼
+             Pods           Pods
