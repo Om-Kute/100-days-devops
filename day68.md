@@ -87,3 +87,38 @@ ClusterIP Service
 Use Case
 
 Internal communication between application components.
+🟠 NodePort
+
+A NodePort exposes a Service on a port on each node.
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: web-service
+
+spec:
+  type: NodePort
+
+  selector:
+    app: web
+
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 30080
+
+Architecture:
+
+External Client
+      │
+      ▼
+Node IP:30080
+      │
+      ▼
+   Service
+      │
+      ▼
+     Pods
