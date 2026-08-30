@@ -372,3 +372,52 @@ Service
      │
      ▼
 Pods
+🔑 TLS Secret
+
+A TLS Secret can contain the certificate and private key.
+
+Example:
+
+kubectl create secret tls tls-secret \
+  --cert=tls.crt \
+  --key=tls.key
+
+Check:
+
+kubectl get secrets
+🌐 DNS and Ingress
+
+For host-based routing to work, DNS should resolve the hostname to the appropriate Ingress entry point.
+
+Conceptually:
+
+app.example.com
+       │
+       ▼
+DNS
+       │
+       ▼
+Ingress IP / Load Balancer
+       │
+       ▼
+Ingress Controller
+🔄 Complete Request Flow
+Browser
+   │
+   ▼
+DNS
+   │
+   ▼
+Ingress Controller
+   │
+   ▼
+Ingress Rules
+   │
+   ▼
+Kubernetes Service
+   │
+   ▼
+Pod
+   │
+   ▼
+Application Container
