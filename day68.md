@@ -17,3 +17,39 @@ Each Pod receives its own IP address within the cluster networking model.
 However, Pod IPs are ephemeral and should generally not be used directly by clients.
 
 For stable access, Kubernetes Services are used.
+🏗️ Kubernetes Networking Overview
+                    Internet
+                       │
+                       ▼
+                    Ingress
+                       │
+                       ▼
+                    Service
+                       │
+             ┌─────────┼─────────┐
+             ▼         ▼         ▼
+           Pod 1     Pod 2     Pod 3
+
+For HTTP/HTTPS applications, a common architecture is:
+
+Client
+  │
+  ▼
+Ingress
+  │
+  ▼
+Service
+  │
+  ▼
+Pods
+📦 Kubernetes Service
+
+A Service provides a stable network endpoint for a set of Pods.
+
+             Service
+                │
+        ┌───────┼───────┐
+        ▼       ▼       ▼
+      Pod 1   Pod 2   Pod 3
+
+If a Pod is replaced and its IP changes, the Service continues providing a stable endpoint.
