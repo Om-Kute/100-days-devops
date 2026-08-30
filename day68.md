@@ -156,3 +156,30 @@ Service
    │
    ▼
 Pods
+🔀 Service Types Comparison
+Service Type	Main Purpose
+ClusterIP	Internal cluster access
+NodePort	Expose Service through node ports
+LoadBalancer	External load balancer integration
+ExternalName	Maps a Service name to an external DNS name
+🚪 What is Ingress?
+
+An Ingress is a Kubernetes API resource used to define rules for routing HTTP/HTTPS traffic to Services.
+
+It can provide:
+
+Host-based routing
+Path-based routing
+TLS termination
+Centralized HTTP/HTTPS routing
+Internet
+    │
+    ▼
+ Ingress
+    │
+ ┌──┴──┐
+ ▼     ▼
+Service A   Service B
+ │            │
+ ▼            ▼
+Pods         Pods
