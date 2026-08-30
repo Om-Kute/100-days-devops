@@ -221,3 +221,55 @@ The exact controller and configuration depend on the Kubernetes distribution and
                │             │
                ▼             ▼
              Pods           Pods
+🌍 Host-Based Routing
+
+Host-based routing routes traffic according to the requested hostname.
+
+Example:
+
+app.example.com
+       │
+       ▼
+   Service A
+
+api.example.com
+       │
+       ▼
+   Service B
+
+Example:
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: host-routing
+
+spec:
+  rules:
+
+    - host: app.example.com
+
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+
+            backend:
+              service:
+                name: app-service
+                port:
+                  number: 80
+
+    - host: api.example.com
+
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 80
