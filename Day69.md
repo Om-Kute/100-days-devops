@@ -54,3 +54,16 @@ Authenticated User
        │
        ▼
 Allowed / Denied
+🛡️ What is RBAC?
+RBAC = Role-Based Access Control
+RBAC controls which users, groups, and ServiceAccounts can perform which actions on Kubernetes resources.
+Subject
+   │
+   ▼
+Role / ClusterRole
+   │
+   ▼
+RoleBinding / ClusterRoleBinding
+   │
+   ▼
+Kubernetes Resources
