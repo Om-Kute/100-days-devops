@@ -160,3 +160,44 @@ ClusterRole
  │
  ▼
 Cluster Resources
+👤 RBAC Subjects
+Permissions can be assigned to:
+Subjects
+   │
+   ├── Users
+   ├── Groups
+   └── ServiceAccounts
+🤖 ServiceAccounts
+A ServiceAccount provides an identity for applications or workloads running inside Kubernetes.
+Example:
+apiVersion: v1
+kind: ServiceAccount
+
+metadata:
+  name: app-service-account
+  namespace: dev
+Use it with a Pod:
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: app-pod
+  namespace: dev
+
+spec:
+  serviceAccountName: app-service-account
+
+  containers:
+    - name: app
+      image: nginx:alpine
+Concept:
+Application Pod
+      │
+      ▼
+ServiceAccount
+      │
+      ▼
+RBAC Permissions
+      │
+      ▼
+Kubernetes API
