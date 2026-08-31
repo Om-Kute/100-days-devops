@@ -256,3 +256,32 @@ Validate requests
 Mutate objects
 Enforce policies
 Reject unsafe configurations
+📜 Audit Logging
+Kubernetes audit logging records API activity.
+Concept:
+User
+ │
+ ▼
+API Request
+ │
+ ▼
+Kubernetes API
+ │
+ ▼
+Audit Event
+Audit logs can help answer:
+Who performed an action?
+What resource was accessed?
+When did it happen?
+What operation was performed?
+⚠️ Common Kubernetes Security Risks
+❌ Excessive RBAC permissions
+❌ Using cluster-admin unnecessarily
+❌ Running containers as root
+❌ Hardcoding secrets
+❌ Storing credentials in Git
+❌ Exposing the API server unnecessarily
+❌ Unrestricted network access
+❌ Missing audit logs
+❌ Weak image security
+❌ Unnecessary container capabilities
