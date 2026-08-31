@@ -103,3 +103,32 @@ rules:
     resources: ["pods"]
     verbs: ["get", "list", "watch"]
 A ClusterRole can be used with a ClusterRoleBinding for cluster-wide access, or with a RoleBinding to grant its permissions within a specific namespace.
+🔗 RoleBinding
+A RoleBinding grants a Role's permissions to a subject within a namespace.
+Example:
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+
+metadata:
+  name: pod-reader-binding
+  namespace: dev
+
+subjects:
+  - kind: User
+    name: om
+
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+Architecture:
+User
+ │
+ ▼
+RoleBinding
+ │
+ ▼
+Role
+ │
+ ▼
+Pods in dev namespace
