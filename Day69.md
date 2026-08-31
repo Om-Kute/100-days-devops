@@ -89,3 +89,17 @@ rules:
     resources: ["pods"]
     verbs: ["get", "list", "watch"]
 This Role allows reading Pods in the dev namespace.
+🌐 ClusterRole
+A ClusterRole defines permissions that can apply cluster-wide or be bound into a namespace.
+Example:
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+
+metadata:
+  name: cluster-view
+
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+A ClusterRole can be used with a ClusterRoleBinding for cluster-wide access, or with a RoleBinding to grant its permissions within a specific namespace.
