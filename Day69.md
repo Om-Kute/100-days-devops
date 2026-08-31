@@ -201,3 +201,58 @@ RBAC Permissions
       │
       ▼
 Kubernetes API
+🔒 Principle of Least Privilege
+The Principle of Least Privilege means:
+Give users and applications only the permissions they actually need.
+Avoid:
+Application
+     │
+     ▼
+cluster-admin
+     │
+     ▼
+Full Cluster Access
+Prefer:
+Application
+     │
+     ▼
+Specific ServiceAccount
+     │
+     ▼
+Minimal Role
+     │
+     ▼
+Required Resources Only
+🚨 Avoid Excessive Permissions
+Bad example:
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+This can provide extremely broad permissions.
+Better:
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+Grant only the permissions required by the workload.
+🚦 Admission Controllers
+Admission Controllers intercept API requests after authentication and authorization but before objects are persisted.
+Request
+   │
+   ▼
+Authentication
+   │
+   ▼
+Authorization
+   │
+   ▼
+Admission
+   │
+   ▼
+Persist Object
+Admission controllers can:
+Validate requests
+Mutate objects
+Enforce policies
+Reject unsafe configurations
