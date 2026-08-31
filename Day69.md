@@ -27,3 +27,30 @@ User / Application
         │
         ▼
  Cluster Resources
+🔑 Authentication vs Authorization
+Authentication
+Authentication answers:
+Who are you?
+Examples:
+User identity
+ServiceAccount
+Certificates
+OIDC identity provider
+Identity
+   │
+   ▼
+Authentication
+   │
+   ▼
+Verified Identity
+Authorization
+Authorization answers:
+What are you allowed to do?
+RBAC is one of Kubernetes' primary authorization mechanisms.
+Authenticated User
+       │
+       ▼
+ Authorization
+       │
+       ▼
+Allowed / Denied
