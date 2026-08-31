@@ -132,3 +132,31 @@ Role
  │
  ▼
 Pods in dev namespace
+🔗 ClusterRoleBinding
+A ClusterRoleBinding grants a ClusterRole's permissions across the cluster.
+Example:
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+
+metadata:
+  name: cluster-view-binding
+
+subjects:
+  - kind: Group
+    name: devops-team
+
+roleRef:
+  kind: ClusterRole
+  name: cluster-view
+  apiGroup: rbac.authorization.k8s.io
+Architecture:
+Group
+ │
+ ▼
+ClusterRoleBinding
+ │
+ ▼
+ClusterRole
+ │
+ ▼
+Cluster Resources
