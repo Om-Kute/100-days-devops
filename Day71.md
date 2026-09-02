@@ -86,3 +86,27 @@ Easy Memory Trick
 CI → Integrate & Test
 CD → Deliver & Release
 Continuous Deployment → Automatically Deploy
+🏗️ CI/CD Pipeline
+A typical CI/CD pipeline looks like:
+Developer
+                  │
+                  ▼
+               Git Push
+                  │
+                  ▼
+                Build
+                  │
+                  ▼
+                Test
+                  │
+                  ▼
+               Package
+                  │
+                  ▼
+               Deploy
+                  │
+                  ▼
+               Release
+                  │
+                  ▼
+               Monitor
