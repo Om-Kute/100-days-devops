@@ -248,3 +248,22 @@ Docker Image
 Registry
     ↓
 Kubernetes
+☸️ CI/CD + Kubernetes
+Kubernetes can become the deployment target of a CI/CD pipeline.
+Jenkins
+   │
+   ▼
+Build & Test
+   │
+   ▼
+Docker Image
+   │
+   ▼
+Registry
+   │
+   ▼
+Kubernetes
+   │
+   ▼
+Deployment
+This is the architecture we will build toward during the CI/CD phase.
