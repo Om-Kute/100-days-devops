@@ -39,3 +39,19 @@ Automated builds
 Automated testing
 Early bug detection
 Fast developer feedback
+🟢 Continuous Delivery
+Continuous Delivery automatically builds, tests, and prepares software so that it is always ready for release.
+A production release may still require manual approval.
+Code
+ ↓
+Build
+ ↓
+Test
+ ↓
+Package
+ ↓
+Staging
+ ↓
+Manual Approval
+ ↓
+Production
