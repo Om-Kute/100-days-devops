@@ -163,3 +163,23 @@ Performance
 Availability
 Infrastructure
 User impact
+♾️ DevOps Lifecycle
+CI/CD is part of the broader DevOps lifecycle.
+PLAN
+          ↓
+        CODE
+          ↓
+        BUILD
+          ↓
+        TEST
+          ↓
+       RELEASE
+          ↓
+       DEPLOY
+          ↓
+       OPERATE
+          ↓
+       MONITOR
+          │
+          └──────────────► PLAN
+DevOps encourages continuous feedback and improvement throughout this lifecycle.
