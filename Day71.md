@@ -110,3 +110,56 @@ Developer
                   │
                   ▼
                Monitor
+🔧 CI/CD Pipeline Stages
+1. Code
+Developer writes and commits application code.
+git add .
+git commit -m "Add new feature"
+git push
+2. Build
+The application is compiled or packaged.
+Examples:
+mvn package
+or:
+npm install
+npm run build
+3. Test
+Automated tests validate the application.
+Examples:
+Unit tests
+Integration tests
+API tests
+End-to-end tests
+Example:
+mvn test
+4. Package
+The application is packaged for deployment.
+Examples:
+JAR
+WAR
+Docker Image
+ZIP
+Binary
+For Docker:
+docker build -t myapp:1.0 .
+5. Deploy
+Deploy the application to an environment.
+Examples:
+Development
+     ↓
+Testing
+     ↓
+Staging
+     ↓
+Production
+6. Release
+The validated application is released to users.
+7. Monitor
+After deployment, monitor:
+Application health
+Logs
+Errors
+Performance
+Availability
+Infrastructure
+User impact
