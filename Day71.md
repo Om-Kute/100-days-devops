@@ -267,3 +267,60 @@ Kubernetes
    ▼
 Deployment
 This is the architecture we will build toward during the CI/CD phase.
+📊 Important CI/CD Metrics
+Common metrics include:
+Deployment Frequency
+How frequently an organization deploys changes.
+Lead Time for Changes
+Time taken from code change to deployment.
+Change Failure Rate
+Percentage of deployments that cause failures or require remediation.
+Mean Time to Recovery
+How quickly the team restores service after a failure.
+Build Success Rate
+Percentage of successful pipeline executions.
+Test Coverage
+Percentage of code covered by automated tests.
+⚠️ Common CI/CD Challenges
+❌ Flaky tests
+❌ Long build times
+❌ Dependency problems
+❌ Environment differences
+❌ Deployment failures
+❌ Poor secret management
+❌ Security vulnerabilities
+❌ Complex rollback procedures
+❌ Insufficient monitoring
+A good CI/CD design should continuously address these problems.
+🛡️ CI/CD Best Practices
+Commit code frequently.
+Automate builds and tests.
+Keep pipelines fast and reliable.
+Store code in version control.
+Use automated testing.
+Keep environments consistent.
+Secure credentials and secrets.
+Use immutable/versioned artifacts.
+Deploy to staging before production where appropriate.
+Implement rollback strategies.
+Monitor production deployments.
+Continuously improve the pipeline.
+🔐 CI/CD Security
+Security should be integrated into the pipeline.
+Code
+ ↓
+Build
+ ↓
+Test
+ ↓
+Security Scan
+ ↓
+Package
+ ↓
+Deploy
+Possible security checks include:
+Dependency scanning
+Container image scanning
+Secret detection
+Static analysis
+Infrastructure-as-Code scanning
