@@ -204,3 +204,47 @@ Azure Pipelines
 Bamboo
 Argo CD
 In this learning phase, the primary focus will be Jenkins.
+🔗 Example DevOps Pipeline
+A modern application could use:
+GitHub
+   │
+   ▼
+Jenkins
+   │
+   ▼
+Build
+   │
+   ▼
+Test
+   │
+   ▼
+Docker Build
+   │
+   ▼
+Docker Registry
+   │
+   ▼
+Kubernetes
+   │
+   ▼
+Application
+   │
+   ▼
+Monitoring
+This connects the technologies learned earlier in the 100 Days of DevOps journey.
+🐳 CI/CD + Docker
+Docker makes applications easier to package consistently.
+Example:
+docker build -t myapp:1.0 .
+Then the CI/CD pipeline can push the image to a registry:
+docker push username/myapp:1.0
+Later, Kubernetes can deploy that image.
+Source Code
+    ↓
+CI/CD
+    ↓
+Docker Image
+    ↓
+Registry
+    ↓
+Kubernetes
