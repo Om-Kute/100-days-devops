@@ -55,3 +55,17 @@ Staging
 Manual Approval
  ↓
 Production
+🟠 Continuous Deployment
+Continuous Deployment goes one step further.
+Validated changes are automatically deployed to production without a manual approval step.
+Code
+ ↓
+Build
+ ↓
+Test
+ ↓
+Package
+ ↓
+Deploy
+ ↓
+Production
