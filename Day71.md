@@ -69,3 +69,20 @@ Package
 Deploy
  ↓
 Production
+⚖️ CI vs Continuous Delivery vs Continuous Deployment
+Concept
+Main Purpose
+Production Deployment
+Continuous Integration
+Integrate and test code frequently
+No
+Continuous Delivery
+Keep software ready for release
+Usually manual approval
+Continuous Deployment
+Automatically release validated changes
+Automatic
+Easy Memory Trick
+CI → Integrate & Test
+CD → Deliver & Release
+Continuous Deployment → Automatically Deploy
