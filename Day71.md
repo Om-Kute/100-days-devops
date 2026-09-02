@@ -183,3 +183,24 @@ PLAN
           │
           └──────────────► PLAN
 DevOps encourages continuous feedback and improvement throughout this lifecycle.
+🚀 Why CI/CD is Important
+CI/CD helps organizations:
+Release software faster
+Detect bugs earlier
+Reduce manual work
+Improve consistency
+Reduce deployment risk
+Increase developer productivity
+Standardize deployment processes
+Enable frequent releases
+Improve feedback loops
+🧰 Popular CI/CD Tools
+Some commonly used tools include:
+Jenkins
+GitHub Actions
+GitLab CI/CD
+CircleCI
+Azure Pipelines
+Bamboo
+Argo CD
+In this learning phase, the primary focus will be Jenkins.
