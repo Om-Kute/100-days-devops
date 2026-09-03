@@ -35,3 +35,40 @@ Supports cloud platforms
 Automates builds and tests
 Supports distributed builds
 Highly customizable
+🏗️ Jenkins Architecture
+A basic Jenkins architecture looks like:
+                    Jenkins
+                       │
+              ┌────────┴────────┐
+              │                 │
+         Controller          Agents
+              │                 │
+      ┌───────┼───────┐    ┌────┼────┐
+      │       │       │    │    │    │
+    Jobs   Plugins  Config  A1   A2   A3
+              │
+              ▼
+         Build Scheduling
+🧠 Jenkins Controller
+The Jenkins Controller is responsible for coordinating Jenkins operations.
+It can:
+Manage Jenkins configuration
+Manage jobs
+Schedule builds
+Manage plugins
+Manage credentials
+Assign work to agents
+Provide the Jenkins web interface
+Track build results
+Conceptually:
+Users
+  │
+  ▼
+Jenkins Controller
+  │
+  ├── Manage Jobs
+  ├── Schedule Builds
+  ├── Manage Plugins
+  ├── Manage Credentials
+  └── Distribute Work
+Modern Jenkins terminology generally uses Controller rather than the older "Master" terminology.
