@@ -117,3 +117,22 @@ Job
 Every build gets a build number.
 Example:
 Build #42
+⚙️ Executors
+An Executor is a slot that allows a Jenkins node to run a build.
+Example:
+Agent
+ │
+ ├── Executor 1 → Build A
+ ├── Executor 2 → Build B
+ └── Executor 3 → Build C
+More executors can allow more parallel work, but actual concurrency depends on available CPU, memory, I/O, and other resources.
+📁 Jenkins Workspace
+A workspace is a directory where Jenkins performs a job's work.
+Typical workflow:
+Workspace
+    │
+    ├── Clone Repository
+    ├── Compile Code
+    ├── Run Tests
+    └── Create Artifacts
+A Pipeline may use a workspace on the node/agent where its steps execute.
