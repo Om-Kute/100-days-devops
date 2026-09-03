@@ -22,3 +22,16 @@ Developer
     ├── Test
     ├── Package
     └── Deploy
+🚀 Why Jenkins?
+Jenkins helps DevOps teams automate repetitive tasks.
+Key Benefits
+Open source
+Large plugin ecosystem
+Supports CI/CD
+Integrates with Git and GitHub
+Supports Docker
+Supports Kubernetes
+Supports cloud platforms
+Automates builds and tests
+Supports distributed builds
+Highly customizable
