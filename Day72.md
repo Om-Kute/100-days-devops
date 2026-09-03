@@ -72,3 +72,21 @@ Jenkins Controller
   ├── Manage Credentials
   └── Distribute Work
 Modern Jenkins terminology generally uses Controller rather than the older "Master" terminology.
+🖥️ Jenkins Agents
+Agents are machines that execute Jenkins workloads.
+An agent can be:
+A physical machine
+A virtual machine
+A cloud instance
+A container
+A Kubernetes Pod
+Architecture:
+Jenkins Controller
+       │
+       ├──────────────┐
+       ▼              ▼
+   Agent 1         Agent 2
+       │              │
+       ▼              ▼
+    Build           Test
+Agents are useful when workloads need different operating systems, tools, or environments.
