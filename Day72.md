@@ -182,3 +182,54 @@ Agent
     │
     ▼
 Application
+🔥 Example Workflow
+Suppose we have a Java application.
+Step 1 – Developer Push
+git add .
+git commit -m "Update application"
+git push
+Step 2 – Jenkins Trigger
+GitHub can notify Jenkins using a webhook.
+GitHub
+   │
+   ▼
+Webhook
+   │
+   ▼
+Jenkins
+Step 3 – Build
+mvn clean package
+Step 4 – Test
+mvn test
+Step 5 – Docker Build
+docker build -t myapp:1.0 .
+Step 6 – Deployment
+The image can then be deployed to a suitable environment such as Kubernetes.
+Jenkins
+   │
+   ▼
+Docker Image
+   │
+   ▼
+Kubernetes
+🏗️ Detailed Jenkins Architecture
+                         Users
+                           │
+                           ▼
+                  Jenkins Controller
+                           │
+       ┌───────────────────┼───────────────────┐
+       │                   │                   │
+       ▼                   ▼                   ▼
+  Job Management     Build Scheduling    Plugin Management
+       │                   │                   │
+       └───────────────────┼───────────────────┘
+                           │
+                           ▼
+                      Jenkins Agents
+                    ┌──────┼──────┐
+                    ▼      ▼      ▼
+                  Agent1 Agent2 Agent3
+                    │      │      │
+                    ▼      ▼      ▼
+                  Build  Test   Deploy
