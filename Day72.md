@@ -90,3 +90,30 @@ Jenkins Controller
        ▼              ▼
     Build           Test
 Agents are useful when workloads need different operating systems, tools, or environments.
+📋 Jenkins Jobs
+A Job defines work that Jenkins should perform.
+Example:
+Job
+ │
+ ├── Checkout Code
+ ├── Build
+ ├── Test
+ ├── Package
+ └── Deploy
+Common Jenkins job types include:
+Freestyle Project
+Pipeline
+Multibranch Pipeline
+Organization Folder
+🔨 Jenkins Build
+A Build is an execution of a Jenkins job.
+Example:
+Job
+ │
+ ├── Build #1 → SUCCESS
+ ├── Build #2 → SUCCESS
+ ├── Build #3 → FAILURE
+ └── Build #4 → SUCCESS
+Every build gets a build number.
+Example:
+Build #42
