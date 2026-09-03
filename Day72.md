@@ -136,3 +136,49 @@ Workspace
     ├── Run Tests
     └── Create Artifacts
 A Pipeline may use a workspace on the node/agent where its steps execute.
+🧩 Jenkins Plugins
+Plugins extend Jenkins functionality.
+Examples include integrations for:
+Git
+GitHub
+Maven
+Docker
+Kubernetes
+Slack
+Email
+Cloud Platforms
+The plugin ecosystem allows Jenkins to integrate with many DevOps tools.
+🔗 Jenkins Ecosystem
+A typical Jenkins environment can look like:
+                   Jenkins
+                      │
+       ┌──────────────┼──────────────┐
+       ▼              ▼              ▼
+      Git           Docker       Kubernetes
+       │              │              │
+       ▼              ▼              ▼
+   Source Code    Container       Deployment
+🔄 Jenkins CI/CD Workflow
+A common Jenkins workflow:
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+Webhook / Trigger
+    │
+    ▼
+Jenkins Controller
+    │
+    ▼
+Agent
+    │
+    ├── Checkout
+    ├── Build
+    ├── Test
+    ├── Package
+    └── Deploy
+    │
+    ▼
+Application
