@@ -233,3 +233,17 @@ Kubernetes
                     │      │      │
                     ▼      ▼      ▼
                   Build  Test   Deploy
+🗂️ Jenkins Home
+Jenkins stores important configuration and job-related data under the Jenkins home directory.
+Common location on Linux installations:
+/var/lib/jenkins
+Depending on how Jenkins is installed or configured, the location can differ.
+It may contain:
+JENKINS_HOME
+ │
+ ├── jobs/
+ ├── plugins/
+ ├── workspace/
+ ├── users/
+ ├── secrets/
+ └── configuration data
