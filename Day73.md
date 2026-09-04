@@ -123,3 +123,30 @@ Initial Administrator Password
              │
              ▼
        Jenkins Login
+🔓 Step 9 – Unlock Jenkins
+Open the Jenkins web interface:
+http://SERVER-IP:8080
+The first-time setup screen asks for the Administrator Password.
+Paste the password obtained from:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Then continue with the setup wizard.
+🧩 Step 10 – Install Plugins
+Jenkins provides plugin installation options.
+For a basic CI/CD setup, useful plugins may include:
+Git
+Pipeline
+Credentials
+Docker
+Kubernetes
+Maven Integration
+Email Extension
+Install only the plugins that are actually required.
+Keeping the plugin set smaller can reduce maintenance and security exposure.
+👤 Step 11 – Create Administrator User
+Create the first Jenkins administrator account.
+Typical information:
+Username
+Password
+Full Name
+Email Address
+Use a strong password and protect the account appropriately.
