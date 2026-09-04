@@ -84,3 +84,23 @@ Check status:
 sudo systemctl status jenkins
 Expected state:
 Active: active (running)
+🔄 Step 6 – Enable Jenkins at Boot
+Enable Jenkins to start automatically after system reboot:
+sudo systemctl enable jenkins
+Verify:
+sudo systemctl is-enabled jenkins
+Expected:
+enabled
+🛑 Jenkins Service Commands
+Start:
+sudo systemctl start jenkins
+Stop:
+sudo systemctl stop jenkins
+Restart:
+sudo systemctl restart jenkins
+Check status:
+sudo systemctl status jenkins
+Enable at boot:
+sudo systemctl enable jenkins
+Disable at boot:
+sudo systemctl disable jenkins
