@@ -61,3 +61,26 @@ java -version
 Example:
 openjdk version "21..."
 Use a Java version supported by the Jenkins release you install.
+🔑 Step 3 – Add Jenkins Repository
+Import the Jenkins signing key:
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+Add the Jenkins repository:
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] \
+https://pkg.jenkins.io/debian-stable binary/" | \
+sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+Always verify the current installation instructions from the official Jenkins documentation before installing in production because repository URLs and supported Java versions can change.
+📦 Step 4 – Install Jenkins
+Update package information:
+sudo apt update
+Install Jenkins:
+sudo apt install -y jenkins
+Check installation:
+jenkins --version
+▶️ Step 5 – Start Jenkins
+Start the Jenkins service:
+sudo systemctl start jenkins
+Check status:
+sudo systemctl status jenkins
+Expected state:
+Active: active (running)
