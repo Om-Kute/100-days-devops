@@ -21,3 +21,21 @@ Kubernetes
 AWS
 Slack
 Email
+🏗️ Jenkins Installation Architecture
+Ubuntu Server
+                       │
+                       ▼
+                    Java/JDK
+                       │
+                       ▼
+                    Jenkins
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+         Jenkins UI         Jenkins Service
+              │                 │
+              ▼                 ▼
+          Port 8080          systemd
+              │
+              ▼
+          CI/CD Jobs
