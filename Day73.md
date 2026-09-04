@@ -172,3 +172,31 @@ Credentials
 Nodes
 System information
 System log
+🔐 Jenkins Credentials
+Jenkins provides a credentials system for securely managing authentication information used by jobs and pipelines.
+Examples:
+Git Credentials
+SSH Keys
+API Tokens
+Docker Registry Credentials
+Cloud Credentials
+Kubernetes Credentials
+Avoid hardcoding credentials inside:
+Jenkinsfile
+Shell Scripts
+Source Code
+Git Repositories
+📁 Jenkins Home Directory
+For a typical Linux package installation:
+/var/lib/jenkins
+This directory is commonly used as JENKINS_HOME.
+Conceptually:
+JENKINS_HOME
+     │
+     ├── jobs/
+     ├── plugins/
+     ├── workspace/
+     ├── users/
+     ├── secrets/
+     └── configuration files
+Do not manually modify Jenkins internal files unless you understand the consequences.
