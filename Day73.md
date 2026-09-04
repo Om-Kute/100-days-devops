@@ -150,3 +150,25 @@ Password
 Full Name
 Email Address
 Use a strong password and protect the account appropriately.
+🖥️ Step 12 – Jenkins Dashboard
+After completing the setup, Jenkins displays the Dashboard.
+Typical areas include:
+Jenkins Dashboard
+       │
+       ├── New Item
+       ├── Build Queue
+       ├── Build Executor Status
+       ├── Build History
+       ├── Manage Jenkins
+       └── Credentials
+⚙️ Step 13 – Manage Jenkins
+The Manage Jenkins section provides access to important administration features.
+Depending on your Jenkins version and installed plugins, you may find:
+System configuration
+Plugins
+Tools
+Security
+Credentials
+Nodes
+System information
+System log
