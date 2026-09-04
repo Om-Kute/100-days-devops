@@ -200,3 +200,31 @@ JENKINS_HOME
      ├── secrets/
      └── configuration files
 Do not manually modify Jenkins internal files unless you understand the consequences.
+📊 Check Jenkins Service
+Use:
+sudo systemctl status jenkins
+Check listening ports:
+sudo ss -lntp | grep 8080
+Check Jenkins logs through systemd:
+sudo journalctl -u jenkins
+Follow logs:
+sudo journalctl -u jenkins -f
+🔥 AWS EC2 Jenkins Setup
+If Jenkins is installed on an AWS EC2 Ubuntu instance:
+Internet
+                    │
+                    ▼
+               AWS EC2
+                    │
+              ┌─────┴─────┐
+              │           │
+             SSH        8080
+              │           │
+              ▼           ▼
+           Terminal    Jenkins UI
+Security Group
+For SSH:
+Port → 22
+For Jenkins:
+Port → 8080
+For better security, restrict inbound Jenkins access to trusted IP addresses or use a secure reverse-proxy/network architecture rather than exposing Jenkins directly to the entire internet.
