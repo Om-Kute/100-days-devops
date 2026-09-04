@@ -104,3 +104,22 @@ Enable at boot:
 sudo systemctl enable jenkins
 Disable at boot:
 sudo systemctl disable jenkins
+🌐 Step 7 – Access Jenkins
+By default, Jenkins listens on port:
+8080
+On the same machine:
+http://localhost:8080
+For a remote Ubuntu/AWS server:
+http://SERVER-IP:8080
+Example:
+http://203.0.113.10:8080
+Do not expose Jenkins broadly to the public internet without appropriate network controls and authentication.
+🔐 Step 8 – Get Initial Administrator Password
+Jenkins provides an initial administrator password during first-time setup.
+On a standard Debian/Ubuntu package installation:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Copy the displayed password.
+Initial Administrator Password
+             │
+             ▼
+       Jenkins Login
