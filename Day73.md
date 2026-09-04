@@ -39,3 +39,12 @@ Ubuntu Server
               │
               ▼
           CI/CD Jobs
+📋 Prerequisites
+Before installing Jenkins, make sure you have:
+Ubuntu server
+Sudo/root privileges
+Java installed
+Internet connectivity
+Sufficient CPU and memory
+Port 8080 accessible if Jenkins needs to be reached remotely
+For an AWS EC2 deployment, make sure the instance's security rules allow access to port 8080 only from trusted sources.
