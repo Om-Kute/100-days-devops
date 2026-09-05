@@ -75,3 +75,35 @@ Clone / Fetch
    ▼
 Workspace
 Jenkins checks out the required source code into the workspace used by the build.
+📁 Jenkins Workspace
+The workspace is the directory where Jenkins performs the job's operations.
+Conceptually:
+Workspace
+    │
+    ├── Source Code
+    ├── Dependencies
+    ├── Build Files
+    └── Generated Artifacts
+For a typical Linux Jenkins installation, job workspaces are commonly located under:
+/var/lib/jenkins/workspace/
+The actual workspace location can vary depending on the node and Jenkins configuration.
+🛠️ Step 3 – Add Build Steps
+In the job configuration:
+Build Steps
+    ↓
+Add build step
+Common options include:
+Execute Shell
+Invoke top-level Maven targets
+Execute Windows batch command
+The available options depend on the installed Jenkins plugins and operating system.
+🐧 Execute Shell
+For a Linux agent, you can use:
+echo "Starting Jenkins Build"
+
+pwd
+
+ls -la
+
+echo "Build completed"
+Jenkins executes these commands on the node where the job is running.
