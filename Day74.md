@@ -55,3 +55,23 @@ https://github.com/USERNAME/REPOSITORY.git
 Example:
 https://github.com/omkute/my-app.git
 Configure credentials if the repository is private.
+🌿 Configure Branch
+Specify the branch Jenkins should build.
+Example:
+*/main
+For another branch:
+*/develop
+The exact branch specification depends on the repository and SCM configuration.
+📥 Jenkins Git Checkout
+When the job runs:
+Jenkins
+   │
+   ▼
+Git Repository
+   │
+   ▼
+Clone / Fetch
+   │
+   ▼
+Workspace
+Jenkins checks out the required source code into the workspace used by the build.
