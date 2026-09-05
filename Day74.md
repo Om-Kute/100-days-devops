@@ -33,3 +33,25 @@ Build Result
     │
     ├── SUCCESS
     └── FAILURE
+🚀 Step 1 – Create a Freestyle Project
+Open Jenkins Dashboard.
+Select:
+New Item
+   ↓
+Enter an item name
+   ↓
+Freestyle project
+   ↓
+OK
+Example job name:
+my-first-freestyle-job
+⚙️ Step 2 – Configure Source Code Management
+Inside the job configuration:
+Source Code Management
+        ↓
+       Git
+Enter the repository URL:
+https://github.com/USERNAME/REPOSITORY.git
+Example:
+https://github.com/omkute/my-app.git
+Configure credentials if the repository is private.
