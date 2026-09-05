@@ -191,3 +191,70 @@ Build
 Test
  ↓
 SUCCESS ✅
+🔴 Failed Build
+A failed build may look like:
+Finished: FAILURE
+Possible causes:
+Compilation Error
+Test Failure
+Dependency Problem
+Git Error
+Shell Command Error
+Environment Problem
+Permission Error
+Always inspect the Console Output to identify the actual failure.
+⏰ Build Triggers
+Jenkins provides different ways to start jobs.
+Common triggers include:
+Manual Trigger
+      │
+Poll SCM
+      │
+Scheduled Build
+      │
+Webhook
+      │
+Upstream Job
+👆 1. Manual Trigger
+The simplest method is:
+Build Now
+A developer or Jenkins administrator manually starts the job.
+Useful for:
+Testing configuration
+Debugging
+Manual deployments
+Initial job testing
+🔍 2. Poll SCM
+With Poll SCM, Jenkins periodically checks the source-control repository for changes.
+Concept:
+Jenkins
+   │
+   ▼
+Check Repository
+   │
+   ├── No Change → Do Nothing
+   │
+   └── Change → Start Build
+Example schedule:
+H/5 * * * *
+This represents polling roughly every five minutes with Jenkins' hashed scheduling behavior.
+Polling is different from a webhook because Jenkins periodically checks the repository instead of being directly notified of a change.
+🔗 3. GitHub Webhook
+A webhook allows GitHub to notify Jenkins when an event occurs.
+Concept:
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub
+    │
+ Webhook
+    │
+    ▼
+Jenkins
+    │
+    ▼
+Build
+This can provide faster feedback than periodic polling.
