@@ -107,3 +107,44 @@ ls -la
 
 echo "Build completed"
 Jenkins executes these commands on the node where the job is running.
+☕ Maven Build
+For a Maven-based Java application, a build step can run:
+mvn clean package
+Example workflow:
+Git Checkout
+     ↓
+Maven Build
+     ↓
+Unit Tests
+     ↓
+Package
+     ↓
+JAR
+🧪 Example Shell Build
+echo "===== Build Started ====="
+
+echo "Current Directory:"
+pwd
+
+echo "Files:"
+ls -la
+
+echo "Running Maven Build..."
+
+mvn clean package
+
+echo "===== Build Completed ====="
+🔨 Step 4 – Build the Job
+After saving the configuration:
+Jenkins Job
+     ↓
+Build Now
+Click Build Now to manually trigger the job.
+Build Now
+    ↓
+Build #1
+    ↓
+Build #2
+    ↓
+Build #3
+Each execution receives a build number.
