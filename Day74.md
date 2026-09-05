@@ -148,3 +148,46 @@ Build #2
     ↓
 Build #3
 Each execution receives a build number.
+📊 Build History
+Jenkins maintains a history of job executions.
+Example:
+Build #5 → SUCCESS
+Build #4 → SUCCESS
+Build #3 → FAILURE
+Build #2 → SUCCESS
+Build #1 → SUCCESS
+Build history helps track:
+Successful builds
+Failed builds
+Build duration
+Console logs
+Changes
+Artifacts
+📜 Console Output
+The Console Output shows what happened during the build.
+Example:
+Started by user
+Building in workspace /var/lib/jenkins/workspace/my-first-job
+
+> git fetch
+> git checkout main
+
+Running build...
+
+[INFO] Building application
+[INFO] Running tests
+[INFO] BUILD SUCCESS
+
+Finished: SUCCESS
+If something fails, the console output is usually the first place to investigate.
+🟢 Successful Build
+A successful Jenkins build normally ends with:
+Finished: SUCCESS
+Concept:
+Code
+ ↓
+Build
+ ↓
+Test
+ ↓
+SUCCESS ✅
