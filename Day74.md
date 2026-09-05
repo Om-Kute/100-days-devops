@@ -258,3 +258,32 @@ Jenkins
     ▼
 Build
 This can provide faster feedback than periodic polling.
+🏗️ Complete Freestyle Workflow
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+Webhook / Poll SCM / Manual
+    │
+    ▼
+Jenkins Freestyle Job
+    │
+    ▼
+Checkout Source Code
+    │
+    ▼
+Build Step
+    │
+    ▼
+Automated Tests
+    │
+    ▼
+Package
+    │
+    ▼
+Console Output
+    │
+    ▼
+Build Result
