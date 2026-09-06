@@ -327,3 +327,37 @@ failure
 unstable
 aborted
 changed
+🔄 Pipeline Execution Flow
+Jenkinsfile
+     │
+     ▼
+Pipeline Start
+     │
+     ▼
+Checkout
+     │
+     ▼
+Build
+     │
+     ▼
+Test
+     │
+     ▼
+Package
+     │
+     ▼
+Deploy
+     │
+     ▼
+Post Actions
+🖥️ Create a Pipeline Job
+From the Jenkins Dashboard:
+New Item
+   ↓
+Enter Name
+   ↓
+Pipeline
+   ↓
+OK
+Example:
+my-first-pipeline
