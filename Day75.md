@@ -289,3 +289,41 @@ stage('Test') {
     }
 }
 If the command returns a failure status, Jenkins normally marks the stage/build as failed unless the pipeline explicitly handles the error.
+🚀 Deploy Stage
+A deployment step can be added after successful build and test stages.
+Example:
+stage('Deploy') {
+    steps {
+        echo 'Deploying application...'
+    }
+}
+Later this can be replaced with commands for:
+Docker
+Kubernetes
+AWS
+Cloud platforms
+Application servers
+📜 post Block
+The post section allows actions to run after Pipeline execution.
+Example:
+post {
+
+    always {
+        echo 'Pipeline finished'
+    }
+
+    success {
+        echo 'Pipeline successful'
+    }
+
+    failure {
+        echo 'Pipeline failed'
+    }
+}
+Common conditions include:
+always
+success
+failure
+unstable
+aborted
+changed
