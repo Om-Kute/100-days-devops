@@ -129,3 +129,86 @@ pipeline {
         }
     }
 }
+🧩 Jenkinsfile Components
+A typical Declarative Pipeline contains:
+pipeline
+   │
+   ├── agent
+   │
+   ├── stages
+   │      │
+   │      ├── stage
+   │      │     └── steps
+   │      │
+   │      ├── stage
+   │      │     └── steps
+   │      │
+   │      └── stage
+   │            └── steps
+   │
+   └── post
+⚙️ pipeline
+The pipeline block defines the entire Jenkins Pipeline.
+pipeline {
+    // Pipeline configuration
+}
+🖥️ agent
+The agent specifies where the Pipeline or a stage should execute.
+Example:
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Running build'
+            }
+        }
+    }
+}
+agent any allows Jenkins to select an available suitable agent.
+🏗️ stages
+The stages block contains the major phases of the Pipeline.
+Example:
+stages {
+
+    stage('Build') {
+        steps {
+            echo 'Build application'
+        }
+    }
+
+    stage('Test') {
+        steps {
+            echo 'Run tests'
+        }
+    }
+}
+📌 stage
+A stage represents a logical phase of the CI/CD process.
+Common stages:
+Checkout
+   ↓
+Build
+   ↓
+Test
+   ↓
+Package
+   ↓
+Deploy
+Example:
+stage('Build') {
+    steps {
+        echo 'Building application'
+    }
+}
+▶️ steps
+The steps block contains the commands that Jenkins executes.
+Example:
+steps {
+    echo 'Hello Jenkins'
+}
+Shell command:
+steps {
+    sh 'mvn clean package'
+}
