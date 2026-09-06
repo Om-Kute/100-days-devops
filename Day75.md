@@ -83,3 +83,21 @@ Production CI/CD
 Less suitable for complex workflows
 
 Commonly preferred
+🏗️ Jenkins Pipeline Architecture
+GitHub
+                    │
+                    ▼
+               Jenkinsfile
+                    │
+                    ▼
+            Jenkins Controller
+                    │
+                    ▼
+                  Agent
+                    │
+          ┌─────────┼─────────┐
+          ▼         ▼         ▼
+       Checkout   Build      Test
+                              │
+                              ▼
+                           Deploy
