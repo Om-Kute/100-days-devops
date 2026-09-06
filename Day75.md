@@ -101,3 +101,31 @@ GitHub
                               │
                               ▼
                            Deploy
+📋 Declarative Pipeline
+Jenkins supports different Pipeline approaches.
+A Declarative Pipeline provides a structured syntax for defining CI/CD workflows.
+Basic structure:
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo 'Building application'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application'
+            }
+        }
+    }
+}
