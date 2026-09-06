@@ -28,3 +28,58 @@ my-project/
 └── Jenkinsfile
 This approach is called:
 Pipeline as Code
+ Freestyle vs Pipeline
+
+Feature
+
+Freestyle
+
+Pipeline
+
+Configuration
+
+Jenkins UI
+
+Code
+
+Version Control
+
+Limited
+
+Jenkinsfile can be stored in Git
+
+Complex Workflows
+
+Limited
+
+Excellent
+
+Maintainability
+
+Can become difficult
+
+Better
+
+Stages
+
+Limited
+
+Built-in pipeline stages
+
+Parallel Execution
+
+Limited
+
+Supported
+
+Code Review
+
+Difficult
+
+Jenkinsfile can be reviewed
+
+Production CI/CD
+
+Less suitable for complex workflows
+
+Commonly preferred
