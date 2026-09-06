@@ -361,3 +361,35 @@ Pipeline
 OK
 Example:
 my-first-pipeline
+⚙️ Configure Pipeline
+Inside the Pipeline configuration:
+Pipeline
+   │
+   ├── Definition
+   │
+   ├── Pipeline script
+   │
+   └── Pipeline script from SCM
+For a learning test, you can use:
+Pipeline script
+For a real project, prefer storing the Jenkinsfile in source control:
+Pipeline script from SCM
+📁 Jenkinsfile from Git
+Recommended project structure:
+GitHub Repository
+       │
+       ├── src/
+       ├── pom.xml
+       ├── Dockerfile
+       └── Jenkinsfile
+Jenkins retrieves the Jenkinsfile from the repository.
+GitHub
+   │
+   ▼
+Jenkins
+   │
+   ▼
+Read Jenkinsfile
+   │
+   ▼
+Execute Pipelineu
