@@ -212,3 +212,80 @@ Shell command:
 steps {
     sh 'mvn clean package'
 }
+📦 Basic Jenkinsfile
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed'
+        }
+    }
+}
+🔗 Git Checkout
+A Jenkins Pipeline can retrieve source code from Git.
+Example:
+stage('Checkout') {
+    steps {
+        git 'https://github.com/USERNAME/REPOSITORY.git'
+    }
+}
+For private repositories, use Jenkins-managed credentials rather than embedding credentials in the Jenkinsfile.
+☕ Maven Pipeline Example
+For a Java/Maven project:
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
+}
+🧪 Test Stage
+Automated testing can be included in the Pipeline.
+Example:
+stage('Test') {
+    steps {
+        sh 'mvn test'
+    }
+}
+If the command returns a failure status, Jenkins normally marks the stage/build as failed unless the pipeline explicitly handles the error.
