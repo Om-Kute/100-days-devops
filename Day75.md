@@ -16,3 +16,15 @@ Jenkins Pipeline
       ├── Build
       ├── Test
       └── Deploy
+💻 What is a Jenkinsfile?
+A Jenkinsfile is a text file that defines a Jenkins Pipeline.
+It can be stored inside the application's Git repository.
+Example:
+my-project/
+│
+├── src/
+├── pom.xml
+├── Dockerfile
+└── Jenkinsfile
+This approach is called:
+Pipeline as Code
