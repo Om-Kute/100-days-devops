@@ -442,3 +442,104 @@ Deploying application...
 [Pipeline] }
 
 Finished: SUCCESS
+🔥 Pipeline with Docker
+A Jenkins Pipeline can build a Docker image.
+Example:
+stage('Docker Build') {
+    steps {
+        sh 'docker build -t myapp:1.0 .'
+    }
+}
+Workflow:
+GitHub
+   ↓
+Jenkins
+   ↓
+Build
+   ↓
+Test
+   ↓
+Docker Build
+   ↓
+Docker Image
+☸️ Pipeline with Kubernetes
+A later Pipeline can deploy the application to Kubernetes.
+Concept:
+Jenkins
+   ↓
+Build
+   ↓
+Test
+   ↓
+Docker Image
+   ↓
+Container Registry
+   ↓
+Kubernetes
+   ↓
+Deployment
+Example deployment command:
+kubectl apply -f deployment.yaml
+In production, Kubernetes credentials and access should be configured securely rather than hardcoded.
+🔐 Credentials in Pipeline
+Do not put passwords or API tokens directly in a Jenkinsfile.
+Avoid:
+sh 'docker login -u admin -p mypassword'
+Prefer Jenkins Credentials and credential-binding mechanisms.
+Concept:
+Jenkins Credentials
+        │
+        ▼
+Pipeline
+        │
+        ▼
+Authenticated Operation
+🌱 Environment Variables
+Pipelines can define environment variables.
+Example:
+pipeline {
+
+    agent any
+
+    environment {
+        APP_NAME = 'myapp'
+        APP_ENV = 'production'
+    }
+
+    stages {
+
+        stage('Build') {
+            steps {
+                sh 'echo Building $APP_NAME'
+            }
+        }
+    }
+}
+Avoid putting sensitive values directly in the Jenkinsfile.
+⚡ Parallel Stages
+Jenkins Pipelines can execute independent work in parallel.
+Concept:
+Build
+               │
+        ┌──────┴──────┐
+        ▼             ▼
+    Unit Tests    Security Scan
+        │             │
+        └──────┬──────┘
+               ▼
+             Deploy
+Parallel execution can reduce pipeline duration when tasks are independent.
+🌿 Multibranch Pipeline
+A Multibranch Pipeline can automatically discover branches containing Jenkinsfiles.
+Concept:
+Repository
+    │
+    ├── main
+    │     └── Jenkinsfile
+    │
+    ├── develop
+    │     └── Jenkinsfile
+    │
+    └── feature/*
+          └── Jenkinsfile
+Jenkins can create and manage branch-specific Pipeline jobs based on repository configuration.
