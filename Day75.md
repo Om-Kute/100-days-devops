@@ -393,3 +393,52 @@ Read Jenkinsfile
    │
    ▼
 Execute Pipelineu
+🟢 Run Pipeline
+After saving the Pipeline:
+Build Now
+Jenkins executes:
+Checkout
+   ↓
+Build
+   ↓
+Test
+   ↓
+Deploy
+📊 Stage View
+Jenkins provides stage-level visibility.
+Example:
+Build #1
+
+Checkout    Build    Test    Deploy
+   ✅         ✅       ✅       ✅
+If a stage fails:
+Checkout    Build    Test    Deploy
+   ✅         ✅       ❌       ⏸️
+This makes troubleshooting easier.
+📜 Console Output
+Open the build and select:
+Console Output
+Example:
+Started by user
+
+[Pipeline] Start
+[Pipeline] stage
+[Pipeline] { (Build)
+
+Building application...
+
+[Pipeline] }
+[Pipeline] stage
+[Pipeline] { (Test)
+
+Running tests...
+
+[Pipeline] }
+[Pipeline] stage
+[Pipeline] { (Deploy)
+
+Deploying application...
+
+[Pipeline] }
+
+Finished: SUCCESS
