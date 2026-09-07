@@ -21,3 +21,25 @@ Developer
     ├── Build
     ├── Test
     └── Deploy
+🚀 Why Integrate Jenkins with GitHub?
+Without automation:
+Developer
+    ↓
+Push Code
+    ↓
+Open Jenkins
+    ↓
+Click Build Now
+With GitHub Webhooks:
+Developer
+    ↓
+Push Code
+    ↓
+GitHub
+    ↓
+Webhook
+    ↓
+Jenkins
+    ↓
+Automatic Build 🚀
+This creates a faster and more automated CI/CD feedback loop.
