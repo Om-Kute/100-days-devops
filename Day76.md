@@ -62,3 +62,28 @@ Release
 Tag
 Branch-related events
 For a basic Jenkins CI workflow, the push event is commonly used.
+🏗️ Complete Architecture
+Developer
+                        │
+                     git push
+                        │
+                        ▼
+                 GitHub Repository
+                        │
+                    Webhook
+                        │
+                        ▼
+                Jenkins Controller
+                        │
+                        ▼
+                  Jenkins Pipeline
+                        │
+              ┌─────────┼─────────┐
+              ▼         ▼         ▼
+           Checkout    Build     Test
+                                  │
+                                  ▼
+                               Deploy
+                                  │
+                                  ▼
+                             Application
