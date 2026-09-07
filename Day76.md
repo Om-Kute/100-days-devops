@@ -99,3 +99,29 @@ Manage Jenkins
       ↓
 Plugins
 Search for the required integrations.                             Application
+🔐 GitHub Credentials in Jenkins
+If the repository is private, Jenkins needs authentication to access it.
+Credentials can include:
+Username + Token
+SSH Key
+GitHub App
+For modern GitHub integrations, a token or GitHub App can be used depending on the Jenkins plugin and organization setup.
+🔑 Create GitHub Token
+For a practical lab, you can create a GitHub Personal Access Token with the minimum permissions required for the repository and operation.
+General workflow:
+GitHub
+  ↓
+Settings
+  ↓
+Developer Settings
+  ↓
+Personal Access Tokens
+  ↓
+Create Token
+⚠️ Security
+Never:
+❌ Commit tokens to Git
+❌ Put tokens in Jenkinsfile
+❌ Share tokens publicly
+❌ Put credentials directly in shell commands
+Store credentials in Jenkins' Credentials system.
