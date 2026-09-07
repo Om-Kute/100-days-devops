@@ -86,4 +86,16 @@ Developer
                                Deploy
                                   │
                                   ▼
-                             Application
+🧩 Jenkins Plugins
+Depending on the Jenkins setup, plugins commonly used for GitHub integration include:
+Git Plugin
+GitHub Plugin
+Pipeline Plugin
+Credentials Plugin
+GitHub Branch Source Plugin
+Install only the plugins required for your workflow.
+Go to:
+Manage Jenkins
+      ↓
+Plugins
+Search for the required integrations.                             Application
