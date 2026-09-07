@@ -43,3 +43,22 @@ Jenkins
     ↓
 Automatic Build 🚀
 This creates a faster and more automated CI/CD feedback loop.
+🔔 What is a GitHub Webhook?
+A GitHub Webhook allows GitHub to send an HTTP request to an external service when specific repository events occur.
+For example:
+git push
+   ↓
+GitHub Event
+   ↓
+Webhook
+   ↓
+Jenkins
+   ↓
+Pipeline Trigger
+Common events include:
+Push
+Pull request
+Release
+Tag
+Branch-related events
+For a basic Jenkins CI workflow, the push event is commonly used.
