@@ -125,3 +125,35 @@ Never:
 ❌ Share tokens publicly
 ❌ Put credentials directly in shell commands
 Store credentials in Jenkins' Credentials system.
+🔐 Add Credentials to Jenkins
+Go to:
+Jenkins Dashboard
+      ↓
+Manage Jenkins
+      ↓
+Credentials
+      ↓
+Global credentials
+      ↓
+Add Credentials
+Configure the credential according to the repository authentication method.
+Example ID:
+github-credentials
+📁 Jenkins Pipeline from SCM
+A Pipeline can load the Jenkinsfile directly from GitHub.
+Jenkins configuration:
+Pipeline
+   ↓
+Definition
+   ↓
+Pipeline script from SCM
+   ↓
+SCM: Git
+   ↓
+Repository URL
+   ↓
+Credentials
+   ↓
+Branch
+   ↓
+Jenkinsfile
