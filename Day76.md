@@ -224,3 +224,23 @@ application/json
 For events, select:
 Just the push event
 Then create the webhook.
+⚠️ Important Webhook Security
+Do not expose a Jenkins server directly to the public internet without proper security controls.
+For production environments, consider:
+HTTPS
+Reverse Proxy
+Firewall
+VPN / Private Networking
+IP Restrictions
+Authentication
+GitHub App / Secure Integration
+The webhook endpoint must be reachable by GitHub if GitHub is expected to trigger Jenkins directly.
+🔄 Enable Jenkins Trigger
+Open the Jenkins job:
+Jenkins Job
+    ↓
+Configure
+    ↓
+Build Triggers
+Enable the GitHub-related webhook trigger available in your Jenkins/plugin configuration.
+The exact label can vary by Jenkins version and installed plugins.
