@@ -157,3 +157,70 @@ Credentials
 Branch
    ↓
 Jenkinsfile
+📄 Recommended Repository Structure
+my-app/
+│
+├── src/
+├── pom.xml
+├── Dockerfile
+└── Jenkinsfile
+The Jenkinsfile defines the CI/CD workflow.
+📝 Sample Jenkinsfile
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building application'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully'
+        }
+
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
+⚙️ Configure GitHub Webhook
+Open the GitHub repository.
+Go to:
+Settings
+    ↓
+Webhooks
+    ↓
+Add webhook
+Configure:
+Payload URL:
+http://JENKINS-SERVER:8080/github-webhook/
+
+Content type:
+application/json
+For events, select:
+Just the push event
+Then create the webhook.
