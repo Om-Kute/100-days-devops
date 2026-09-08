@@ -278,3 +278,19 @@ This example assumes:
 Jenkins Credentials ID:
 dockerhub-credentials
 and that the Jenkins agent has permission to execute Docker commands.
+🏷️ Using Jenkins Build Number
+Jenkins automatically provides the BUILD_NUMBER environment variable.
+Example:
+docker build -t myapp:${BUILD_NUMBER} .
+If the build number is 25:
+myapp:25
+This helps create unique image versions.
+🔢 Versioning Strategy
+Instead of always using:
+latest
+you can use versioned tags:
+myapp:1.0
+myapp:1.1
+myapp:2.0
+myapp:BUILD_NUMBER
+Versioned images make deployments and rollbacks easier to reason about.
