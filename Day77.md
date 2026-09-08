@@ -113,3 +113,9 @@ Reads Dockerfile
 Builds Image
      ↓
 myapp:1.0
+📋 List Docker Images
+docker images
+or:
+docker image ls
+Example:
+REPOSITORY    TAG       IMAGE ID
