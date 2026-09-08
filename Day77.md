@@ -155,3 +155,18 @@ Secure Binding
 Pipeline
         ↓
 Docker Registry
+🔑 Docker Login
+For a manual test, Docker can authenticate interactively:
+docker login
+For automation, use Jenkins Credentials and avoid exposing secrets in command output.
+📤 Docker Push
+After tagging:
+docker push USERNAME/myapp:1.0
+Workflow:
+Docker Image
+     ↓
+Tag
+     ↓
+Docker Registry
+     ↓
+Push
