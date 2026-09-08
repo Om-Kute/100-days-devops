@@ -170,3 +170,111 @@ Tag
 Docker Registry
      ↓
 Push
+🔄 Jenkins + Docker Pipeline
+A basic Pipeline can look like:
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t myapp:${BUILD_NUMBER} .'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Docker image build completed successfully'
+        }
+
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
+checkout scm is useful when the Jenkins Pipeline is configured from SCM, because Jenkins already knows the repository configuration.
+🚀 Jenkins Pipeline with Docker Registry
+A simplified example using Jenkins credentials:
+pipeline {
+
+    agent any
+
+    environment {
+        IMAGE_NAME = 'USERNAME/myapp'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh "docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} ."
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'dockerhub-credentials',
+                        usernameVariable: 'DOCKER_USER',
+                        passwordVariable: 'DOCKER_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        set +x
+                        echo "$DOCKER_TOKEN" | docker login \
+                          --username "$DOCKER_USER" \
+                          --password-stdin
+
+                        docker push "$IMAGE_NAME:$BUILD_NUMBER"
+
+                        docker logout
+                    '''
+                }
+            }
+        }
+    }
+}
+This example assumes:
+Jenkins Credentials ID:
+dockerhub-credentials
+and that the Jenkins agent has permission to execute Docker commands.
