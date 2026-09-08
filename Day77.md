@@ -66,3 +66,26 @@ Docker Image
    ↓
 Registry
 This creates a repeatable container build process.
+🏗️ Architecture
+Developer
+                        │
+                        ▼
+                 GitHub Repository
+                        │
+                     Webhook
+                        │
+                        ▼
+                Jenkins Controller
+                        │
+                        ▼
+                    Jenkins Agent
+                        │
+              ┌─────────┴─────────┐
+              ▼                   ▼
+         Application Build     Docker Build
+                                    │
+                                    ▼
+                              Docker Image
+                                    │
+                                    ▼
+                              Docker Registry
