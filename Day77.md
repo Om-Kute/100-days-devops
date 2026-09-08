@@ -143,3 +143,15 @@ Add Credentials
 For Docker Hub, use an appropriate credential type and preferably a Docker Hub access token rather than a reusable account password.
 Example credential ID:
 dockerhub-credentials
+⚠️ Never Hardcode Credentials
+Avoid:
+sh 'docker login -u admin -p mypassword'
+Do not commit passwords or tokens to GitHub.
+Prefer Jenkins-managed credentials:
+Jenkins Credentials
+        ↓
+Secure Binding
+        ↓
+Pipeline
+        ↓
+Docker Registry
