@@ -38,3 +38,14 @@ Tag Image
 Push Image
     ↓
 Docker Registry
+🐳 What is Docker?
+Docker is a containerization platform that packages an application and its dependencies into a container image.
+Application
+     +
+Dependencies
+     +
+Configuration
+     ↓
+Docker Image
+     ↓
+Container
