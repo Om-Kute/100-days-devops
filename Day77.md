@@ -119,3 +119,14 @@ or:
 docker image ls
 Example:
 REPOSITORY    TAG       IMAGE ID
+🏷️ Docker Image Tagging
+Before pushing an image to Docker Hub, tag it with the registry repository name.
+Example:
+docker tag myapp:1.0 USERNAME/myapp:1.0
+Verify:
+docker images
+Concept:
+myapp:1.0
+    │
+    ▼
+USERNAME/myapp:1.0
