@@ -89,3 +89,16 @@ Developer
                                     │
                                     ▼
                               Docker Registry
+📄 Dockerfile
+A Dockerfile defines how a Docker image is built.
+Example for a Java application:
+FROM eclipse-temurin:21-jre
+
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
+The exact base image and Java version should match your application's requirements.
