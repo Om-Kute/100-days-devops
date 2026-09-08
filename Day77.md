@@ -49,3 +49,20 @@ Configuration
 Docker Image
      ↓
 Container
+🤖 Why Jenkins + Docker?
+Jenkins automates the CI/CD workflow, while Docker provides a consistent packaging format for applications.
+Together:
+GitHub
+   ↓
+Jenkins
+   ↓
+Build
+   ↓
+Test
+   ↓
+Docker Build
+   ↓
+Docker Image
+   ↓
+Registry
+This creates a repeatable container build process.
