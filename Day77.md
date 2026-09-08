@@ -130,3 +130,16 @@ myapp:1.0
     │
     ▼
 USERNAME/myapp:1.0
+🔐 Jenkins Credentials
+Jenkins should manage Docker registry credentials securely.
+Go to:
+Jenkins Dashboard
+      ↓
+Manage Jenkins
+      ↓
+Credentials
+      ↓
+Add Credentials
+For Docker Hub, use an appropriate credential type and preferably a Docker Hub access token rather than a reusable account password.
+Example credential ID:
+dockerhub-credentials
