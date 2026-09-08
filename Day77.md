@@ -102,3 +102,14 @@ EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
 The exact base image and Java version should match your application's requirements.
+🔨 Docker Build
+Build the image:
+docker build -t myapp:1.0 .
+Explanation:
+docker build
+     ↓
+Reads Dockerfile
+     ↓
+Builds Image
+     ↓
+myapp:1.0
