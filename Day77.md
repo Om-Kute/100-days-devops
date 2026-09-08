@@ -21,3 +21,20 @@ Developer
           │
           ▼
      Docker Registry
+🎯 Goal
+The main goal is to automate:
+Code Push
+    ↓
+Jenkins Trigger
+    ↓
+Build Application
+    ↓
+Run Tests
+    ↓
+Build Docker Image
+    ↓
+Tag Image
+    ↓
+Push Image
+    ↓
+Docker Registry
