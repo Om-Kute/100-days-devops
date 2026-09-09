@@ -123,3 +123,29 @@ Dockerfile
 Git Repository
 Shell Scripts
 Use Jenkins Credentials and least-privilege access.
+📄 Kubernetes Deployment
+Example deployment.yaml:
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: my-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: my-app
+
+  template:
+    metadata:
+      labels:
+        app: my-app
+
+    spec:
+      containers:
+        - name: my-app
+          image: USERNAME/my-app:1.0
+          ports:
+            - containerPort: 8080
