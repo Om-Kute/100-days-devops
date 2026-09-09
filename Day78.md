@@ -204,3 +204,24 @@ Check Deployment:
 kubectl get deployment my-app
 Check Service:
 kubectl get service my-app-service
+🔎 Describe Resources
+For detailed Pod information:
+kubectl describe pod <pod-name>
+For Deployment:
+kubectl describe deployment my-app
+These commands are useful for troubleshooting.
+🔄 Rolling Update
+Kubernetes Deployments support rolling updates.
+Change the image:
+kubectl set image deployment/my-app \
+my-app=USERNAME/my-app:2.0
+Monitor the rollout:
+kubectl rollout status deployment/my-app
+Concept:
+Version 1
+   ↓
+New Version
+   ↓
+Gradually Replace Pods
+   ↓
+Version 2
