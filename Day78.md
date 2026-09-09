@@ -243,3 +243,90 @@ Concept:
  ↓
 5 Pods
 Kubernetes manages the desired replica count.
+🤖 Jenkins Pipeline
+A simplified Jenkins Pipeline can deploy Kubernetes manifests:
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t USERNAME/my-app:${BUILD_NUMBER} .'
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                echo 'Push Docker image to registry'
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f k8s/deployment.yaml'
+                sh 'kubectl apply -f k8s/service.yaml'
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh 'kubectl rollout status deployment/my-app'
+                sh 'kubectl get pods'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Deployment successful 🚀'
+        }
+
+        failure {
+            echo 'Deployment failed ❌'
+        }
+    }
+}
+In a real pipeline, the image reference in deployment.yaml must correspond to the image Jenkins built and pushed. Avoid leaving a fixed tag such as 1.0 if every build is supposed to deploy a new image.
+🔄 Complete CI/CD Pipeline
+GitHub
+                       │
+                       ▼
+                    Jenkins
+                       │
+                ┌──────┴──────┐
+                ▼             ▼
+              Build          Test
+                │             │
+                └──────┬──────┘
+                       ▼
+                 Docker Build
+                       │
+                       ▼
+                Docker Registry
+                       │
+                       ▼
+              Kubernetes Deploy
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+          Deployment          Service
+              │
+              ▼
+             Pods
+              │
+              ▼
+        Running Application
