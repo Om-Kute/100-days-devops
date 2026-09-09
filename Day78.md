@@ -168,3 +168,16 @@ spec:
       targetPort: 8080
       nodePort: 30080
 For production workloads, choose the Service type and ingress/load-balancing architecture appropriate to your environment.
+📁 Project Structure
+A project can contain:
+my-app/
+│
+├── src/
+├── pom.xml
+├── Dockerfile
+├── Jenkinsfile
+│
+└── k8s/
+    ├── deployment.yaml
+    └── service.yaml
+This keeps application code, CI/CD configuration, and Kubernetes manifests together under version control.
