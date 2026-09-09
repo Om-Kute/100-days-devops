@@ -149,3 +149,22 @@ spec:
           image: USERNAME/my-app:1.0
           ports:
             - containerPort: 8080
+🌐 Kubernetes Service
+Example service.yaml:
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: my-app-service
+
+spec:
+  type: NodePort
+
+  selector:
+    app: my-app
+
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
+For production workloads, choose the Service type and ingress/load-balancing architecture appropriate to your environment.
