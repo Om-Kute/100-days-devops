@@ -111,3 +111,15 @@ Credentials
        ↓
 Add Credentials
 The exact credential type depends on your Jenkins/Kubernetes setup.
+⚠️ Security
+Never hardcode:
+❌ Kubernetes tokens
+❌ kubeconfig secrets
+❌ Cloud credentials
+❌ Passwords
+inside:
+Jenkinsfile
+Dockerfile
+Git Repository
+Shell Scripts
+Use Jenkins Credentials and least-privilege access.
