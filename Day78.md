@@ -89,3 +89,25 @@ Verify kubectl:
 kubectl version --client
 Check cluster access:
 kubectl get nodes
+🔐 Kubernetes Credentials in Jenkins
+Jenkins needs credentials to communicate securely with the Kubernetes cluster.
+Conceptually:
+Jenkins
+   │
+   ▼
+Kubernetes Credentials
+   │
+   ▼
+Kubernetes API Server
+   │
+   ▼
+Cluster
+Credentials can be configured through:
+Jenkins Dashboard
+       ↓
+Manage Jenkins
+       ↓
+Credentials
+       ↓
+Add Credentials
+The exact credential type depends on your Jenkins/Kubernetes setup.
