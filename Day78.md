@@ -225,3 +225,21 @@ New Version
 Gradually Replace Pods
    ↓
 Version 2
+↩️ Rollback
+If a deployment has a problem:
+kubectl rollout undo deployment/my-app
+Check rollout history:
+kubectl rollout history deployment/my-app
+This provides a useful recovery mechanism for Deployment-based workloads.
+📈 Scaling
+Scale the application:
+kubectl scale deployment my-app --replicas=5
+Verify:
+kubectl get pods
+Concept:
+1 Pod
+ ↓
+3 Pods
+ ↓
+5 Pods
+Kubernetes manages the desired replica count.
