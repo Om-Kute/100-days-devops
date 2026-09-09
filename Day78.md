@@ -61,3 +61,17 @@ Developer
                           │
                           ▼
                     Running Application
+☸️ Why Jenkins + Kubernetes?
+Jenkins handles automation, while Kubernetes handles container orchestration.
+Jenkins
+   ↓
+Automate CI/CD
+
+Docker
+   ↓
+Package Application
+
+Kubernetes
+   ↓
+Run & Orchestrate Containers
+Together they provide an automated application delivery workflow.
