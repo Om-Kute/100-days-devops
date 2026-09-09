@@ -23,3 +23,41 @@ Pods
 Service
     ↓
 Application 🚀
+🏗️ Complete Architecture
+Developer
+                           │
+                         git push
+                           │
+                           ▼
+                    GitHub Repository
+                           │
+                        Webhook
+                           │
+                           ▼
+                   Jenkins Controller
+                           │
+                           ▼
+                     Jenkins Agent
+                           │
+                  ┌────────┴────────┐
+                  ▼                 ▼
+              Build/Test       Docker Build
+                                    │
+                                    ▼
+                              Docker Image
+                                    │
+                                    ▼
+                             Container Registry
+                                    │
+                                    ▼
+                              Kubernetes Cluster
+                                    │
+                          ┌─────────┴─────────┐
+                          ▼                   ▼
+                       Deployment          Service
+                          │                   │
+                          ▼                   ▼
+                         Pods              Network
+                          │
+                          ▼
+                    Running Application
