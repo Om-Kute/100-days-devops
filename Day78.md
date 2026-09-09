@@ -192,3 +192,15 @@ Check Deployment:
 kubectl get deployments
 Check Service:
 kubectl get services
+🔍 Verify Deployment
+Check Pods:
+kubectl get pods
+Example:
+NAME                      READY   STATUS
+my-app-7d9f8c6d5b-abc12   1/1     Running
+my-app-7d9f8c6d5b-def34   1/1     Running
+my-app-7d9f8c6d5b-ghi56   1/1     Running
+Check Deployment:
+kubectl get deployment my-app
+Check Service:
+kubectl get service my-app-service
