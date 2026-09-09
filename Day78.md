@@ -75,3 +75,17 @@ Kubernetes
    ↓
 Run & Orchestrate Containers
 Together they provide an automated application delivery workflow.
+📋 Prerequisites
+Before integrating Jenkins with Kubernetes, you should have:
+✅ Jenkins Server
+✅ Jenkins Agent
+✅ Kubernetes Cluster
+✅ kubectl
+✅ kubeconfig / Kubernetes credentials
+✅ Docker Image
+✅ Container Registry
+✅ Kubernetes YAML manifests
+Verify kubectl:
+kubectl version --client
+Check cluster access:
+kubectl get nodes
