@@ -181,3 +181,14 @@ my-app/
     ├── deployment.yaml
     └── service.yaml
 This keeps application code, CI/CD configuration, and Kubernetes manifests together under version control.
+🚀 Kubernetes Deployment Commands
+Apply the Deployment:
+kubectl apply -f k8s/deployment.yaml
+Apply the Service:
+kubectl apply -f k8s/service.yaml
+Check Pods:
+kubectl get pods
+Check Deployment:
+kubectl get deployments
+Check Service:
+kubectl get services
