@@ -100,3 +100,8 @@ Pipeline and deployment operations
 Viewer
 View jobs and build results
 RBAC helps organizations maintain consistent and manageable permissions.
+🔑 Jenkins Credentials
+Jenkins provides a Credentials system for securely storing authentication information.
+Instead of writing secrets directly inside a Jenkinsfile:
+password = "MyPassword123"
+Store the secret in Jenkins Credentials and reference it through a credential ID.
