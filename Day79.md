@@ -296,3 +296,82 @@ printenv
 when sensitive environment variables are present.
 Never intentionally print:
 echo "$PASSWORD"
+🔐 Jenkins Security Best Practices
+1. Use Strong Authentication
+Use strong passwords or centralized identity providers.
+2. Enable Authorization
+Do not leave Jenkins with unrestricted access for every user.
+3. Use Least Privilege
+Give users, agents, and service accounts only the permissions they actually need.
+4. Use Jenkins Credentials
+Store secrets in Jenkins Credentials instead of source code.
+5. Avoid Hardcoded Secrets
+Never commit:
+Passwords
+API Keys
+Access Tokens
+Private Keys
+Cloud Secrets
+Kubeconfig Files
+to Git repositories.
+6. Enable HTTPS
+Jenkins should ideally be protected by HTTPS, commonly through a reverse proxy or another secure frontend.
+User
+ ↓ HTTPS
+Reverse Proxy
+ ↓
+Jenkins
+7. Protect Against CSRF
+Jenkins provides CSRF protection mechanisms to help prevent unauthorized requests.
+Keep appropriate security protections enabled rather than disabling them simply to bypass integration problems.
+8. Keep Jenkins Updated
+Regularly update:
+Jenkins
+Plugins
+Java/runtime components where applicable
+Operating system packages
+Security updates are important because vulnerabilities can exist in Jenkins core or plugins.
+9. Restrict Network Access
+Do not expose Jenkins administration unnecessarily to the public internet.
+Use appropriate:
+Firewalls
+Security Groups
+VPNs
+Reverse proxies
+Network segmentation
+Access controls
+10. Monitor and Audit
+Monitor:
+Login activity
+Permission changes
+Credential usage
+Job execution
+Configuration changes
+Administrative actions
+🔄 Secure CI/CD Architecture
+Developer
+                      │
+                      ↓
+                GitHub / Git
+                      │
+                   Webhook
+                      │
+                      ↓
+              ┌───────────────┐
+              │    Jenkins    │
+              │    Security   │
+              └───────┬───────┘
+                      │
+              Jenkins Credentials
+                      │
+          ┌───────────┼───────────┐
+          ↓           ↓           ↓
+       GitHub       Docker       AWS
+       Token        Token      Credentials
+          │           │           │
+          └───────────┼───────────┘
+                      ↓
+                 Kubernetes
+                      │
+                      ↓
+                Application
