@@ -212,3 +212,47 @@ echo "$DOCKER_PASSWORD" | docker login \
 -u "$DOCKER_USER" \
 --password-stdin
 This reduces the chance of exposing passwords through command history or process arguments.
+☁️ AWS Credentials
+Jenkins pipelines may need AWS credentials for tasks such as:
+Deploying to EC2
+Uploading to S3
+Managing infrastructure
+Deploying applications
+Working with ECR
+AWS credentials should be stored securely and scoped with the minimum permissions required.
+Avoid placing credentials directly inside:
+Jenkinsfile
+GitHub repository
+Dockerfile
+Shell scripts
+Environment files committed to Git
+☸️ Kubernetes Credentials
+Jenkins may require Kubernetes authentication for deployment.
+For example:
+GitHub
+   ↓
+Jenkins
+   ↓
+Docker Image
+   ↓
+Container Registry
+   ↓
+Kubernetes
+A Kubernetes credential may contain a kubeconfig or another supported authentication mechanism.
+Example concept:
+withCredentials([
+    file(
+        credentialsId: 'kubeconfig',
+        variable: 'KUBECONFIG'
+    )
+]) {
+    sh '''
+        kubectl get pods
+        kubectl apply -f deployment.yaml
+    '''
+}
+⚠️ Security Principle
+Do not automatically give Jenkins:
+cluster-admin
+permissions unless there is a legitimate requirement.
+Prefer narrowly scoped Kubernetes RBAC permissions.
