@@ -12,3 +12,23 @@ The goal of this day was to understand how to:
 🚫 Avoid hardcoding passwords and tokens
 🔗 Secure Jenkins integrations with GitHub, Docker, AWS, and Kubernetes
 📋 Follow least-privilege security principles
+🔐 Why Jenkins Security Matters
+Jenkins pipelines often have access to sensitive resources such as:
+GitHub Repository
+      ↓
+    Jenkins
+      ↓
+Docker Registry
+      ↓
+    AWS
+      ↓
+ Kubernetes Cluster
+If Jenkins is compromised, an attacker could potentially:
+Access source code
+Steal credentials
+Modify builds
+Push malicious Docker images
+Deploy unauthorized applications
+Access cloud resources
+Modify Kubernetes workloads
+Therefore, Jenkins should always be treated as a critical infrastructure component.
