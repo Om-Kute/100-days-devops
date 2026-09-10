@@ -256,3 +256,43 @@ Do not automatically give Jenkins:
 cluster-admin
 permissions unless there is a legitimate requirement.
 Prefer narrowly scoped Kubernetes RBAC permissions.
+🚫 Never Hardcode Secrets
+❌ Bad Practice
+environment {
+    PASSWORD = 'mypassword'
+    API_KEY = '123456789'
+}
+Or:
+docker login -u myuser -p mypassword
+Or:
+AWS_ACCESS_KEY_ID=xxxxx
+AWS_SECRET_ACCESS_KEY=xxxxx
+inside a Git repository.
+✅ Better Practice
+Secret
+  ↓
+Jenkins Credentials
+  ↓
+Credential ID
+  ↓
+Pipeline
+  ↓
+Temporary Environment / Binding
+  ↓
+Required Operation
+🕵️ Secret Leakage Prevention
+Secrets can accidentally appear in:
+Console logs
+Shell commands
+Git commits
+Environment dumps
+Error messages
+Build artifacts
+Debug output
+Avoid commands such as:
+env
+or:
+printenv
+when sensitive environment variables are present.
+Never intentionally print:
+echo "$PASSWORD"
