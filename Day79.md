@@ -55,3 +55,14 @@ Authorization
 Check Permissions
  ↓
 Access Jenkins Resources
+👤 Jenkins Authentication
+Jenkins can authenticate users through different mechanisms.
+Common options include:
+Jenkins internal user database
+LDAP
+Active Directory
+OAuth
+SAML
+OpenID Connect
+For smaller environments, Jenkins' built-in user database may be sufficient.
+For enterprise environments, centralized identity management is commonly preferred.
