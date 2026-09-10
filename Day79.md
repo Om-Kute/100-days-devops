@@ -137,3 +137,52 @@ Kubernetes kubeconfig files
 Other sensitive files
 5. Certificate
 Can be used when authentication requires certificates.
+🏗️ Adding Credentials in Jenkins
+Typical process:
+Jenkins Dashboard
+      ↓
+Manage Jenkins
+      ↓
+Credentials
+      ↓
+Choose Credential Store
+      ↓
+Global Credentials
+      ↓
+Add Credentials
+      ↓
+Select Credential Type
+      ↓
+Enter Secret
+      ↓
+Save
+Example:
+ID: github-credentials
+Username: <username>
+Password/Token: <token>
+The exact UI can vary depending on the Jenkins version and installed plugins.
+🔒 Using Credentials in Jenkinsfile
+Credentials should be referenced by their Jenkins credential ID.
+Example:
+pipeline {
+    agent any
+
+    stages {
+        stage('Use Credentials') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'github-credentials',
+                        usernameVariable: 'GIT_USER',
+                        passwordVariable: 'GIT_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        echo "Using authenticated operation"
+                    '''
+                }
+            }
+        }
+    }
+}
+The secret itself should not be written into the Jenkinsfile.
