@@ -105,3 +105,35 @@ Jenkins provides a Credentials system for securely storing authentication inform
 Instead of writing secrets directly inside a Jenkinsfile:
 password = "MyPassword123"
 Store the secret in Jenkins Credentials and reference it through a credential ID.
+📦 Common Credential Types
+Jenkins can store different types of credentials.
+1. Username + Password
+Used for:
+Private repositories
+Internal applications
+Registry authentication
+Example ID:
+github-credentials
+2. SSH Username with Private Key
+Commonly used for:
+Git SSH authentication
+Linux servers
+Remote deployment
+Example:
+Username: ubuntu
+Private Key: ********
+3. Secret Text
+Useful for:
+API tokens
+Access tokens
+Application secrets
+Example:
+github-token
+4. Secret File
+Useful for:
+Configuration files
+Certificates
+Kubernetes kubeconfig files
+Other sensitive files
+5. Certificate
+Can be used when authentication requires certificates.
