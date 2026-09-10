@@ -32,3 +32,26 @@ Deploy unauthorized applications
 Access cloud resources
 Modify Kubernetes workloads
 Therefore, Jenkins should always be treated as a critical infrastructure component.
+🔑 Authentication vs Authorization
+Authentication
+Authorization
+Verifies identity
+Determines permissions
+"Who are you?"
+"What can you do?"
+Login/password/token
+Roles and permissions
+Happens first
+Happens after authentication
+Example
+User
+ ↓
+Authentication
+ ↓
+Identity Verified
+ ↓
+Authorization
+ ↓
+Check Permissions
+ ↓
+Access Jenkins Resources
