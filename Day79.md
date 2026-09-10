@@ -186,3 +186,29 @@ pipeline {
     }
 }
 The secret itself should not be written into the Jenkinsfile.
+🐳 Docker Credentials
+Jenkins can securely authenticate with a Docker registry.
+Example:
+withCredentials([
+    usernamePassword(
+        credentialsId: 'dockerhub-credentials',
+        usernameVariable: 'DOCKER_USER',
+        passwordVariable: 'DOCKER_PASSWORD'
+    )
+]) {
+    sh '''
+        echo "$DOCKER_PASSWORD" | docker login \
+        -u "$DOCKER_USER" \
+        --password-stdin
+
+        docker push USERNAME/my-app:$BUILD_NUMBER
+    '''
+}
+Important
+Avoid:
+docker login -u username -p password
+Prefer:
+echo "$DOCKER_PASSWORD" | docker login \
+-u "$DOCKER_USER" \
+--password-stdin
+This reduces the chance of exposing passwords through command history or process arguments.
