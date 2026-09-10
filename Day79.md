@@ -78,3 +78,25 @@ Credential management
 Agent management
 Workspace access
 A user should receive only the permissions required for their role.
+🎭 Role-Based Access Control (RBAC)
+RBAC assigns permissions based on roles rather than individually configuring every user.
+Example
+Jenkins
+                       │
+          ┌────────────┼────────────┐
+          ↓            ↓            ↓
+       Admin       Developer      Viewer
+          │            │            │
+       Full Access   Build/View    View Only
+Example Roles
+Role
+Example Permissions
+Admin
+Full Jenkins administration
+Developer
+Build and view jobs
+DevOps Engineer
+Pipeline and deployment operations
+Viewer
+View jobs and build results
+RBAC helps organizations maintain consistent and manageable permissions.
