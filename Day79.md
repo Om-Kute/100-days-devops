@@ -66,3 +66,15 @@ SAML
 OpenID Connect
 For smaller environments, Jenkins' built-in user database may be sufficient.
 For enterprise environments, centralized identity management is commonly preferred.
+🛡️ Jenkins Authorization
+Authorization controls what authenticated users are allowed to do.
+Examples include:
+Overall Jenkins administration
+Job creation
+Job configuration
+Job execution
+View access
+Credential management
+Agent management
+Workspace access
+A user should receive only the permissions required for their role.
