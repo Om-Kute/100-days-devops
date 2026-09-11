@@ -85,3 +85,19 @@ Useful commands include:
 ss -tuln
 and:
 ip addr
+⚡ 5. Application Metrics
+Important application-level metrics include:
+Request Rate
+Response Time
+Error Rate
+Latency
+Throughput
+Active Users
+Database Connections
+Queue Length
+For web applications, a useful combination is:
+Requests/sec
++
+Latency
++
+Error Rate
