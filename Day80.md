@@ -326,3 +326,16 @@ On systems using systemd:
 journalctl
 Follow logs:
 journalctl -f
+📋 Application Logging Levels
+Common logging levels include:
+DEBUG
+INFO
+WARN
+ERROR
+FATAL
+Example:
+INFO  → Application started
+INFO  → Database connected
+WARN  → Memory usage is high
+ERROR → API request failed
+Logging levels should be selected carefully so that useful diagnostic information is available without generating excessive noise.
