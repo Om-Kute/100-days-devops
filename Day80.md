@@ -218,3 +218,40 @@ Grafana
     ↓
 Log Dashboard
 Loki is particularly useful in cloud-native and Kubernetes environments.
+📚 ELK Stack
+ELK stands for:
+E → Elasticsearch
+L → Logstash
+K → Kibana
+Architecture:
+Application
+     ↓
+   Logs
+     ↓
+ Logstash
+     ↓
+Elasticsearch
+     ↓
+  Kibana
+     ↓
+Visualization & Search
+Elasticsearch
+Stores and searches log data.
+Logstash
+Collects, processes, and forwards logs.
+Kibana
+Provides visualization and log exploration.
+🔭 Distributed Tracing
+Monitoring and logging are not always enough for complex microservices.
+Distributed tracing helps track a request across multiple services.
+Example:
+User Request
+     ↓
+API Gateway
+     ↓
+Service A
+     ↓
+Service B
+     ↓
+Database
+Tools such as Jaeger can help visualize request paths and latency across services.
