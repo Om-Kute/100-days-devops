@@ -155,3 +155,36 @@ Prometheus
 Dashboard
      ↓
 CPU / Memory / Disk / Network
+🖥️ Node Exporter
+Node Exporter exposes hardware and operating-system metrics for Prometheus.
+Typical metrics include:
+CPU
+Memory
+Disk
+Network
+Filesystem
+Load Average
+Architecture:
+Linux Server
+     ↓
+Node Exporter
+     ↓
+Prometheus
+     ↓
+Grafana
+🐳 cAdvisor
+cAdvisor provides container resource usage information.
+It can expose metrics such as:
+Container CPU
+Container Memory
+Network
+Filesystem
+Container Statistics
+Architecture:
+Docker Containers
+       ↓
+   cAdvisor
+       ↓
+   Prometheus
+       ↓
+    Grafana
