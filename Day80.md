@@ -139,3 +139,19 @@ Linux monitoring
 Application monitoring
 Container monitoring
 Alerting
+📈 Grafana
+Grafana is a visualization and dashboard platform.
+It can connect to data sources such as:
+Prometheus
+Loki
+Elasticsearch
+InfluxDB
+Cloud monitoring systems
+Example:
+Prometheus
+     ↓
+   Grafana
+     ↓
+Dashboard
+     ↓
+CPU / Memory / Disk / Network
