@@ -34,3 +34,19 @@ Example:
 2026-09-11 10:18:02 ERROR API request failed
 Logs help us answer:
 "What happened?"
+⚖️ Monitoring vs Logging
+Monitoring
+Logging
+Measures system health
+Records system events
+Uses metrics
+Uses log messages
+Good for detecting problems
+Good for investigating problems
+CPU, memory, latency
+Errors, warnings, events
+Often visualized in dashboards
+Often searched and analyzed
+Prometheus, Grafana
+Loki, ELK
+Both are important for production systems.
