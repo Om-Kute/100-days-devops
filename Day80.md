@@ -101,3 +101,41 @@ Requests/sec
 Latency
 +
 Error Rate
+🔥 Popular Monitoring & Observability Tools
+Tool
+Main Purpose
+Prometheus
+Metrics collection and storage
+Grafana
+Metrics visualization
+Node Exporter
+Linux system metrics
+cAdvisor
+Container metrics
+Alertmanager
+Alert handling
+Loki
+Log aggregation
+ELK Stack
+Centralized logging and analysis
+Jaeger
+Distributed tracing
+Zabbix
+Infrastructure monitoring
+🔥 Prometheus
+Prometheus is a popular open-source monitoring and alerting system.
+It collects and stores metrics as time-series data.
+Basic architecture:
+Application / Server
+        ↓
+    Metrics
+        ↓
+   Prometheus
+        ↓
+Time-Series Storage
+Prometheus is commonly used for:
+Kubernetes monitoring
+Linux monitoring
+Application monitoring
+Container monitoring
+Alerting
