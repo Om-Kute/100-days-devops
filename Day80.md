@@ -10,3 +10,18 @@ Are requests becoming slow?
 Are errors increasing?
 What happened when a service failed?
 Monitoring helps us understand system health through metrics, while logging helps us investigate what happened inside systems and applications.
+🔍 What is Monitoring?
+Monitoring is the continuous collection and analysis of system and application metrics.
+Examples:
+CPU Usage
+Memory Usage
+Disk Usage
+Network Traffic
+Request Rate
+Response Time
+Error Rate
+Application Uptime
+Container Status
+Pod Status
+Monitoring helps us answer:
+"What is happening right now?"
