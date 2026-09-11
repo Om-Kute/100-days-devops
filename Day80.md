@@ -188,3 +188,33 @@ Docker Containers
    Prometheus
        ↓
     Grafana
+🚨 Alertmanager
+Prometheus can detect conditions that require attention.
+Alertmanager handles those alerts and can route notifications to configured destinations.
+Example:
+Prometheus
+    ↓
+Alert Rule
+    ↓
+Alertmanager
+    ↓
+Notification
+    ↓
+Email / Slack / Other Integrations
+Example alert condition:
+CPU usage > defined threshold
+for a sustained period
+The exact threshold should depend on the workload rather than using one universal value.
+📝 Loki
+Loki is a log aggregation system designed to work well with Grafana.
+Basic architecture:
+Application
+    ↓
+Logs
+    ↓
+Loki
+    ↓
+Grafana
+    ↓
+Log Dashboard
+Loki is particularly useful in cloud-native and Kubernetes environments.
