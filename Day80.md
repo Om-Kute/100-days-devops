@@ -50,3 +50,22 @@ Often searched and analyzed
 Prometheus, Grafana
 Loki, ELK
 Both are important for production systems.
+📊 Important Metrics to Monitor
+1. CPU Usage
+Shows how much processing capacity is being used.
+top
+or:
+htop
+High CPU usage for a long period may indicate:
+High traffic
+CPU-intensive application
+Inefficient code
+Resource limitation
+🧠 2. Memory Usage
+Memory monitoring helps identify:
+High memory consumption
+Memory leaks
+Out-of-memory conditions
+Insufficient resources
+Command:
+free -h
