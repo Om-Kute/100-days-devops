@@ -69,3 +69,19 @@ Out-of-memory conditions
 Insufficient resources
 Command:
 free -h
+💾 3. Disk Usage
+Check disk utilization:
+df -h
+Check directory sizes:
+du -sh *
+A full disk can cause applications and services to fail.
+🌐 4. Network Monitoring
+Network monitoring helps identify:
+High traffic
+Packet problems
+Connection failures
+Network bottlenecks
+Useful commands include:
+ss -tuln
+and:
+ip addr
