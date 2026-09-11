@@ -255,3 +255,74 @@ Service B
      ↓
 Database
 Tools such as Jaeger can help visualize request paths and latency across services.
+🏗️ Monitoring Architecture
+A basic Prometheus + Grafana architecture:
+┌───────────────────┐
+                 │    Linux Server   │
+                 │   Node Exporter   │
+                 └─────────┬─────────┘
+                           │
+                        Metrics
+                           │
+                           ↓
+                  ┌─────────────────┐
+                  │   Prometheus    │
+                  │ Collect & Store │
+                  └────────┬────────┘
+                           │
+                ┌──────────┴──────────┐
+                ↓                     ↓
+           ┌─────────┐          ┌────────────┐
+           │ Grafana │          │Alertmanager│
+           └────┬────┘          └──────┬─────┘
+                │                      │
+                ↓                      ↓
+            Dashboard             Notifications
+☸️ Kubernetes Monitoring
+Kubernetes environments contain many components that need monitoring.
+Important resources include:
+Nodes
+Pods
+Deployments
+Services
+Containers
+CPU
+Memory
+Network
+Useful commands:
+kubectl get nodes
+kubectl get pods
+kubectl get pods -A
+kubectl describe pod <pod-name>
+Depending on the cluster configuration, resource usage can also be inspected with:
+kubectl top nodes
+and:
+kubectl top pods
+🐳 Docker Monitoring
+List running containers:
+docker ps
+Check container resource usage:
+docker stats
+View container logs:
+docker logs <container-name>
+Follow logs in real time:
+docker logs -f <container-name>
+🐧 Linux Monitoring Commands
+CPU
+top
+htop
+Memory
+free -h
+Disk
+df -h
+Processes
+ps aux
+Network
+ss -tuln
+System uptime
+uptime
+System logs
+On systems using systemd:
+journalctl
+Follow logs:
+journalctl -f
