@@ -240,3 +240,75 @@ Destroy
 terraform destroy
 Removes infrastructure managed by the configuration.
 ⚠️ Use terraform destroy carefully, especially with production infrastructure.
+☁️ Terraform + AWS
+Terraform can be used to manage AWS infrastructure.
+Example architecture:
+Terraform
+                     │
+                     ↓
+               AWS Provider
+                     │
+        ┌────────────┼────────────┐
+        ↓            ↓            ↓
+       EC2          VPC           S3
+        │            │            │
+        └────────────┼────────────┘
+                     ↓
+             AWS Infrastructure
+🖥️ Basic AWS EC2 Example
+Example Terraform configuration:
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform-EC2"
+  }
+}
+Important
+The AMI ID must be valid for the selected AWS region.
+Do not blindly copy an AMI ID from another region.
+📁 Basic Terraform Project Structure
+A simple project can look like:
+terraform-project/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+└── .gitignore
+As projects become larger, modules can be introduced:
+terraform-project/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+│
+├── modules/
+│   ├── network/
+│   ├── compute/
+│   └── security/
+│
+└── .gitignore
+🔐 Terraform Security
+Infrastructure code can interact with highly privileged cloud resources.
+Important security practices:
+❌ Never hardcode credentials
+Avoid:
+provider "aws" {
+  access_key = "MY_ACCESS_KEY"
+  secret_key = "MY_SECRET_KEY"
+}
+✅ Use secure authentication
+Prefer mechanisms such as:
+IAM roles
+AWS CLI credential configuration
+Short-lived credentials
+Environment-based authentication
+Workload identity mechanisms where appropriate
