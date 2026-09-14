@@ -190,3 +190,18 @@ Terraform Project
 │
 └── main.tf
 Modules are especially useful for larger infrastructure projects.
+📝 Declarative Infrastructure
+Terraform follows a declarative approach.
+Instead of describing every individual step required to create infrastructure, we describe the desired end state.
+Imperative Thinking
+1. Create network
+2. Create subnet
+3. Create security group
+4. Create server
+5. Configure server
+Declarative Thinking
+"I want this infrastructure to exist."
+              ↓
+          Terraform
+              ↓
+    Determines required changes
