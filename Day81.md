@@ -15,3 +15,35 @@ resource "aws_instance" "example" {
   }
 }
 Terraform then compares the configuration with the current infrastructure and determines what needs to be created, changed, or removed.
+💡 What is Infrastructure as Code?
+Infrastructure as Code (IaC) means managing infrastructure using code and configuration files.
+Traditional Approach
+Developer
+    ↓
+AWS Console
+    ↓
+Manual Configuration
+    ↓
+EC2
+    ↓
+VPC
+    ↓
+Security Groups
+This can become difficult to reproduce and maintain.
+Infrastructure as Code
+Developer
+    ↓
+Terraform Code
+    ↓
+terraform plan
+    ↓
+terraform apply
+    ↓
+Cloud Infrastructure
+Infrastructure becomes:
+Version controlled
+Repeatable
+Automated
+Reviewable
+Consistent
+Easier to reproduce
