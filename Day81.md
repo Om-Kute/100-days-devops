@@ -47,3 +47,50 @@ Automated
 Reviewable
 Consistent
 Easier to reproduce
+🔥 Why Use Terraform?
+1. Automation
+Terraform automates infrastructure provisioning.
+Terraform Code
+      ↓
+Automatic Provisioning
+      ↓
+Infrastructure
+2. Consistency
+The same configuration can be used to create consistent environments.
+Terraform Code
+     ↓
+ ┌───┼────┐
+ ↓   ↓    ↓
+Dev Test  Prod
+3. Version Control
+Terraform files can be stored in Git.
+Terraform Code
+      ↓
+     Git
+      ↓
+GitHub / GitLab
+This allows infrastructure changes to be reviewed and tracked.
+4. Repeatability
+The same Terraform configuration can be used repeatedly.
+For example:
+Development
+     ↓
+Testing
+     ↓
+Staging
+     ↓
+Production
+5. Multi-Cloud
+Terraform supports many providers.
+Examples include:
+AWS
+Azure
+Google Cloud
+Kubernetes
+GitHub
+Docker
+This allows Terraform to manage infrastructure across different platforms.
+6. Plan Before Apply
+Terraform can show proposed changes before making them.
+terraform plan
+This makes infrastructure changes easier to review.
