@@ -114,3 +114,40 @@ Terraform Configuration
              ↓           ↓           ↓
         Infrastructure Resources
 Terraform uses providers to communicate with external platforms and services.
+🧩 Key Terraform Components
+1. Configuration Files
+Terraform configurations normally use the .tf extension.
+Example:
+main.tf
+variables.tf
+outputs.tf
+providers.tf
+These files contain the infrastructure configuration.
+2. HCL
+Terraform commonly uses HCL — HashiCorp Configuration Language.
+Example:
+resource "aws_instance" "web" {
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "WebServer"
+  }
+}
+HCL is designed to be:
+Human readable
+Declarative
+Structured
+Reusable
+3. Providers
+Providers allow Terraform to communicate with APIs and platforms.
+Example AWS provider:
+provider "aws" {
+  region = "ap-south-1"
+}
+Examples of provider categories:
+AWS
+Azure
+Google Cloud
+Kubernetes
+GitHub
+Docker
