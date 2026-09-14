@@ -312,3 +312,73 @@ AWS CLI credential configuration
 Short-lived credentials
 Environment-based authentication
 Workload identity mechanisms where appropriate
+🔒 Protect Terraform State
+Do not blindly commit:
+terraform.tfstate
+terraform.tfstate.backup
+to a public Git repository.
+A useful .gitignore can contain:
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+For team environments, Terraform state should generally be stored in a properly secured remote backend with appropriate access control and state-locking capabilities.
+🌍 Real-World Terraform Use Cases
+Terraform can be used for:
+☁️ Cloud Infrastructure
+EC2
+VPC
+S3
+RDS
+Load Balancers
+IAM
+☸️ Kubernetes
+EKS
+AKS
+GKE
+Kubernetes Resources
+🔄 CI/CD
+Terraform can be integrated with:
+Jenkins
+GitHub Actions
+GitLab CI/CD
+Azure DevOps
+Example:
+Developer
+    ↓
+GitHub
+    ↓
+CI/CD Pipeline
+    ↓
+Terraform Plan
+    ↓
+Approval
+    ↓
+Terraform Apply
+    ↓
+Cloud Infrastructure
+🏢 Real-World DevOps Architecture
+Terraform can become part of a complete DevOps ecosystem:
+Developer
+                         │
+                         ↓
+                      GitHub
+                         │
+                         ↓
+                      Jenkins
+                         │
+             ┌───────────┴───────────┐
+             ↓                       ↓
+          Docker                 Terraform
+             ↓                       ↓
+      Container Registry        AWS Infrastructure
+             ↓                       ↓
+         Kubernetes             VPC / EC2 / S3
+             │                       │
+             └───────────┬───────────┘
+                         ↓
+                 Prometheus/Grafana
+                         ↓
+                    Monitoring
