@@ -205,3 +205,38 @@ Declarative Thinking
           Terraform
               ↓
     Determines required changes
+🔄 Terraform Workflow
+The basic Terraform workflow is:
+Write
+          ↓
+      terraform init
+          ↓
+     terraform validate
+          ↓
+       terraform plan
+          ↓
+      terraform apply
+          ↓
+     Infrastructure
+          ↓
+     terraform destroy
+🛠️ Important Terraform Commands
+Initialize
+terraform init
+Initializes the working directory and downloads required provider plugins.
+Validate
+terraform validate
+Checks whether the configuration is valid.
+Format
+terraform fmt
+Formats Terraform configuration files.
+Plan
+terraform plan
+Shows the changes Terraform intends to make.
+Apply
+terraform apply
+Creates or updates infrastructure according to the configuration.
+Destroy
+terraform destroy
+Removes infrastructure managed by the configuration.
+⚠️ Use terraform destroy carefully, especially with production infrastructure.
