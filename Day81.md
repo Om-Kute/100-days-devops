@@ -151,3 +151,42 @@ Google Cloud
 Kubernetes
 GitHub
 Docker
+4. Resources
+Resources represent infrastructure components managed by Terraform.
+Examples:
+EC2 Instance
+S3 Bucket
+VPC
+Security Group
+Load Balancer
+Database
+Kubernetes Deployment
+Example:
+resource "aws_instance" "web" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+}
+5. State
+Terraform maintains information about infrastructure in a state.
+The default local state file is:
+terraform.tfstate
+Conceptually:
+Terraform Configuration
+        ↓
+Terraform State
+        ↓
+Real Infrastructure
+Terraform uses state to understand which real-world resources correspond to the configuration.
+⚠️ State can contain sensitive information depending on the resources being managed. Protect it appropriately.
+6. Modules
+Terraform modules allow infrastructure code to be organized into reusable components.
+Example:
+Terraform Project
+│
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   └── security-group/
+│
+└── main.tf
+Modules are especially useful for larger infrastructure projects.
