@@ -94,3 +94,23 @@ This allows Terraform to manage infrastructure across different platforms.
 Terraform can show proposed changes before making them.
 terraform plan
 This makes infrastructure changes easier to review.
+🏛️ Terraform Architecture
+A simplified Terraform architecture:
+Terraform Configuration
+                         │
+                         ↓
+                  ┌─────────────┐
+                  │ Terraform   │
+                  │     CLI     │
+                  └──────┬──────┘
+                         │
+                    Terraform Core
+                         │
+             ┌───────────┼───────────┐
+             ↓           ↓           ↓
+           AWS         Azure        GCP
+        Provider      Provider     Provider
+             │           │           │
+             ↓           ↓           ↓
+        Infrastructure Resources
+Terraform uses providers to communicate with external platforms and services.
