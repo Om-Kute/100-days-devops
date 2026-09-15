@@ -88,3 +88,22 @@ Default output format
 Example region:
 ap-south-1
 🔐 Never commit AWS credentials to GitHub or place them directly inside .tf files.
+🔎 Verify AWS Authentication
+Run:
+aws sts get-caller-identity
+A successful response identifies the AWS principal being used.
+This is a useful way to confirm that the CLI authentication is working before using Terraform.
+📁 Create a Terraform Project
+Create a directory:
+mkdir terraform-demo
+Move into it:
+cd terraform-demo
+Create the main configuration:
+touch main.tf
+Project structure:
+terraform-demo/
+│
+├── main.tf
+│
+└── terraform.tfstate
+terraform.tfstate is generated after Terraform manages resources. It should generally not be committed to a public Git repository.
