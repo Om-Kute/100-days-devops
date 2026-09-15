@@ -73,3 +73,18 @@ terraform show
 Display state information
 terraform providers
 Show configured providers
+☁️ Configure AWS Credentials
+Terraform needs authentication to interact with AWS.
+A common learning setup is configuring the AWS CLI.
+Check whether AWS CLI is installed:
+aws --version
+Configure credentials:
+aws configure
+You will be prompted for:
+AWS Access Key ID
+AWS Secret Access Key
+Default region name
+Default output format
+Example region:
+ap-south-1
+🔐 Never commit AWS credentials to GitHub or place them directly inside .tf files.
