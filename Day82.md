@@ -196,3 +196,52 @@ Terraform shows the resources that will be removed before asking for confirmatio
 For automated environments:
 terraform destroy -auto-approve
 ⚠️ Never run terraform destroy against production infrastructure unless you fully understand the consequences.
+📦 Terraform State
+Terraform maintains information about managed infrastructure in its state.
+The default local state file is:
+terraform.tfstate
+Terraform uses state to understand the relationship between:
+Configuration
+      ↓
+Terraform State
+      ↓
+Real Infrastructure
+For example:
+main.tf
+   ↓
+terraform.tfstate
+   ↓
+AWS EC2
+🔐 Terraform State Security
+State can contain sensitive information depending on the resources being managed.
+Therefore:
+❌ Do not commit:
+terraform.tfstate
+terraform.tfstate.backup
+to a public Git repository.
+A typical .gitignore can include:
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+📄 Example .gitignore
+# Terraform working directory
+.terraform/
+
+# Terraform state
+*.tfstate
+*.tfstate.*
+
+# Terraform plan files
+*.tfplan
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Local variable files
+*.tfvars
+*.tfvars.json
+Keep sensitive variable files out of source control unless they contain no secrets and are intentionally meant to be shared.
