@@ -13,3 +13,14 @@ Validate Terraform configuration
 Preview infrastructure changes
 Apply infrastructure changes
 Destroy test infrastructure safely
+🏗️ Prerequisites
+Before installing Terraform, I prepared:
+Ubuntu/Linux system
+Terminal access
+sudo privileges
+Internet connectivity
+AWS account for AWS-based practice
+AWS CLI
+IAM identity with appropriate permissions
+Text editor such as VS Code, Vim, or Nano
+⚠️ For production environments, use an appropriate IAM role or other short-lived/managed authentication mechanism where possible instead of long-lived access keys.
