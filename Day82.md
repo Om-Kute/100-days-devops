@@ -42,3 +42,34 @@ sudo tee /etc/apt/sources.list.d/hashicorp.list
 Step 5 – Install Terraform
 sudo apt update
 sudo apt install terraform
+✅ Verify Terraform Installation
+Run:
+terraform version
+Example:
+Terraform v1.x.x
+on linux_amd64
+The exact version will depend on the version installed on the system.
+Another useful command:
+terraform -help
+🧰 Terraform CLI
+Some important Terraform commands:
+Command
+Purpose
+terraform version
+Display Terraform version
+terraform init
+Initialize working directory
+terraform validate
+Validate configuration
+terraform fmt
+Format Terraform files
+terraform plan
+Preview changes
+terraform apply
+Create/update infrastructure
+terraform destroy
+Destroy managed infrastructure
+terraform show
+Display state information
+terraform providers
+Show configured providers
