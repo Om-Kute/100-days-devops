@@ -107,3 +107,35 @@ terraform-demo/
 │
 └── terraform.tfstate
 terraform.tfstate is generated after Terraform manages resources. It should generally not be committed to a public Git repository.
+🧩 Terraform Provider
+A provider allows Terraform to interact with an external platform or service.
+For AWS:
+provider "aws" {
+  region = "ap-south-1"
+}
+Terraform can use providers for platforms and services such as:
+AWS
+Azure
+Google Cloud
+Kubernetes
+GitHub
+Docker
+🖥️ Basic AWS Terraform Configuration
+Example:
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform-EC2"
+  }
+}
+Important
+Replace:
+YOUR_AMI_ID
+with an AMI that exists in the selected AWS region.
+AMI IDs are region-specific, so do not blindly copy an AMI ID from another region.
