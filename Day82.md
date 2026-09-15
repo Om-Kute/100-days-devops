@@ -139,3 +139,60 @@ Replace:
 YOUR_AMI_ID
 with an AMI that exists in the selected AWS region.
 AMI IDs are region-specific, so do not blindly copy an AMI ID from another region.
+🔄 Terraform Workflow
+The basic Terraform workflow is:
+Write
+                   ↓
+              .tf Files
+                   ↓
+                Init
+                   ↓
+               Validate
+                   ↓
+                 Plan
+                   ↓
+                Apply
+                   ↓
+              Infrastructure
+                   ↓
+               Destroy
+1️⃣ terraform init
+Initialize the Terraform working directory:
+terraform init
+This downloads the required provider plugins and prepares the working directory.
+2️⃣ terraform validate
+Validate the Terraform configuration:
+terraform validate
+A successful validation indicates that the configuration is syntactically and structurally valid according to Terraform's checks.
+3️⃣ terraform fmt
+Format Terraform configuration:
+terraform fmt
+Check which files would be changed:
+terraform fmt -check
+Formatting helps maintain consistent Terraform code.
+4️⃣ terraform plan
+Preview the changes Terraform intends to make:
+terraform plan
+This is one of the most important Terraform commands because it allows us to review changes before applying them.
+Conceptually:
+Terraform Configuration
+        ↓
+terraform plan
+        ↓
+Proposed Changes
+        ↓
+Review
+5️⃣ terraform apply
+Create or update infrastructure:
+terraform apply
+Terraform displays the proposed changes and normally asks for confirmation.
+To automatically approve:
+terraform apply -auto-approve
+⚠️ Use -auto-approve carefully, especially in production.
+6️⃣ terraform destroy
+Remove resources managed by the Terraform configuration:
+terraform destroy
+Terraform shows the resources that will be removed before asking for confirmation.
+For automated environments:
+terraform destroy -auto-approve
+⚠️ Never run terraform destroy against production infrastructure unless you fully understand the consequences.
