@@ -142,3 +142,32 @@ Map
 variable "tags" {
   type = map(string)
 }
+📄 terraform.tfvars
+Variable values can be provided through a .tfvars file.
+Example:
+instance_type = "t2.micro"
+environment   = "dev"
+Terraform automatically loads:
+terraform.tfvars
+and:
+*.auto.tfvars
+files.
+You can also explicitly specify a variable file:
+terraform plan -var-file="dev.tfvars"
+📤 Outputs
+Outputs expose useful information after Terraform creates infrastructure.
+Example:
+output "instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.web.id
+}
+Another example:
+output "public_ip" {
+  description = "Public IP address"
+  value       = aws_instance.web.public_ip
+}
+After deployment:
+terraform output
+Example:
+instance_id = "i-xxxxxxxx"
+public_ip   = "xx.xx.xx.xx"
