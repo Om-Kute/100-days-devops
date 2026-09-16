@@ -257,3 +257,89 @@ String interpolation
 Collection operations
 Functions
 for expressions
+🏷️ Tags with Variables
+Variables can be used to create reusable tags.
+variables.tf
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+main.tf
+resource "aws_instance" "web" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name        = "Terraform-Web"
+    Environment = var.environment
+  }
+}
+📁 Recommended Project Structure
+For a small Terraform project:
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── providers.tf
+├── terraform.tfvars
+└── .gitignore
+For a larger project:
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── providers.tf
+├── versions.tf
+├── data.tf
+│
+├── environments/
+│   ├── dev/
+│   ├── staging/
+│   └── prod/
+│
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   └── security-group/
+│
+└── .gitignore
+🔄 Terraform Configuration Workflow
+Write HCL
+   ↓
+terraform fmt
+   ↓
+terraform init
+   ↓
+terraform validate
+   ↓
+terraform plan
+   ↓
+Review Changes
+   ↓
+terraform apply
+   ↓
+Infrastructure
+🛠️ Important Terraform Commands
+Initialize
+terraform init
+Initializes the Terraform working directory.
+Format
+terraform fmt
+Formats Terraform configuration files.
+Validate
+terraform validate
+Checks the configuration for syntax and internal consistency.
+Plan
+terraform plan
+Shows the changes Terraform plans to make.
+Apply
+terraform apply
+Creates or updates infrastructure.
+Show Outputs
+terraform output
+Displays configured output values.
+Show Providers
+terraform providers
+Displays the providers required by the configuration.
