@@ -117,3 +117,28 @@ resource "aws_instance" "web" {
   }
 }
 Now the same configuration can be used with different instance types.
+🎛️ Variable Types
+Terraform supports several useful variable types.
+String
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+Number
+variable "instance_count" {
+  type    = number
+  default = 1
+}
+Boolean
+variable "monitoring_enabled" {
+  type    = bool
+  default = true
+}
+List
+variable "availability_zones" {
+  type = list(string)
+}
+Map
+variable "tags" {
+  type = map(string)
+}
