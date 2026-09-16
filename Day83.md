@@ -171,3 +171,41 @@ terraform output
 Example:
 instance_id = "i-xxxxxxxx"
 public_ip   = "xx.xx.xx.xx"
+🔎 Data Sources
+A data source allows Terraform to retrieve information about existing infrastructure or external data without managing that object as a resource.
+For example, we can retrieve an existing AWS AMI.
+Example:
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  owners = ["099720109477"]
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+}
+Then use it:
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.instance_type
+}
+Conceptually:
+Existing AWS Information
+          ↓
+      Data Source
+          ↓
+       Terraform
+          ↓
+     Resource
+🔄 Resource vs Data Source
+Resource
+Data Source
+Creates/manages infrastructure
+Reads existing information
+Terraform controls lifecycle
+Terraform does not manage the object's lifecycle
+Example: create EC2
+Example: find an existing AMI
+Uses resource
+Uses data
