@@ -9,3 +9,18 @@ The goal was to understand how to write Terraform code that is:
 📦 Maintainable
 ⚙️ Scalable
 🔐 Secure
+🧩 What is HCL?
+HCL (HashiCorp Configuration Language) is the configuration language commonly used by Terraform.
+Example:
+resource "aws_instance" "web" {
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform-Web"
+  }
+}
+HCL is designed to be:
+Human-readable
+Declarative
+Structured
+Easy to maintain
