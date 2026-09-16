@@ -343,3 +343,130 @@ Displays configured output values.
 Show Providers
 terraform providers
 Displays the providers required by the configuration.
+🧪 Hands-On Example – AWS EC2
+providers.tf
+provider "aws" {
+  region = "ap-south-1"
+}
+variables.tf
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "environment" {
+  description = "Deployment environment"
+  type        = string
+  default     = "dev"
+}
+main.tf
+resource "aws_instance" "web" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = var.instance_type
+
+  tags = {
+    Name        = "Terraform-Web"
+    Environment = var.environment
+  }
+}
+outputs.tf
+output "instance_id" {
+  description = "EC2 instance ID"
+  value       = aws_instance.web.id
+}
+
+output "public_ip" {
+  description = "EC2 public IP"
+  value       = aws_instance.web.public_ip
+}
+▶️ Run the Configuration
+Step 1 – Initialize
+terraform init
+Step 2 – Format
+terraform fmt
+Step 3 – Validate
+terraform validate
+Step 4 – Plan
+terraform plan
+Step 5 – Apply
+terraform apply
+Step 6 – Check Outputs
+terraform output
+🔐 Security Best Practices
+Never Hardcode Credentials
+❌ Avoid:
+provider "aws" {
+  access_key = "YOUR_ACCESS_KEY"
+  secret_key = "YOUR_SECRET_KEY"
+}
+Use secure AWS authentication mechanisms instead.
+Protect Sensitive Variables
+If a variable contains sensitive information:
+variable "database_password" {
+  type      = string
+  sensitive = true
+}
+However, marking a variable as sensitive mainly prevents casual display in Terraform CLI output; it does not make the underlying value safe to commit or store insecurely.
+🚫 Git Best Practices
+Avoid committing:
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+A basic .gitignore:
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+If a .tfvars file contains secrets, keep it out of source control as well:
+*.tfvars
+💡 Configuration Best Practices
+✅ Use Variables
+Avoid unnecessary hardcoded values.
+✅ Use Outputs
+Expose important infrastructure information.
+✅ Use Data Sources
+Read existing infrastructure information when appropriate.
+✅ Separate Configuration
+Use logical files such as:
+main.tf
+variables.tf
+outputs.tf
+providers.tf
+✅ Use Formatting
+Run:
+terraform fmt
+✅ Validate Before Planning
+Run:
+terraform validate
+✅ Review Plans
+Always review:
+terraform plan
+before applying important infrastructure changes.
+✅ Use Version Constraints
+Pin or constrain Terraform/provider versions appropriately for reproducible environments.
+⚠️ Common Mistakes
+1. Hardcoding Values
+Hardcoded configuration becomes difficult to reuse.
+Better:
+instance_type = var.instance_type
+2. Hardcoding Credentials
+Never store AWS access keys or secrets in Terraform source code.
+3. Using Invalid AMI IDs
+AMI IDs are region-specific.
+Always verify the AMI for your selected region.
+4. Ignoring Terraform State
+Terraform depends heavily on state to manage infrastructure correctly.
+5. Skipping terraform plan
+Always understand what Terraform is going to change.
+6. Committing Secrets
+Never commit:
+Passwords
+API keys
+Private keys
+Cloud credentials
+Sensitive tfvars
+to a public repository.
