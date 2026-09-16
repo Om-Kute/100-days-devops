@@ -56,3 +56,16 @@ Terraform/provider version constraints
 .gitignore
 Prevent unwanted files from Git
 Terraform loads all .tf files in a directory together. The filenames are mainly used to organize the configuration for humans.
+☁️ Provider Configuration
+A provider allows Terraform to interact with an external platform or service.
+Example AWS provider:
+provider "aws" {
+  region = "ap-south-1"
+}
+Terraform can work with many providers, including:
+AWS
+Azure
+Google Cloud
+Kubernetes
+GitHub
+Docker
