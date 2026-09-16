@@ -24,3 +24,35 @@ Human-readable
 Declarative
 Structured
 Easy to maintain
+🏗️ Terraform Configuration Structure
+A Terraform project can be organized like this:
+terraform-project/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+├── data.tf
+├── versions.tf
+└── .gitignore
+File Responsibilities
+File
+Purpose
+main.tf
+Main infrastructure resources
+providers.tf
+Provider configuration
+variables.tf
+Input variables
+outputs.tf
+Output values
+terraform.tfvars
+Variable values
+data.tf
+Data sources
+versions.tf
+Terraform/provider version constraints
+.gitignore
+Prevent unwanted files from Git
+Terraform loads all .tf files in a directory together. The filenames are mainly used to organize the configuration for humans.
