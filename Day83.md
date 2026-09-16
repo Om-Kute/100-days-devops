@@ -69,3 +69,51 @@ Google Cloud
 Kubernetes
 GitHub
 Docker
+📦 Resource
+A resource represents an infrastructure object that Terraform manages.
+Examples:
+EC2
+S3
+VPC
+Security Group
+RDS
+Load Balancer
+Kubernetes Deployment
+Example:
+resource "aws_instance" "web" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Terraform-Web"
+  }
+}
+Resource syntax:
+resource "<RESOURCE_TYPE>" "<LOCAL_NAME>" {
+    configuration
+}
+For example:
+aws_instance → Resource type
+web          → Local name
+🔢 Input Variables
+Variables make Terraform configurations reusable.
+Instead of hardcoding values:
+instance_type = "t2.micro"
+we can use:
+instance_type = var.instance_type
+variables.tf
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+main.tf
+resource "aws_instance" "web" {
+  ami           = "YOUR_AMI_ID"
+  instance_type = var.instance_type
+
+  tags = {
+    Name = "Terraform-Web"
+  }
+}
+Now the same configuration can be used with different instance types.
