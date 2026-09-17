@@ -195,3 +195,65 @@ The Terraform state bucket should not be publicly accessible.
 Use appropriate AWS logging and auditing mechanisms to track access.
 🗂️ Versioning
 S3 versioning can help recover previous versions of state after accidental changes or deletion.
+👥 Team Collaboration
+Remote state is particularly useful when multiple DevOps engineers work on the same infrastructure.
+Without shared state:
+Developer A
+    ↓
+Local State
+
+Developer B
+    ↓
+Different Local State
+This can create conflicts.
+With remote state:
+Developer A ──┐
+              │
+Developer B ──┼──→ Remote State
+              │
+CI/CD ────────┘
+Everyone works against a shared source of state.
+🔄 Terraform State Workflow
+Developer
+    ↓
+Terraform Configuration
+    ↓
+terraform plan
+    ↓
+Remote State
+    ↓
+Compare Infrastructure
+    ↓
+Review Changes
+    ↓
+terraform apply
+    ↓
+Update Infrastructure
+    ↓
+Update State
+🛠️ Terraform State Commands
+Terraform provides commands for inspecting and managing state.
+List Resources
+terraform state list
+Displays resources currently tracked in state.
+Example:
+aws_instance.web
+aws_s3_bucket.logs
+Show Resource
+terraform state show aws_instance.web
+Displays information about a resource tracked in state.
+Move Resource
+terraform state mv \
+aws_instance.old \
+aws_instance.web
+Used when changing the Terraform address of a resource while preserving its state association.
+Remove Resource from State
+terraform state rm aws_instance.web
+This removes the resource from Terraform state.
+⚠️ terraform state rm does not automatically destroy the real infrastructure resource. It only removes Terraform's state tracking for that resource.
+Pull State
+terraform state pull
+Retrieves the current state from the configured backend.
+Push State
+terraform state push state.tfstate
+⚠️ This is a potentially dangerous operation. Never push state blindly. Verify the file, backend, and intended environment before using it.
