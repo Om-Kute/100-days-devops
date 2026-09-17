@@ -22,3 +22,25 @@ terraform.tfstate
    ↓
 AWS EC2
 Terraform uses state to map configuration objects to real infrastructure resources.
+🔍 Why Does Terraform Need State?
+Terraform needs state to understand the current infrastructure and determine what changes are required.
+Suppose we have:
+resource "aws_instance" "web" {
+  instance_type = "t2.micro"
+}
+Terraform creates an EC2 instance and records information about that resource in its state.
+Later, if the configuration changes:
+resource "aws_instance" "web" {
+  instance_type = "t3.micro"
+}
+Terraform can compare the configuration and state with the real infrastructure to determine the required change.
+Conceptually:
+Current Configuration
+        ↓
+Terraform State
+        ↓
+Real Infrastructure
+        ↓
+Calculate Difference
+        ↓
+Proposed Changes
