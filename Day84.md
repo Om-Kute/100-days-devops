@@ -170,3 +170,28 @@ Enable appropriate audit logging
 Avoid public state storage
 Use secure backups
 Never commit state to a public Git repository
+🚫 Never Commit Terraform State
+Do not commit:
+terraform.tfstate
+terraform.tfstate.backup
+to a public repository.
+Add them to .gitignore:
+*.tfstate
+*.tfstate.*
+Also commonly ignore:
+.terraform/
+*.tfplan
+crash.log
+crash.*.log
+🛡️ S3 Security Considerations
+When using S3 as a Terraform backend, consider:
+🔐 Encryption
+Use encryption for state at rest.
+👤 IAM Access Control
+Only authorized identities should access the state bucket.
+🚫 Block Public Access
+The Terraform state bucket should not be publicly accessible.
+📝 Logging and Auditing
+Use appropriate AWS logging and auditing mechanisms to track access.
+🗂️ Versioning
+S3 versioning can help recover previous versions of state after accidental changes or deletion.
