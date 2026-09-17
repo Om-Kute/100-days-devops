@@ -84,3 +84,36 @@ Risk of accidental deletion
 Difficult to share
 No centralized access control
 Collaboration can become problematic
+☁️ Remote State
+Remote state stores Terraform state in a shared remote backend.
+For example:
+Terraform
+    ↓
+Remote Backend
+    ↓
+Amazon S3
+    ↓
+Team Members
+Remote state is useful for:
+Teams
+CI/CD
+Production environments
+Shared infrastructure
+Centralized access control
+🆚 Local State vs Remote State
+Local State
+Remote State
+Stored locally
+Stored remotely
+Easy to configure
+Requires backend setup
+Good for learning
+Better for teams
+Difficult to share
+Shared centrally
+Higher local-file risk
+Centralized controls
+Limited collaboration
+Better collaboration
+Simple projects
+Production/team environments
