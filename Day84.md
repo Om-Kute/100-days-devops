@@ -117,3 +117,25 @@ Limited collaboration
 Better collaboration
 Simple projects
 Production/team environments
+🗄️ Remote Backend
+A Terraform backend determines where Terraform stores state.
+Example concept:
+Terraform
+    ↓
+Backend
+    ↓
+State Storage
+For AWS, an S3 backend can be used to store state remotely.
+☁️ AWS S3 Backend
+A simplified S3 backend configuration can look like:
+terraform {
+  backend "s3" {
+    bucket       = "my-terraform-state-bucket"
+    key          = "project/terraform.tfstate"
+    region       = "ap-south-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}
+Backend configuration options can vary by Terraform version and backend capabilities. Always verify the syntax supported by the Terraform version and backend you are using.
+The S3 bucket should be created and secured before using it as the backend.
