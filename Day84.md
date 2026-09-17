@@ -9,3 +9,16 @@ Terraform Configuration
         ↓
  Real Infrastructure
 State is essential because Terraform uses it to determine what resources already exist and what changes need to be made.
+🧠 What is Terraform State?
+Terraform State is the record Terraform uses to track resources it manages.
+The default local state file is:
+terraform.tfstate
+For example:
+main.tf
+   ↓
+Terraform
+   ↓
+terraform.tfstate
+   ↓
+AWS EC2
+Terraform uses state to map configuration objects to real infrastructure resources.
