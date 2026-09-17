@@ -64,3 +64,23 @@ Terraform Code
                                     │
                                     ↓
                               Team Collaboration
+💻 Local State
+By default, Terraform stores state locally.
+Example:
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+└── terraform.tfstate
+Advantages
+Simple
+Easy for learning
+No additional backend required
+Useful for small personal experiments
+Disadvantages
+Difficult for teams
+Risk of accidental deletion
+Difficult to share
+No centralized access control
+Collaboration can become problematic
