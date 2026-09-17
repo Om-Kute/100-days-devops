@@ -44,3 +44,23 @@ Real Infrastructure
 Calculate Difference
         ↓
 Proposed Changes
+🏗️ Terraform State Architecture
+Terraform Code
+                         │
+                         ↓
+                  ┌─────────────┐
+                  │ Terraform   │
+                  │    Core     │
+                  └──────┬──────┘
+                         │
+                         ↓
+                 Terraform State
+                         │
+              ┌──────────┴──────────┐
+              ↓                     ↓
+        Local State             Remote State
+              │                     │
+       terraform.tfstate       S3 / Backend
+                                    │
+                                    ↓
+                              Team Collaboration
