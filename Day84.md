@@ -139,3 +139,34 @@ terraform {
 }
 Backend configuration options can vary by Terraform version and backend capabilities. Always verify the syntax supported by the Terraform version and backend you are using.
 The S3 bucket should be created and secured before using it as the backend.
+🔒 State Locking
+State locking helps prevent conflicting Terraform operations when multiple users or automation processes work with the same state.
+Example:
+Team Member 1
+     │
+ terraform apply
+     │
+     ↓
+┌──────────────┐
+│ State Locked │
+└──────┬───────┘
+       │
+       ↓
+Team Member 2
+terraform apply
+       │
+       ↓
+   Wait / Fail
+The goal is to avoid simultaneous operations modifying the same state.
+🔐 State Security
+Terraform state can contain sensitive information depending on the resources and configuration being managed.
+Therefore, state should be treated as a sensitive infrastructure asset.
+Important practices:
+Encrypt state at rest
+Restrict access
+Use least-privilege IAM policies
+Protect backend credentials
+Enable appropriate audit logging
+Avoid public state storage
+Use secure backups
+Never commit state to a public Git repository
