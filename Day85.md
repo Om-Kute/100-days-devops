@@ -12,3 +12,12 @@ Reuse Module
 Multiple Environments
     ↓
 Standardized Infrastructure
+🧩 What is a Terraform Module?
+A Terraform module is a collection of Terraform configuration files that are grouped together to manage a particular part of infrastructure.
+For example:
+VPC Module
+EC2 Module
+Security Group Module
+S3 Module
+RDS Module
+Instead of repeating the same infrastructure code, we can create a module once and reuse it.
