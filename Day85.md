@@ -249,3 +249,40 @@ module "example" {
   source = "https://example.com/module.zip"
 }
 Only use trusted sources.
+🔢 Module Inputs
+Inputs allow a module to receive values from the caller.
+Example:
+module "web_server" {
+  source = "./modules/ec2"
+
+  ami_id        = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+  name          = "Web-Server"
+}
+The module receives:
+ami_id
+instance_type
+name
+📤 Module Outputs
+Outputs allow a module to expose information.
+Example:
+output "instance_id" {
+  value = aws_instance.this.id
+}
+The root module can access it:
+module.web_server.instance_id
+🔄 Complete Module Flow
+Root Module
+                      │
+                      │ Inputs
+                      ↓
+                ┌───────────┐
+                │ EC2 Module│
+                └─────┬─────┘
+                      │
+                      ↓
+                  AWS EC2
+                      │
+                      │ Outputs
+                      ↓
+                  Root Module
