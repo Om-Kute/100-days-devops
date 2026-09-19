@@ -179,3 +179,73 @@ output "public_ip" {
   value       = aws_instance.this.public_ip
 }
 The module exposes useful values to the root module.
+🌳 Root Module
+Now the root module can call the EC2 module.
+Example main.tf:
+provider "aws" {
+  region = "ap-south-1"
+}
+
+module "web_server" {
+  source = "./modules/ec2"
+
+  ami_id        = "YOUR_AMI_ID"
+  instance_type = "t2.micro"
+  name          = "Terraform-Web"
+}
+🔄 Module Data Flow
+Root Module
+     │
+     │ Input Variables
+     ↓
+EC2 Module
+     │
+     ↓
+AWS EC2
+     │
+     │ Outputs
+     ↓
+Root Module
+📤 Using Module Outputs
+The root module can expose the child module's outputs.
+Example:
+output "instance_id" {
+  value = module.web_server.instance_id
+}
+
+output "public_ip" {
+  value = module.web_server.public_ip
+}
+Then:
+terraform output
+can display the values.
+🌍 Module Sources
+Terraform supports different module sources.
+1. Local Module
+module "ec2" {
+  source = "./modules/ec2"
+}
+Useful when the module exists in the same repository.
+2. Git Repository
+module "ec2" {
+  source = "git::https://github.com/example/terraform-ec2-module.git"
+}
+For production, pin modules to a reviewed commit, tag, or release where appropriate.
+3. Terraform Registry
+Example:
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+}
+A version constraint can be used:
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 5.0"
+}
+Review module documentation and version compatibility before adoption.
+4. HTTP/HTTPS Source
+Terraform can also load modules from supported HTTP/HTTPS sources.
+Example:
+module "example" {
+  source = "https://example.com/module.zip"
+}
+Only use trusted sources.
