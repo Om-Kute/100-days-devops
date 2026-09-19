@@ -62,3 +62,41 @@ Large Infrastructure
 Modules help follow:
 DRY – Don't Repeat Yourself
 Instead of copying the same resource configuration multiple times, create a reusable module.
+🏗️ Terraform Module Architecture
+Root Module
+                        │
+             ┌──────────┼──────────┐
+             ↓          ↓          ↓
+          VPC Module  EC2 Module  S3 Module
+             │          │          │
+             ↓          ↓          ↓
+          VPC         EC2          S3
+The root module calls child modules and passes required input values.
+📦 Types of Terraform Modules
+There are several ways modules are commonly used.
+1. Root Module
+The directory where Terraform commands are executed is the root module.
+Example:
+terraform-project/
+├── main.tf
+├── variables.tf
+└── outputs.tf
+2. Child Module
+A child module is a reusable module called by another module.
+Example:
+terraform-project/
+│
+├── main.tf
+│
+└── modules/
+    └── ec2/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
+3. Registry Module
+Terraform modules can also be published and consumed from the Terraform Registry.
+Example concept:
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+}
+Always review a third-party module's source, version, permissions, and behavior before using it.
