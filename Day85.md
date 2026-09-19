@@ -100,3 +100,34 @@ module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 }
 Always review a third-party module's source, version, permissions, and behavior before using it.
+📁 Module Directory Structure
+A simple project can look like:
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+│
+└── modules/
+    │
+    └── ec2/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
+🧱 Creating a Simple EC2 Module
+Let's create a reusable EC2 module.
+Step 1 – Create Directory
+mkdir -p modules/ec2
+Project structure:
+terraform-project/
+│
+├── main.tf
+├── variables.tf
+├── outputs.tf
+│
+└── modules/
+    └── ec2/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
