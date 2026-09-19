@@ -131,3 +131,51 @@ terraform-project/
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
+📝 Module main.tf
+Inside:
+modules/ec2/main.tf
+Add:
+resource "aws_instance" "this" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name = var.name
+  }
+}
+The module does not hardcode the AMI or instance type.
+Instead, these values are provided through variables.
+🔢 Module Variables
+Create:
+modules/ec2/variables.tf
+Example:
+variable "ami_id" {
+  description = "AMI ID for EC2"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "name" {
+  description = "Name tag for EC2"
+  type        = string
+}
+Now the same module can be reused with different values.
+📤 Module Outputs
+Create:
+modules/ec2/outputs.tf
+Example:
+output "instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.this.id
+}
+
+output "public_ip" {
+  description = "Public IP of the EC2 instance"
+  value       = aws_instance.this.public_ip
+}
+The module exposes useful values to the root module.
