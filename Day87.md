@@ -72,3 +72,47 @@ terraform workspace select <name>
 Switch workspace
 terraform workspace delete <name>
 Delete a workspace
+1️⃣ List Workspaces
+Run:
+terraform workspace list
+Example:
+* default
+After creating more workspaces:
+* dev
+  staging
+  prod
+2️⃣ Show Current Workspace
+Run:
+terraform workspace show
+Example:
+dev
+This tells you which workspace is currently selected.
+3️⃣ Create a Workspace
+Create a development workspace:
+terraform workspace new dev
+Terraform creates the workspace and selects it.
+Create staging:
+terraform workspace new staging
+Create production:
+terraform workspace new prod
+List them:
+terraform workspace list
+Example:
+default
+* dev
+  staging
+  prod
+4️⃣ Select a Workspace
+Switch to development:
+terraform workspace select dev
+Switch to staging:
+terraform workspace select staging
+Switch to production:
+terraform workspace select prod
+Verify:
+terraform workspace show
+5️⃣ Delete a Workspace
+To delete a workspace:
+terraform workspace delete dev
+Terraform will normally prevent deletion if the workspace still has managed resources unless you explicitly force deletion.
+⚠️ Deleting a workspace is potentially destructive. Always understand what infrastructure and state are associated with the workspace before removing it.
