@@ -153,3 +153,43 @@ If the workspace is:
 prod
 it can become:
 Environment = "prod"
+🔢 Workspace-Specific Values
+Workspace names can be used to select different configuration values.
+Example:
+locals {
+  instance_types = {
+    dev     = "t2.micro"
+    staging = "t2.small"
+    prod    = "t3.medium"
+  }
+}
+Use the current workspace:
+resource "aws_instance" "web" {
+  ami           = var.ami_id
+  instance_type = local.instance_types[terraform.workspace]
+
+  tags = {
+    Name        = "Web-${terraform.workspace}"
+    Environment = terraform.workspace
+  }
+}
+Conceptually:
+Workspace       Instance Type
+─────────────────────────────
+dev             t2.micro
+staging         t2.small
+prod            t3.medium
+Use instance types that are actually available and appropriate for your AWS account and region.
+🔐 Workspace-Specific Variables
+Variables can also be combined with workspace logic.
+Example:
+variable "ami_id" {
+  description = "AMI ID for the selected AWS region"
+  type        = string
+}
+Then:
+resource "aws_instance" "web" {
+  ami           = var.ami_id
+  instance_type = local.instance_types[terraform.workspace]
+}
+The AMI can be provided through a secure variable source appropriate to the environment.
