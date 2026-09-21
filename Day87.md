@@ -193,3 +193,45 @@ resource "aws_instance" "web" {
   instance_type = local.instance_types[terraform.workspace]
 }
 The AMI can be provided through a secure variable source appropriate to the environment.
+🏷️ Environment Tags
+Workspaces can also be used to generate environment-specific resource names and tags.
+Example:
+tags = {
+  Name        = "app-${terraform.workspace}"
+  Environment = terraform.workspace
+  ManagedBy   = "Terraform"
+}
+For the dev workspace:
+Name        = app-dev
+Environment = dev
+ManagedBy   = Terraform
+For the prod workspace:
+Name        = app-prod
+Environment = prod
+ManagedBy   = Terraform
+📂 Workspace State
+Terraform stores different state for different workspaces.
+Conceptually:
+.terraform/
+└── terraform.tfstate.d/
+    ├── dev/
+    │   └── terraform.tfstate
+    │
+    ├── staging/
+    │   └── terraform.tfstate
+    │
+    └── prod/
+        └── terraform.tfstate
+The exact physical state layout can vary depending on the backend, so treat this as a conceptual representation rather than a universal backend layout.
+The important concept is:
+Dev Workspace
+      ↓
+Dev State
+
+Staging Workspace
+      ↓
+Staging State
+
+Prod Workspace
+      ↓
+Prod State
