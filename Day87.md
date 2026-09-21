@@ -13,3 +13,21 @@ Same Terraform Code
          Separate       Separate      Separate
            State          State         State
 This can be useful when similar infrastructure needs to be managed across multiple environments.
+🧠 What is a Terraform Workspace?
+A Terraform workspace provides a separate state for a Terraform configuration.
+The same configuration can be used with multiple workspaces:
+Terraform Code
+      │
+      ├── dev
+      │     └── Separate State
+      │
+      ├── staging
+      │     └── Separate State
+      │
+      └── prod
+            └── Separate State
+For example:
+dev
+staging
+prod
+can represent different environments.
