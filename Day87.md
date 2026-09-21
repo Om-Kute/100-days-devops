@@ -43,3 +43,19 @@ terraform workspace list
 Example:
 * default
 The * indicates the currently selected workspace.
+🔄 Why Use Workspaces?
+Workspaces can be useful when the same Terraform configuration needs multiple isolated state instances.
+Example:
+Terraform Code
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+       Dev           Staging         Prod
+        │              │              │
+   Dev State      Staging State    Prod State
+Potential benefits include:
+Reusing the same configuration
+Separating state
+Managing similar environments
+Reducing unnecessary code duplication
+Simplifying certain development workflows
