@@ -116,3 +116,40 @@ To delete a workspace:
 terraform workspace delete dev
 Terraform will normally prevent deletion if the workspace still has managed resources unless you explicitly force deletion.
 ⚠️ Deleting a workspace is potentially destructive. Always understand what infrastructure and state are associated with the workspace before removing it.
+🏗️ Workspace Architecture
+Terraform
+                             │
+                     Same Configuration
+                             │
+          ┌──────────────────┼──────────────────┐
+          ↓                  ↓                  ↓
+        Dev                Staging             Prod
+          │                  │                  │
+          ↓                  ↓                  ↓
+     Dev State          Staging State       Prod State
+          │                  │                  │
+          ↓                  ↓                  ↓
+     Dev AWS             Staging AWS          Prod AWS
+The key concept is state isolation, not automatically separate cloud accounts, networks, or permissions.
+💻 Using terraform.workspace
+Terraform provides the built-in value:
+terraform.workspace
+It returns the name of the currently selected workspace.
+Example:
+resource "aws_instance" "web" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name        = "Web-${terraform.workspace}"
+    Environment = terraform.workspace
+  }
+}
+If the workspace is:
+dev
+the environment tag can become:
+Environment = "dev"
+If the workspace is:
+prod
+it can become:
+Environment = "prod"
