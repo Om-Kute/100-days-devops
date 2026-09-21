@@ -31,3 +31,15 @@ dev
 staging
 prod
 can represent different environments.
+⭐ Default Workspace
+When Terraform initializes a new project, Terraform starts with a workspace named:
+default
+Check the current workspace:
+terraform workspace show
+Expected:
+default
+List available workspaces:
+terraform workspace list
+Example:
+* default
+The * indicates the currently selected workspace.
