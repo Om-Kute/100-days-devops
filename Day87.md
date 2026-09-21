@@ -59,3 +59,16 @@ Separating state
 Managing similar environments
 Reducing unnecessary code duplication
 Simplifying certain development workflows
+🧩 Terraform Workspace Commands
+Command
+Purpose
+terraform workspace list
+List workspaces
+terraform workspace show
+Show current workspace
+terraform workspace new <name>
+Create and select a workspace
+terraform workspace select <name>
+Switch workspace
+terraform workspace delete <name>
+Delete a workspace
