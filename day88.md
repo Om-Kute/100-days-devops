@@ -55,3 +55,39 @@ Code Review
 Approved Change
       ↓
 CI/CD
+🔥 Benefits
+1. Version Control
+
+Every Terraform configuration change can be tracked.
+
+Example:
+
+Commit 1 → Create VPC
+Commit 2 → Add Subnet
+Commit 3 → Add Security Group
+Commit 4 → Update EC2
+2. Collaboration
+
+Multiple DevOps engineers can work on infrastructure code using branches and Pull Requests.
+
+3. Code Review
+
+Terraform changes can be reviewed before they affect real infrastructure.
+
+4. Auditability
+
+Git history provides information about:
+
+What changed
+When it changed
+Which commit changed it
+Which branch contained the change
+5. CI/CD Integration
+
+Terraform can be integrated with CI/CD systems to automatically run:
+
+terraform fmt
+terraform validate
+terraform plan
+
+before changes are applied.
