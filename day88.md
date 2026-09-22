@@ -128,3 +128,34 @@ terraform-project/
 ├── versions.tf
 ├── .gitignore
 └── README.md
+🔐 Terraform .gitignore
+
+Terraform generates files that should generally not be committed to Git.
+
+Example .gitignore:
+
+# Terraform working directory
+.terraform/
+
+# Terraform state
+*.tfstate
+*.tfstate.*
+
+# Terraform plan files
+*.tfplan
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Local variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+If a .tfvars file contains no sensitive information and is intentionally meant to be shared, it can be committed selectively. A safer pattern is usually to commit a terraform.tfvars.example file instead.
