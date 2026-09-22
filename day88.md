@@ -24,3 +24,34 @@ Approval
 Infrastructure Deployment
 
 This approach helps teams track infrastructure changes, review them before deployment, collaborate safely, and maintain an audit trail of infrastructure code.
+🧠 Why Use GitHub with Terraform?
+
+Terraform manages infrastructure, but GitHub manages the source code that defines that infrastructure.
+
+Without version control:
+
+Terraform Files
+      ↓
+Manual Changes
+      ↓
+Hard to Track
+      ↓
+Hard to Review
+      ↓
+Higher Risk
+
+With GitHub:
+
+Terraform Files
+      ↓
+Git
+      ↓
+GitHub
+      ↓
+Pull Request
+      ↓
+Code Review
+      ↓
+Approved Change
+      ↓
+CI/CD
