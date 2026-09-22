@@ -91,3 +91,40 @@ terraform validate
 terraform plan
 
 before changes are applied.
+📁 Recommended Terraform + GitHub Repository Structure
+
+A simple project:
+
+terraform-project/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars.example
+├── versions.tf
+├── .gitignore
+└── README.md
+
+A larger project:
+
+terraform-project/
+│
+├── environments/
+│   ├── dev/
+│   ├── staging/
+│   └── prod/
+│
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── security-group/
+│   └── s3/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+├── .gitignore
+└── README.md
