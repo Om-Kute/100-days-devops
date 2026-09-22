@@ -186,3 +186,20 @@ AWS CLI credential configuration
 Environment-based credentials
 Short-lived credentials
 CI/CD identity mechanisms
+📄 Example terraform.tfvars.example
+
+Instead of committing a real secrets file:
+
+terraform.tfvars
+
+create:
+
+terraform.tfvars.example
+
+Example:
+
+aws_region   = "ap-south-1"
+instance_type = "t2.micro"
+environment   = "dev"
+
+The actual terraform.tfvars can remain local or be supplied securely through the CI/CD environment.
