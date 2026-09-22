@@ -159,3 +159,30 @@ override.tf.json
 *_override.tf.json
 
 If a .tfvars file contains no sensitive information and is intentionally meant to be shared, it can be committed selectively. A safer pattern is usually to commit a terraform.tfvars.example file instead.
+🚨 Never Commit Secrets
+
+Never commit:
+
+AWS Access Keys
+AWS Secret Keys
+Passwords
+API Tokens
+Private Keys
+Kubeconfig Secrets
+Database Credentials
+Terraform State
+
+Example of what NOT to do:
+
+provider "aws" {
+  access_key = "AKIAxxxxxxxx"
+  secret_key = "xxxxxxxx"
+}
+
+Instead, use secure authentication mechanisms such as:
+
+IAM roles
+AWS CLI credential configuration
+Environment-based credentials
+Short-lived credentials
+CI/CD identity mechanisms
