@@ -279,3 +279,46 @@ terraform fmt -recursive
 Check formatting without modifying files:
 
 terraform fmt -check
+✅ Terraform Validation
+
+Run:
+
+terraform validate
+
+This checks whether the Terraform configuration is syntactically valid and internally consistent.
+
+A typical workflow is:
+
+terraform fmt
+terraform validate
+🔍 Terraform Plan
+
+The next step is:
+
+terraform plan
+
+Terraform calculates the proposed infrastructure changes.
+
+Conceptually:
+
+GitHub Code
+     ↓
+Terraform Plan
+     ↓
+Proposed Changes
+     ↓
+Code Review
+     ↓
+Approval
+
+The plan should be reviewed before applying infrastructure changes.
+
+🚀 Terraform Apply
+
+After appropriate review and approval:
+
+terraform apply
+
+Terraform applies the configuration to the target infrastructure.
+
+In production environments, apply should normally be controlled through an appropriate approval process rather than allowing every Pull Request to directly change production.
