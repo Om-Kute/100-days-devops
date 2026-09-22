@@ -322,3 +322,255 @@ terraform apply
 Terraform applies the configuration to the target infrastructure.
 
 In production environments, apply should normally be controlled through an appropriate approval process rather than allowing every Pull Request to directly change production.
+🧪 Pull Request Workflow
+
+A good Terraform Pull Request can follow:
+
+1. Create Branch
+        ↓
+2. Modify Terraform
+        ↓
+3. terraform fmt
+        ↓
+4. terraform validate
+        ↓
+5. Commit Changes
+        ↓
+6. Push to GitHub
+        ↓
+7. Open Pull Request
+        ↓
+8. CI Validation
+        ↓
+9. terraform plan
+        ↓
+10. Review
+        ↓
+11. Approval
+        ↓
+12. Merge
+🤖 CI Checks for Terraform
+
+A CI pipeline can automatically run:
+
+terraform fmt -check -recursive
+terraform init
+terraform validate
+terraform plan
+
+Example:
+
+Pull Request
+     ↓
+GitHub
+     ↓
+CI Pipeline
+     ↓
+terraform fmt -check
+     ↓
+terraform init
+     ↓
+terraform validate
+     ↓
+terraform plan
+     ↓
+Status Check
+🐙 GitHub Actions Example
+
+A simple GitHub Actions workflow can run Terraform checks.
+
+Create:
+
+.github/workflows/terraform.yml
+
+Example:
+
+name: Terraform
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Init
+        run: terraform init -backend=false
+
+      - name: Terraform Validate
+        run: terraform validate
+
+This example focuses on formatting, initialization, and validation.
+
+A real deployment pipeline should additionally handle:
+
+Secure cloud authentication
+Remote state
+terraform plan
+Approval
+terraform apply
+
+with appropriate permissions and environment protection.
+
+🔐 GitHub Secrets
+
+Sensitive credentials should not be stored directly in Terraform files.
+
+If a CI/CD system requires secrets, use an appropriate secure secret-management mechanism.
+
+For GitHub Actions, repository or environment secrets can be used where appropriate.
+
+Conceptually:
+
+GitHub
+   ↓
+Secure Secret
+   ↓
+CI/CD Runner
+   ↓
+Terraform
+   ↓
+AWS
+
+Avoid printing secrets in workflow logs.
+
+☁️ Terraform + AWS + GitHub
+
+A common architecture:
+
+                    Developer
+                        │
+                        ↓
+                     GitHub
+                        │
+                 Pull Request
+                        │
+                        ↓
+                  CI/CD Pipeline
+                        │
+             ┌──────────┴──────────┐
+             ↓                     ↓
+       Terraform fmt         Terraform validate
+             │                     │
+             └──────────┬──────────┘
+                        ↓
+                Terraform Plan
+                        │
+                    Approval
+                        │
+                        ↓
+                Terraform Apply
+                        │
+                        ↓
+                       AWS
+             ┌──────────┼──────────┐
+             ↓          ↓          ↓
+            VPC        EC2         S3
+🗄️ GitHub is NOT Terraform State
+
+A common misconception is that GitHub should store the Terraform state file.
+
+GitHub should normally store:
+
+Terraform Configuration
+Terraform Modules
+Documentation
+CI/CD Workflows
+
+Terraform state should be stored in an appropriate backend.
+
+Example:
+
+GitHub
+  ↓
+Terraform Code
+
+Remote Backend
+  ↓
+Terraform State
+
+For AWS, an S3 backend is commonly used for remote state, with appropriate security and locking support.
+
+🔒 State Security
+
+Never commit:
+
+terraform.tfstate
+terraform.tfstate.backup
+
+Terraform state may contain sensitive information depending on the resources being managed.
+
+Use:
+
+Remote backend
+Encryption
+Access controls
+Least privilege
+State locking where supported
+Versioning/backups
+Audit logging
+🏗️ Environment-Based Repository Structure
+
+A possible structure:
+
+terraform-infrastructure/
+│
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── staging/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   └── prod/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+│
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   └── security-group/
+│
+├── .github/
+│   └── workflows/
+│       └── terraform.yml
+│
+├── .gitignore
+└── README.md
+
+This is one possible architecture; teams may choose different layouts depending on their infrastructure and isolation requirements.
+
+🔄 Git Workflow Commands
+Clone Repository
+git clone <repository-url>
+Create Branch
+git checkout -b feature/terraform-vpc
+Check Status
+git status
+Add Changes
+git add .
+Commit
+git commit -m "Add Terraform VPC configuration"
+Push
+git push -u origin feature/terraform-vpc
