@@ -203,3 +203,29 @@ instance_type = "t2.micro"
 environment   = "dev"
 
 The actual terraform.tfvars can remain local or be supplied securely through the CI/CD environment.
+🌿 Git Branching Strategy
+
+A basic workflow:
+
+main
+ │
+ ├── feature/vpc
+ │
+ ├── feature/ec2
+ │
+ └── feature/security-group
+
+Example:
+
+git checkout -b feature/vpc
+
+Make changes:
+
+git add .
+git commit -m "Add VPC configuration"
+
+Push:
+
+git push -u origin feature/vpc
+
+Then create a Pull Request on GitHub.
