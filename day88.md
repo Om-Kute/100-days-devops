@@ -229,3 +229,53 @@ Push:
 git push -u origin feature/vpc
 
 Then create a Pull Request on GitHub.
+🔄 Terraform + GitHub Workflow
+              Developer
+                  │
+                  ↓
+          Modify Terraform
+                  │
+                  ↓
+              Git Branch
+                  │
+                  ↓
+              Git Commit
+                  │
+                  ↓
+             GitHub Push
+                  │
+                  ↓
+           Pull Request
+                  │
+                  ↓
+             Code Review
+                  │
+                  ↓
+        ┌─────────┴─────────┐
+        ↓                   ↓
+terraform fmt        terraform validate
+        │                   │
+        └─────────┬─────────┘
+                  ↓
+          terraform plan
+                  ↓
+             Approval
+                  ↓
+          terraform apply
+                  ↓
+          Cloud Infrastructure
+🧹 Terraform Formatting
+
+Terraform code should be consistently formatted.
+
+Run:
+
+terraform fmt
+
+For a complete directory tree:
+
+terraform fmt -recursive
+
+Check formatting without modifying files:
+
+terraform fmt -check
