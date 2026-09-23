@@ -181,3 +181,63 @@ terraform.tfvars.example	Example variable values
 .gitignore	Prevent unwanted files from Git
 Jenkinsfile	Jenkins pipeline
 README.md	Project documentation
+📝 7. Jenkinsfile
+
+A Jenkinsfile defines the Jenkins pipeline as code.
+
+Example:
+
+pipeline {
+    agent any
+
+    tools {
+        terraform 'terraform'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/your-repo.git'
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
+        stage('Terraform Format') {
+            steps {
+                sh 'terraform fmt -check -recursive'
+            }
+        }
+
+        stage('Terraform Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan -out=tfplan'
+            }
+        }
+
+        stage('Approval') {
+            steps {
+                input message: 'Apply Terraform changes?'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply -auto-approve tfplan'
+            }
+        }
+    }
+}
+
+The exact Jenkins configuration depends on how Terraform, GitHub, AWS authentication, and the Jenkins agent are configured.
