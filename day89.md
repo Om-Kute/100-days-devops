@@ -131,3 +131,27 @@ A typical workflow is:
              │
              ▼
      AWS Infrastructure
+🧰 5. Jenkins Requirements
+
+Before creating the pipeline, Jenkins should have access to the required tools.
+
+Required tools
+Jenkins
+Git
+Terraform
+AWS CLI (optional depending on workflow)
+GitHub repository
+AWS credentials
+Terraform Jenkins plugin/integration where appropriate
+Useful Jenkins plugins
+
+Commonly used plugins include:
+
+Pipeline
+Git
+GitHub integration
+Credentials Binding
+AWS Credentials
+Terraform-related tooling where needed
+
+Plugin names and installation methods can vary with the Jenkins version and environment.
