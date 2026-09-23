@@ -61,3 +61,36 @@ Generate Terraform plans
 Request manual approval
 Deploy infrastructure
 Monitor pipeline results
+🔗 3. Why Use Jenkins with Terraform?
+
+Using Terraform manually for every infrastructure change can become repetitive.
+
+Jenkins can automate the workflow.
+
+Without Jenkins
+Developer
+   │
+   ├── terraform init
+   ├── terraform validate
+   ├── terraform plan
+   └── terraform apply
+With Jenkins
+Developer
+     │
+     ▼
+   GitHub
+     │
+     ▼
+   Jenkins
+     │
+     ├── Init
+     ├── Format
+     ├── Validate
+     ├── Plan
+     ├── Approval
+     └── Apply
+     │
+     ▼
+    AWS
+
+This provides a more consistent and auditable deployment process.
