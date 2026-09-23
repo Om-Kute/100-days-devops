@@ -94,3 +94,40 @@ Developer
     AWS
 
 This provides a more consistent and auditable deployment process.
+🔄 4. Terraform + Jenkins CI/CD Workflow
+
+A typical workflow is:
+
+        Developer
+            │
+            │ git push
+            ▼
+        ┌─────────┐
+        │ GitHub  │
+        └────┬────┘
+             │
+             ▼
+        ┌─────────┐
+        │ Jenkins │
+        └────┬────┘
+             │
+             ▼
+      Terraform Init
+             │
+             ▼
+       Terraform Fmt
+             │
+             ▼
+      Terraform Validate
+             │
+             ▼
+        Terraform Plan
+             │
+             ▼
+      Manual Approval
+             │
+             ▼
+       Terraform Apply
+             │
+             ▼
+     AWS Infrastructure
