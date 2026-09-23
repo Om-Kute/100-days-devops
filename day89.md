@@ -284,3 +284,29 @@ A saved plan can also be created:
 terraform plan -out=tfplan
 
 This allows the reviewed plan to be used for the subsequent apply.
+🛑 9. Manual Approval
+
+For production infrastructure, applying changes automatically may not always be appropriate.
+
+Jenkins can pause the pipeline:
+
+stage('Approval') {
+    steps {
+        input message: 'Approve Terraform deployment?'
+    }
+}
+
+The workflow becomes:
+
+Terraform Plan
+      │
+      ▼
+Review Changes
+      │
+      ▼
+Manual Approval
+      │
+      ▼
+Terraform Apply
+
+This provides an additional control before infrastructure changes are applied.
