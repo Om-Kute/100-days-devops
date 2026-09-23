@@ -310,3 +310,42 @@ Manual Approval
 Terraform Apply
 
 This provides an additional control before infrastructure changes are applied.
+🚀 10. Terraform Apply
+
+After approval:
+
+terraform apply tfplan
+
+Using a previously generated plan helps ensure that the deployment corresponds to the reviewed plan.
+
+For automated non-production environments, teams may choose different approval policies.
+
+🔐 11. Managing AWS Credentials
+
+Never hard-code AWS credentials inside:
+
+main.tf
+Jenkinsfile
+variables.tf
+GitHub repository
+
+Avoid:
+
+environment {
+    AWS_ACCESS_KEY_ID = "MY_ACCESS_KEY"
+    AWS_SECRET_ACCESS_KEY = "MY_SECRET_KEY"
+}
+
+Instead, use Jenkins Credentials and an appropriate authentication mechanism.
+
+For AWS workloads, prefer short-lived or role-based authentication where possible.
+
+Conceptually:
+
+Jenkins
+   │
+   ▼
+Secure Credentials / IAM Role
+   │
+   ▼
+AWS
