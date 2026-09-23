@@ -349,3 +349,76 @@ Secure Credentials / IAM Role
    │
    ▼
 AWS
+🔒 12. Jenkins Credentials
+
+Jenkins provides a credentials store for securely managing sensitive information.
+
+Credentials may include:
+
+AWS credentials
+SSH keys
+GitHub credentials
+API tokens
+Username/password credentials
+Certificates
+
+Example:
+
+withCredentials([
+    string(
+        credentialsId: 'example-token',
+        variable: 'TOKEN'
+    )
+]) {
+    sh 'some-command'
+}
+
+Credentials should only be exposed to the stages that require them.
+
+🌎 13. Environment Strategy
+
+Terraform + Jenkins can be used with multiple environments.
+
+             Jenkins
+                │
+       ┌────────┼────────┐
+       ▼        ▼        ▼
+      Dev    Staging   Production
+       │        │        │
+       ▼        ▼        ▼
+      AWS      AWS       AWS
+
+A common approach is:
+
+Development
+Feature Branch
+     ↓
+Jenkins
+     ↓
+Terraform Plan
+     ↓
+Optional Auto Apply
+Staging
+Develop Branch
+     ↓
+Jenkins
+     ↓
+Plan
+     ↓
+Approval
+     ↓
+Apply
+Production
+Main Branch
+     ↓
+Jenkins
+     ↓
+Plan
+     ↓
+Strict Review
+     ↓
+Manual Approval
+     ↓
+Apply
+
+For stronger isolation, production may use a separate AWS account and separate credentials/state rather than relying only on Jenkins pipeline logic.
