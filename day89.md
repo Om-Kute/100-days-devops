@@ -422,3 +422,50 @@ Manual Approval
 Apply
 
 For stronger isolation, production may use a separate AWS account and separate credentials/state rather than relying only on Jenkins pipeline logic.
+📦 14. Remote Terraform State
+
+Terraform state should generally not be stored directly in the Git repository.
+
+For AWS-based environments, an S3 backend is a common approach.
+
+Example:
+
+terraform {
+  backend "s3" {
+    bucket       = "my-terraform-state"
+    key          = "project/terraform.tfstate"
+    region       = "ap-south-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}
+
+The exact backend options depend on the Terraform version and backend configuration.
+
+Benefits
+Centralized state
+Team collaboration
+Better access control
+Safer state management
+CI/CD compatibility
+🛡️ 15. Security Best Practices
+Terraform
+✅ Use remote state
+✅ Encrypt sensitive state
+✅ Use least-privilege IAM
+✅ Review terraform plan
+✅ Pin provider versions
+✅ Validate code before deployment
+Jenkins
+✅ Secure Jenkins
+✅ Use Credentials Manager
+✅ Restrict permissions
+✅ Protect production jobs
+✅ Keep plugins updated
+✅ Monitor build logs
+GitHub
+✅ Use branch protection
+✅ Review Pull Requests
+✅ Never commit secrets
+✅ Never commit state files
+✅ Use CODEOWNERS where appropriate
