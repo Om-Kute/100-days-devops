@@ -47,3 +47,17 @@ IAM
 Load Balancers
 RDS
 Kubernetes resources
+⚙️ 2. What is Jenkins?
+
+Jenkins is an open-source automation server commonly used to build CI/CD pipelines.
+
+Jenkins can automatically:
+
+Pull code from GitHub
+Run tests
+Validate configurations
+Execute Terraform commands
+Generate Terraform plans
+Request manual approval
+Deploy infrastructure
+Monitor pipeline results
