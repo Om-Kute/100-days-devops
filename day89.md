@@ -155,3 +155,29 @@ AWS Credentials
 Terraform-related tooling where needed
 
 Plugin names and installation methods can vary with the Jenkins version and environment.
+📁 6. Recommended Terraform Project Structure
+
+A typical repository can look like:
+
+terraform-project/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+├── terraform.tfvars.example
+├── .gitignore
+├── Jenkinsfile
+└── README.md
+File responsibilities
+File	Purpose
+main.tf	Main infrastructure resources
+providers.tf	Terraform providers
+variables.tf	Input variables
+outputs.tf	Output values
+versions.tf	Terraform/provider constraints
+terraform.tfvars.example	Example variable values
+.gitignore	Prevent unwanted files from Git
+Jenkinsfile	Jenkins pipeline
+README.md	Project documentation
