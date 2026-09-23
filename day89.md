@@ -241,3 +241,46 @@ pipeline {
 }
 
 The exact Jenkins configuration depends on how Terraform, GitHub, AWS authentication, and the Jenkins agent are configured.
+🔍 8. Understanding Each Pipeline Stage
+Stage 1 – Checkout
+
+Jenkins downloads the latest Terraform code from GitHub.
+
+stage('Checkout') {
+    steps {
+        checkout scm
+    }
+}
+Stage 2 – Terraform Init
+
+Initializes the Terraform working directory.
+
+terraform init
+
+It downloads providers and configures the backend.
+
+Stage 3 – Terraform Format
+
+Checks whether Terraform code follows standard formatting.
+
+terraform fmt -check -recursive
+
+To automatically format files:
+
+terraform fmt -recursive
+Stage 4 – Terraform Validate
+
+Checks the configuration for syntax and configuration errors.
+
+terraform validate
+Stage 5 – Terraform Plan
+
+Shows what Terraform intends to change.
+
+terraform plan
+
+A saved plan can also be created:
+
+terraform plan -out=tfplan
+
+This allows the reviewed plan to be used for the subsequent apply.
