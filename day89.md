@@ -469,3 +469,107 @@ GitHub
 ✅ Never commit secrets
 ✅ Never commit state files
 ✅ Use CODEOWNERS where appropriate
+🚫 16. .gitignore
+
+Terraform repositories should normally ignore generated and sensitive files.
+
+Example:
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Variable files containing secrets
+*.tfvars
+*.tfvars.json
+
+# Terraform CLI config
+.terraformrc
+terraform.rc
+
+# Local files
+.DS_Store
+
+If a .tfvars file contains only non-sensitive example values, it is better to provide a file such as:
+
+terraform.tfvars.example
+🧪 17. Useful Terraform Commands
+Command	Purpose
+terraform init	Initialize Terraform
+terraform fmt	Format configuration
+terraform fmt -check	Check formatting
+terraform validate	Validate configuration
+terraform plan	Preview changes
+terraform apply	Apply changes
+terraform destroy	Destroy managed infrastructure
+terraform output	Display outputs
+terraform version	Check Terraform version
+🏗️ 18. Real-World Architecture
+┌──────────────┐
+│  Developer   │
+└──────┬───────┘
+       │
+       │ Git Push / Pull Request
+       ▼
+┌──────────────┐
+│    GitHub    │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────────┐
+│      Jenkins     │
+│      CI/CD       │
+└────────┬─────────┘
+         │
+         ├── Format
+         ├── Validate
+         ├── Plan
+         ├── Approval
+         └── Apply
+                 │
+                 ▼
+          ┌─────────────┐
+          │  Terraform  │
+          └──────┬──────┘
+                 │
+                 ▼
+          ┌─────────────┐
+          │     AWS     │
+          │Infrastructure│
+          └─────────────┘
+                 ▲
+                 │
+          ┌──────┴──────┐
+          │ Remote State│
+          │     S3      │
+          └─────────────┘
+🔄 19. Complete CI/CD Flow
+1. Developer writes Terraform code
+            ↓
+2. Push code to GitHub
+            ↓
+3. Jenkins pipeline starts
+            ↓
+4. Checkout repository
+            ↓
+5. terraform init
+            ↓
+6. terraform fmt -check
+            ↓
+7. terraform validate
+            ↓
+8. terraform plan
+            ↓
+9. Review plan
+            ↓
+10. Manual approval
+            ↓
+11. terraform apply
+            ↓
+12. Infrastructure updated
+            ↓
+13. Monitor pipeline
