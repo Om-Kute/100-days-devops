@@ -588,3 +588,156 @@ Use a safe example file such as:
 terraform.tfvars.example
 
 for documenting required variables without exposing secrets.
+Complete Terraform Workflow
+
+Before deployment:
+
+terraform init
+
+Format:
+
+terraform fmt -recursive
+
+Validate:
+
+terraform validate
+
+Create plan:
+
+terraform plan -out=tfplan
+
+Review:
+
+terraform show tfplan
+
+Apply:
+
+terraform apply tfplan
+
+Check outputs:
+
+terraform output
+
+When the infrastructure is no longer required:
+
+terraform destroy
+
+Use terraform destroy carefully, especially in shared or production environments.
+
+📊 Example Deployment Flow
+┌─────────────────┐
+│ Developer       │
+│ Writes Code     │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ GitHub          │
+│ Version Control │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Jenkins         │
+│ CI/CD           │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Terraform Init  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Format/Validate │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Terraform Plan  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Approval        │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Terraform Apply │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ AWS             │
+│ Infrastructure  │
+└─────────────────┘
+🧰 Practical Project Steps
+Step 1 – Create GitHub Repository
+git clone https://github.com/your-username/terraform-end-to-end.git
+
+cd terraform-end-to-end
+Step 2 – Create Terraform Structure
+terraform-end-to-end/
+├── main.tf
+├── providers.tf
+├── versions.tf
+├── variables.tf
+├── outputs.tf
+├── backend.tf
+├── Jenkinsfile
+├── modules/
+├── environments/
+└── .gitignore
+Step 3 – Initialize Terraform
+terraform init
+Step 4 – Format Code
+terraform fmt -recursive
+Step 5 – Validate Configuration
+terraform validate
+Step 6 – Create Plan
+terraform plan -out=tfplan
+
+Review the plan carefully.
+
+Step 7 – Commit Code
+git add .
+git commit -m "Add Terraform infrastructure"
+git push origin main
+
+For team workflows, use a feature branch and Pull Request instead of pushing directly to the protected production branch.
+
+Step 8 – Jenkins Pipeline
+
+Jenkins performs:
+
+Checkout
+   ↓
+Init
+   ↓
+Format
+   ↓
+Validate
+   ↓
+Plan
+   ↓
+Approval
+   ↓
+Apply
+Step 9 – Verify AWS
+
+After successful deployment:
+
+Terraform
+    ↓
+AWS
+    ↓
+VPC
+    ↓
+Subnets
+    ↓
+Security Groups
+    ↓
+EC2 / ALB / S3
+
+Verify resources through AWS Console or AWS CLI.
