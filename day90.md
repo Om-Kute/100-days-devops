@@ -741,3 +741,83 @@ Security Groups
 EC2 / ALB / S3
 
 Verify resources through AWS Console or AWS CLI.
+🐛 Common Issues
+1. Terraform Not Found
+terraform: command not found
+Solution
+
+Install Terraform on the Jenkins agent or configure Terraform as a Jenkins tool.
+
+2. AWS Authentication Error
+
+Possible causes:
+
+❌ Missing credentials
+❌ Incorrect IAM permissions
+❌ Expired temporary credentials
+❌ Incorrect role configuration
+
+Verify the Jenkins agent's AWS identity and IAM permissions.
+
+3. State Lock Error
+
+Example:
+
+Error acquiring the state lock
+
+Check whether another Terraform operation is currently running.
+
+Do not force-unlock a state without first confirming that no active Terraform process is using it.
+
+4. Terraform Validation Failure
+
+Run:
+
+terraform validate
+
+Then inspect:
+
+Resource configuration
+Variables
+Provider configuration
+Module paths
+Terraform syntax
+5. Provider Version Problem
+
+Use provider constraints in the Terraform configuration.
+
+Example:
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
+}
+
+Use a provider version compatible with your project and test upgrades before applying them to important environments.
+
+📈 Benefits of the End-to-End Approach
+Benefit	Description
+Automation	Reduces repetitive manual infrastructure work
+Consistency	Same Terraform configuration can be reused
+Version Control	Infrastructure changes are tracked
+Collaboration	Teams can review infrastructure changes
+Scalability	Modules make infrastructure reusable
+Security	Controlled credentials and permissions
+Auditability	Git and Jenkins provide change history
+Reliability	Standardized deployment workflow
+Faster Delivery	CI/CD reduces manual steps
+Environment Management	Dev, staging, and production can be organized
+🆚 Manual vs Automated Infrastructure
+Manual Approach	Terraform + Jenkins
+Console-based changes	Infrastructure as Code
+High manual effort	Automated workflow
+Harder to reproduce	Repeatable
+Limited change history	Git history
+Manual validation	Automated validation
+Manual deployment	CI/CD
+Higher configuration drift risk	Declarative configuration
+Difficult to scale	Module-based scaling
