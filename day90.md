@@ -73,3 +73,98 @@ Terraform
                    │     AWS      │
                    │Infrastructure│
                    └──────────────┘
+☁️ AWS Infrastructure
+
+The project can provision infrastructure such as:
+
+                    AWS
+                     │
+        ┌────────────┼────────────┐
+        │            │            │
+        ▼            ▼            ▼
+       VPC        Security       S3
+                    Groups
+        │
+        ├───────────────┐
+        │               │
+        ▼               ▼
+   Public Subnet    Private Subnet
+        │               │
+        ▼               ▼
+       EC2             EC2
+        │
+        ▼
+       ALB
+
+Depending on project requirements, the infrastructure can include:
+
+VPC
+Public subnets
+Private subnets
+Route tables
+Internet Gateway
+NAT Gateway
+Security Groups
+EC2
+Application Load Balancer
+S3
+IAM
+CloudWatch
+
+Resource selection should match the project requirements and AWS cost constraints.
+
+📁 Project Structure
+
+A recommended repository structure is:
+
+terraform-end-to-end/
+│
+├── Jenkinsfile
+├── README.md
+├── .gitignore
+│
+├── backend.tf
+├── providers.tf
+├── versions.tf
+├── variables.tf
+├── outputs.tf
+├── main.tf
+│
+├── modules/
+│   │
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── security-group/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── ec2/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   └── s3/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+│
+└── environments/
+    │
+    ├── dev/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── terraform.tfvars
+    │
+    ├── staging/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── terraform.tfvars
+    │
+    └── prod/
+        ├── main.tf
+        ├── variables.tf
+        └── terraform.tfvars
