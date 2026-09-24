@@ -35,3 +35,41 @@ Terraform
 + AWS
 + CI/CD
 + Environment Management
+🏗️ High-Level Architecture
+                    ┌──────────────┐
+                    │  Developer   │
+                    │ Terraform    │
+                    │    Code      │
+                    └──────┬───────┘
+                           │
+                           │ git push
+                           ▼
+                    ┌──────────────┐
+                    │    GitHub    │
+                    │ Source Code  │
+                    └──────┬───────┘
+                           │
+                           │ Webhook / Trigger
+                           ▼
+                    ┌──────────────┐
+                    │   Jenkins    │
+                    │    CI/CD     │
+                    └──────┬───────┘
+                           │
+                           ▼
+                 ┌──────────────────┐
+                 │     Terraform    │
+                 │                  │
+                 │ Init             │
+                 │ Format           │
+                 │ Validate         │
+                 │ Plan             │
+                 │ Approval         │
+                 │ Apply            │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                   ┌──────────────┐
+                   │     AWS      │
+                   │Infrastructure│
+                   └──────────────┘
