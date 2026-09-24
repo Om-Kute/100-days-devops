@@ -313,3 +313,103 @@ Jenkins
              │
              ▼
         AWS Infrastructure
+⚙️ Jenkins Pipeline
+
+A basic Jenkinsfile can look like:
+
+pipeline {
+    agent any
+
+    tools {
+        terraform 'terraform'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
+        stage('Terraform Format') {
+            steps {
+                sh 'terraform fmt -check -recursive'
+            }
+        }
+
+        stage('Terraform Validate') {
+            steps {
+                sh 'terraform validate'
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan -out=tfplan'
+            }
+        }
+
+        stage('Approval') {
+            steps {
+                input message: 'Approve Terraform deployment?'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply tfplan'
+            }
+        }
+    }
+}
+
+The exact pipeline depends on how Jenkins agents, Terraform, AWS authentication, credentials, and the repository are configured.
+
+🔍 Pipeline Stages Explained
+1. Checkout
+
+Jenkins retrieves the latest Terraform code.
+
+GitHub
+   ↓
+Jenkins Workspace
+2. Terraform Init
+terraform init
+
+Initializes:
+
+Backend
+Providers
+Modules
+Terraform working directory
+3. Terraform Format
+terraform fmt -check -recursive
+
+Checks Terraform formatting.
+
+4. Terraform Validate
+terraform validate
+
+Checks Terraform configuration for valid syntax and internal consistency.
+
+5. Terraform Plan
+terraform plan -out=tfplan
+
+Creates an execution plan.
+
+Example:
+
+Plan:
+
++ Create
+~ Modify
+- Destroy
+
+The plan should be reviewed before production changes are applied.
