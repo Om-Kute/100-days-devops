@@ -250,3 +250,66 @@ State locking
 Modern Terraform S3 backends support native state locking using the S3 backend's lock-file mechanism.
 
 Older architectures may use DynamoDB for state locking. If using DynamoDB locking in an existing setup, follow the Terraform version and backend documentation applicable to that environment.
+🌎 Environment Management
+
+The project can separate environments:
+
+              Terraform
+                  │
+       ┌──────────┼──────────┐
+       ▼          ▼          ▼
+      Dev       Staging      Prod
+       │          │          │
+       ▼          ▼          ▼
+      AWS        AWS        AWS
+
+Example:
+
+dev
+├── smaller resources
+├── automatic deployment where appropriate
+└── development testing
+
+staging
+├── production-like configuration
+├── plan review
+└── approval before deployment
+
+prod
+├── strict access control
+├── protected branch
+├── mandatory review
+└── controlled deployment
+
+For stronger isolation, production infrastructure should generally use appropriate separate AWS accounts, credentials, state, and access boundaries rather than relying only on workspace or directory names.
+
+🔄 Complete CI/CD Workflow
+
+The end-to-end pipeline:
+
+Developer
+    │
+    │ Write Terraform
+    ▼
+GitHub
+    │
+    │ Push / Pull Request
+    ▼
+Jenkins
+    │
+    ├── Checkout
+    │
+    ├── Terraform Init
+    │
+    ├── Terraform Format
+    │
+    ├── Terraform Validate
+    │
+    ├── Terraform Plan
+    │
+    ├── Manual Approval
+    │
+    └── Terraform Apply
+             │
+             ▼
+        AWS Infrastructure
