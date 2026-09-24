@@ -413,3 +413,85 @@ Plan:
 - Destroy
 
 The plan should be reviewed before production changes are applied.
+🛑 6. Manual Approval
+
+Production deployments can include an approval stage.
+
+stage('Approval') {
+    steps {
+        input message: 'Approve Terraform deployment?'
+    }
+}
+
+Workflow:
+
+Terraform Plan
+      │
+      ▼
+Review
+      │
+      ▼
+Approval
+      │
+      ▼
+Terraform Apply
+🚀 7. Terraform Apply
+
+After approval:
+
+terraform apply tfplan
+
+Using the reviewed plan helps keep the apply operation aligned with the plan that was inspected.
+
+🏗️ Example VPC Module
+
+Example:
+
+resource "aws_vpc" "this" {
+  cidr_block = var.vpc_cidr
+
+  tags = {
+    Name        = "${var.project_name}-${var.environment}-vpc"
+    Environment = var.environment
+  }
+}
+
+resource "aws_subnet" "public" {
+  vpc_id                  = aws_vpc.this.id
+  cidr_block              = var.public_subnet_cidr
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name        = "${var.project_name}-${var.environment}-public"
+    Environment = var.environment
+  }
+}
+📦 Example Variables
+variable "project_name" {
+  type        = string
+  description = "Project name"
+}
+
+variable "environment" {
+  type        = string
+  description = "Deployment environment"
+}
+
+variable "vpc_cidr" {
+  type        = string
+  description = "VPC CIDR block"
+}
+
+variable "public_subnet_cidr" {
+  type        = string
+  description = "Public subnet CIDR block"
+}
+📤 Example Outputs
+output "vpc_id" {
+  description = "VPC ID"
+  value       = aws_vpc.this.id
+}
+
+Outputs can be used by other modules or displayed after deployment.
+
+terraform output
