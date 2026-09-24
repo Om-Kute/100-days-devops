@@ -168,3 +168,85 @@ terraform-end-to-end/
         ├── main.tf
         ├── variables.tf
         └── terraform.tfvars
+🧩 Terraform Modules
+
+Modules make Terraform code reusable.
+
+For example:
+
+modules/
+│
+├── vpc/
+├── ec2/
+├── security-group/
+└── s3/
+
+Instead of repeatedly writing the same infrastructure code, the root configuration can call modules.
+
+Example:
+
+module "vpc" {
+  source = "./modules/vpc"
+
+  project_name = var.project_name
+  environment  = var.environment
+  vpc_cidr     = var.vpc_cidr
+}
+
+Another environment can reuse the same module:
+
+module "vpc" {
+  source = "../../modules/vpc"
+
+  project_name = "dev-project"
+  environment  = "dev"
+  vpc_cidr     = "10.10.0.0/16"
+}
+Benefits
+Reusable
+   ↓
+Consistent
+   ↓
+Maintainable
+   ↓
+Scalable
+🔐 Remote Terraform State
+
+Terraform state contains information about resources managed by Terraform.
+
+For team-based and CI/CD workflows, state should generally be stored remotely instead of committing it to Git.
+
+For AWS, an S3 backend is commonly used.
+
+Example:
+
+terraform {
+  backend "s3" {
+    bucket       = "my-terraform-state-bucket"
+    key          = "project/terraform.tfstate"
+    region       = "ap-south-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}
+State Architecture
+              Terraform
+                  │
+                  ▼
+          ┌──────────────┐
+          │      S3      │
+          │ Terraform    │
+          │    State     │
+          └──────────────┘
+State security
+Enable encryption
+Restrict IAM access
+Enable versioning where appropriate
+Enable appropriate bucket protections
+Do not commit state to Git
+Back up according to recovery requirements
+State locking
+
+Modern Terraform S3 backends support native state locking using the S3 backend's lock-file mechanism.
+
+Older architectures may use DynamoDB for state locking. If using DynamoDB locking in an existing setup, follow the Terraform version and backend documentation applicable to that environment.
