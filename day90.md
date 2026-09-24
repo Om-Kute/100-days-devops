@@ -495,3 +495,96 @@ output "vpc_id" {
 Outputs can be used by other modules or displayed after deployment.
 
 terraform output
+🔑 AWS Authentication
+
+AWS credentials should never be hard-coded into Terraform files.
+
+Avoid:
+
+access_key = "YOUR_ACCESS_KEY"
+secret_key = "YOUR_SECRET_KEY"
+
+Instead, use secure authentication mechanisms such as:
+
+Jenkins credentials
+IAM roles
+Instance roles
+Workload identity mechanisms
+Short-lived credentials
+
+For Jenkins running on AWS, an IAM role attached to the Jenkins agent can be preferable to storing long-lived access keys.
+
+🔒 Security Architecture
+                    GitHub
+                       │
+                       ▼
+                   Jenkins
+                       │
+                Secure Identity
+                       │
+                       ▼
+                  Terraform
+                       │
+                       ▼
+                    AWS IAM
+                       │
+              Least-Privilege Role
+                       │
+                       ▼
+                AWS Resources
+🛡️ Security Best Practices
+GitHub
+✅ Protect main branch
+✅ Require Pull Requests
+✅ Review infrastructure changes
+✅ Use repository secrets where appropriate
+✅ Enable security scanning
+Jenkins
+✅ Secure Jenkins access
+✅ Use Jenkins Credentials
+✅ Limit permissions
+✅ Keep plugins updated
+✅ Protect production pipelines
+Terraform
+✅ Use remote state
+✅ Encrypt state
+✅ Review terraform plan
+✅ Pin provider versions
+✅ Use reusable modules
+✅ Avoid hard-coded secrets
+AWS
+✅ Use least-privilege IAM
+✅ Separate environments appropriately
+✅ Enable logging and monitoring
+✅ Apply security groups carefully
+✅ Protect production resources
+🚫 .gitignore
+
+Example:
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform CLI configuration
+.terraformrc
+terraform.rc
+
+# Local files
+.DS_Store
+
+Use a safe example file such as:
+
+terraform.tfvars.example
+
+for documenting required variables without exposing secrets.
