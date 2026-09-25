@@ -514,3 +514,45 @@ receivers:
       - to: "team@example.com"
 
 In production, credentials and notification endpoints should be stored securely rather than committed directly to Git.
+🧠 20. Alert Fatigue
+
+Too many alerts can become a problem.
+
+Poor alerting:
+
+CPU 50% → Alert
+CPU 51% → Alert
+CPU 52% → Alert
+CPU 53% → Alert
+CPU 54% → Alert
+
+Better alerting:
+
+CPU > 85%
+for 10 minutes
+       ↓
+Alert
+
+Good alerts should be:
+
+Actionable
+Meaningful
+Specific
+Properly prioritized
+Resistant to temporary spikes
+📊 21. Monitoring Dashboard
+
+A useful infrastructure dashboard can include:
+
+┌────────────────────────────────────────┐
+│         SYSTEM OVERVIEW                │
+├────────────────────────────────────────┤
+│ CPU Usage          Memory Usage        │
+│    72%                 64%             │
+│                                        │
+│ Disk Usage         Network Traffic     │
+│    58%              120 MB/s           │
+│                                        │
+│ Uptime             Active Alerts       │
+│   3.2 days               2             │
+└────────────────────────────────────────┘
