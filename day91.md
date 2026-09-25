@@ -651,3 +651,161 @@ Connections
 Data Sources
    ↓
 Prometheus
+Step 7 – Create Dashboard
+
+Create panels for:
+
+CPU
+Memory
+Disk
+Network
+Load
+Uptime
+Step 8 – Configure Alerts
+
+Create alerts for conditions such as:
+
+High CPU
+High Memory
+Low Disk Space
+Target Down
+High Error Rate
+🏭 25. Real-World Architecture
+                        USERS
+                          │
+                          ▼
+                     Application
+                          │
+             ┌────────────┼────────────┐
+             │            │            │
+             ▼            ▼            ▼
+          Metrics        Logs        Traces
+             │            │            │
+             ▼            ▼            ▼
+        Prometheus     Log System    Tracing
+             │
+             ▼
+          Grafana
+             │
+             ▼
+       Alertmanager
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+    Email        Chat
+🧩 26. Monitoring Stack
+Tool	Main Purpose
+Prometheus	Metrics collection and alert evaluation
+Grafana	Visualization and dashboards
+Node Exporter	Linux system metrics
+cAdvisor	Container metrics
+Alertmanager	Alert routing and management
+Loki / ELK	Log management
+Jaeger / Tempo	Distributed tracing
+
+Tool selection depends on the environment and operational requirements.
+
+🛡️ 27. Monitoring Best Practices
+✅ Monitor important system and application metrics
+✅ Create meaningful dashboards
+✅ Use actionable alerts
+✅ Set appropriate thresholds
+✅ Monitor availability and latency
+✅ Monitor resource utilization
+✅ Monitor application errors
+✅ Monitor containers and Kubernetes
+✅ Avoid excessive alerts
+✅ Keep historical metrics where needed
+✅ Protect monitoring systems
+✅ Restrict access to sensitive dashboards
+✅ Monitor the monitoring stack itself
+🔐 28. Security Considerations
+
+Monitoring systems can contain sensitive operational information.
+
+Best practices:
+
+✅ Use authentication
+✅ Use HTTPS where appropriate
+✅ Restrict Grafana access
+✅ Protect Prometheus endpoints
+✅ Secure Alertmanager configuration
+✅ Avoid exposing /metrics publicly
+✅ Protect notification credentials
+✅ Follow least privilege
+
+Do not expose internal monitoring endpoints directly to the public internet unless there is a deliberate security design for doing so.
+
+📦 29. Monitoring Docker + Kubernetes
+
+A modern DevOps monitoring architecture may look like:
+
+                  AWS / Cloud
+                       │
+              ┌────────┴────────┐
+              │                 │
+            EC2             Kubernetes
+              │                 │
+           Docker             Pods
+              │                 │
+         cAdvisor        kube-state-metrics
+              │                 │
+              └────────┬────────┘
+                       │
+                       ▼
+                  Prometheus
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+           Grafana         Alertmanager
+              │                 │
+              ▼                 ▼
+          Dashboards       Notifications
+🐛 30. Common Problems
+Prometheus Target Down
+
+Check:
+
+Status → Targets
+
+Then verify the exporter:
+
+curl http://localhost:9100/metrics
+
+Check:
+
+Exporter process
+Port
+Firewall
+Network connectivity
+Prometheus target configuration
+Grafana Shows No Data
+
+Check:
+
+Grafana → Data Sources → Prometheus
+
+Verify that the Prometheus URL is correct.
+
+Then test:
+
+up
+Node Exporter Metrics Missing
+
+Check:
+
+ps aux | grep node_exporter
+
+Then:
+
+curl http://localhost:9100/metrics
+Alerts Not Triggering
+
+Check:
+
+Alert expression
+Metric availability
+Alert duration
+Prometheus rules
+Alertmanager configuration
+Notification configuration
