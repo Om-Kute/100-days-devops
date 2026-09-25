@@ -461,3 +461,56 @@ Saturation
 How much of the system's capacity is being used
 
 These signals can help prioritize service-level monitoring.
+🚨 18. Alerting
+
+Alerts should identify conditions that require attention.
+
+Example:
+
+CPU > 80%
+      ↓
+Prometheus evaluates rule
+      ↓
+Alert fires
+      ↓
+Alertmanager
+      ↓
+Notification
+
+Example alert rule:
+
+groups:
+  - name: system-alerts
+
+    rules:
+
+      - alert: HighCPUUsage
+        expr: 100 - (avg by (instance) (
+          rate(node_cpu_seconds_total{
+            mode="idle"
+          }[5m])
+        ) * 100) > 80
+
+        for: 5m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: "High CPU usage detected"
+
+The exact expression should be tested against the metrics exposed by your environment.
+
+🔔 19. Alertmanager Configuration
+
+A simplified example:
+
+route:
+  receiver: "team-alerts"
+
+receivers:
+  - name: "team-alerts"
+    email_configs:
+      - to: "team@example.com"
+
+In production, credentials and notification endpoints should be stored securely rather than committed directly to Git.
