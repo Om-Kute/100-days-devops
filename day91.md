@@ -140,3 +140,49 @@ Query metrics using PromQL
 Evaluate alerting rules
 Integrate with Alertmanager
 Monitor infrastructure and applications
+📡 6. Prometheus Pull Model
+
+Prometheus commonly collects metrics by scraping HTTP endpoints.
+
+              Prometheus
+                   │
+                   │ HTTP GET
+                   ▼
+             /metrics
+                   │
+          ┌────────┴────────┐
+          │                 │
+          ▼                 ▼
+   Node Exporter       Application
+                       Metrics
+
+For example:
+
+http://server:9100/metrics
+
+Node Exporter exposes Linux system metrics that Prometheus can scrape.
+
+🐧 7. Node Exporter
+
+Node Exporter exposes hardware and operating-system metrics for Unix-like systems.
+
+It can provide information about:
+
+CPU
+Memory
+Disk
+Filesystem
+Network
+Load
+System uptime
+
+Architecture:
+
+Linux Server
+     │
+     ▼
+Node Exporter
+     │
+     │ /metrics
+     ▼
+Prometheus
