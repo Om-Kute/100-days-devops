@@ -237,3 +237,33 @@ Alertmanager
     ├── Slack
     ├── PagerDuty
     └── Other Integrations
+⚙️ 11. Prometheus Configuration
+
+A simplified prometheus.yml:
+
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+
+  - job_name: "prometheus"
+    static_configs:
+      - targets:
+          - "localhost:9090"
+
+  - job_name: "node-exporter"
+    static_configs:
+      - targets:
+          - "localhost:9100"
+Explanation
+scrape_interval
+       ↓
+How frequently Prometheus collects metrics
+
+job_name
+       ↓
+Identifies the monitoring target
+
+targets
+       ↓
+Endpoints Prometheus should scrape
