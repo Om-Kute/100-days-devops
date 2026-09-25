@@ -556,3 +556,98 @@ A useful infrastructure dashboard can include:
 │ Uptime             Active Alerts       │
 │   3.2 days               2             │
 └────────────────────────────────────────┘
+🧰 22. Useful Prometheus Commands
+
+Start Prometheus:
+
+./prometheus --config.file=prometheus.yml
+
+Check configuration:
+
+promtool check config prometheus.yml
+
+Check Prometheus target status from its web interface:
+
+Status → Targets
+
+Example metric:
+
+up
+🔎 23. Useful Linux Monitoring Commands
+CPU
+top
+Memory
+free -h
+Disk
+df -h
+Processes
+ps aux
+Network
+ss -tulnp
+System Load
+uptime
+Disk I/O
+iostat
+🧪 24. Hands-On Monitoring Lab
+Step 1 – Install Prometheus
+
+Download and configure Prometheus on a Linux server.
+
+Verify:
+
+prometheus --version
+Step 2 – Install Node Exporter
+
+Start Node Exporter:
+
+./node_exporter
+
+Verify metrics:
+
+curl http://localhost:9100/metrics
+Step 3 – Configure Prometheus
+
+Add Node Exporter:
+
+scrape_configs:
+
+  - job_name: "node"
+    static_configs:
+      - targets:
+          - "localhost:9100"
+
+Restart or reload Prometheus according to your deployment method.
+
+Step 4 – Verify Targets
+
+Open the Prometheus interface and check:
+
+Status → Targets
+
+The target should show as:
+
+UP
+Step 5 – Query Metrics
+
+Try:
+
+up
+
+Then:
+
+node_memory_MemAvailable_bytes
+
+And:
+
+node_cpu_seconds_total
+Step 6 – Install Grafana
+
+Connect Grafana to Prometheus as a data source.
+
+Grafana
+   ↓
+Connections
+   ↓
+Data Sources
+   ↓
+Prometheus
