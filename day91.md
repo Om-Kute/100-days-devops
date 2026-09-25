@@ -267,3 +267,32 @@ Identifies the monitoring target
 targets
        ↓
 Endpoints Prometheus should scrape
+🧮 12. PromQL
+
+Prometheus uses PromQL (Prometheus Query Language) to query metrics.
+
+Example:
+
+up
+
+Shows whether targets are available.
+
+CPU-related example:
+
+node_cpu_seconds_total
+
+Memory example:
+
+node_memory_MemAvailable_bytes
+
+HTTP request example:
+
+http_requests_total
+
+PromQL can also perform calculations, filtering, aggregation, and rate calculations.
+
+Example:
+
+rate(http_requests_total[5m])
+
+This calculates the per-second rate of increase over the selected five-minute range.
