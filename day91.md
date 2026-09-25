@@ -355,3 +355,109 @@ Docker Host
              │
              ▼
            Grafana
+☸️ 15. Monitoring Kubernetes
+
+Kubernetes monitoring can include:
+
+Cluster Health
+Node Health
+Pod Status
+Container Resources
+CPU
+Memory
+Network
+API Server
+Application Metrics
+
+A simplified architecture:
+
+Kubernetes Cluster
+       │
+       ├── Nodes
+       │
+       ├── Pods
+       │
+       └── Services
+              │
+              ▼
+         Metrics Sources
+              │
+              ▼
+          Prometheus
+              │
+              ▼
+           Grafana
+
+Common Kubernetes monitoring ecosystems include:
+
+Prometheus
+Grafana
+kube-state-metrics
+node-exporter
+Alertmanager
+📈 16. Important Metrics
+CPU
+
+High CPU usage can indicate:
+
+Heavy workload
+Inefficient application
+Insufficient resources
+CPU-intensive processes
+Memory
+
+Monitor:
+
+Used Memory
+Available Memory
+Swap
+Memory Pressure
+Disk
+
+Monitor:
+
+Disk Usage
+Disk I/O
+Filesystem Capacity
+Inodes
+Network
+
+Monitor:
+
+Incoming Traffic
+Outgoing Traffic
+Packets
+Errors
+Dropped Packets
+Application
+
+Useful application metrics include:
+
+Request Rate
+Error Rate
+Latency
+Response Time
+Active Users
+Queue Size
+Database Connections
+🎯 17. The Four Golden Signals
+
+A useful framework for monitoring services is the Four Golden Signals:
+
+Latency
+   ↓
+How long requests take
+
+Traffic
+   ↓
+How much demand the system receives
+
+Errors
+   ↓
+How many requests fail
+
+Saturation
+   ↓
+How much of the system's capacity is being used
+
+These signals can help prioritize service-level monitoring.
