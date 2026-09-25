@@ -89,3 +89,54 @@ Service B
 Database
 
 Traces are especially useful in distributed systems and microservices.
+🆚 3. Monitoring vs Observability
+Monitoring	Observability
+Detects known problems	Helps investigate unknown problems
+Focuses heavily on metrics	Uses metrics, logs and traces
+Answers "Is something wrong?"	Helps answer "Why is it wrong?"
+Dashboards and alerts	Deeper system understanding
+Often threshold-driven	Supports exploratory troubleshooting
+
+Both are important for reliable DevOps systems.
+
+🏗️ 4. Monitoring Architecture
+
+A basic monitoring stack can look like:
+
+                 ┌──────────────────┐
+                 │    Linux Server  │
+                 │                  │
+                 │   Node Exporter  │
+                 └────────┬─────────┘
+                          │
+                          │ Metrics
+                          ▼
+                 ┌──────────────────┐
+                 │    Prometheus    │
+                 │ Metrics Database │
+                 └───────┬──────────┘
+                         │
+             ┌───────────┴───────────┐
+             │                       │
+             ▼                       ▼
+      ┌─────────────┐        ┌─────────────┐
+      │   Grafana   │        │ Alertmanager│
+      │ Dashboards  │        │   Alerts    │
+      └──────┬──────┘        └──────┬──────┘
+             │                       │
+             ▼                       ▼
+           Users               Email/Chat/etc.
+🔥 5. Prometheus
+
+Prometheus is an open-source monitoring and alerting toolkit.
+
+It is widely used for collecting and querying time-series metrics.
+
+Prometheus can:
+
+Scrape metrics
+Store time-series data
+Query metrics using PromQL
+Evaluate alerting rules
+Integrate with Alertmanager
+Monitor infrastructure and applications
