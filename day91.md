@@ -296,3 +296,62 @@ Example:
 rate(http_requests_total[5m])
 
 This calculates the per-second rate of increase over the selected five-minute range.
+🖥️ 13. Monitoring Linux
+
+Important Linux metrics include:
+
+CPU
+Memory
+Disk
+Filesystem
+Network
+Load Average
+Processes
+Uptime
+
+Example commands:
+
+top
+htop
+free -h
+df -h
+uptime
+vmstat
+iostat
+
+These commands are useful for local troubleshooting, while Prometheus and Grafana provide centralized monitoring and historical visualization.
+
+🐳 14. Monitoring Docker
+
+Docker environments should monitor:
+
+Running containers
+CPU consumption
+Memory consumption
+Network traffic
+Container restarts
+Container health
+Disk usage
+
+Useful commands:
+
+docker ps
+docker stats
+docker logs <container>
+
+Example architecture:
+
+Docker Host
+     │
+     ├── App Container
+     ├── Database Container
+     └── Nginx Container
+             │
+             ▼
+          cAdvisor
+             │
+             ▼
+         Prometheus
+             │
+             ▼
+           Grafana
