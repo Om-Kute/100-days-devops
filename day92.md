@@ -69,3 +69,35 @@ Alert Rules
 Notifications
 +
 Incident Response
+🔥 2. Prometheus
+
+Prometheus is an open-source monitoring and alerting toolkit that collects and stores time-series metrics.
+
+It can:
+
+Scrape metrics
+Store time-series data
+Query metrics using PromQL
+Evaluate alerting rules
+Send alerts to Alertmanager
+Monitor infrastructure
+Monitor applications
+Monitor containers
+Monitor Kubernetes
+
+Architecture:
+
+Exporter / Application
+        │
+        │ /metrics
+        ▼
+   ┌────────────┐
+   │ Prometheus │
+   └─────┬──────┘
+         │
+    ┌────┴─────┐
+    ▼          ▼
+  PromQL     Alerts
+    │          │
+    ▼          ▼
+ Grafana   Alertmanager
