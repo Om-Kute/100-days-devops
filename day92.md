@@ -101,3 +101,26 @@ Exporter / Application
     │          │
     ▼          ▼
  Grafana   Alertmanager
+🧮 3. PromQL
+
+PromQL (Prometheus Query Language) is used to query and analyze Prometheus time-series data.
+
+Basic Query
+up
+
+This can be used to check whether monitored targets are reporting as available.
+
+CPU Metric
+node_cpu_seconds_total
+
+This exposes cumulative CPU time by CPU mode.
+
+Memory Metric
+node_memory_MemAvailable_bytes
+
+Shows available memory reported by Node Exporter.
+
+Filesystem Metric
+node_filesystem_avail_bytes
+
+Shows available filesystem space.
