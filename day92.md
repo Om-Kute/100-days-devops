@@ -143,3 +143,34 @@ Example:
 increase(http_requests_total[1h])
 
 This can show the increase in HTTP requests during the las
+📊 6. Aggregation in PromQL
+
+PromQL supports aggregation.
+
+Example:
+
+sum(rate(http_requests_total[5m]))
+
+This calculates the total request rate across the selected series.
+
+Another example:
+
+sum by (instance) (rate(http_requests_total[5m]))
+
+This groups request rates by instance.
+
+🐳 7. Container CPU Monitoring
+
+For container environments, cAdvisor metrics can be queried.
+
+Example:
+
+rate(container_cpu_usage_seconds_total[5m])
+
+A more useful aggregation may be:
+
+sum by (container) (
+  rate(container_cpu_usage_seconds_total[5m])
+)
+
+The exact labels available depend on the cAdvisor and Prometheus setup.
