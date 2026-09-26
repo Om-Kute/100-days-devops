@@ -245,3 +245,35 @@ Short spike
 Condition disappears
     ↓
 No alert
+🚦 11. Alert States
+
+Prometheus alerts commonly move through states such as:
+
+Inactive
+    │
+    │ Condition becomes true
+    ▼
+Pending
+    │
+    │ Condition remains true
+    ▼
+Firing
+    │
+    │ Condition becomes false
+    ▼
+Resolved
+Inactive
+
+The alert condition is not currently true.
+
+Pending
+
+The condition is true but the configured for duration has not completed.
+
+Firing
+
+The condition has remained true for the required duration.
+
+Resolved
+
+The condition is no longer true.
