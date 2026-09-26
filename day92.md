@@ -4,3 +4,68 @@
 Day 92 focuses on Advanced Monitoring & Alerting, building on the monitoring and observability concepts covered on Day 91.
 
 The goal is to move from simply collecting metrics to creating actionable alerts that help DevOps engineers detect problems, investigate incidents, and maintain reliable infrastructure.
+🔄 Advanced Monitoring Workflow
+                    Metrics
+                       │
+                       ▼
+                ┌─────────────┐
+                │ Prometheus  │
+                │ Collect     │
+                │ Store       │
+                │ Evaluate    │
+                └──────┬──────┘
+                       │
+                       ▼
+                    PromQL
+                       │
+                       ▼
+                 Alert Rules
+                       │
+                       ▼
+                ┌─────────────┐
+                │ Alertmanager│
+                └──────┬──────┘
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+        Email        Slack       Webhook
+                       │
+                       ▼
+                  Engineer
+                       │
+                       ▼
+                  Investigate
+                       │
+                       ▼
+                  Fix & Improve
+🔭 1. What is Advanced Monitoring?
+
+Basic monitoring answers questions such as:
+
+Is the server running?
+Is CPU high?
+Is memory available?
+Is the service up?
+
+Advanced monitoring goes further:
+
+Why is CPU increasing?
+Which service is causing the problem?
+How long has the issue existed?
+How many users are affected?
+Is the problem isolated or widespread?
+What should happen when the threshold is exceeded?
+
+Advanced monitoring combines:
+
+Metrics
++
+Queries
++
+Dashboards
++
+Alert Rules
++
+Notifications
++
+Incident Response
