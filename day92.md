@@ -373,3 +373,49 @@ After maintenance:
 Remove / Expire Silence
 
 Silencing should be controlled carefully so real incidents are not hidden.
+🚫 16. Alert Inhibition
+
+Inhibition prevents lower-priority alerts from creating additional noise when a higher-level problem is already known.
+
+Example:
+
+Database Down
+      │
+      ├── Application Errors
+      ├── API Errors
+      └── User Requests Failing
+
+Instead of sending many secondary notifications, an inhibition rule can suppress alerts that are consequences of the primary incident.
+
+📊 17. Grafana Alerting
+
+Grafana can visualize metrics and create alert rules depending on the configured data sources and Grafana version.
+
+A typical process:
+
+Grafana
+   │
+   ▼
+Create Panel
+   │
+   ▼
+Choose Query
+   │
+   ▼
+Set Threshold
+   │
+   ▼
+Configure Evaluation
+   │
+   ▼
+Configure Notification
+   │
+   ▼
+Save Alert Rule
+
+Example:
+
+CPU Usage > 80%
+for 5 minutes
+        ↓
+Alert
