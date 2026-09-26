@@ -419,3 +419,33 @@ CPU Usage > 80%
 for 5 minutes
         ↓
 Alert
+📈 18. Useful Dashboard Panels
+
+A production dashboard can contain:
+
+┌─────────────────────────────────────────┐
+│          SYSTEM OVERVIEW                │
+├─────────────────────────────────────────┤
+│ CPU Usage       │ Memory Usage          │
+│     72%         │      65%              │
+├─────────────────┼───────────────────────┤
+│ Disk Usage      │ Network Traffic       │
+│     58%         │     120 MB/s          │
+├─────────────────┼───────────────────────┤
+│ Request Rate    │ Error Rate            │
+│    1.2K/s       │       0.4%            │
+├─────────────────┼───────────────────────┤
+│ Latency         │ Active Alerts         │
+│    120 ms       │         2             │
+└─────────────────────────────────────────┘
+🔔 19. Notification Channels
+
+Common notification destinations include:
+
+📧 Email
+💬 Slack
+💬 Microsoft Teams
+🚨 PagerDuty
+🔗 Webhooks
+
+The correct notification channel depends on incident severity and team requirements.
