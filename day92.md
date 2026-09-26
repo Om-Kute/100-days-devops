@@ -220,3 +220,28 @@ groups:
         annotations:
           summary: "High CPU usage detected"
           description: "CPU usage has remained above 80% for 5 minutes."
+⏱️ 10. The for Duration
+
+The for field prevents temporary spikes from immediately generating alerts.
+
+Example:
+
+for: 5m
+
+This means the alert condition must remain true for the configured duration before the alert becomes firing.
+
+Without an appropriate duration:
+
+Short spike
+    ↓
+Alert
+    ↓
+Noise
+
+With a duration:
+
+Short spike
+    ↓
+Condition disappears
+    ↓
+No alert
