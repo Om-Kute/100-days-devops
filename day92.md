@@ -174,3 +174,49 @@ sum by (container) (
 )
 
 The exact labels available depend on the cAdvisor and Prometheus setup.
+☸️ 8. Kubernetes Monitoring
+
+Kubernetes environments can be monitored using tools such as:
+
+Prometheus
+Node Exporter
+kube-state-metrics
+cAdvisor/container metrics
+Alertmanager
+Grafana
+
+Example metric:
+
+kube_pod_status_phase
+
+This can be used to inspect Kubernetes Pod phase information.
+
+🚨 9. Prometheus Alerting Rules
+
+Prometheus can evaluate alerting rules.
+
+Example:
+
+groups:
+  - name: system-alerts
+
+    rules:
+      - alert: HighCPUUsage
+
+        expr: |
+          100 - (
+            avg by (instance) (
+              rate(node_cpu_seconds_total{
+                mode="idle"
+              }[5m])
+            ) * 100
+          ) > 80
+
+        for: 5m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage has remained above 80% for 5 minutes."
