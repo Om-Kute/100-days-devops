@@ -557,3 +557,50 @@ kubectl top pods
 kubectl top nodes
 
 kubectl top requires the Kubernetes Metrics API, commonly provided by Metrics Server.
+🧰 23. Useful Monitoring Commands
+Validate Prometheus Configuration
+promtool check config prometheus.yml
+Validate Alert Rules
+promtool check rules alerts.yml
+Check Prometheus Metrics
+curl http://localhost:9090/metrics
+Check Node Exporter
+curl http://localhost:9100/metrics
+Docker Resource Usage
+docker stats
+Kubernetes Pods
+kubectl get pods -A
+Kubernetes Nodes
+kubectl get nodes
+🔍 24. Troubleshooting Workflow
+
+When an alert fires:
+
+Alert
+  │
+  ▼
+Check Dashboard
+  │
+  ▼
+Identify Affected Service
+  │
+  ▼
+Check Metrics
+  │
+  ▼
+Check Logs
+  │
+  ▼
+Check Recent Changes
+  │
+  ▼
+Identify Root Cause
+  │
+  ▼
+Fix Problem
+  │
+  ▼
+Verify Recovery
+  │
+  ▼
+Review Alert
