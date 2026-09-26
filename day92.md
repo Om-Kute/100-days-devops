@@ -124,3 +124,22 @@ Filesystem Metric
 node_filesystem_avail_bytes
 
 Shows available filesystem space.
+📈 4. PromQL Rate Functions
+
+For counters, rate() is commonly used to calculate the average per-second increase over a time window.
+
+Example:
+
+rate(http_requests_total[5m])
+
+This calculates the average request rate over the last five minutes.
+
+🔢 5. Increase Function
+
+increase() calculates the total increase in a counter over a time range.
+
+Example:
+
+increase(http_requests_total[1h])
+
+This can show the increase in HTTP requests during the las
