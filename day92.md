@@ -325,3 +325,51 @@ receivers:
 Additional notification configuration depends on the integration being used.
 
 Sensitive credentials should never be committed directly into a public repository.
+📦 14. Alert Grouping
+
+Suppose several servers experience the same issue:
+
+Server 1 → High CPU
+Server 2 → High CPU
+Server 3 → High CPU
+Server 4 → High CPU
+
+Without grouping:
+
+Alert
+Alert
+Alert
+Alert
+
+With grouping:
+
+HighCPUUsage
+    │
+    └── 4 affected instances
+
+Grouping reduces notification noise.
+
+🔇 15. Alert Silencing
+
+Sometimes an alert is expected during maintenance.
+
+Instead of receiving notifications during planned maintenance, an alert can be silenced.
+
+Example scenario:
+
+Scheduled Maintenance
+        │
+        ▼
+Create Silence
+        │
+        ▼
+Expected Alerts
+        │
+        ▼
+No Notifications
+
+After maintenance:
+
+Remove / Expire Silence
+
+Silencing should be controlled carefully so real incidents are not hidden.
