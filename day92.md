@@ -533,3 +533,27 @@ docker ps
 Check logs:
 
 docker logs <container-name>
+☸️ 22. Kubernetes Alert Scenarios
+
+Useful Kubernetes conditions include:
+
+Pod CrashLoopBackOff
+Pod Pending
+Pod NotReady
+High Node CPU
+High Node Memory
+High Pod Memory
+Container Restart
+Node NotReady
+Deployment Replica Mismatch
+
+Useful commands:
+
+kubectl get pods
+kubectl get nodes
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl top pods
+kubectl top nodes
+
+kubectl top requires the Kubernetes Metrics API, commonly provided by Metrics Server.
