@@ -277,3 +277,28 @@ The condition has remained true for the required duration.
 Resolved
 
 The condition is no longer true.
+📡 12. Alertmanager
+
+Alertmanager receives alerts from Prometheus and manages notification delivery.
+
+It supports concepts such as:
+
+Grouping
+Routing
+Silencing
+Inhibition
+Notification receivers
+
+Architecture:
+
+Prometheus
+    │
+    │ Alerts
+    ▼
+Alertmanager
+    │
+    ├── Email
+    ├── Slack
+    ├── Microsoft Teams
+    ├── PagerDuty
+    └── Webhook
