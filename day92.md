@@ -449,3 +449,87 @@ Common notification destinations include:
 🔗 Webhooks
 
 The correct notification channel depends on incident severity and team requirements.
+🎯 20. Production Alert Scenarios
+High CPU
+CPU > 80%
+for 5 minutes
+
+Possible causes:
+
+Heavy workload
+CPU-intensive process
+Traffic increase
+Application issue
+High Memory
+Memory > 85%
+for 5 minutes
+
+Possible causes:
+
+Memory leak
+Increased workload
+Insufficient resources
+Low Disk Space
+Free disk space < 10%
+
+Possible causes:
+
+Large logs
+Temporary files
+Application data growth
+Backup accumulation
+High Error Rate
+
+Example concept:
+
+HTTP 5xx errors > 5%
+
+Possible causes:
+
+Application failure
+Dependency failure
+Database problems
+Deployment issue
+High Latency
+
+Example:
+
+95th percentile latency > defined SLO
+
+Possible causes:
+
+Slow database
+Network problems
+Resource exhaustion
+Application bottleneck
+Target Down
+up == 0
+
+Possible causes:
+
+Exporter stopped
+Service stopped
+Network failure
+Host failure
+🐳 21. Docker Alert Scenarios
+
+Monitor:
+
+Container CPU
+Container Memory
+Container Restarts
+Container Availability
+Container Network
+Container Disk Usage
+
+Useful command:
+
+docker stats
+
+Check running containers:
+
+docker ps
+
+Check logs:
+
+docker logs <container-name>
