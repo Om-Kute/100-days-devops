@@ -302,3 +302,26 @@ Alertmanager
     ├── Microsoft Teams
     ├── PagerDuty
     └── Webhook
+⚙️ 13. Alertmanager Configuration
+
+Basic example:
+
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by:
+    - alertname
+
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 1h
+
+  receiver: team-alerts
+
+receivers:
+  - name: team-alerts
+
+Additional notification configuration depends on the integration being used.
+
+Sensitive credentials should never be committed directly into a public repository.
