@@ -330,3 +330,35 @@ Elasticsearch
   Kibana
 
 EFK is commonly associated with Kubernetes logging architectures.
+🟣 12. Loki Stack
+
+A popular Grafana-based logging architecture is:
+
+Loki
++
+Grafana
++
+Log Collector
+
+A common flow is:
+
+Application
+     │
+     ▼
+Log Collector
+     │
+     ▼
+    Loki
+     │
+     ▼
+  Grafana
+
+Historically, Promtail was commonly used with Loki. Grafana's current ecosystem also includes Grafana Alloy for telemetry collection.
+
+🧱 13. Loki
+
+Grafana Loki is a log aggregation system designed to work well with Grafana.
+
+A key design characteristic is that Loki does not index the full content of every log line in the same way Elasticsearch does. Instead, it primarily indexes labels and stores the log content separately.
+
+This can make it attractive for teams already using Grafana and Prometheus.
