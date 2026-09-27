@@ -592,3 +592,83 @@ docker logs --tail 100 <container>
 Logs since a time:
 
 docker logs --since 1h <container>
+☸️ 25. Kubernetes Logging
+
+View Pod logs:
+
+kubectl logs <pod>
+
+Follow logs:
+
+kubectl logs -f <pod>
+
+Specific container:
+
+kubectl logs <pod> -c <container>
+
+Previous container instance:
+
+kubectl logs <pod> --previous
+
+All Pods matching a label can also be queried using appropriate kubectl logs options.
+
+🐧 26. Linux Logging
+
+Linux commonly stores logs under:
+
+/var/log/
+
+List log files:
+
+ls -lah /var/log/
+
+View a log:
+
+cat /var/log/syslog
+
+Follow a log:
+
+tail -f /var/log/syslog
+
+Search:
+
+grep "ERROR" /var/log/syslog
+
+Systemd logs:
+
+journalctl
+
+Follow systemd logs:
+
+journalctl -f
+
+Service-specific logs:
+
+journalctl -u nginx
+🔐 27. Log Security
+
+Logs can contain sensitive information.
+
+Avoid logging:
+
+❌ Passwords
+❌ API Keys
+❌ Access Tokens
+❌ Private Keys
+❌ Credit Card Data
+❌ Sensitive Personal Information
+
+Instead:
+
+Sensitive Data
+      ↓
+Redaction / Masking
+      ↓
+Safe Logging
+
+Example:
+
+❌ Bad
+password=MySecretPassword123
+✅ Better
+password=[REDACTED]
