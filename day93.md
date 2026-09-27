@@ -133,3 +133,31 @@ kubectl logs <pod-name> -c <container-name>
 View logs from previous container instance:
 
 kubectl logs <pod-name> --previous
+🏗️ 4. What is Centralized Logging?
+
+In a traditional environment:
+
+Server 1 → Logs
+Server 2 → Logs
+Server 3 → Logs
+Server 4 → Logs
+
+An engineer has to connect to each server separately.
+
+With centralized logging:
+
+Server 1 ──┐
+Server 2 ──┤
+Server 3 ──┼──> Log Collector
+Server 4 ──┤
+Containers ─┘        │
+                     ▼
+              Centralized Storage
+                     │
+                     ▼
+                Search & Analysis
+                     │
+                     ▼
+                Visualization
+
+This makes troubleshooting much easier.
