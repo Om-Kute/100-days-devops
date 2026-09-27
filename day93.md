@@ -196,3 +196,51 @@ Cloud Services
          │
          ▼
     Troubleshooting
+🧩 6. Popular Logging Stacks
+
+Three common approaches are:
+
+ELK
+EFK
+Loki Stack
+🔵 7. ELK Stack
+
+ELK stands for:
+
+E → Elasticsearch
+L → Logstash
+K → Kibana
+
+Architecture:
+
+Applications
+     │
+     ▼
+ Logstash
+     │
+     ▼
+Elasticsearch
+     │
+     ▼
+   Kibana
+🔎 8. Elasticsearch
+
+Elasticsearch is a distributed search and analytics engine commonly used to store and search log data.
+
+It provides:
+
+Full-text search
+Filtering
+Aggregation
+Distributed storage
+Fast querying
+
+Example architecture:
+
+Logs
+ ↓
+Elasticsearch
+ ↓
+Search
+ ↓
+Kibana
