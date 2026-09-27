@@ -161,3 +161,38 @@ Containers ─┘        │
                 Visualization
 
 This makes troubleshooting much easier.
+🔄 5. Centralized Logging Workflow
+Applications
+Servers
+Containers
+Kubernetes
+Cloud Services
+      │
+      ▼
+┌─────────────────┐
+│  Log Collector  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Log Processing  │
+│ & Parsing       │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Central Storage │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Search & Query  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Visualization   │
+└────────┬────────┘
+         │
+         ▼
+    Troubleshooting
