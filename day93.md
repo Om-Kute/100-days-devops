@@ -406,3 +406,52 @@ Log Processing
     │
     ▼
 Elasticsearch
+🌊 16. Fluentd
+
+Fluentd is a log collector and data processing tool.
+
+It is often used in Kubernetes environments.
+
+Kubernetes Nodes
+       │
+       ▼
+    Fluentd
+       │
+       ▼
+ Elasticsearch
+       │
+       ▼
+     Kibana
+🔥 17. Fluent Bit
+
+Fluent Bit is a lightweight telemetry agent commonly used for collecting and forwarding logs.
+
+It is useful in:
+
+Containers
+Kubernetes
+Edge environments
+Resource-constrained systems
+🧾 18. Structured Logging
+
+Structured logging stores logs in a machine-readable format, commonly JSON.
+
+Unstructured
+Payment failed for user 12345
+Structured
+{
+  "level": "ERROR",
+  "service": "payment-service",
+  "user_id": "12345",
+  "event": "payment_failed",
+  "status_code": 500
+}
+
+Structured logs are easier to:
+
+Search
+Filter
+Parse
+Aggregate
+Visualize
+Analyze
