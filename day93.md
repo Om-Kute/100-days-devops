@@ -33,3 +33,27 @@ Example:
   "status_code": 500,
   "response_time": "2.3s"
 }
+🎯 2. Why Are Logs Important?
+
+Logs help engineers:
+
+Detect Problems
+      ↓
+Understand What Happened
+      ↓
+Find Root Cause
+      ↓
+Fix the Issue
+      ↓
+Verify Recovery
+
+Logs are commonly used for:
+
+Troubleshooting
+Debugging
+Security investigation
+Auditing
+Performance analysis
+Incident response
+Application monitoring
+Compliance
