@@ -672,3 +672,74 @@ Example:
 password=MySecretPassword123
 ✅ Better
 password=[REDACTED]
+🗄️ 28. Log Retention
+
+Logs should not necessarily be stored forever.
+
+A retention strategy can define:
+
+Hot Logs
+   ↓
+Recent & frequently accessed
+
+Warm Logs
+   ↓
+Older but still useful
+
+Cold / Archive
+   ↓
+Long-term retention
+
+Retention depends on:
+
+Storage cost
+Compliance requirements
+Troubleshooting needs
+Security requirements
+Business requirements
+📈 29. Log Volume Management
+
+Large systems can generate huge amounts of logs.
+
+Example:
+
+100 Servers
+×
+10 GB/day
+=
+1 TB/day
+
+Therefore, teams should consider:
+
+Filtering
+Sampling
+Compression
+Retention
+Rotation
+Aggregation
+🏭 30. Real-World Logging Architecture
+                       Production
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+        ▼                  ▼                  ▼
+      Linux              Docker           Kubernetes
+        │                  │                  │
+        ▼                  ▼                  ▼
+      Logs              Logs               Logs
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           │
+                           ▼
+                    Log Collector
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        Elasticsearch                 Loki
+              │                         │
+              ▼                         ▼
+           Kibana                    Grafana
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                       Engineers
