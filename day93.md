@@ -244,3 +244,46 @@ Elasticsearch
 Search
  ↓
 Kibana
+⚙️ 9. Logstash
+
+Logstash is a data processing pipeline that can collect, transform, and send logs to destinations.
+
+Conceptually:
+
+Input
+  ↓
+Filter
+  ↓
+Output
+
+Example:
+
+Log File
+   ↓
+Logstash
+   ↓
+Parse JSON
+   ↓
+Add Fields
+   ↓
+Elasticsearch
+
+A simplified Logstash pipeline:
+
+input {
+  file {
+    path => "/var/log/app.log"
+  }
+}
+
+filter {
+  json {
+    source => "message"
+  }
+}
+
+output {
+  stdout {
+    codec => rubydebug
+  }
+}
