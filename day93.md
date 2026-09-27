@@ -455,3 +455,78 @@ Parse
 Aggregate
 Visualize
 Analyze
+19. Important Log Fields
+
+Useful fields include:
+
+timestamp
+level
+service
+environment
+host
+container
+namespace
+request_id
+trace_id
+user_id
+status_code
+method
+path
+response_time
+message
+
+Example:
+
+{
+  "timestamp": "2026-09-27T10:15:30Z",
+  "level": "ERROR",
+  "service": "api",
+  "environment": "production",
+  "request_id": "abc123",
+  "method": "POST",
+  "path": "/api/payment",
+  "status_code": 500,
+  "response_time_ms": 2300,
+  "message": "Payment gateway unavailable"
+}
+🔎 20. Log Levels
+
+Common log levels include:
+
+DEBUG
+INFO
+WARN
+ERROR
+FATAL
+DEBUG
+
+Detailed information useful during development and troubleshooting.
+
+INFO
+
+Normal application events.
+
+WARN
+
+Potentially problematic conditions.
+
+ERROR
+
+An operation failed.
+
+FATAL
+
+A severe failure that may prevent the application from continuing.
+
+🔍 21. Log Searching
+
+Centralized logging allows engineers to search large amounts of data quickly.
+
+Example requirements:
+
+Find all ERROR logs
+Find logs for one service
+Find logs from one server
+Find HTTP 500 responses
+Find a request using request_id
+Find Kubernetes Pod errors
