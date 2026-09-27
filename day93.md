@@ -362,3 +362,47 @@ Grafana Loki is a log aggregation system designed to work well with Grafana.
 A key design characteristic is that Loki does not index the full content of every log line in the same way Elasticsearch does. Instead, it primarily indexes labels and stores the log content separately.
 
 This can make it attractive for teams already using Grafana and Prometheus.
+📥 14. Log Collection
+
+Log collectors gather logs from different sources.
+
+Common tools include:
+
+Filebeat
+Fluent Bit
+Fluentd
+Promtail
+Grafana Alloy
+
+Example:
+
+Linux Server
+     │
+     ▼
+Log Collector
+     │
+     ▼
+Centralized Log System
+📦 15. Filebeat
+
+Filebeat is a lightweight log shipper from Elastic.
+
+It can:
+
+Read log files
+Monitor multiple files
+Add metadata
+Forward logs to supported destinations
+
+Architecture:
+
+Log Files
+    │
+    ▼
+ Filebeat
+    │
+    ▼
+Log Processing
+    │
+    ▼
+Elasticsearch
