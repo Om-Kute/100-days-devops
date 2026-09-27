@@ -530,3 +530,65 @@ Find logs from one server
 Find HTTP 500 responses
 Find a request using request_id
 Find Kubernetes Pod errors
+📊 22. Grafana Log Exploration
+
+With Loki configured as a Grafana data source, logs can be explored using LogQL.
+
+Example:
+
+{app="payment-service"}
+
+Filter for errors:
+
+{app="payment-service"} |= "ERROR"
+
+Filter by JSON fields:
+
+{app="payment-service"} | json | level="error"
+
+Search for timeout messages:
+
+{app="payment-service"} |= "timeout"
+
+The exact labels and parsed fields depend on the collector and Loki configuration.
+
+🔎 23. Useful Log Queries
+
+Examples of useful searches:
+
+level="ERROR"
+service="payment-service"
+status_code=500
+message contains "timeout"
+
+For Kubernetes:
+
+namespace="default"
+
+For a specific container:
+
+container="api"
+
+The exact syntax depends on the logging platform being used.
+
+🐳 24. Docker Logging
+
+View container logs:
+
+docker logs <container>
+
+Follow logs:
+
+docker logs -f <container>
+
+Show timestamps:
+
+docker logs -t <container>
+
+Show recent logs:
+
+docker logs --tail 100 <container>
+
+Logs since a time:
+
+docker logs --since 1h <container>
