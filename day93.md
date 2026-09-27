@@ -287,3 +287,46 @@ output {
     codec => rubydebug
   }
 }
+📊 10. Kibana
+
+Kibana provides visualization and exploration capabilities for Elasticsearch data.
+
+It can be used for:
+
+Log search
+Dashboards
+Filtering
+Visualizations
+Incident investigation
+
+Architecture:
+
+Elasticsearch
+      │
+      ▼
+    Kibana
+      │
+      ▼
+Dashboards & Search
+🟢 11. EFK Stack
+
+EFK stands for:
+
+E → Elasticsearch
+F → Fluentd
+K → Kibana
+
+Architecture:
+
+Kubernetes
+    │
+    ▼
+ Fluentd
+    │
+    ▼
+Elasticsearch
+    │
+    ▼
+  Kibana
+
+EFK is commonly associated with Kubernetes logging architectures.
