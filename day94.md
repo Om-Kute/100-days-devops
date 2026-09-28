@@ -650,3 +650,12 @@ Incident investigation	Understand failures
 Dependency visibility	Understand service relationships
 User experience	Investigate slow user requests
 Data-driven decisions	Use telemetry for optimization
+🆚 26. Monitoring vs Observability
+Monitoring	Observability
+Focuses on known problems	Helps investigate unknown problems
+Uses dashboards and alerts	Uses metrics, logs, and traces
+Answers "Is the system healthy?"	Helps answer "Why is it behaving this way?"
+Threshold-oriented	Investigation-oriented
+Strong for known failure modes	Strong for complex distributed systems
+
+Both are complementary rather than competing concepts.
