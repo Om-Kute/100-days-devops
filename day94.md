@@ -397,3 +397,56 @@ Together they provide stronger troubleshooting context.
       └─────┬─────┘
             ▼
          Grafana
+🧪 15. Example Trace
+
+Suppose a customer places an order.
+
+Trace ID: 8a7f91c2
+
+0 ms
+ │
+ ├── API Gateway
+ │     └── 120 ms
+ │
+ ├──── Order Service
+ │       └── 250 ms
+ │
+ ├──────── Payment Service
+ │           └── 400 ms
+ │
+ ├──────────── Database
+ │               └── 180 ms
+ │
+ └──────────────── External API
+                     └── 100 ms
+
+A trace visualization can make the slow portion immediately visible.
+
+🚨 16. Alerting Strategy
+
+Monitoring becomes more useful when alerts are meaningful and actionable.
+
+A good alerting workflow is:
+
+Metric
+  ↓
+Threshold / Condition
+  ↓
+Alert Rule
+  ↓
+Alertmanager
+  ↓
+Notification
+  ↓
+Engineer / Team
+  ↓
+Investigation
+
+Examples:
+
+High API latency
+High error rate
+Service unavailable
+CPU saturation
+Memory pressure
+Database connection failures
