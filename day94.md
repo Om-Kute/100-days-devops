@@ -62,3 +62,58 @@ Response
 A trace records this entire journey.
 
 Without tracing, finding the slow component in a microservices system can be difficult.
+.
+
+🧩 3. Trace vs Span
+Trace
+
+A trace represents the complete journey of a request.
+
+Example:
+
+Trace ID: abc123
+
+The trace may contain multiple spans.
+
+Span
+
+A span represents one operation or unit of work within a trace.
+
+Example:
+
+Trace
+ │
+ ├── API Gateway       120 ms
+ ├── Order Service     250 ms
+ ├── Payment Service   400 ms
+ └── Database          180 ms
+
+The total trace gives an end-to-end view, while each span provides detailed information about an individual operation.
+
+🆔 4. Trace ID and Span ID
+Trace ID
+
+A unique identifier associated with the overall request.
+
+Trace ID:
+9f2a7c8d...
+Span ID
+
+A unique identifier for an individual operation.
+
+Span ID:
+a82c91...
+
+Conceptually:
+
+Trace ID
+   │
+   ├── Span A
+   │
+   ├── Span B
+   │
+   ├── Span C
+   │
+   └── Span D
+
+This allows engineers to connect operations belonging to the same request.
