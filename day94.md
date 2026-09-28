@@ -117,3 +117,53 @@ Trace ID
    └── Span D
 
 This allows engineers to connect operations belonging to the same request.
+🔗 5. Context Propagation
+
+Context propagation allows trace information to travel from one service to another.
+
+Example:
+
+Service A
+   │
+   │ Trace Context
+   ▼
+Service B
+   │
+   │ Trace Context
+   ▼
+Service C
+
+The receiving service can continue the same trace instead of starting an unrelated trace.
+
+In HTTP-based systems, trace context is commonly propagated through headers.
+
+🌐 6. Distributed Tracing Example
+
+Consider an e-commerce application.
+
+                 User
+                   │
+                   ▼
+             API Gateway
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+    Order Service      User Service
+          │
+          ▼
+    Payment Service
+          │
+          ▼
+       Database
+
+A single request could produce:
+
+Trace: order-service
+
+API Gateway       120 ms
+Order Service     250 ms
+Payment Service   400 ms
+Database          180 ms
+External API      100 ms
+
+If the request takes 1 second, tracing helps identify which components contributed most to the latency.
