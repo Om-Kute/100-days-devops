@@ -167,3 +167,66 @@ Database          180 ms
 External API      100 ms
 
 If the request takes 1 second, tracing helps identify which components contributed most to the latency.
+🛰️ 7. OpenTelemetry
+
+OpenTelemetry (OTel) is an open-source observability framework for generating, collecting, and exporting telemetry data.
+
+It supports:
+
+Metrics
+Logs
+Traces
+
+Architecture:
+
+Application
+    │
+    ▼
+OpenTelemetry Instrumentation
+    │
+    ▼
+OpenTelemetry Collector
+    │
+    ├─────────────┬──────────────┐
+    ▼             ▼              ▼
+  Traces        Metrics         Logs
+    │             │              │
+    ▼             ▼              ▼
+  Jaeger       Prometheus        Loki
+    │             │              │
+    └─────────────┴──────────────┘
+                   │
+                   ▼
+                Grafana
+
+OpenTelemetry can send telemetry to different compatible backends.
+
+🧰 8. OpenTelemetry Components
+
+A typical OpenTelemetry setup can include:
+
+Instrumentation
+
+Collects telemetry from applications.
+
+SDK
+
+Processes telemetry inside the application.
+
+Collector
+
+Receives, processes, and exports telemetry.
+
+Exporters
+
+Send telemetry to supported backends.
+
+Example:
+
+Application
+     ↓
+OpenTelemetry SDK
+     ↓
+OTel Collector
+     ↓
+Jaeger / Tempo / Prometheus / Loki
