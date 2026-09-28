@@ -330,3 +330,70 @@ Disk = 78%
 Apdex / User Experience
 
 Apdex is one approach for representing user satisfaction based on response-
+🔄 13. Metrics + Logs + Traces
+
+Modern observability commonly combines three major telemetry signals.
+
+             Observability
+                   │
+       ┌───────────┼───────────┐
+       ▼           ▼           ▼
+    Metrics       Logs       Traces
+       │           │           │
+       ▼           ▼           ▼
+  Performance   Events    Request Flow
+Metrics
+
+Tell you what is happening.
+
+Logs
+
+Tell you what events occurred.
+
+Traces
+
+Help explain where a request traveled and where time was spent.
+
+Together they provide stronger troubleshooting context.
+
+🏗️ 14. Complete Tracing Architecture
+┌───────────────────────┐
+│     User Request      │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│     API Gateway       │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│    Order Service      │
+│   OpenTelemetry SDK   │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│   Payment Service     │
+│   OpenTelemetry SDK   │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│       Database        │
+└───────────────────────┘
+            │
+            │ Telemetry
+            ▼
+┌───────────────────────┐
+│ OpenTelemetry         │
+│ Collector             │
+└───────────┬───────────┘
+            │
+      ┌─────┴─────┐
+      ▼           ▼
+   Jaeger        Tempo
+      │           │
+      └─────┬─────┘
+            ▼
+         Grafana
