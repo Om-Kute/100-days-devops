@@ -498,3 +498,55 @@ Check Prometheus targets
 http://<prometheus-host>:9090/targets
 View Grafana
 http://<grafana-host>:3000
+🐳 19. Monitoring Docker Applications
+
+For containerized workloads, container-level metrics can be collected using tools such as cAdvisor.
+
+Architecture:
+
+Docker Containers
+       │
+       ▼
+    cAdvisor
+       │
+       ▼
+   Prometheus
+       │
+       ▼
+    Grafana
+
+Useful container metrics include:
+
+CPU usage
+Memory usage
+Network traffic
+Container restarts
+Filesystem usage
+☸️ 20. Monitoring Kubernetes
+
+Observability becomes especially important in Kubernetes because applications may contain many dynamically scheduled workloads.
+
+Typical stack:
+
+Kubernetes
+    │
+    ├── Application Metrics
+    ├── Node Metrics
+    ├── Container Metrics
+    ├── Logs
+    └── Traces
+           │
+           ▼
+      Observability
+           │
+     ┌─────┼─────┐
+     ▼     ▼     ▼
+ Metrics  Logs  Traces
+
+Tracing can help investigate:
+
+Slow APIs
+Service-to-service latency
+Failed requests
+Dependency problems
+Database delays
