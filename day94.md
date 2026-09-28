@@ -550,3 +550,59 @@ Service-to-service latency
 Failed requests
 Dependency problems
 Database delays
+🔎 21. Troubleshooting with Traces
+
+Suppose users report that checkout is slow.
+
+Without tracing:
+
+Checkout is slow
+       ↓
+Check everything manually
+
+With tracing:
+
+Checkout Request
+      ↓
+API Gateway       100 ms
+      ↓
+Order Service     150 ms
+      ↓
+Payment Service   900 ms  ← Bottleneck
+      ↓
+Database          100 ms
+
+The trace immediately points toward the payment service for deeper investigation.
+
+🛠️ 22. Common Problems
+Missing Traces
+
+Possible causes:
+
+❌ Application not instrumented
+❌ Exporter misconfigured
+❌ Collector unavailable
+❌ Incorrect endpoint
+❌ Network connectivity problem
+Broken Trace Across Services
+
+Possible causes:
+
+❌ Context propagation disabled
+❌ Headers removed
+❌ Incorrect instrumentation
+❌ Different tracing configuration
+High Telemetry Volume
+
+Possible causes:
+
+❌ Too many traces
+❌ No sampling strategy
+❌ Excessive instrumentation
+
+Possible solutions:
+
+Sampling
+Filtering
+Retention policies
+Appropriate collection rules
