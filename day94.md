@@ -36,3 +36,29 @@ Requests per second
 Database query duration
 CPU usage
 Memory usage
+🧭 2. What is Distributed Tracing?
+
+Distributed tracing tracks a request as it travels through multiple services.
+
+For example:
+
+User
+ │
+ ▼
+API Gateway
+ │
+ ▼
+Order Service
+ │
+ ▼
+Payment Service
+ │
+ ▼
+Database
+ │
+ ▼
+Response
+
+A trace records this entire journey.
+
+Without tracing, finding the slow component in a microservices system can be difficult.
