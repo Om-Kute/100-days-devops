@@ -311,3 +311,60 @@ Little or no immediate user impact
 Can be handled during normal operations
 
 Severity definitions should be based on actual business and customer impact, not simply on a technical metric crossing a threshold.
+🧠 10. Alert vs Incident
+
+Not every alert should become a major incident.
+
+Alert
+  │
+  ▼
+Evaluate
+  │
+  ├── False Positive → Close
+  │
+  ├── Informational → Record
+  │
+  └── Real Impact → Incident
+
+A useful alert should provide enough context for the responder to understand:
+
+What happened?
+Where did it happen?
+When did it start?
+How severe is it?
+What service is affected?
+What should the responder check?
+📞 11. On-Call
+
+An on-call engineer is responsible for responding to operational alerts during a defined period.
+
+Example:
+
+Monday
+   │
+   ▼
+Engineer A
+   │
+   ▼
+Primary On-Call
+
+If the primary responder does not acknowledge the incident:
+
+Primary
+   │
+   │ No response
+   ▼
+Secondary
+   │
+   │ No response
+   ▼
+Escalation
+
+A good on-call system should define:
+
+Ownership
+Rotation
+Escalation paths
+Contact methods
+Service responsibilities
+Runbooks
