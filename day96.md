@@ -50,3 +50,25 @@ Monitoring Alert
 Incident Response
 
 The goal is to restore normal service as quickly and safely as possible while capturing information needed for later analysis
+🔍 2. Monitoring vs Incident Management
+Monitoring	Incident Management
+Detects system conditions	Coordinates response
+Collects metrics	Assigns ownership
+Creates alerts	Handles escalation
+Shows system health	Restores service
+Provides visibility	Documents incidents
+Identifies anomalies	Drives learning and prevention
+Simple idea
+Monitoring
+    ↓
+Something is wrong
+    ↓
+Alert
+    ↓
+Incident Management
+    ↓
+Response
+    ↓
+Resolution
+    ↓
+Learning
