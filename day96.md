@@ -477,3 +477,63 @@ Ways to reduce alert fatigue
 ✅ Silence planned maintenance
 ✅ Remove noisy alerts
 ✅ Review alerts regularly
+🎯 16. Good Alert vs Bad Alert
+Bad Alert
+CPU High
+
+This provides little context.
+
+Better Alert
+HighCPUUsage
+
+Service: web-server
+Instance: server-01
+Severity: warning
+Condition: CPU > 85%
+Duration: 10 minutes
+
+A good alert should help the responder understand the problem quickly.
+
+📊 17. Important Reliability Metrics
+MTTA – Mean Time to Acknowledge
+
+Average time between alert creation and acknowledgment.
+
+Alert
+  │
+  ├─────── MTTA ───────►
+  │
+  ▼
+Acknowledged
+MTTR – Mean Time to Resolution
+
+Average time taken to resolve an incident.
+
+Incident
+  │
+  ├──────────── MTTR ────────────►
+  │
+  ▼
+Resolved
+Incident Frequency
+
+Measures how often incidents occur over a period.
+
+Incidents / Time Period
+Alert Noise
+
+Measures unnecessary or low-value alerts.
+
+High Alert Noise
+       ↓
+Alert Fatigue
+       ↓
+Slower Response
+Availability
+
+A simplified availability calculation:
+
+Availability =
+(Uptime / Total Time) × 100
+
+For production systems, availability targets should be tied to explicit service-level objectives.
