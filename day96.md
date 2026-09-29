@@ -368,3 +368,67 @@ Escalation paths
 Contact methods
 Service responsibilities
 Runbooks
+📈 12. Incident Response Workflow
+Alert
+  ↓
+Acknowledge
+  ↓
+Investigate
+  ↓
+Assess Impact
+  ↓
+Mitigate
+  ↓
+Fix
+  ↓
+Communicate
+  ↓
+Verify Recovery
+  ↓
+Close
+  ↓
+Post-Incident Review
+🔎 13. Investigation Process
+
+When an alert fires, investigate systematically.
+
+Step 1 – Check the Alert
+Alert name
+Service
+Severity
+Timestamp
+Labels
+Annotations
+Step 2 – Check Metrics
+
+Look at:
+
+CPU
+Memory
+Disk
+Network
+Request rate
+Error rate
+Latency
+Step 3 – Check Logs
+
+Search for:
+
+ERROR
+WARN
+Timeout
+Connection refused
+Out of memory
+Authentication failure
+Step 4 – Check Recent Changes
+
+Investigate:
+
+Recent deployment
+Configuration change
+Infrastructure change
+Dependency update
+Database change
+Step 5 – Check Traces
+
+For distributed applications, inspect traces to identify where requests are failing or slowing down.
