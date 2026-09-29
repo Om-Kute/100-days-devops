@@ -251,3 +251,63 @@ Possible notification channels include:
 📟 SMS
 
 The exact notification mechanism should depend on alert severity and organizational requirements.
+🧩 8. Alertmanager Configuration
+
+A simplified example:
+
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by:
+    - alertname
+    - service
+
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 1h
+
+  receiver: team-alerts
+
+receivers:
+  - name: team-alerts
+    email_configs:
+      - to: team@example.com
+Important
+
+Do not place real passwords, API keys, or integration secrets directly into a public repository.
+
+Use a secure secret-management mechanism.
+
+🚦 9. Alert Severity Levels
+
+Organizations can define their own severity model.
+
+A common example:
+
+Severity	Meaning	Typical Response
+P1 / Critical	Major service impact	Immediate response
+P2 / High	Significant degradation	Rapid response
+P3 / Medium	Limited impact	Normal response
+P4 / Low	Minor issue	Planned response
+
+Example:
+
+P1
+Complete service outage
+Major customer impact
+Immediate response required
+P2
+Major feature degraded
+Significant user impact
+Rapid investigation required
+P3
+Limited functionality affected
+Moderate or low impact
+Normal investigation
+P4
+Minor issue
+Little or no immediate user impact
+Can be handled during normal operations
+
+Severity definitions should be based on actual business and customer impact, not simply on a technical metric crossing a threshold.
