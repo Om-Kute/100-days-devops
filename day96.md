@@ -72,3 +72,30 @@ Response
 Resolution
     ↓
 Learning
+🔄 3. Incident Management Lifecycle
+
+A typical incident lifecycle is:
+
+        ┌─────────────┐
+        │   Detect    │
+        └──────┬──────┘
+               ↓
+        ┌─────────────┐
+        │    Triage   │
+        └──────┬──────┘
+               ↓
+        ┌─────────────┐
+        │   Respond   │
+        └──────┬──────┘
+               ↓
+        ┌─────────────┐
+        │   Resolve   │
+        └──────┬──────┘
+               ↓
+        ┌─────────────┐
+        │    Learn    │
+        └──────┬──────┘
+               ↓
+        ┌─────────────┐
+        │   Prevent   │
+        └─────────────┘
