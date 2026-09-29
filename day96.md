@@ -17,3 +17,36 @@ Escalation
 Runbooks
 Post-incident reviews
 Reliability metrics
+🚨 1. What Is an Incident?
+
+An incident is an event that causes or may cause an interruption, degradation, or unexpected behavior in a service.
+
+Examples:
+
+Application Down
+Database Unavailable
+High CPU Usage
+Memory Exhaustion
+API Errors
+Network Failure
+Deployment Failure
+Kubernetes Pod Crash
+Cloud Service Failure
+
+Example:
+
+Users
+  │
+  ▼
+Application
+  │
+  X
+Service Failure
+  │
+  ▼
+Monitoring Alert
+  │
+  ▼
+Incident Response
+
+The goal is to restore normal service as quickly and safely as possible while capturing information needed for later analysis
