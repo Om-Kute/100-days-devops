@@ -432,3 +432,48 @@ Database change
 Step 5 – Check Traces
 
 For distributed applications, inspect traces to identify where requests are failing or slowing down.
+📚 14. Runbooks
+
+A runbook contains predefined operational instructions for handling a known problem.
+
+Example:
+
+Incident:
+High CPU Usage
+
+Steps:
+
+1. Check CPU dashboard
+2. Identify affected host
+3. Check running processes
+4. Check recent deployments
+5. Check traffic level
+6. Scale if required
+7. Investigate root cause
+8. Verify recovery
+9. Document incident
+
+Runbooks help responders act consistently, especially during high-pressure incidents.
+
+🚨 15. Alert Fatigue
+
+Alert fatigue occurs when teams receive too many alerts, especially alerts that are noisy, duplicated, or not actionable.
+
+Example:
+
+100 alerts
+   ↓
+80 unnecessary
+   ↓
+20 useful
+   ↓
+Responder overwhelmed
+Ways to reduce alert fatigue
+✅ Alert only on actionable conditions
+✅ Set meaningful thresholds
+✅ Use severity levels
+✅ Group related alerts
+✅ Use inhibition rules
+✅ Silence planned maintenance
+✅ Remove noisy alerts
+✅ Review alerts regularly
