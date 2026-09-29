@@ -537,3 +537,142 @@ Availability =
 (Uptime / Total Time) × 100
 
 For production systems, availability targets should be tied to explicit service-level objectives.
+🧪 18. Example Prometheus Alert Rule
+
+Example:
+
+groups:
+  - name: system-alerts
+
+    rules:
+      - alert: HighCPUUsage
+
+        expr: |
+          100 * (
+            1 - avg by(instance)
+            (rate(node_cpu_seconds_total{mode="idle"}[5m]))
+          ) > 85
+
+        for: 5m
+
+        labels:
+          severity: warning
+
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is above 85% for 5 minutes."
+
+This example generates an alert when the calculated CPU usage remains above the threshold for the specified duration.
+
+🔧 19. Useful Commands
+
+Check Prometheus configuration:
+
+promtool check config prometheus.yml
+
+Check Prometheus alert rules:
+
+promtool check rules alert-rules.yml
+
+Check running Docker containers:
+
+docker ps
+
+View container logs:
+
+docker logs <container>
+
+Follow logs:
+
+docker logs -f <container>
+
+Check Kubernetes pods:
+
+kubectl get pods
+
+Check pod details:
+
+kubectl describe pod <pod-name>
+
+View Kubernetes logs:
+
+kubectl logs <pod-name>
+🐳 20. Monitoring Docker
+
+For Docker environments, container metrics can be collected using tools such as cAdvisor.
+
+Conceptual architecture:
+
+Docker Containers
+       │
+       ▼
+   cAdvisor
+       │
+       ▼
+   Prometheus
+       │
+       ▼
+    Grafana
+
+Useful metrics include:
+
+CPU usage
+Memory usage
+Network traffic
+Container restarts
+Filesystem usage
+☸️ 21. Monitoring Kubernetes
+
+Monitoring is especially important in Kubernetes.
+
+Useful information includes:
+
+Pod status
+CPU usage
+Memory usage
+Container restarts
+Node health
+Deployment status
+Network metrics
+API server metrics
+
+Basic commands:
+
+kubectl get pods
+kubectl get nodes
+kubectl get deployments
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+🏗️ 22. Real-World Architecture
+              Applications
+                   │
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+      Linux      Docker    Kubernetes
+     Metrics     Metrics      Metrics
+        │          │          │
+        └──────────┼──────────┘
+                   ▼
+              Prometheus
+                   │
+                   ▼
+             Alertmanager
+                   │
+       ┌───────────┼───────────┐
+       ▼           ▼           ▼
+    Slack        Email     Incident Tool
+       │           │           │
+       └───────────┼───────────┘
+                   ▼
+             On-Call Team
+                   │
+                   ▼
+          Incident Response
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+       Resolve             Learn
+          │                 │
+          └────────┬────────┘
+                   ▼
+                Prevent
