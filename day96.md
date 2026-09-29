@@ -201,3 +201,20 @@ A common Prometheus-based alerting architecture:
           ┌──────────┼──────────┐
           ▼          ▼          ▼
         Email       Slack    Incident Tool
+🔥 5. Prometheus
+
+Prometheus collects and stores time-series metrics and evaluates alerting rules.
+
+Example metric:
+
+node_cpu_seconds_total
+
+Another example:
+
+node_memory_MemAvailable_bytes
+
+Prometheus can evaluate rules such as:
+
+CPU usage > threshold
+
+and send alert notifications to Alertmanager.
