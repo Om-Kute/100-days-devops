@@ -676,3 +676,103 @@ kubectl logs <pod-name>
           └────────┬────────┘
                    ▼
                 Prevent
+🔐 23. Security Considerations
+
+Alerting systems may contain sensitive information.
+
+Best practices:
+
+✅ Protect Prometheus
+✅ Protect Alertmanager
+✅ Use HTTPS where appropriate
+✅ Secure webhook endpoints
+✅ Protect API tokens
+✅ Use secret management
+✅ Restrict administrative access
+✅ Avoid exposing internal infrastructure details
+
+Never commit credentials such as:
+
+API keys
+Passwords
+Webhook secrets
+Pager/integration tokens
+Cloud credentials
+🛠️ 24. Practical Incident Simulation
+
+A simple learning exercise:
+
+Scenario
+Web server CPU usage reaches 90%+
+Workflow
+1. Prometheus detects high CPU
+        ↓
+2. Alert rule fires
+        ↓
+3. Alertmanager receives alert
+        ↓
+4. Alert is routed
+        ↓
+5. On-call engineer receives notification
+        ↓
+6. Engineer checks Grafana
+        ↓
+7. Engineer checks logs
+        ↓
+8. Engineer identifies cause
+        ↓
+9. Mitigation is applied
+        ↓
+10. Service recovers
+        ↓
+11. Incident is documented
+        ↓
+12. Preventive action is created
+📝 25. Post-Incident Review
+
+After a significant incident, document:
+
+Incident Title
+Date & Time
+Duration
+Affected Services
+Impact
+Detection Method
+Timeline
+Root Cause
+Contributing Factors
+Mitigation
+Resolution
+Customer Impact
+What Went Well
+What Went Poorly
+Action Items
+Owners
+Due Dates
+
+The objective is to improve the system and process rather than simply assign blame.
+
+🧠 26. Root Cause Analysis
+
+A simple approach is the 5 Whys.
+
+Example:
+
+Why did the application become unavailable?
+        ↓
+Because the server ran out of memory.
+        ↓
+Why did it run out of memory?
+        ↓
+A process continuously increased memory usage.
+        ↓
+Why wasn't it detected earlier?
+        ↓
+There was no suitable memory alert.
+        ↓
+Why was there no alert?
+        ↓
+Monitoring coverage was incomplete.
+        ↓
+Preventive Action:
+Add memory monitoring and alerting.
