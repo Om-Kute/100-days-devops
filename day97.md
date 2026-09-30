@@ -242,3 +242,42 @@ Semgrep
 CodeQL
 
 SAST is useful for finding issues early in development.
+🌐 DAST
+Dynamic Application Security Testing
+
+DAST tests a running application from the outside.
+
+Running Application
+        ↑
+        │
+   DAST Scanner
+        │
+        ↓
+Security Findings
+
+Example:
+
+OWASP ZAP
+
+DAST can help identify vulnerabilities that are observable in a running application.
+
+📦 Dependency Scanning
+
+Dependency scanning checks application libraries and packages for known vulnerabilities.
+
+Example:
+
+Application
+     ↓
+package.json / requirements.txt / pom.xml
+     ↓
+Dependency Scanner
+     ↓
+Known Vulnerabilities
+
+Examples:
+
+npm audit
+pip-audit
+Dependabot
+Trivy
