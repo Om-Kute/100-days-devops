@@ -338,3 +338,65 @@ Kubernetes Cluster
  ↓      ↓        ↓
 RBAC  Network   Pod
       Policy   Security
+🔑 Kubernetes RBAC
+
+RBAC means:
+
+Role-Based Access Control
+
+It controls who can perform which actions.
+
+Example:
+
+Developer
+   ↓
+Read Pods
+
+DevOps Engineer
+   ↓
+Deploy Applications
+
+Administrator
+   ↓
+Cluster Management
+
+Follow the principle of:
+
+Least Privilege
+
+Give users and workloads only the permissions they actually need.
+
+🏗️ Infrastructure as Code Security
+
+Terraform and other IaC tools should also be scanned.
+
+Example:
+
+checkov -d .
+
+Workflow:
+
+Terraform Code
+      ↓
+Checkov
+      ↓
+Security / Policy Findings
+      ↓
+Fix Configuration
+      ↓
+terraform validate
+      ↓
+terraform plan
+
+Example insecure configuration:
+
+resource "aws_security_group" "example" {
+  ingress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+This can expose a very broad network surface and should be reviewed against the application's actual requirements.
