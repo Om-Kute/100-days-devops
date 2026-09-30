@@ -466,3 +466,82 @@ A secure CI/CD pipeline can look like:
                      │
                      ▼
            Runtime Monitoring
+🧪 Example Jenkins DevSecOps Pipeline
+
+Example:
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('SAST') {
+            steps {
+                sh 'echo "Run SAST scanner"'
+            }
+        }
+
+        stage('Secret Scan') {
+            steps {
+                sh 'echo "Run secret scanner"'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t myapp:latest .'
+            }
+        }
+
+        stage('Container Scan') {
+            steps {
+                sh 'trivy image myapp:latest'
+            }
+        }
+
+        stage('IaC Scan') {
+            steps {
+                sh 'checkov -d .'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploy after security checks pass"'
+            }
+        }
+    }
+}
+
+Replace the placeholder scanner commands with the actual tools and configurations used by your project.
+
+🚦 Security Gates
+
+Security gates prevent known unacceptable risks from moving further through the pipeline.
+
+Example:
+
+Code
+ ↓
+SAST
+ ↓
+PASS ───────────────→ Continue
+ ↓
+FAIL
+ ↓
+Stop Pipeline
+
+A pipeline can enforce policies such as:
+
+Critical vulnerability → Fail
+High vulnerability     → Review / Fail
+Medium vulnerability   → Review
+Low vulnerability      → Track
+
+The exact thresholds should be defined according to the organization's risk policy.
