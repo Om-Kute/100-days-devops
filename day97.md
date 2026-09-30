@@ -202,3 +202,43 @@ Public database
 Unrestricted network access
 
 Infrastructure as Code scanning can identify many configuration problems before deployment.
+🛠️ DevSecOps Tools
+
+Common tools include:
+
+Tool	Primary Use
+SonarQube	Code quality and static analysis
+Trivy	Vulnerability scanning
+OWASP ZAP	Dynamic application security testing
+Checkov	IaC security scanning
+kube-bench	Kubernetes security checks
+GitHub Dependabot	Dependency updates/alerts
+Semgrep	Static code analysis
+Gitleaks	Secret detection
+
+Tool selection depends on the language, platform, pipeline, and security requirements.
+
+🔎 SAST
+Static Application Security Testing
+
+SAST analyzes source code or compiled representations without executing the application.
+
+Example workflow:
+
+Source Code
+     ↓
+SAST Scanner
+     ↓
+Security Findings
+     ↓
+Developer Fix
+     ↓
+Build
+
+Examples:
+
+SonarQube
+Semgrep
+CodeQL
+
+SAST is useful for finding issues early in development.
