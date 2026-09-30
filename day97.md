@@ -281,3 +281,60 @@ npm audit
 pip-audit
 Dependabot
 Trivy
+🐳 Container Security
+
+Containers should be scanned before deployment.
+
+Example:
+
+trivy image nginx:latest
+
+A typical workflow:
+
+Dockerfile
+    ↓
+docker build
+    ↓
+Container Image
+    ↓
+Trivy Scan
+    ↓
+Security Check
+    ↓
+Registry
+    ↓
+Deployment
+🧱 Docker Security Best Practices
+✅ Use trusted base images
+✅ Keep images updated
+✅ Use minimal images
+✅ Scan images regularly
+✅ Avoid running containers as root
+✅ Do not embed secrets
+✅ Remove unnecessary packages
+✅ Pin important dependencies
+✅ Limit container privileges
+☸️ Kubernetes Security
+
+Kubernetes environments require security at multiple layers.
+
+Important areas include:
+
+RBAC
+Network Policies
+Pod Security
+Secrets management
+Admission controls
+Image scanning
+Namespace isolation
+Resource limits
+API server security
+
+Example:
+
+Kubernetes Cluster
+        │
+ ┌──────┼────────┐
+ ↓      ↓        ↓
+RBAC  Network   Pod
+      Policy   Security
