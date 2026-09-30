@@ -36,3 +36,48 @@ Threat  SAST   Scan   DAST   Policy   Runtime
 Model   Secrets Dependencies   IaC      Security
 
 Security checks are performed continuously rather than waiting until the end.
+🔄 DevSecOps Lifecycle
+┌──────────┐
+│   PLAN   │
+│ Threat   │
+│ Modeling │
+└────┬─────┘
+     ↓
+┌──────────┐
+│   CODE   │
+│ SAST     │
+│ Secrets  │
+│ Review   │
+└────┬─────┘
+     ↓
+┌──────────┐
+│  BUILD   │
+│ Dependency│
+│ Scanning │
+└────┬─────┘
+     ↓
+┌──────────┐
+│   TEST   │
+│ DAST     │
+│ Security │
+│ Testing  │
+└────┬─────┘
+     ↓
+┌──────────┐
+│   SCAN   │
+│ Container│
+│ IaC      │
+│ Images   │
+└────┬─────┘
+     ↓
+┌──────────┐
+│  DEPLOY  │
+│ Policy   │
+│ Checks   │
+└────┬─────┘
+     ↓
+┌──────────┐
+│ MONITOR  │
+│ Runtime  │
+│ Security │
+└──────────┘
