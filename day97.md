@@ -134,3 +134,71 @@ Better collaboration
 Improved compliance readiness
 More secure deployments
 Better visibility
+🔍 Common Security Risks
+
+DevOps environments can face many types of security risks.
+
+1. Insecure Code
+
+Examples:
+
+SQL Injection
+Command Injection
+XSS
+Insecure authentication
+Authorization flaws
+2. Vulnerable Dependencies
+
+Applications often depend on third-party libraries.
+
+An outdated dependency may contain known vulnerabilities.
+
+Example:
+
+Application
+    ↓
+Dependency A
+    ↓
+Dependency B
+    ↓
+Vulnerable Library
+
+Dependency scanning can help identify known vulnerable packages.
+
+3. Exposed Secrets
+
+Never commit:
+
+❌ AWS Access Keys
+❌ Passwords
+❌ API Tokens
+❌ Private Keys
+❌ Database Credentials
+
+Avoid:
+
+AWS_ACCESS_KEY = "MY_SECRET_KEY"
+
+Use secure secret-management mechanisms instead.
+
+4. Insecure Containers
+
+Container risks can include:
+
+Vulnerable base images
+Unnecessary packages
+Running as root
+Exposed ports
+Embedded secrets
+Outdated dependencies
+5. Misconfigured Infrastructure
+
+Examples:
+
+Public S3 bucket
+Open security group
+Excessive IAM permissions
+Public database
+Unrestricted network access
+
+Infrastructure as Code scanning can identify many configuration problems before deployment.
