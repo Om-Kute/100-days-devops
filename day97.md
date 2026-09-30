@@ -400,3 +400,69 @@ resource "aws_security_group" "example" {
 }
 
 This can expose a very broad network surface and should be reviewed against the application's actual requirements.
+🔐 Secrets Management
+
+Secrets should not be stored directly in source code.
+
+Bad practice
+GitHub Repository
+       ↓
+AWS Access Key
+       ↓
+Password
+       ↓
+API Token
+Better approach
+Application
+     ↓
+Secret Manager
+     ↓
+Temporary / Controlled Credential
+     ↓
+Application
+
+Possible solutions include:
+
+Jenkins Credentials
+AWS Secrets Manager
+HashiCorp Vault
+Kubernetes Secrets with appropriate protection
+GitHub Actions Secrets
+🔄 DevSecOps CI/CD Pipeline
+
+A secure CI/CD pipeline can look like:
+
+                  GitHub
+                     │
+                     ▼
+                 Checkout
+                     │
+                     ▼
+             Static Code Scan
+                     │
+                     ▼
+             Secret Detection
+                     │
+                     ▼
+           Dependency Scanning
+                     │
+                     ▼
+                  Build
+                     │
+                     ▼
+            Container Scan
+                     │
+                     ▼
+              IaC Scanning
+                     │
+                     ▼
+              Security Tests
+                     │
+                     ▼
+                Approval
+                     │
+                     ▼
+                 Deploy
+                     │
+                     ▼
+           Runtime Monitoring
