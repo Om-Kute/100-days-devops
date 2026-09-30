@@ -545,3 +545,138 @@ Medium vulnerability   → Review
 Low vulnerability      → Track
 
 The exact thresholds should be defined according to the organization's risk policy.
+🏗️ Real-World DevSecOps Architecture
+                        Developer
+                            │
+                            ▼
+                       ┌─────────┐
+                       │ GitHub  │
+                       └────┬────┘
+                            │
+                            ▼
+                       ┌─────────┐
+                       │ Jenkins │
+                       └────┬────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+          ▼                 ▼                 ▼
+       SonarQube          Trivy            Checkov
+        SAST           Container Scan       IaC Scan
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            │
+                            ▼
+                       Security Gate
+                            │
+                            ▼
+                         Deploy
+                            │
+              ┌─────────────┴─────────────┐
+              ▼                           ▼
+          Kubernetes                     AWS
+              │                           │
+              └─────────────┬─────────────┘
+                            ▼
+                       Monitoring
+                            │
+                            ▼
+                     Security Alerts
+📊 DevSecOps Security Layers
+Layer	Security Focus	Examples
+Code	Vulnerable code	SAST
+Dependencies	Known CVEs	Dependency scanners
+Secrets	Credential leakage	Gitleaks
+Container	Image vulnerabilities	Trivy
+IaC	Misconfiguration	Checkov
+Application	Runtime vulnerabilities	OWASP ZAP
+Kubernetes	Cluster security	RBAC, policies
+Cloud	IAM and resources	IAM/security controls
+Runtime	Threat detection	Logs, monitoring
+🔍 Useful Commands
+Trivy
+
+Scan an image:
+
+trivy image nginx:latest
+
+Scan a filesystem:
+
+trivy fs .
+
+Scan a repository:
+
+trivy repo https://github.com/example/project
+Checkov
+
+Scan Terraform:
+
+checkov -d .
+
+Scan a specific Terraform file:
+
+checkov -f main.tf
+Gitleaks
+
+Example:
+
+gitleaks detect
+
+Use the current Gitleaks CLI syntax and configuration appropriate to your installed version.
+
+OWASP ZAP
+
+A typical workflow is:
+
+Start Application
+       ↓
+Run ZAP
+       ↓
+Scan Application
+       ↓
+Review Findings
+       ↓
+Fix Vulnerabilities
+🧰 DevSecOps Toolchain
+                 DEVSECOPS TOOLCHAIN
+
+Code
+ │
+ ├── SonarQube / Semgrep / CodeQL
+ │
+ ▼
+Dependencies
+ │
+ ├── Dependabot / Trivy
+ │
+ ▼
+Secrets
+ │
+ └── Gitleaks
+ │
+ ▼
+Container
+ │
+ └── Trivy
+ │
+ ▼
+Infrastructure
+ │
+ └── Checkov
+ │
+ ▼
+Application
+ │
+ └── OWASP ZAP
+ │
+ ▼
+Kubernetes
+ │
+ ├── RBAC
+ ├── Network Policies
+ └── kube-bench
+ │
+ ▼
+Runtime
+ │
+ └── Monitoring & Security Alerts
