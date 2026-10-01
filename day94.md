@@ -14,7 +14,34 @@ External API delays
 Service dependencies
 Performance issues
 
+🔍 1. What is APM?
 
+Application Performance Monitoring (APM) is the practice of monitoring application performance and availability.
+
+APM helps teams understand:
+
+Application Performance
+        │
+        ├── Response Time
+        ├── Error Rate
+        ├── Throughput
+        ├── Resource Usage
+        └── User Experience
+
+Typical APM signals include:
+
+Request latency
+HTTP error rate
+Requests per second
+Database query duration
+CPU usage
+Memory usage
+
+
+
+
+
+  
 Strong for known failure modes	Strong for complex distributed systems
 
 Both are complementary rather than competing concepts.
