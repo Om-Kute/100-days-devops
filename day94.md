@@ -87,6 +87,33 @@ Trace
  └── Database          180 ms
 
 The total trace gives an end-to-end view, while each span provides detailed information about an individual operation.
+🆔 4. Trace ID and Span ID
+Trace ID
+
+A unique identifier associated with the overall request.
+
+Trace ID:
+9f2a7c8d...
+Span ID
+
+A unique identifier for an individual operation.
+
+Span ID:
+a82c91...
+
+Conceptually:
+
+Trace ID
+   │
+   ├── Span A
+   │
+   ├── Span B
+   │
+   ├── Span C
+   │
+   └── Span D
+
+This allows engineers to connect operations belonging to the same request.
 
 
 
