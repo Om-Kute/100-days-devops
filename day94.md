@@ -197,6 +197,35 @@ OpenTelemetry Collector
                 Grafana
 
 OpenTelemetry can send telemetry to different compatible backends
+🧰 8. OpenTelemetry Components
+
+A typical OpenTelemetry setup can include:
+
+Instrumentation
+
+Collects telemetry from applications.
+
+SDK
+
+Processes telemetry inside the application.
+
+Collector
+
+Receives, processes, and exports telemetry.
+
+Exporters
+
+Send telemetry to supported backends.
+
+Example:
+
+Application
+     ↓
+OpenTelemetry SDK
+     ↓
+OTel Collector
+     ↓
+Jaeger / Tempo / Prometheus / Loki
 
 
 
