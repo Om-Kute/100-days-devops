@@ -270,6 +270,63 @@ OpenTelemetry
 
 Tempo can be used alongside metrics and logs to create a more complete observability workflow.
 
+📊 11. Grafana
+
+Grafana provides visualization and dashboards.
+
+It can display:
+
+Metrics
+Logs
+Traces
+Alerts
+
+Example:
+
+                 Grafana
+                    │
+        ┌───────────┼───────────┐
+        ▼           ▼           ▼
+     Metrics       Logs       Traces
+        │           │           │
+   Prometheus      Loki      Tempo/Jaeger
+
+This allows engineers to investigate incidents using multiple telemetry signals.
+
+📈 12. Important APM Metrics
+Latency
+
+Measures how long an operation takes.
+
+Example:
+
+API Response Time = 250 ms
+Throughput
+
+Measures how many requests are processed over time.
+
+Example:
+
+Requests = 500 req/sec
+Error Rate
+
+Measures failed requests.
+
+Example:
+
+HTTP 5xx Errors = 2%
+Saturation
+
+Shows how heavily a resource is being used.
+
+Examples:
+
+CPU = 85%
+Memory = 90%
+Disk = 78%
+Apdex / User Experience
+
+Apdex is one approach for representing user satisfaction based on response-
 
 
 
