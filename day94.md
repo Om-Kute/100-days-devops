@@ -114,6 +114,25 @@ Trace ID
    └── Span D
 
 This allows engineers to connect operations belonging to the same request.
+🔗 5. Context Propagation
+
+Context propagation allows trace information to travel from one service to another.
+
+Example:
+
+Service A
+   │
+   │ Trace Context
+   ▼
+Service B
+   │
+   │ Trace Context
+   ▼
+Service C
+
+The receiving service can continue the same trace instead of starting an unrelated trace.
+
+In HTTP-based systems, trace context is commonly propagated through headers.
 
 
 
