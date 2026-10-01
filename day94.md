@@ -226,6 +226,31 @@ OpenTelemetry SDK
 OTel Collector
      ↓
 Jaeger / Tempo / Prometheus / Loki
+🔥 9. Jaeger
+
+Jaeger is a distributed tracing platform.
+
+It can be used to:
+
+Store traces
+Search traces
+Visualize spans
+Analyze request latency
+Find failed operations
+Understand service dependencies
+
+Conceptually:
+
+Application
+     │
+     ▼
+OpenTelemetry
+     │
+     ▼
+   Jaeger
+     │
+     ▼
+Trace Visualization
 
 
 
