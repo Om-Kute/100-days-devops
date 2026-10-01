@@ -251,6 +251,24 @@ OpenTelemetry
      │
      ▼
 Trace Visualization
+🟠 10. Grafana Tempo
+
+Grafana Tempo is a distributed tracing backend designed to integrate with the Grafana observability ecosystem.
+
+Example:
+
+Application
+     │
+     ▼
+OpenTelemetry
+     │
+     ▼
+    Tempo
+     │
+     ▼
+   Grafana
+
+Tempo can be used alongside metrics and logs to create a more complete observability workflow.
 
 
 
