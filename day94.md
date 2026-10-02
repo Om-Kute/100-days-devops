@@ -599,6 +599,40 @@ Sampling
 Filtering
 Retention policies
 Appropriate collection rules
+23. Security Considerations
+
+Telemetry can contain sensitive information.
+
+Be careful with:
+
+User identifiers
+Authorization headers
+Tokens
+Cookies
+Request bodies
+Database information
+Personally identifiable information
+Best practices
+✅ Do not log secrets
+✅ Redact sensitive fields
+✅ Restrict dashboard access
+✅ Encrypt telemetry in transit
+✅ Apply access control
+✅ Define retention policies
+📋 24. Best Practices
+☑️ Instrument applications with OpenTelemetry
+☑️ Monitor latency and error rates
+☑️ Track throughput
+☑️ Use meaningful alerts
+☑️ Correlate traces with logs and metrics
+☑️ Use dashboards for important services
+☑️ Apply sampling where appropriate
+☑️ Avoid alert fatigue
+☑️ Protect sensitive telemetry
+☑️ Define retention policies
+☑️ Monitor the observability stack itself
+☑️ Regularly review alert rules
+☑️ Document incident response procedures
 
   
 Strong for known failure modes	Strong for complex distributed systems
