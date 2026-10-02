@@ -474,7 +474,24 @@ Make alerts actionable
 The goal is:
 
 Notify quickly when action is required, without overwhelming engineers with unnecessary notifications.
+ 18. Useful Commands & Examples
+Send a request with trace context
+curl -H "traceparent: ..." http://localhost:8080/api/orders
 
+The exact traceparent value should come from a valid tracing context rather than being copied arbitrarily.
+
+View Kubernetes application logs
+kubectl logs <pod-name>
+Follow Kubernetes logs
+kubectl logs -f <pod-name>
+Check Kubernetes pods
+kubectl get pods
+Inspect a pod
+kubectl describe pod <pod-name>
+Check Prometheus targets
+http://<prometheus-host>:9090/targets
+View Grafana
+http://<grafana-host>:3000
 
   
 Strong for known failure modes	Strong for complex distributed systems
