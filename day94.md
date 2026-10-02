@@ -445,6 +445,35 @@ Service unavailable
 CPU saturation
 Memory pressure
 Database connection failures
+17. Managing Notifications Effectively
+
+Too many alerts can cause alert fatigue.
+
+A practical notification strategy is:
+
+                    Alerts
+                      │
+             ┌────────┴────────┐
+             ▼                 ▼
+          Critical           Warning
+             │                 │
+             ▼                 ▼
+        Immediate          Review Soon
+        Notification
+Good practices
+Set meaningful thresholds
+Prioritize alerts by severity
+Avoid duplicate notifications
+Group related alerts
+Route alerts to the appropriate team
+Use escalation policies
+Suppress known maintenance alerts
+Regularly review noisy alerts
+Make alerts actionable
+
+The goal is:
+
+Notify quickly when action is required, without overwhelming engineers with unnecessary notifications.
 
 
   
