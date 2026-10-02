@@ -492,7 +492,30 @@ Check Prometheus targets
 http://<prometheus-host>:9090/targets
 View Grafana
 http://<grafana-host>:3000
+19. Monitoring Docker Applications
 
+For containerized workloads, container-level metrics can be collected using tools such as cAdvisor.
+
+Architecture:
+
+Docker Containers
+       │
+       ▼
+    cAdvisor
+       │
+       ▼
+   Prometheus
+       │
+       ▼
+    Grafana
+
+Useful container metrics include:
+
+CPU usage
+Memory usage
+Network traffic
+Container restarts
+Filesystem usage
   
 Strong for known failure modes	Strong for complex distributed systems
 
