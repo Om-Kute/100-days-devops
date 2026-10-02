@@ -352,6 +352,47 @@ Traces
 Help explain where a request traveled and where time was spent.
 
 Together they provide stronger troubleshooting context.
+14. Complete Tracing Architecture
+┌───────────────────────┐
+│     User Request      │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│     API Gateway       │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│    Order Service      │
+│   OpenTelemetry SDK   │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│   Payment Service     │
+│   OpenTelemetry SDK   │
+└───────────┬───────────┘
+            │
+            ▼
+┌───────────────────────┐
+│       Database        │
+└───────────────────────┘
+            │
+            │ Telemetry
+            ▼
+┌───────────────────────┐
+│ OpenTelemetry         │
+│ Collector             │
+└───────────┬───────────┘
+            │
+      ┌─────┴─────┐
+      ▼           ▼
+   Jaeger        Tempo
+      │           │
+      └─────┬─────┘
+            ▼
+         Grafana
 
 
 
