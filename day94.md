@@ -544,7 +544,29 @@ Service-to-service latency
 Failed requests
 Dependency problems
 Database delays
+21. Troubleshooting with Traces
 
+Suppose users report that checkout is slow.
+
+Without tracing:
+
+Checkout is slow
+       ↓
+Check everything manually
+
+With tracing:
+
+Checkout Request
+      ↓
+API Gateway       100 ms
+      ↓
+Order Service     150 ms
+      ↓
+Payment Service   900 ms  ← Bottleneck
+      ↓
+Database          100 ms
+
+The trace immediately points toward the payment service for deeper investigation.
 
 
   
