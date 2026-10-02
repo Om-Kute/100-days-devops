@@ -516,6 +516,37 @@ Memory usage
 Network traffic
 Container restarts
 Filesystem usage
+20. Monitoring Kubernetes
+
+Observability becomes especially important in Kubernetes because applications may contain many dynamically scheduled workloads.
+
+Typical stack:
+
+Kubernetes
+    │
+    ├── Application Metrics
+    ├── Node Metrics
+    ├── Container Metrics
+    ├── Logs
+    └── Traces
+           │
+           ▼
+      Observability
+           │
+     ┌─────┼─────┐
+     ▼     ▼     ▼
+ Metrics  Logs  Traces
+
+Tracing can help investigate:
+
+Slow APIs
+Service-to-service latency
+Failed requests
+Dependency problems
+Database delays
+
+
+
   
 Strong for known failure modes	Strong for complex distributed systems
 
