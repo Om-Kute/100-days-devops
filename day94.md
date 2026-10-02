@@ -634,6 +634,22 @@ Best practices
 ☑️ Regularly review alert rules
 ☑️ Document incident response procedures
 
+5. Benefits of Distributed Tracing
+Benefit	Description
+Faster troubleshooting	Find problematic services quickly
+End-to-end visibility	Follow requests across services
+Bottleneck detection	Identify slow operations
+Better performance	Optimize latency
+Incident investigation	Understand failures
+Dependency visibility	Understand service relationships
+User experience	Investigate slow user requests
+Data-driven decisions	Use telemetry for optimization
+🆚 26. Monitoring vs Observability
+Monitoring	Observability
+Focuses on known problems	Helps investigate unknown problems
+Uses dashboards and alerts	Uses metrics, logs, and traces
+Answers "Is the system healthy?"	Helps answer "Why is it behaving this way?"
+Threshold-
   
 Strong for known failure modes	Strong for complex distributed systems
 
