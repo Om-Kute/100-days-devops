@@ -186,3 +186,49 @@ Nginx
 Database
 
 MySQL / PostgreSQL / RDS
+📁 Recommended Project Structure
+
+devops-3-tier-project/
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── src/
+│   └── package.json
+│
+├── backend/
+│   ├── Dockerfile
+│   ├── src/
+│   └── package.json
+│
+├── k8s/
+│   ├── namespace.yaml
+│   ├── frontend-deployment.yaml
+│   ├── frontend-service.yaml
+│   ├── backend-deployment.yaml
+│   ├── backend-service.yaml
+│   ├── configmap.yaml
+│   ├── secret.yaml
+│   ├── ingress.yaml
+│   └── hpa.yaml
+│
+├── terraform/
+│   ├── main.tf
+│   ├── providers.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── versions.tf
+│   ├── backend.tf
+│   └── modules/
+│
+├── monitoring/
+│   ├── prometheus/
+│   ├── grafana/
+│   └── alertmanager/
+│
+├── security/
+│   ├── sonar-project.properties
+│   └── checkov/
+│
+├── Jenkinsfile
+├── .gitignore
+└── README.md
