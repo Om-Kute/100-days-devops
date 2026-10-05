@@ -109,3 +109,80 @@ A production-like deployment can be structured as:
                                                   RDS
 
 The exact architecture depends on project requirements, security boundaries, and AWS cost constraints.
+🛠️ Technology Stack
+
+Category
+
+Technology
+
+Operating System
+
+Linux
+
+Version Control
+
+Git
+
+Repository
+
+GitHub
+
+Containerization
+
+Docker
+
+CI/CD
+
+Jenkins / GitHub Actions
+
+Infrastructure as Code
+
+Terraform
+
+Orchestration
+
+Kubernetes
+
+Cloud
+
+AWS
+
+Kubernetes Service
+
+Amazon EKS
+
+Load Balancing
+
+AWS Load Balancer
+
+Monitoring
+
+Prometheus
+
+Visualization
+
+Grafana
+
+Alerting
+
+Alertmanager
+
+Code Security
+
+SonarQube
+
+Container Security
+
+Trivy
+
+IaC Security
+
+Checkov
+
+Web Server
+
+Nginx
+
+Database
+
+MySQL / PostgreSQL / RDS
