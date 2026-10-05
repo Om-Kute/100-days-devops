@@ -445,3 +445,61 @@ spec:
 
 An Ingress or AWS Load Balancer integration can expose the application externally.
 
+📈 Kubernetes Scaling
+
+The application can use multiple replicas:
+
+Frontend
+   │
+   ├── Pod 1
+   ├── P🌐 Kubernetes Service
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: frontend-service
+
+spec:
+  selector:
+    app: frontend
+
+  ports:
+    - port: 80
+      targetPort: 80
+
+  type: ClusterIP
+
+An Ingress or AWS Load Balancer integration can expose the application externally.
+
+od 2
+   └── Pod 3
+
+Horizontal Pod Autoscaler can scale workloads based on resource utilization and other supported metrics.
+
+Example:
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+
+metadata:
+  name: frontend-hpa
+
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: frontend
+
+  minReplicas: 2
+  maxReplicas: 10
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
