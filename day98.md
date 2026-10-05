@@ -232,3 +232,42 @@ devops-3-tier-project/
 ├── Jenkinsfile
 ├── .gitignore
 └── README.md
+🔄 Complete DevOps Workflow
+
+Developer
+    │
+    │ Git Push
+    ▼
+GitHub
+    │
+    ▼
+CI/CD Pipeline
+    │
+    ├── Build
+    ├── Unit Test
+    ├── SAST
+    ├── Dependency Scan
+    ├── Docker Build
+    ├── Container Scan
+    ├── Push Image
+    └── Deploy
+             │
+             ▼
+        Kubernetes / EKS
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+   Frontend      Backend
+                     │
+                     ▼
+                  Database
+                     │
+                     ▼
+                 Monitoring
+                     │
+             ┌───────┴────────┐
+             ▼                ▼
+          Prometheus        Grafana
+             │
+             ▼
+        Alertmanager
