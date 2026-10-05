@@ -332,3 +332,36 @@ docker run -p 3000:3000 myapp-backend:latest
 Check running containers:
 
 docker ps
+🔐 Docker Best Practices
+
+✅ Use minimal trusted base images
+✅ Use multi-stage builds where appropriate
+✅ Avoid running applications as root
+✅ Do not store secrets in images
+✅ Scan images for vulnerabilities
+✅ Pin important dependency versions
+✅ Remove unnecessary packages
+
+🏗️ 3. Infrastructure as Code with Terraform
+
+Terraform is used to provision AWS infrastructure.
+
+Potential resources include:
+
+VPC
+ ├── Subnets
+ ├── Route Tables
+ ├── Internet Gateway
+ ├── NAT Gateway
+ └── Security Groups
+
+EKS
+ ├── Cluster
+ ├── Node Groups
+ └── IAM Roles
+
+RDS
+ └── Database
+
+Load Balancer
+ └── Application Traffic
