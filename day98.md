@@ -47,3 +47,35 @@ Monitor
 Alert
   ↓
 Optimize
+🏗️ Application Architecture
+
+The project follows a 3-tier architecture:
+
+                 INTERNET USERS
+                       │
+                       ▼
+              ┌─────────────────┐
+              │  AWS Load       │
+              │  Balancer       │
+              └────────┬────────┘
+                       │
+                       ▼
+             ┌──────────────────┐
+             │     FRONTEND     │
+             │   React / Nginx  │
+             │    Kubernetes    │
+             └────────┬─────────┘
+                      │
+                      ▼
+             ┌──────────────────┐
+             │     BACKEND      │
+             │ Node.js / Python │
+             │    Kubernetes    │
+             └────────┬─────────┘
+                      │
+                      ▼
+             ┌──────────────────┐
+             │     DATABASE     │
+             │ MySQL/PostgreSQL │
+             │ RDS / Kubernetes │
+             └──────────────────┘
