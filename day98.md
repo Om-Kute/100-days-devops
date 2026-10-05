@@ -271,3 +271,64 @@ CI/CD Pipeline
              │
              ▼
         Alertmanager
+🔀 1. Git & GitHub
+
+Git is used to manage source-code versions.
+
+Initialize the repository:
+
+git init
+
+Add remote repository:
+
+git remote add origin https://github.com/your-username/devops-3-tier-project.git
+
+Create a branch:
+
+git checkout -b feature/application
+
+Add files:
+
+git add .
+
+Commit:
+
+git commit -m "Add application components"
+
+Push:
+
+git push origin feature/application
+
+Create a Pull Request and review changes before merging into the protected main branch.
+
+🐳 2. Docker Containerization
+
+Both frontend and backend applications can be packaged as Docker images.
+
+Example Dockerfile
+
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+
+Build the image:
+
+docker build -t myapp-backend:latest .
+
+Run locally:
+
+docker run -p 3000:3000 myapp-backend:latest
+
+Check running containers:
+
+docker ps
