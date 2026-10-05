@@ -503,3 +503,119 @@ spec:
         target:
           type: Utilization
           averageUtilization: 70
+🚀 5. CI/CD Pipeline
+
+The CI/CD pipeline automates the application delivery process.
+
+Code
+ ↓
+Build
+ ↓
+Test
+ ↓
+Security Scan
+ ↓
+Docker Build
+ ↓
+Container Scan
+ ↓
+Push Image
+ ↓
+Deploy to Kubernetes
+ ↓
+Verify
+
+🧰 Example GitHub Actions Workflow
+
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t myapp:${{ github.sha }} ./backend
+
+      - name: Run Tests
+        run: |
+          echo "Run application tests here"
+
+      - name: Scan Image
+        run: |
+          echo "Run Trivy or another approved scanner here"
+
+The exact registry authentication and deployment steps should be configured using secure credentials and environment-specific controls.
+
+⚙️ Jenkins Alternative
+
+A Jenkins pipeline can follow:
+
+Checkout
+   ↓
+Build
+   ↓
+Test
+   ↓
+SonarQube
+   ↓
+Trivy
+   ↓
+Docker Build
+   ↓
+Docker Push
+   ↓
+Kubernetes Deploy
+   ↓
+Verification
+
+Example:
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t myapp:${BUILD_NUMBER} ./backend'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Run tests here"'
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                sh 'trivy image myapp:${BUILD_NUMBER}'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'kubectl apply -f k8s/'
+            }
+        }
+    }
+}
