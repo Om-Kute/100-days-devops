@@ -79,3 +79,33 @@ The project follows a 3-tier architecture:
              │ MySQL/PostgreSQL │
              │ RDS / Kubernetes │
              └──────────────────┘
+☁️ AWS Architecture
+
+A production-like deployment can be structured as:
+
+                         AWS
+                          │
+                  ┌───────┴────────┐
+                  │       VPC       │
+                  └───────┬────────┘
+                          │
+            ┌─────────────┴─────────────┐
+            │                           │
+            ▼                           ▼
+      Public Subnets              Private Subnets
+            │                           │
+            ▼                           ▼
+       Load Balancer                EKS Nodes
+                                        │
+                              ┌─────────┴─────────┐
+                              │                   │
+                              ▼                   ▼
+                         Frontend Pods       Backend Pods
+                                                   │
+                                                   ▼
+                                              Database
+                                                   │
+                                                   ▼
+                                                  RDS
+
+The exact architecture depends on project requirements, security boundaries, and AWS cost constraints.
