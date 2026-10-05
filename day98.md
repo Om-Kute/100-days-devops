@@ -392,3 +392,34 @@ Destroy when the lab is no longer required:
 terraform destroy
 
 Always review terraform plan and be especially careful with terraform destroy in shared or production environments.
+☸️ 4. Kubernetes Deployment
+
+The application is deployed using Kubernetes.
+
+Example frontend deployment:
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: frontend
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+
+    spec:
+      containers:
+        - name: frontend
+          image: your-registry/frontend:latest
+
+          ports:
+            - containerPort: 80
