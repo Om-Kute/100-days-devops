@@ -423,3 +423,25 @@ spec:
 
           ports:
             - containerPort: 80
+🌐 Kubernetes Service
+
+Example:
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: frontend-service
+
+spec:
+  selector:
+    app: frontend
+
+  ports:
+    - port: 80
+      targetPort: 80
+
+  type: ClusterIP
+
+An Ingress or AWS Load Balancer integration can expose the application externally.
+
