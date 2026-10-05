@@ -754,3 +754,22 @@ Important practices:
 ✅ Keep cluster components updated
 ✅ Secure Secrets
 ✅ Restrict public exposure
+       ▼
+               AWS Load Balancer
+                      │
+                      ▼
+              ┌───────────────┐
+              │   FRONTEND    │
+              │ React / Nginx │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │    BACKEND    │
+              │ Node / Python │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │   DATABASE    │
+              │ MySQL / RDS   │
