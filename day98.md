@@ -773,3 +773,125 @@ Important practices:
               ┌───────────────┐
               │   DATABASE    │
               │ MySQL / RDS   │
+
+
+
+🔄 10. End-to-End Deployment
+
+The complete process:
+
+1. Developer writes application code
+            ↓
+2. Push code to GitHub
+            ↓
+3. CI/CD pipeline starts
+            ↓
+4. Build application
+            ↓
+5. Run tests
+            ↓
+6. Perform security scans
+            ↓
+7. Build Docker image
+            ↓
+8. Scan Docker image
+            ↓
+9. Push image to registry
+            ↓
+10. Deploy to Kubernetes
+            ↓
+11. Expose through Load Balancer
+            ↓
+12. Monitor with Prometheus
+            ↓
+13. Visualize with Grafana
+            ↓
+14. Configure alerts
+            ↓
+15. Troubleshoot and optimize
+
+🧪 11. Verification Commands
+
+Check Kubernetes cluster:
+
+kubectl cluster-info
+
+Check nodes:
+
+kubectl get nodes
+
+Check namespaces:
+
+kubectl get namespaces
+
+Check deployments:
+
+kubectl get deployments
+
+Check pods:
+
+kubectl get pods -A
+
+Check services:
+
+kubectl get svc -A
+
+Check ingress:
+
+kubectl get ingress -A
+
+Check pod logs:
+
+kubectl logs <pod-name>
+
+Describe a pod:
+
+kubectl describe pod <pod-name>
+
+🐛 12. Troubleshooting Workflow
+
+When something fails:
+
+Check Pod
+   ↓
+Check Events
+   ↓
+Check Logs
+   ↓
+Check Service
+   ↓
+Check Endpoints
+   ↓
+Check Ingress / Load Balancer
+   ↓
+Check Application
+   ↓
+Check Database
+   ↓
+Check Monitoring
+
+Useful commands:
+
+kubectl get pods
+kubectl describe pod <pod>
+kubectl logs <pod>
+kubectl get svc
+kubectl get endpoints
+kubectl get events --sort-by=.lastTimestamp
+
+📦 13. Project Deliverables
+
+The project should ideally contain:
+
+✅ Application source code
+✅ Dockerfiles
+✅ Kubernetes manifests
+✅ Terraform configuration
+✅ CI/CD pipeline
+✅ Security scanning configuration
+✅ Monitoring configuration
+✅ Alerting configuration
+✅ Architecture diagram
+✅ README documentation
+✅ Deployment instructions
+✅ Troubleshooting guide
