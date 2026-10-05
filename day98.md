@@ -685,3 +685,72 @@ Application Down
 High Response Latency
 
 Alerts should be actionable and designed to avoid excessive alert noise.
+🔐 8. DevSecOps Integration
+
+Security is integrated throughout the pipeline.
+
+Developer
+    ↓
+Code Scan
+    ↓
+Dependency Scan
+    ↓
+Docker Image Scan
+    ↓
+IaC Scan
+    ↓
+Kubernetes Security
+    ↓
+Deploy
+    ↓
+Runtime Monitoring
+
+🛡️ Security Tools
+
+SonarQube
+
+Used for code quality and static analysis.
+
+Source Code
+    ↓
+SonarQube
+    ↓
+Quality / Security Findings
+
+Trivy
+
+Can scan:
+
+Container images
+
+Filesystems
+
+Dependencies
+
+Infrastructure configuration
+
+Example:
+
+trivy image myapp:latest
+
+Checkov
+
+Used for Infrastructure as Code security scanning.
+
+Example:
+
+checkov -d terraform/
+
+☸️ Kubernetes Security
+
+Important practices:
+
+✅ Use RBAC
+✅ Follow least privilege
+✅ Avoid privileged containers
+✅ Avoid unnecessary root access
+✅ Use NetworkPolicies where appropriate
+✅ Scan images
+✅ Keep cluster components updated
+✅ Secure Secrets
+✅ Restrict public exposure
