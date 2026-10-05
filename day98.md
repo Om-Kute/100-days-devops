@@ -365,3 +365,30 @@ RDS
 
 Load Balancer
  └── Application Traffic
+⚙️ Terraform Workflow
+
+Initialize:
+
+terraform init
+
+Format:
+
+terraform fmt -recursive
+
+Validate:
+
+terraform validate
+
+Create plan:
+
+terraform plan
+
+Apply:
+
+terraform apply
+
+Destroy when the lab is no longer required:
+
+terraform destroy
+
+Always review terraform plan and be especially careful with terraform destroy in shared or production environments.
