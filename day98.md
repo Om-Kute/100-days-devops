@@ -455,7 +455,6 @@ Frontend
    ├── P🌐 Kubernetes Service
 
 Example:
-
 apiVersion: v1
 kind: Service
 
