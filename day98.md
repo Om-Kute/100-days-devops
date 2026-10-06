@@ -1170,29 +1170,6 @@ Use multiple replicas, appropriate Kubernetes scheduling, health probes, autosca
         │ Checkov → IaC Security                  │
         └────────────────────────────────────────┘
 
-📈 20. 100 Days of DevOps Progress
-
-Days 01–20 → Linux
-Days 21–27 → Networking
-Days 28–35 → Shell Scripting
-Days 36–40 → Git & GitHub
-Days 41–50 → AWS Cloud
-Days 51–60 → Docker
-Days 61–70 → Kubernetes
-Days 71–80 → CI/CD & Jenkins
-Days 81–90 → Terraform / Infrastructure as Code
-Days 91–100 → Monitoring, Observability, DevSecOps & Real-World Projects
-
-🔥 Day 98/100
-
-██████████████████████████████████████████████████████████████████████████████████████████░░ 98%
-
-Only 2 days remaining! 🚀
-
-🏁 Final Takeaway
-
-The main purpose of this project was not simply to deploy an application.
-
 It was to understand the complete DevOps lifecycle:
 
 PLAN
