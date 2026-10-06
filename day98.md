@@ -895,3 +895,44 @@ The project should ideally contain:
 ✅ README documentation
 ✅ Deployment instructions
 ✅ Troubleshooting guide
+📊 14. Key Metrics to Track
+
+Category
+
+Metrics
+
+Application
+
+Request Rate, Response Time, Error Rate
+
+Kubernetes
+
+Pod Status, Restarts, CPU, Memory
+
+Infrastructure
+
+CPU, Memory, Network, Disk
+
+Database
+
+Connections, Latency, CPU, Storage
+
+CI/CD
+
+Build Success Rate, Deployment Time
+
+Security
+
+Vulnerabilities, Failed Scans
+
+Reliability
+
+Uptime, MTTR, Incident Frequency
+
+Cloud
+
+Infrastructure Cost
+
+💰 15. Cost Optimization
+
+Cloud resources can become expensive if they are left running unnecess
