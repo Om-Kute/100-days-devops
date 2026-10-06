@@ -27,7 +27,6 @@ The objective is to design and deploy a 3-Tier Web Application using AWS and Kub
 📝 Documentation
 
 The project follows a complete DevOps lifecycle:
-
 Plan
   ↓
 Code
