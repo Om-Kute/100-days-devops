@@ -79,7 +79,6 @@ The project follows a 3-tier architecture:
              │ RDS / Kubernetes │
              └──────────────────┘
 ☁️ AWS Architecture
-
 A production-like deployment can be structured as:
 
                          AWS
