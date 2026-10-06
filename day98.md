@@ -935,4 +935,20 @@ Infrastructure Cost
 
 💰 15. Cost Optimization
 
-Cloud resources can become expensive if they are left running unnecess
+Cloud resources can become expensive if they are left running unnecesscessarily.
+
+Best practices:
+
+✅ Delete unused resources
+✅ Use appropriate instance sizes
+✅ Use autoscaling
+✅ Avoid unnecessary NAT Gateway usage
+✅ Monitor storage
+✅ Clean unused images
+✅ Review EKS node capacity
+✅ Use managed services where appropriate
+✅ Monitor AWS costs
+
+For a learning project, remember to destroy temporary infrastructure when it is no longer required.
+
+
