@@ -1050,3 +1050,44 @@ Troubleshooting is a core DevOps skill.
 
 Documentation is essential for maintainability.
 
+18. Interview Questions
+
+Q1. Why use Kubernetes for this project?
+
+Kubernetes provides container orchestration, service discovery, scaling, self-healing, and controlled application deployments.
+
+Q2. Why use Terraform?
+
+Terraform allows cloud infrastructure to be defined, versioned, reviewed, and provisioned as code.
+
+Q3. Why use Docker?
+
+Docker packages applications and their dependencies into portable containers.
+
+Q4. How does CI/CD help?
+
+CI/CD automates building, testing, security validation, and deployment, reducing manual effort and inconsistent deployments.
+
+Q5. How do you monitor the application?
+
+Prometheus collects metrics, Grafana visualizes them, and Alertmanager can route actionable alerts.
+
+Q6. How do you secure the pipeline?
+
+Use code scanning, dependency scanning, container scanning, IaC scanning, secret management, least privilege, protected branches, and controlled deployment.
+
+Q7. How would you troubleshoot a failing pod?
+
+Start with:
+
+kubectl get pods
+kubectl describe pod <pod>
+kubectl logs <pod>
+kubectl get events
+
+Then check services, networking, configuration, resources, and dependencies.
+
+Q8. How do you make the application highly available?
+
+Use multiple replicas, appropriate Kubernetes scheduling, health probes, autoscaling, load balancing, and highly available underlying infrastructure.
+
