@@ -23,3 +23,46 @@ The objective is to take the existing application and infrastructure and improve
 🧹 Maintainability
 
 The goal is not simply to make the application work, but to make it production-ready and easier to operate.
+🏗️ Optimized DevOps Architecture
+
+                         USERS
+                           │
+                           ▼
+                     AWS Route 53
+                           │
+                           ▼
+                    AWS Load Balancer
+                           │
+                           ▼
+                 ┌───────────────────┐
+                 │     AWS EKS       │
+                 │                   │
+                 │ ┌───────────────┐ │
+                 │ │   Frontend    │ │
+                 │ │    Pods       │ │
+                 │ └───────┬───────┘ │
+                 │         │         │
+                 │ ┌───────▼───────┐ │
+                 │ │    Backend    │ │
+                 │ │     Pods      │ │
+                 │ └───────┬───────┘ │
+                 └─────────┼─────────┘
+                           │
+                           ▼
+                       Database
+                           │
+                           ▼
+                         RDS
+
+       ┌─────────────────────────────────────┐
+       │          DevOps Platform            │
+       │                                     │
+       │ GitHub → CI/CD → Docker → EKS      │
+       │ Terraform → Infrastructure         │
+       │ Prometheus → Metrics               │
+       │ Grafana → Dashboards               │
+       │ Alertmanager → Alerts              │
+       │ SonarQube → Code Security          │
+       │ Trivy → Container Security         │
+       │ Checkov → IaC Security             │
+       └─────────────────────────────────────┘
