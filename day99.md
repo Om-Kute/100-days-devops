@@ -101,3 +101,16 @@ Reduce manual operations
 Observability
 
 Improve visibility into systems
+⚡ 2. Performance Optimization
+
+Performance optimization ensures that applications respond quickly while using resources efficiently.
+
+Application-level improvements
+
+✅ Optimize database queries
+✅ Reduce unnecessary API calls
+✅ Use caching
+✅ Compress static assets
+✅ Optimize frontend bundles
+✅ Remove unnecessary dependencies
+✅ Use asynchronous processing where appropriate
