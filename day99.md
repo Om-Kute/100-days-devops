@@ -5,7 +5,6 @@
 Day 99 focuses on optimizing the real-world DevOps project developed during the previous stages of the 100 Days of DevOps journey.
 
 The objective is to take the existing application and infrastructure and improve its:
-
 ⚡ Performance
 
 📈 Scalability
