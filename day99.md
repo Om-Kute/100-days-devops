@@ -61,37 +61,21 @@ The goal is not simply to make the application work, but to make it production-r
 📊 1. Optimization Areas
 
 The project is optimized across seven major areas:
-
 Area
-
 Objective
-
 Performance
-
 Faster response and efficient resource usage
-
 Scalability
-
 Handle increasing traffic
-
 Reliability
-
 Reduce failures and downtime
-
 Security
-
 Reduce vulnerabilities and attack surface
-
 Cost
-
 Eliminate unnecessary cloud spending
-
 Automation
-
 Reduce manual operations
-
 Observability
-
 Improve visibility into systems
 ⚡ 2. Performance Optimization
 
