@@ -136,3 +136,27 @@ Faster Push
 Faster Pull
       ↓
 Faster Deployment
+🧹 Docker Best Practices
+
+✅ Use minimal trusted base images
+✅ Use multi-stage builds
+✅ Remove unnecessary packages
+✅ Keep dependencies updated
+✅ Avoid secrets inside images
+✅ Run containers as non-root where possible
+✅ Scan images regularly
+✅ Use immutable image tags in deployments
+
+Instead of:
+
+myapp:latest
+
+prefer an immutable version:
+
+myapp:1.0.5
+
+or:
+
+myapp:<commit-sha>
+
+This makes deployments more reproducible.
