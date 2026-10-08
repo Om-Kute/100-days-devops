@@ -175,3 +175,21 @@ Scheduling
 Health Probes
 Services
 Network Policies
+📈 Resource Requests and Limits
+
+Example:
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+Why use them?
+
+Requests help Kubernetes schedule workloads.
+
+Limits prevent a container from consuming unlimited resources.
