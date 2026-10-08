@@ -193,3 +193,31 @@ Why use them?
 Requests help Kubernetes schedule workloads.
 
 Limits prevent a container from consuming unlimited resources.
+🔄 Horizontal Pod Autoscaler
+
+HPA can automatically adjust the number of replicas.
+
+Example:
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+
+metadata:
+  name: backend-hpa
+
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+
+  minReplicas: 2
+  maxReplicas: 10
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
