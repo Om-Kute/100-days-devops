@@ -7,17 +7,11 @@ Day 99 focuses on optimizing the real-world DevOps project developed during the 
 The objective is to take the existing application and infrastructure and improve its:
 ⚡ Performance
 📈 Scalability
-
 🔐 Security
-
 🛡️ Reliability
-
 💰 Cost efficiency
-
 🔄 Automation
-
 📊 Observability
-
 🧹 Maintainability
 
 The goal is not simply to make the application work, but to make it production-ready and easier to operate.
