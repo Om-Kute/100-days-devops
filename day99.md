@@ -130,4 +130,9 @@ EXPOSE 80
 Benefits
 
 Smaller Image
-
+↓
+Faster Push
+      ↓
+Faster Pull
+      ↓
+Faster Deployment
