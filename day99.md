@@ -90,4 +90,44 @@ Application-level improvements
 ✅ Optimize frontend bundles
 ✅ Remove unnecessary dependencies
 ✅ Use asynchronous processing where appropriate
+🐳 Docker Performance Optimization
+
+Large container images can increase:
+
+Build time
+
+Push/pull time
+
+Storage requirements
+
+Deployment time
+
+Use multi-stage builds
+
+Example:
+
+# Build stage
+FROM node:22-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci
+
+COPY . .
+
+RUN npm run build
+
+
+# Production stage
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+Benefits
+
+Smaller Image
 
