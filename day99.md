@@ -160,3 +160,18 @@ or:
 myapp:<commit-sha>
 
 This makes deployments more reproducible.
+☸️ 3. Kubernetes Optimization
+
+Kubernetes should be configured according to application requirements.
+
+Important optimization areas:
+
+Pods
+Deployments
+Requests/Limits
+HPA
+Node Capacity
+Scheduling
+Health Probes
+Services
+Network Policies
