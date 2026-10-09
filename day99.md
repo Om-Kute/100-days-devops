@@ -260,3 +260,21 @@ livenessProbe:
 
   initialDelaySeconds: 30
   periodSeconds: 20
+🔄 Rolling Deployment
+
+Kubernetes can gradually replace old pods.
+
+Old Version
+   │
+   ├── Pod 1
+   ├── Pod 2
+   └── Pod 3
+        │
+        ▼
+   New Version
+        │
+        ├── Pod 1
+        ├── Pod 2
+        └── Pod 3
+
+This helps reduce downtime during application updates.
