@@ -329,3 +329,14 @@ Checkov
 Used for Infrastructure as Code scanning.
 
 checkov -d terraform/
+☸️ Kubernetes Security Best Practices
+
+✅ Use RBAC
+✅ Follow least privilege
+✅ Avoid privileged containers
+✅ Avoid running as root
+✅ Use NetworkPolicies where required
+✅ Scan container images
+✅ Secure Kubernetes Secrets
+✅ Restrict unnecessary external access
+✅ Keep cluster components updated
