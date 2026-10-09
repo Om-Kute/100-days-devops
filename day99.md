@@ -295,3 +295,37 @@ IaC Scan
 Kubernetes Security
  ↓
 Runtime Monitoring
+🛡️ Security Tools
+
+SonarQube
+
+Used for:
+
+Static analysis
+
+Code quality
+
+Security issues
+
+Code smells
+
+Maintainability analysis
+
+Trivy
+
+Can scan:
+
+Container Images
+Filesystems
+Dependencies
+Infrastructure Configuration
+
+Example:
+
+trivy image myapp:1.0.5
+
+Checkov
+
+Used for Infrastructure as Code scanning.
+
+checkov -d terraform/
