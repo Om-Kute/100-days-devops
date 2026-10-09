@@ -221,3 +221,18 @@ spec:
         target:
           type: Utilization
           averageUtilization: 70
+❤️ 4. Reliability Improvements
+
+A production application should recover automatically from common failures.
+
+Important Kubernetes features:
+
+✅ Multiple replicas
+✅ Readiness probes
+✅ Liveness probes
+✅ Startup probes where needed
+✅ Horizontal Pod Autoscaling
+✅ Load balancing
+✅ Rolling deployments
+✅ Pod disruption controls
+✅ Multi-AZ infrastructure where appropriate
