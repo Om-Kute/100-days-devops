@@ -359,3 +359,22 @@ Jenkins Credentials
 GitHub Actions Secrets
 
 For production, prefer short-lived credentials and workload identity mechanisms where available.
+🏗️ 6. Terraform Optimization
+
+Terraform should remain modular, predictable, and maintainable.
+
+Recommended structure:
+
+terraform/
+│
+├── main.tf
+├── providers.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+├── backend.tf
+│
+└── modules/
+    ├── vpc/
+    ├── eks/
+    ├── security-group/
