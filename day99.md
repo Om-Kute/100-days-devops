@@ -278,3 +278,20 @@ Old Version
         └── Pod 3
 
 This helps reduce downtime during application updates.
+🔐 5. Security Optimization
+
+Security should be implemented throughout the DevOps lifecycle.
+
+Plan
+ ↓
+Code Security
+ ↓
+Dependency Scan
+ ↓
+Container Scan
+ ↓
+IaC Scan
+ ↓
+Kubernetes Security
+ ↓
+Runtime Monitoring
