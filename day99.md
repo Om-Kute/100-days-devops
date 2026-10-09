@@ -340,3 +340,22 @@ checkov -d terraform/
 ✅ Secure Kubernetes Secrets
 ✅ Restrict unnecessary external access
 ✅ Keep cluster components updated
+🔑 Secrets Management
+
+Never commit:
+
+AWS Access Keys
+Database Passwords
+API Tokens
+Private Keys
+Application Secrets
+
+Use appropriate mechanisms such as:
+
+AWS Secrets Manager
+AWS Systems Manager Parameter Store
+Kubernetes Secrets
+Jenkins Credentials
+GitHub Actions Secrets
+
+For production, prefer short-lived credentials and workload identity mechanisms where available.
