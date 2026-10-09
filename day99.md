@@ -378,3 +378,28 @@ terraform/
     ├── vpc/
     ├── eks/
     ├── security-group/
+🧩 Terraform Modules
+
+Instead of repeating resources:
+
+VPC Code
+EC2 Code
+Security Group Code
+
+create reusable modules:
+
+modules/
+├── vpc/
+├── eks/
+├── rds/
+└── security/
+
+Benefits
+
+Reusable
+   ↓
+Consistent
+   ↓
+Maintainable
+   ↓
+Scalable
