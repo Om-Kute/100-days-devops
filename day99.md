@@ -249,3 +249,14 @@ readinessProbe:
 
   initialDelaySeconds: 10
   periodSeconds: 10
+Liveness Probe
+
+Determines whether the application is still healthy.
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 3000
+
+  initialDelaySeconds: 30
+  periodSeconds: 20
