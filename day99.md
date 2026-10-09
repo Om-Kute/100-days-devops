@@ -236,3 +236,16 @@ Important Kubernetes features:
 ✅ Rolling deployments
 ✅ Pod disruption controls
 ✅ Multi-AZ infrastructure where appropriate
+🩺 Health Probes
+
+Readiness Probe
+
+Determines whether the application is ready to receive traffic.
+
+readinessProbe:
+  httpGet:
+    path: /health
+    port: 3000
+
+  initialDelaySeconds: 10
+  periodSeconds: 10
