@@ -498,3 +498,30 @@ Alert best practices
 ✅ Avoid duplicate alerts
 ✅ Group related alerts
 ✅ Review noisy alerts
+9. Grafana Dashboard
+
+A useful dashboard can include:
+
+┌─────────────────────────────────────────┐
+│         APPLICATION OVERVIEW            │
+├────────────┬────────────┬───────────────┤
+│ CPU Usage  │ Memory     │ Request Rate  │
+├────────────┼────────────┼───────────────┤
+│ Error Rate │ Latency    │ Pod Status    │
+├────────────┼────────────┼───────────────┤
+│ Database   │ Network    │ Availability  │
+└────────────┴────────────┴───────────────┘
+
+Dashboards should help engineers answer:
+
+Is the application healthy?
+
+Is traffic increasing?
+
+Are errors increasing?
+
+Which service is slow?
+
+Are pods restarting?
+
+Is infrastructure running normally?
