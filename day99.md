@@ -654,3 +654,62 @@ Benefits:
 ✅ Higher availability
 ✅ Better resilience
 ✅ Reduced single points of failure
+14. Production Readiness Checklist
+
+Application
+
+☑ Health endpoints
+☑ Proper error handling
+☑ Logging
+☑ Performance optimization
+
+Docker
+
+☑ Small images
+☑ Multi-stage builds
+☑ Non-root user
+☑ Image scanning
+☑ Immutable tags
+
+Kubernetes
+
+☑ Multiple replicas
+☑ Resource requests/limits
+☑ Readiness probes
+☑ Liveness probes
+☑ HPA
+☑ RBAC
+☑ Network policies where required
+
+Terraform
+
+☑ Modules
+☑ Remote state
+☑ Version constraints
+☑ Plan review
+☑ Secure credentials
+
+CI/CD
+
+☑ Automated tests
+☑ Security scans
+☑ Container scanning
+☑ Deployment automation
+☑ Rollback strategy
+
+Monitoring
+
+☑ Prometheus
+☑ Grafana
+☑ Alertmanager
+☑ Actionable alerts
+☑ Log visibility
+
+Security
+
+☑ Least privilege
+☑ Secret management
+☑ SAST
+☑ DAST where appropriate
+☑ Container scanning
+☑ IaC scanning
