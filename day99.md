@@ -750,3 +750,26 @@ Uptime, MTTR, Incident Frequency
 Cost
 
 Monthly Spend, Resource Utilization
+ 16. Verification Commands
+
+Kubernetes
+
+kubectl get nodes
+kubectl get pods -A
+kubectl get deployments -A
+kubectl get services -A
+kubectl get ingress -A
+
+Troubleshooting
+
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+kubectl get events --sort-by=.lastTimestamp
+
+Deployment
+
+kubectl rollout status deployment/backend
+
+Rollback
+
+kubectl rollout undo deployment/backend
