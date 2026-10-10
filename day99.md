@@ -474,3 +474,27 @@ Database Latency
 Network Traffic
 Deployment Success Rate
 Infrastructure Cost
+ Alert Optimization
+
+Bad alert:
+
+CPU = 71%
+
+This may not require immediate action.
+
+Better alert:
+
+CPU > 90%
+FOR 10 minutes
+
+combined with meaningful context.
+
+Alert best practices
+
+✅ Alert on symptoms
+✅ Define severity
+✅ Add useful labels
+✅ Include runbook links where possible
+✅ Avoid duplicate alerts
+✅ Group related alerts
+✅ Review noisy alerts
