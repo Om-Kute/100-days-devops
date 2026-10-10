@@ -773,3 +773,24 @@ kubectl rollout status deployment/backend
 Rollback
 
 kubectl rollout undo deployment/backend
+17. Optimization Workflow
+
+The optimization process should be continuous.
+
+Measure
+   ↓
+Identify Bottleneck
+   ↓
+Analyze
+   ↓
+Optimize
+   ↓
+Test
+   ↓
+Deploy
+   ↓
+Monitor
+   ↓
+Measure Again
+
+This creates a continuous improvement loop.
