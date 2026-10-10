@@ -713,3 +713,40 @@ Security
 ☑ DAST where appropriate
 ☑ Container scanning
 ☑ IaC scanning
+15. Key Metrics to Monitor
+
+Category
+
+Important Metrics
+
+Application
+
+Request Rate, Response Time, Error Rate
+
+Kubernetes
+
+Pod Count, Restarts, CPU, Memory
+
+Infrastructure
+
+CPU, Memory, Disk, Network
+
+Database
+
+Connections, Latency, Storage
+
+CI/CD
+
+Build Time, Success Rate, Deployment Time
+
+Security
+
+Vulnerabilities, Scan Failures
+
+Reliability
+
+Uptime, MTTR, Incident Frequency
+
+Cost
+
+Monthly Spend, Resource Utilization
