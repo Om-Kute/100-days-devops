@@ -403,3 +403,39 @@ Consistent
 Maintainable
    ↓
 Scalable
+💰 7. AWS Cost Optimization
+
+Cloud optimization is an important DevOps responsibility.
+
+Common sources of unnecessary cost
+
+Unused EC2 instances
+Unused EBS volumes
+Unused Elastic IPs
+Unused Load Balancers
+Oversized instances
+Excessive NAT Gateway usage
+Unused snapshots
+Unused container images
+Idle databases
+Over-provisioned EKS nodes
+
+💵 Cost Optimization Strategies
+
+✅ Right-size resources
+✅ Remove unused resources
+✅ Use autoscaling
+✅ Monitor AWS Cost Explorer
+✅ Set budgets and alerts
+✅ Review EKS node capacity
+✅ Clean unused images
+✅ Optimize storage
+✅ Use managed services appropriately
+
+For learning environments:
+
+terraform destroy
+
+can be used when the infrastructure is no longer required.
+
+Always verify what will be destroyed before confirming.
