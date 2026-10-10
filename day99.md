@@ -794,3 +794,46 @@ Monitor
 Measure Again
 
 This creates a continuous improvement loop.
+18. Complete Optimized DevOps Lifecycle
+
+                 PLAN
+                  │
+                  ▼
+                 CODE
+                  │
+                  ▼
+              GIT / GITHUB
+                  │
+                  ▼
+               CI / CD
+                  │
+          ┌───────┴────────┐
+          ▼                ▼
+       BUILD             TEST
+          │                │
+          └───────┬────────┘
+                  ▼
+            SECURITY SCAN
+                  │
+                  ▼
+              DOCKER
+                  │
+                  ▼
+             KUBERNETES
+                  │
+                  ▼
+                AWS
+                  │
+                  ▼
+              MONITOR
+                  │
+                  ▼
+               ALERT
+                  │
+                  ▼
+             TROUBLESHOOT
+                  │
+                  ▼
+              OPTIMIZE
+                  │
+                  └──────────► CONTINUOUS IMPROVEMENT
