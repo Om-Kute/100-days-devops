@@ -605,3 +605,28 @@ myapp:
   ├── 1.0.1
   ├── 1.0.2
   └── <commit-sha>
+ 12. Scalability
+
+Scalability means the system can handle increasing workload.
+
+Low Traffic
+    ↓
+2 Pods
+    ↓
+Medium Traffic
+    ↓
+4 Pods
+    ↓
+High Traffic
+    ↓
+8 Pods
+
+Kubernetes can support this through:
+
+Horizontal Pod Autoscaler
+Cluster Autoscaler
+Load Balancing
+ReplicaSets
+
+The exact scaling strategy should be based on workload behavior and cluster capacity.
+
