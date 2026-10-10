@@ -458,3 +458,19 @@ Alertmanager
      │
      ▼
 Notification
+Key Metrics
+
+Monitor:
+
+CPU Usage
+Memory Usage
+Disk Usage
+Request Rate
+Response Time
+Error Rate
+Pod Restarts
+Pod Availability
+Database Latency
+Network Traffic
+Deployment Success Rate
+Infrastructure Cost
