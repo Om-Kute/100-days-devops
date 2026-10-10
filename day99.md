@@ -525,3 +525,30 @@ Which service is slow?
 Are pods restarting?
 
 Is infrastructure running normally?
+10. CI/CD Optimization
+
+The CI/CD pipeline should be fast, reliable, and secure.
+
+Recommended workflow:
+
+Code
+ ↓
+Build
+ ↓
+Unit Test
+ ↓
+SAST
+ ↓
+Dependency Scan
+ ↓
+Docker Build
+ ↓
+Container Scan
+ ↓
+Push Image
+ ↓
+Deploy
+ ↓
+Smoke Test
+ ↓
+Monitor
