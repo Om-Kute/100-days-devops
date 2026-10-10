@@ -563,3 +563,20 @@ Pipeline Optimization
 ✅ Use immutable image tags
 ✅ Automate rollback
 ✅ Keep pipeline steps simple
+Rollback Strategy
+
+A production deployment should have a recovery strategy.
+
+For Kubernetes:
+
+kubectl rollout history deployment/backend
+
+Rollback:
+
+kubectl rollout undo deployment/backend
+
+Check rollout status:
+
+kubectl rollout status deployment/backend
+
+This provides a simple recovery mechanism when a deployment introduces a problem.
