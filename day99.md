@@ -630,3 +630,27 @@ ReplicaSets
 
 The exact scaling strategy should be based on workload behavior and cluster capacity.
 
+13. Reliability and High Availability
+
+A production-like AWS architecture can use:
+
+                AWS Region
+                    │
+          ┌─────────┴─────────┐
+          ▼                   ▼
+      Availability         Availability
+        Zone A                Zone B
+          │                     │
+       EKS Node              EKS Node
+          │                     │
+       Pods                    Pods
+          └─────────┬───────────┘
+                    │
+               Load Balancer
+
+Benefits:
+
+✅ Fault tolerance
+✅ Higher availability
+✅ Better resilience
+✅ Reduced single points of failure
