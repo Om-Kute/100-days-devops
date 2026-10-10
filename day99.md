@@ -439,3 +439,22 @@ terraform destroy
 can be used when the infrastructure is no longer required.
 
 Always verify what will be destroyed before confirming.
+8. Monitoring Optimization
+
+Monitoring should focus on useful, actionable information.
+
+A typical stack:
+
+Application
+     │
+     ▼
+Prometheus
+     │
+     ▼
+Grafana
+     │
+     ▼
+Alertmanager
+     │
+     ▼
+Notification
