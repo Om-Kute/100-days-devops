@@ -580,3 +580,28 @@ Check rollout status:
 kubectl rollout status deployment/backend
 
 This provides a simple recovery mechanism when a deployment introduces a problem.
+11. Container Registry Optimization
+
+Container images can be stored in:
+
+Amazon ECR
+
+Docker Hub
+
+Another approved container registry
+
+Recommended practices:
+
+✅ Use immutable version tags
+✅ Remove unused images
+✅ Enable vulnerability scanning
+✅ Apply lifecycle policies
+✅ Avoid unnecessarily large images
+
+Example:
+
+myapp:
+  ├── 1.0.0
+  ├── 1.0.1
+  ├── 1.0.2
+  └── <commit-sha>
